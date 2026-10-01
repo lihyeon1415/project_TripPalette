@@ -7,7 +7,11 @@
     "price_per_night": 160000,
     "capacity": 2,
     "rating": null,
-    "image_url": "/static/img/accommodation/창원 진해/그랜드 머큐어 앰배서더 창원/images (1).jpg"
+    "image_url": "/static/img/accommodation/창원 진해/그랜드 머큐어 앰배서더 창원/images (1).jpg",
+    "wifi_available": true,
+    "parking_available": true,
+    "check_in_time": "15:00",
+    "check_out_time": "11:00"
   },
   {
     "destination_name": "창원 진해",
@@ -17,7 +21,11 @@
     "price_per_night": 120000,
     "capacity": 2,
     "rating": null,
-    "image_url": "/static/img/accommodation/창원 진해/진해 인터시티호텔/unnamed (1).jpg"
+    "image_url": "/static/img/accommodation/창원 진해/진해 인터시티호텔/main-upscaled-v1.png",
+    "wifi_available": true,
+    "parking_available": true,
+    "check_in_time": "15:00",
+    "check_out_time": "11:00"
   },
   {
     "destination_name": "창원 진해",
@@ -27,7 +35,11 @@
     "price_per_night": 190000,
     "capacity": 4,
     "rating": null,
-    "image_url": "/static/img/accommodation/창원 진해/글로리아 글램핑/다운로드 (1).jpg"
+    "image_url": "/static/img/accommodation/창원 진해/글로리아 글램핑/다운로드 (1).jpg",
+    "wifi_available": false,
+    "parking_available": true,
+    "check_in_time": "15:00",
+    "check_out_time": "11:00"
   },
   {
     "destination_name": "삼척",
@@ -37,7 +49,11 @@
     "price_per_night": 69000,
     "capacity": 2,
     "rating": null,
-    "image_url": "/static/img/accommodation/삼척/산티아고펜션/다운로드 (1).jpg"
+    "image_url": "/static/img/accommodation/삼척/산티아고펜션/main-upscaled-v1.png",
+    "wifi_available": true,
+    "parking_available": true,
+    "check_in_time": "15:00",
+    "check_out_time": "11:00"
   },
   {
     "destination_name": "삼척",
@@ -47,7 +63,11 @@
     "price_per_night": 120000,
     "capacity": 2,
     "rating": null,
-    "image_url": "/static/img/accommodation/삼척/힐스노클비치호텔/다운로드 (1).jpg"
+    "image_url": "/static/img/accommodation/삼척/힐스노클비치호텔/main-upscaled-v1.png",
+    "wifi_available": true,
+    "parking_available": true,
+    "check_in_time": "15:00",
+    "check_out_time": "11:00"
   },
   {
     "destination_name": "삼척",
@@ -57,37 +77,11 @@
     "price_per_night": 153000,
     "capacity": 4,
     "rating": null,
-    "image_url": "/static/img/accommodation/삼척/쏠비치 삼척/다운로드 (1).jpg"
-  },
-  {
-    "destination_name": "구례",
-    "name": "더케이 지리산가족호텔",
-    "address": "전라남도 구례군 산동면",
-    "description": "지리산 여행을 위한 가족형 호텔",
-    "price_per_night": 120000,
-    "capacity": 4,
-    "rating": null,
-    "image_url": null
-  },
-  {
-    "destination_name": "구례",
-    "name": "지리산호수리조트",
-    "address": "전라남도 구례군 산동면",
-    "description": "지리산과 호수 풍경을 즐기는 리조트",
-    "price_per_night": 100000,
-    "capacity": 4,
-    "rating": null,
-    "image_url": null
-  },
-  {
-    "destination_name": "구례",
-    "name": "노고단게스트하우스",
-    "address": "전라남도 구례군 산동면",
-    "description": "지리산 탐방객을 위한 게스트하우스",
-    "price_per_night": 50000,
-    "capacity": 2,
-    "rating": null,
-    "image_url": null
+    "image_url": "/static/img/accommodation/삼척/쏠비치 삼척/다운로드 (1).jpg",
+    "wifi_available": true,
+    "parking_available": true,
+    "check_in_time": "15:00",
+    "check_out_time": "11:00"
   },
   {
     "destination_name": "속초",
@@ -97,7 +91,11 @@
     "price_per_night": 80000,
     "capacity": 2,
     "rating": null,
-    "image_url": "/static/img/accommodation/속초/HJ하우스펜션/다운로드 (1).jpg"
+    "image_url": "/static/img/accommodation/속초/HJ하우스펜션/main-upscaled-v1.png",
+    "wifi_available": true,
+    "parking_available": true,
+    "check_in_time": "15:00",
+    "check_out_time": "11:00"
   },
   {
     "destination_name": "속초",
@@ -107,7 +105,11 @@
     "price_per_night": 73000,
     "capacity": 2,
     "rating": null,
-    "image_url": "/static/img/accommodation/속초/씨크루즈호텔 속초/다운로드 (1).jpg"
+    "image_url": "/static/img/accommodation/속초/씨크루즈호텔 속초/다운로드 (1).jpg",
+    "wifi_available": true,
+    "parking_available": true,
+    "check_in_time": "15:00",
+    "check_out_time": "11:00"
   },
   {
     "destination_name": "속초",
@@ -117,7 +119,11 @@
     "price_per_night": 260000,
     "capacity": 4,
     "rating": null,
-    "image_url": "/static/img/accommodation/속초/롯데리조트 속초/다운로드 (1).jpg"
+    "image_url": "/static/img/accommodation/속초/롯데리조트 속초/다운로드 (1).jpg",
+    "wifi_available": true,
+    "parking_available": true,
+    "check_in_time": "15:00",
+    "check_out_time": "11:00"
   },
   {
     "destination_name": "무주",
@@ -127,7 +133,11 @@
     "price_per_night": 131000,
     "capacity": 4,
     "rating": null,
-    "image_url": "/static/img/accommodation/무주/나오스펜션/다운로드 (1).jpg"
+    "image_url": "/static/img/accommodation/무주/나오스펜션/main-upscaled-v1.png",
+    "wifi_available": true,
+    "parking_available": true,
+    "check_in_time": "15:00",
+    "check_out_time": "11:00"
   },
   {
     "destination_name": "무주",
@@ -137,7 +147,11 @@
     "price_per_night": 120000,
     "capacity": 4,
     "rating": null,
-    "image_url": "/static/img/accommodation/무주/무주아일랜드/다운로드 (1).jpg"
+    "image_url": "/static/img/accommodation/무주/무주아일랜드/main-upscaled-v1.png",
+    "wifi_available": true,
+    "parking_available": true,
+    "check_in_time": "15:00",
+    "check_out_time": "11:00"
   },
   {
     "destination_name": "무주",
@@ -147,7 +161,11 @@
     "price_per_night": 150000,
     "capacity": 4,
     "rating": null,
-    "image_url": "/static/img/accommodation/무주/무주 랜드글램핑/6a95148b08c721.33241048.jpg"
+    "image_url": "/static/img/accommodation/무주/무주 랜드글램핑/6a95148b08c721.33241048.jpg",
+    "wifi_available": false,
+    "parking_available": true,
+    "check_in_time": "15:00",
+    "check_out_time": "11:00"
   },
   {
     "destination_name": "태백",
@@ -157,7 +175,11 @@
     "price_per_night": 100000,
     "capacity": 4,
     "rating": null,
-    "image_url": "/static/img/accommodation/태백/태백산한옥펜션/다운로드 (1).jpg"
+    "image_url": "/static/img/accommodation/태백/태백산한옥펜션/다운로드 (1).jpg",
+    "wifi_available": true,
+    "parking_available": true,
+    "check_in_time": "15:00",
+    "check_out_time": "11:00"
   },
   {
     "destination_name": "태백",
@@ -167,7 +189,11 @@
     "price_per_night": 118000,
     "capacity": 2,
     "rating": null,
-    "image_url": "/static/img/accommodation/태백/태백호텔/다운로드 (1).jpg"
+    "image_url": "/static/img/accommodation/태백/태백호텔/다운로드 (1).jpg",
+    "wifi_available": true,
+    "parking_available": true,
+    "check_in_time": "15:00",
+    "check_out_time": "11:00"
   },
   {
     "destination_name": "태백",
@@ -177,7 +203,11 @@
     "price_per_night": 120000,
     "capacity": 4,
     "rating": null,
-    "image_url": "/static/img/accommodation/태백/오투리조트/다운로드 (1).jpg"
+    "image_url": "/static/img/accommodation/태백/오투리조트/다운로드 (1).jpg",
+    "wifi_available": true,
+    "parking_available": true,
+    "check_in_time": "15:00",
+    "check_out_time": "11:00"
   },
   {
     "destination_name": "보령",
@@ -187,7 +217,11 @@
     "price_per_night": 104000,
     "capacity": 2,
     "rating": null,
-    "image_url": "/static/img/accommodation/보령/호텔 쏠레르/images (1).jpg"
+    "image_url": "/static/img/accommodation/보령/호텔 쏠레르/images (1).jpg",
+    "wifi_available": true,
+    "parking_available": true,
+    "check_in_time": "15:00",
+    "check_out_time": "11:00"
   },
   {
     "destination_name": "보령",
@@ -197,7 +231,11 @@
     "price_per_night": 83000,
     "capacity": 2,
     "rating": null,
-    "image_url": "/static/img/accommodation/보령/대천 우연플로라호텔/63232ff78af1a1.33603693.jpg"
+    "image_url": "/static/img/accommodation/보령/대천 우연플로라호텔/63232ff78af1a1.33603693.jpg",
+    "wifi_available": true,
+    "parking_available": true,
+    "check_in_time": "15:00",
+    "check_out_time": "11:00"
   },
   {
     "destination_name": "보령",
@@ -207,7 +245,11 @@
     "price_per_night": 115000,
     "capacity": 4,
     "rating": null,
-    "image_url": "/static/img/accommodation/보령/한화리조트 대천 파로스/images (1).jpg"
+    "image_url": "/static/img/accommodation/보령/한화리조트 대천 파로스/images (1).jpg",
+    "wifi_available": true,
+    "parking_available": true,
+    "check_in_time": "15:00",
+    "check_out_time": "11:00"
   },
   {
     "destination_name": "정읍",
@@ -217,7 +259,11 @@
     "price_per_night": 90000,
     "capacity": 2,
     "rating": null,
-    "image_url": "/static/img/accommodation/정읍/앨리스데이/다운로드 (1).jpg"
+    "image_url": "/static/img/accommodation/정읍/앨리스데이/main-upscaled-v1.png",
+    "wifi_available": true,
+    "parking_available": true,
+    "check_in_time": "15:00",
+    "check_out_time": "11:00"
   },
   {
     "destination_name": "정읍",
@@ -227,7 +273,11 @@
     "price_per_night": 120000,
     "capacity": 4,
     "rating": null,
-    "image_url": "/static/img/accommodation/정읍/내장산한옥펜션/다운로드 (1).jpg"
+    "image_url": "/static/img/accommodation/정읍/내장산한옥펜션/다운로드 (1).jpg",
+    "wifi_available": true,
+    "parking_available": true,
+    "check_in_time": "15:00",
+    "check_out_time": "11:00"
   },
   {
     "destination_name": "정읍",
@@ -237,7 +287,11 @@
     "price_per_night": 150000,
     "capacity": 4,
     "rating": null,
-    "image_url": "/static/img/accommodation/정읍/금강두승산글램핑/images (1).jpg"
+    "image_url": "/static/img/accommodation/정읍/금강두승산글램핑/images (1).jpg",
+    "wifi_available": false,
+    "parking_available": true,
+    "check_in_time": "15:00",
+    "check_out_time": "11:00"
   },
   {
     "destination_name": "담양",
@@ -247,7 +301,11 @@
     "price_per_night": 250000,
     "capacity": 4,
     "rating": null,
-    "image_url": "/static/img/accommodation/담양/그라스풀빌라리조트/images (1).jpg"
+    "image_url": "/static/img/accommodation/담양/그라스풀빌라리조트/main-upscaled-v1.png",
+    "wifi_available": true,
+    "parking_available": true,
+    "check_in_time": "15:00",
+    "check_out_time": "11:00"
   },
   {
     "destination_name": "담양",
@@ -257,7 +315,11 @@
     "price_per_night": 50000,
     "capacity": 2,
     "rating": null,
-    "image_url": "/static/img/accommodation/담양/담양메타펜션/다운로드 (1).jpg"
+    "image_url": "/static/img/accommodation/담양/담양메타펜션/다운로드 (1).jpg",
+    "wifi_available": true,
+    "parking_available": true,
+    "check_in_time": "15:00",
+    "check_out_time": "11:00"
   },
   {
     "destination_name": "담양",
@@ -267,7 +329,11 @@
     "price_per_night": 150000,
     "capacity": 4,
     "rating": null,
-    "image_url": "/static/img/accommodation/담양/라온글램핑/다운로드 (1).jpg"
+    "image_url": "/static/img/accommodation/담양/라온글램핑/main-upscaled-v1.png",
+    "wifi_available": false,
+    "parking_available": true,
+    "check_in_time": "15:00",
+    "check_out_time": "11:00"
   },
   {
     "destination_name": "안동",
@@ -277,7 +343,11 @@
     "price_per_night": 385000,
     "capacity": 4,
     "rating": null,
-    "image_url": "/static/img/accommodation/안동/전통리조트 구름에/images (1).jpg"
+    "image_url": "/static/img/accommodation/안동/전통리조트 구름에/images (1).jpg",
+    "wifi_available": true,
+    "parking_available": true,
+    "check_in_time": "15:00",
+    "check_out_time": "11:00"
   },
   {
     "destination_name": "안동",
@@ -287,7 +357,11 @@
     "price_per_night": 100000,
     "capacity": 4,
     "rating": null,
-    "image_url": "/static/img/accommodation/안동/안동마애펜션/images (1).jpg"
+    "image_url": "/static/img/accommodation/안동/안동마애펜션/main-upscaled-v1.png",
+    "wifi_available": true,
+    "parking_available": true,
+    "check_in_time": "15:00",
+    "check_out_time": "11:00"
   },
   {
     "destination_name": "안동",
@@ -297,27 +371,11 @@
     "price_per_night": 150000,
     "capacity": 4,
     "rating": null,
-    "image_url": "/static/img/accommodation/안동/안동 럭셔리 글램핑 라피네/다운로드 (1).jpg"
-  },
-  {
-    "destination_name": "순천",
-    "name": "에코그라드호텔",
-    "address": "전라남도 순천시 백강로 234",
-    "description": "순천 도심과 관광지 이동이 편리한 호텔",
-    "price_per_night": 75000,
-    "capacity": 2,
-    "rating": null,
-    "image_url": null
-  },
-  {
-    "destination_name": "순천",
-    "name": "호텔지뜨 순천",
-    "address": "전라남도 순천시",
-    "description": "순천만국가정원 인근의 호텔",
-    "price_per_night": 70000,
-    "capacity": 2,
-    "rating": null,
-    "image_url": null
+    "image_url": "/static/img/accommodation/안동/안동 럭셔리 글램핑 라피네/다운로드 (1).jpg",
+    "wifi_available": false,
+    "parking_available": true,
+    "check_in_time": "15:00",
+    "check_out_time": "11:00"
   },
   {
     "destination_name": "순천",
@@ -327,7 +385,11 @@
     "price_per_night": 150000,
     "capacity": 4,
     "rating": null,
-    "image_url": "/static/img/accommodation/순천/포라이즌글램핑/1.jpg"
+    "image_url": "/static/img/accommodation/순천/포라이즌글램핑/1.jpg",
+    "wifi_available": false,
+    "parking_available": true,
+    "check_in_time": "15:00",
+    "check_out_time": "11:00"
   },
   {
     "destination_name": "평창",
@@ -337,7 +399,11 @@
     "price_per_night": 120000,
     "capacity": 4,
     "rating": null,
-    "image_url": "/static/img/accommodation/평창/휘닉스파크 평창/images (1).jpg"
+    "image_url": "/static/img/accommodation/평창/휘닉스파크 평창/images (1).jpg",
+    "wifi_available": true,
+    "parking_available": true,
+    "check_in_time": "15:00",
+    "check_out_time": "11:00"
   },
   {
     "destination_name": "평창",
@@ -347,7 +413,11 @@
     "price_per_night": 120000,
     "capacity": 4,
     "rating": null,
-    "image_url": "/static/img/accommodation/평창/숲앤숲펜션/images (1).jpg"
+    "image_url": "/static/img/accommodation/평창/숲앤숲펜션/images (1).jpg",
+    "wifi_available": true,
+    "parking_available": true,
+    "check_in_time": "15:00",
+    "check_out_time": "11:00"
   },
   {
     "destination_name": "평창",
@@ -357,7 +427,11 @@
     "price_per_night": 80000,
     "capacity": 2,
     "rating": null,
-    "image_url": "/static/img/accommodation/평창/AM호텔/다운로드 (3).jpg"
+    "image_url": "/static/img/accommodation/평창/AM호텔/main-upscaled-v1.png",
+    "wifi_available": true,
+    "parking_available": true,
+    "check_in_time": "15:00",
+    "check_out_time": "11:00"
   },
   {
     "destination_name": "인제",
@@ -367,7 +441,11 @@
     "price_per_night": 110000,
     "capacity": 2,
     "rating": null,
-    "image_url": "/static/img/accommodation/인제/인제 스피디움 호텔앤리조트/images (1).jpg"
+    "image_url": "/static/img/accommodation/인제/인제 스피디움 호텔앤리조트/images (1).jpg",
+    "wifi_available": true,
+    "parking_available": true,
+    "check_in_time": "15:00",
+    "check_out_time": "11:00"
   },
   {
     "destination_name": "인제",
@@ -377,7 +455,11 @@
     "price_per_night": 100000,
     "capacity": 4,
     "rating": null,
-    "image_url": "/static/img/accommodation/인제/자작나무숲 자작향기펜션/images (1).jpg"
+    "image_url": "/static/img/accommodation/인제/자작나무숲 자작향기펜션/main-upscaled-v1.png",
+    "wifi_available": true,
+    "parking_available": true,
+    "check_in_time": "15:00",
+    "check_out_time": "11:00"
   },
   {
     "destination_name": "인제",
@@ -387,7 +469,11 @@
     "price_per_night": 162000,
     "capacity": 4,
     "rating": null,
-    "image_url": "/static/img/accommodation/인제/맑은물리조트/images (1).jpg"
+    "image_url": "/static/img/accommodation/인제/맑은물리조트/images (1).jpg",
+    "wifi_available": true,
+    "parking_available": true,
+    "check_in_time": "15:00",
+    "check_out_time": "11:00"
   },
   {
     "destination_name": "강릉",
@@ -397,7 +483,11 @@
     "price_per_night": 100000,
     "capacity": 2,
     "rating": null,
-    "image_url": "/static/img/accommodation/강릉/라카이 샌드파인/images (1).jpg"
+    "image_url": "/static/img/accommodation/강릉/라카이 샌드파인/images (1).jpg",
+    "wifi_available": true,
+    "parking_available": true,
+    "check_in_time": "15:00",
+    "check_out_time": "11:00"
   },
   {
     "destination_name": "강릉",
@@ -407,7 +497,11 @@
     "price_per_night": 90000,
     "capacity": 4,
     "rating": null,
-    "image_url": "/static/img/accommodation/강릉/오션힐펜션/1.png"
+    "image_url": "/static/img/accommodation/강릉/오션힐펜션/1.png",
+    "wifi_available": true,
+    "parking_available": true,
+    "check_in_time": "15:00",
+    "check_out_time": "11:00"
   },
   {
     "destination_name": "강릉",
@@ -417,7 +511,11 @@
     "price_per_night": 100000,
     "capacity": 2,
     "rating": null,
-    "image_url": "/static/img/accommodation/강릉/스카이베이호텔 경포/images (1).jpg"
+    "image_url": "/static/img/accommodation/강릉/스카이베이호텔 경포/images (1).jpg",
+    "wifi_available": true,
+    "parking_available": true,
+    "check_in_time": "15:00",
+    "check_out_time": "11:00"
   },
   {
     "destination_name": "정선",
@@ -427,7 +525,11 @@
     "price_per_night": 120000,
     "capacity": 2,
     "rating": null,
-    "image_url": "/static/img/accommodation/정선/하이원 그랜드호텔/unnamed (1).jpg"
+    "image_url": "/static/img/accommodation/정선/하이원 그랜드호텔/main-upscaled-v1.png",
+    "wifi_available": true,
+    "parking_available": true,
+    "check_in_time": "15:00",
+    "check_out_time": "11:00"
   },
   {
     "destination_name": "정선",
@@ -437,7 +539,11 @@
     "price_per_night": 250000,
     "capacity": 2,
     "rating": null,
-    "image_url": "/static/img/accommodation/정선/파크로쉬 리조트앤웰니스/images (1).jpg"
+    "image_url": "/static/img/accommodation/정선/파크로쉬 리조트앤웰니스/images (1).jpg",
+    "wifi_available": true,
+    "parking_available": true,
+    "check_in_time": "15:00",
+    "check_out_time": "11:00"
   },
   {
     "destination_name": "정선",
@@ -447,7 +553,11 @@
     "price_per_night": 90000,
     "capacity": 4,
     "rating": null,
-    "image_url": "/static/img/accommodation/정선/메이힐스리조트/unnamed (1).jpg"
+    "image_url": "/static/img/accommodation/정선/메이힐스리조트/main-upscaled-v1.png",
+    "wifi_available": true,
+    "parking_available": true,
+    "check_in_time": "15:00",
+    "check_out_time": "11:00"
   },
   {
     "destination_name": "제주",
@@ -457,7 +567,11 @@
     "price_per_night": 185000,
     "capacity": 4,
     "rating": null,
-    "image_url": "/static/img/accommodation/제주/휘닉스 아일랜드 제주/1.jpg"
+    "image_url": "/static/img/accommodation/제주/휘닉스 아일랜드 제주/1.jpg",
+    "wifi_available": true,
+    "parking_available": true,
+    "check_in_time": "15:00",
+    "check_out_time": "11:00"
   },
   {
     "destination_name": "제주",
@@ -467,7 +581,11 @@
     "price_per_night": 85000,
     "capacity": 2,
     "rating": null,
-    "image_url": "/static/img/accommodation/제주/호텔 리젠트마린 제주/1.jpg"
+    "image_url": "/static/img/accommodation/제주/호텔 리젠트마린 제주/1.jpg",
+    "wifi_available": true,
+    "parking_available": true,
+    "check_in_time": "15:00",
+    "check_out_time": "11:00"
   },
   {
     "destination_name": "제주",
@@ -477,7 +595,11 @@
     "price_per_night": 100000,
     "capacity": 4,
     "rating": null,
-    "image_url": "/static/img/accommodation/제주/제주자연인펜션글램핑/1.jpg"
+    "image_url": "/static/img/accommodation/제주/제주자연인펜션글램핑/1.jpg",
+    "wifi_available": false,
+    "parking_available": true,
+    "check_in_time": "15:00",
+    "check_out_time": "11:00"
   },
   {
     "destination_name": "경주",
@@ -487,7 +609,11 @@
     "price_per_night": 120000,
     "capacity": 4,
     "rating": null,
-    "image_url": "/static/img/accommodation/경주/경주엔한옥펜션/images (1).jpg"
+    "image_url": "/static/img/accommodation/경주/경주엔한옥펜션/images (1).jpg",
+    "wifi_available": true,
+    "parking_available": true,
+    "check_in_time": "15:00",
+    "check_out_time": "11:00"
   },
   {
     "destination_name": "경주",
@@ -497,7 +623,11 @@
     "price_per_night": 150000,
     "capacity": 4,
     "rating": null,
-    "image_url": "/static/img/accommodation/경주/경주 파도소리 스파글램핑 펜션/images (1).jpg"
+    "image_url": "/static/img/accommodation/경주/경주 파도소리 스파글램핑 펜션/images (1).jpg",
+    "wifi_available": false,
+    "parking_available": true,
+    "check_in_time": "15:00",
+    "check_out_time": "11:00"
   },
   {
     "destination_name": "경주",
@@ -507,7 +637,11 @@
     "price_per_night": 150000,
     "capacity": 3,
     "rating": null,
-    "image_url": "/static/img/accommodation/경주/라한셀렉트 경주/images (1).jpg"
+    "image_url": "/static/img/accommodation/경주/라한셀렉트 경주/main-upscaled-v1.png",
+    "wifi_available": true,
+    "parking_available": true,
+    "check_in_time": "15:00",
+    "check_out_time": "11:00"
   },
   {
     "destination_name": "부산",
@@ -517,7 +651,11 @@
     "price_per_night": 180000,
     "capacity": 4,
     "rating": null,
-    "image_url": "/static/img/accommodation/부산/제이스 스파 글램핑/images (1).jpg"
+    "image_url": "/static/img/accommodation/부산/제이스 스파 글램핑/images (1).jpg",
+    "wifi_available": false,
+    "parking_available": true,
+    "check_in_time": "15:00",
+    "check_out_time": "11:00"
   },
   {
     "destination_name": "부산",
@@ -527,7 +665,11 @@
     "price_per_night": 135000,
     "capacity": 2,
     "rating": null,
-    "image_url": "/static/img/accommodation/부산/신라스테이 해운대/images (1).jpg"
+    "image_url": "/static/img/accommodation/부산/신라스테이 해운대/images (1).jpg",
+    "wifi_available": true,
+    "parking_available": true,
+    "check_in_time": "15:00",
+    "check_out_time": "11:00"
   },
   {
     "destination_name": "부산",
@@ -537,7 +679,11 @@
     "price_per_night": 317000,
     "capacity": 2,
     "rating": null,
-    "image_url": "/static/img/accommodation/부산/아난티 앳 부산 코브/images (1).jpg"
+    "image_url": "/static/img/accommodation/부산/아난티 앳 부산 코브/images (1).jpg",
+    "wifi_available": true,
+    "parking_available": true,
+    "check_in_time": "15:00",
+    "check_out_time": "11:00"
   },
   {
     "destination_name": "가평",
@@ -547,7 +693,11 @@
     "price_per_night": 100000,
     "capacity": 4,
     "rating": null,
-    "image_url": "/static/img/accommodation/가평/가평 슈가펜션/1.jpg"
+    "image_url": "/static/img/accommodation/가평/가평 슈가펜션/1.jpg",
+    "wifi_available": true,
+    "parking_available": true,
+    "check_in_time": "15:00",
+    "check_out_time": "11:00"
   },
   {
     "destination_name": "가평",
@@ -557,7 +707,11 @@
     "price_per_night": 80000,
     "capacity": 2,
     "rating": null,
-    "image_url": "/static/img/accommodation/가평/아늑에어호텔/1.jpg"
+    "image_url": "/static/img/accommodation/가평/아늑에어호텔/1.jpg",
+    "wifi_available": true,
+    "parking_available": true,
+    "check_in_time": "15:00",
+    "check_out_time": "11:00"
   },
   {
     "destination_name": "가평",
@@ -567,7 +721,11 @@
     "price_per_night": 180000,
     "capacity": 2,
     "rating": null,
-    "image_url": "/static/img/accommodation/가평/더스테이힐링파크/1.jpg"
+    "image_url": "/static/img/accommodation/가평/더스테이힐링파크/1.jpg",
+    "wifi_available": true,
+    "parking_available": true,
+    "check_in_time": "15:00",
+    "check_out_time": "11:00"
   },
   {
     "destination_name": "포천",
@@ -577,7 +735,11 @@
     "price_per_night": 100000,
     "capacity": 4,
     "rating": null,
-    "image_url": "/static/img/accommodation/포천/산정호수계곡 늘푸른허브펜션/1.jpg"
+    "image_url": "/static/img/accommodation/포천/산정호수계곡 늘푸른허브펜션/1.jpg",
+    "wifi_available": true,
+    "parking_available": true,
+    "check_in_time": "15:00",
+    "check_out_time": "11:00"
   },
   {
     "destination_name": "포천",
@@ -587,7 +749,11 @@
     "price_per_night": 98000,
     "capacity": 2,
     "rating": null,
-    "image_url": "/static/img/accommodation/포천/포천 아도니스호텔/1mc5m12000iph7amj29C8_W_600_0_R5.webp"
+    "image_url": "/static/img/accommodation/포천/포천 아도니스호텔/1mc5m12000iph7amj29C8_W_600_0_R5.webp",
+    "wifi_available": true,
+    "parking_available": true,
+    "check_in_time": "15:00",
+    "check_out_time": "11:00"
   },
   {
     "destination_name": "포천",
@@ -597,7 +763,11 @@
     "price_per_night": 123000,
     "capacity": 4,
     "rating": null,
-    "image_url": "/static/img/accommodation/포천/한화리조트 산정호수 안시/1.png"
+    "image_url": "/static/img/accommodation/포천/한화리조트 산정호수 안시/1.png",
+    "wifi_available": true,
+    "parking_available": true,
+    "check_in_time": "15:00",
+    "check_out_time": "11:00"
   },
   {
     "destination_name": "양평",
@@ -607,7 +777,11 @@
     "price_per_night": 100000,
     "capacity": 4,
     "rating": null,
-    "image_url": "/static/img/accommodation/양평/양평 포레스트펜션/1.jpg"
+    "image_url": "/static/img/accommodation/양평/양평 포레스트펜션/1.jpg",
+    "wifi_available": true,
+    "parking_available": true,
+    "check_in_time": "15:00",
+    "check_out_time": "11:00"
   },
   {
     "destination_name": "양평",
@@ -617,7 +791,11 @@
     "price_per_night": 130000,
     "capacity": 2,
     "rating": null,
-    "image_url": "/static/img/accommodation/양평/블룸비스타 호텔앤컨퍼런스/1.jpg"
+    "image_url": "/static/img/accommodation/양평/블룸비스타 호텔앤컨퍼런스/1.jpg",
+    "wifi_available": true,
+    "parking_available": true,
+    "check_in_time": "15:00",
+    "check_out_time": "11:00"
   },
   {
     "destination_name": "양평",
@@ -627,7 +805,11 @@
     "price_per_night": 174000,
     "capacity": 4,
     "rating": null,
-    "image_url": "/static/img/accommodation/양평/소노벨 양평/1.jpg"
+    "image_url": "/static/img/accommodation/양평/소노벨 양평/1.jpg",
+    "wifi_available": true,
+    "parking_available": true,
+    "check_in_time": "15:00",
+    "check_out_time": "11:00"
   },
   {
     "destination_name": "홍천",
@@ -637,7 +819,11 @@
     "price_per_night": 468000,
     "capacity": 6,
     "rating": null,
-    "image_url": "/static/img/accommodation/홍천/오유원/1.jpg"
+    "image_url": "/static/img/accommodation/홍천/오유원/1.jpg",
+    "wifi_available": true,
+    "parking_available": true,
+    "check_in_time": "15:00",
+    "check_out_time": "11:00"
   },
   {
     "destination_name": "홍천",
@@ -647,7 +833,11 @@
     "price_per_night": 180000,
     "capacity": 4,
     "rating": null,
-    "image_url": "/static/img/accommodation/홍천/사가우드 홍천/1.jpg"
+    "image_url": "/static/img/accommodation/홍천/사가우드 홍천/1.jpg",
+    "wifi_available": true,
+    "parking_available": true,
+    "check_in_time": "15:00",
+    "check_out_time": "11:00"
   },
   {
     "destination_name": "홍천",
@@ -657,7 +847,11 @@
     "price_per_night": 210000,
     "capacity": 4,
     "rating": null,
-    "image_url": "/static/img/accommodation/홍천/소노펠리체 빌리지 비발디파크/1.webp"
+    "image_url": "/static/img/accommodation/홍천/소노펠리체 빌리지 비발디파크/1.webp",
+    "wifi_available": true,
+    "parking_available": true,
+    "check_in_time": "15:00",
+    "check_out_time": "11:00"
   },
   {
     "destination_name": "양양",
@@ -667,7 +861,11 @@
     "price_per_night": 100000,
     "capacity": 4,
     "rating": null,
-    "image_url": "/static/img/accommodation/양양/양양 프리지아 펜션/1.jpg"
+    "image_url": "/static/img/accommodation/양양/양양 프리지아 펜션/1.jpg",
+    "wifi_available": true,
+    "parking_available": true,
+    "check_in_time": "15:00",
+    "check_out_time": "11:00"
   },
   {
     "destination_name": "양양",
@@ -677,7 +875,11 @@
     "price_per_night": 61000,
     "capacity": 2,
     "rating": null,
-    "image_url": "/static/img/accommodation/양양/디그니티 호텔/1.jpg"
+    "image_url": "/static/img/accommodation/양양/디그니티 호텔/1.jpg",
+    "wifi_available": true,
+    "parking_available": true,
+    "check_in_time": "15:00",
+    "check_out_time": "11:00"
   },
   {
     "destination_name": "양양",
@@ -687,7 +889,11 @@
     "price_per_night": 114000,
     "capacity": 4,
     "rating": null,
-    "image_url": "/static/img/accommodation/양양/쏠비치 양양/1.jpg"
+    "image_url": "/static/img/accommodation/양양/쏠비치 양양/1.jpg",
+    "wifi_available": true,
+    "parking_available": true,
+    "check_in_time": "15:00",
+    "check_out_time": "11:00"
   },
   {
     "destination_name": "제천",
@@ -697,7 +903,11 @@
     "price_per_night": 100000,
     "capacity": 4,
     "rating": null,
-    "image_url": "/static/img/accommodation/제천/제천힐링펜션/1.webp"
+    "image_url": "/static/img/accommodation/제천/제천힐링펜션/1.webp",
+    "wifi_available": true,
+    "parking_available": true,
+    "check_in_time": "15:00",
+    "check_out_time": "11:00"
   },
   {
     "destination_name": "제천",
@@ -707,7 +917,11 @@
     "price_per_night": 66000,
     "capacity": 2,
     "rating": null,
-    "image_url": "/static/img/accommodation/제천/하운드호텔 제천역/unnamed (1).jpg"
+    "image_url": "/static/img/accommodation/제천/하운드호텔 제천역/main-upscaled-v1.png",
+    "wifi_available": true,
+    "parking_available": true,
+    "check_in_time": "15:00",
+    "check_out_time": "11:00"
   },
   {
     "destination_name": "제천",
@@ -717,7 +931,11 @@
     "price_per_night": 224000,
     "capacity": 4,
     "rating": null,
-    "image_url": "/static/img/accommodation/제천/레스트리 리솜/1.jpg"
+    "image_url": "/static/img/accommodation/제천/레스트리 리솜/1.jpg",
+    "wifi_available": true,
+    "parking_available": true,
+    "check_in_time": "15:00",
+    "check_out_time": "11:00"
   },
   {
     "destination_name": "단양",
@@ -727,7 +945,11 @@
     "price_per_night": 80000,
     "capacity": 2,
     "rating": null,
-    "image_url": "/static/img/accommodation/단양/단양관광호텔 에델바이스/1.webp"
+    "image_url": "/static/img/accommodation/단양/단양관광호텔 에델바이스/1.webp",
+    "wifi_available": true,
+    "parking_available": true,
+    "check_in_time": "15:00",
+    "check_out_time": "11:00"
   },
   {
     "destination_name": "단양",
@@ -737,7 +959,11 @@
     "price_per_night": 100000,
     "capacity": 4,
     "rating": null,
-    "image_url": "/static/img/accommodation/단양/소노벨 단양/1.jpg"
+    "image_url": "/static/img/accommodation/단양/소노벨 단양/1.jpg",
+    "wifi_available": true,
+    "parking_available": true,
+    "check_in_time": "15:00",
+    "check_out_time": "11:00"
   },
   {
     "destination_name": "충주",
@@ -747,7 +973,11 @@
     "price_per_night": 90000,
     "capacity": 4,
     "rating": null,
-    "image_url": "/static/img/accommodation/충주/충주 서유숙펜션/images (1).jpg"
+    "image_url": "/static/img/accommodation/충주/충주 서유숙펜션/images (1).jpg",
+    "wifi_available": true,
+    "parking_available": true,
+    "check_in_time": "15:00",
+    "check_out_time": "11:00"
   },
   {
     "destination_name": "충주",
@@ -757,7 +987,11 @@
     "price_per_night": 70000,
     "capacity": 2,
     "rating": null,
-    "image_url": "/static/img/accommodation/충주/호텔 더베이스/1.webp"
+    "image_url": "/static/img/accommodation/충주/호텔 더베이스/1.webp",
+    "wifi_available": true,
+    "parking_available": true,
+    "check_in_time": "15:00",
+    "check_out_time": "11:00"
   },
   {
     "destination_name": "충주",
@@ -767,7 +1001,11 @@
     "price_per_night": 199000,
     "capacity": 4,
     "rating": null,
-    "image_url": "/static/img/accommodation/충주/켄싱턴리조트 충주/1.jpg"
+    "image_url": "/static/img/accommodation/충주/켄싱턴리조트 충주/1.jpg",
+    "wifi_available": true,
+    "parking_available": true,
+    "check_in_time": "15:00",
+    "check_out_time": "11:00"
   },
   {
     "destination_name": "태안",
@@ -777,7 +1015,11 @@
     "price_per_night": 100000,
     "capacity": 4,
     "rating": null,
-    "image_url": "/static/img/accommodation/태안/태안 칸타빌레펜션/0584i12000t2lsy1508BC_R_960_660_R5_D.jpg"
+    "image_url": "/static/img/accommodation/태안/태안 칸타빌레펜션/0584i12000t2lsy1508BC_R_960_660_R5_D.jpg",
+    "wifi_available": true,
+    "parking_available": true,
+    "check_in_time": "15:00",
+    "check_out_time": "11:00"
   },
   {
     "destination_name": "태안",
@@ -787,7 +1029,11 @@
     "price_per_night": 90000,
     "capacity": 4,
     "rating": null,
-    "image_url": "/static/img/accommodation/태안/롱비치 패밀리 호텔/1.jpg"
+    "image_url": "/static/img/accommodation/태안/롱비치 패밀리 호텔/1.jpg",
+    "wifi_available": true,
+    "parking_available": true,
+    "check_in_time": "15:00",
+    "check_out_time": "11:00"
   },
   {
     "destination_name": "태안",
@@ -797,7 +1043,11 @@
     "price_per_night": 199000,
     "capacity": 5,
     "rating": null,
-    "image_url": "/static/img/accommodation/태안/아일랜드 리솜/1.jpg"
+    "image_url": "/static/img/accommodation/태안/아일랜드 리솜/1.jpg",
+    "wifi_available": true,
+    "parking_available": true,
+    "check_in_time": "15:00",
+    "check_out_time": "11:00"
   },
   {
     "destination_name": "부여",
@@ -807,7 +1057,11 @@
     "price_per_night": 100000,
     "capacity": 4,
     "rating": null,
-    "image_url": "/static/img/accommodation/부여/부여 억새정원 펜션/1.webp"
+    "image_url": "/static/img/accommodation/부여/부여 억새정원 펜션/1.webp",
+    "wifi_available": true,
+    "parking_available": true,
+    "check_in_time": "15:00",
+    "check_out_time": "11:00"
   },
   {
     "destination_name": "부여",
@@ -817,7 +1071,11 @@
     "price_per_night": 130000,
     "capacity": 4,
     "rating": null,
-    "image_url": "/static/img/accommodation/부여/부여파크아트빌라스/1.jpg"
+    "image_url": "/static/img/accommodation/부여/부여파크아트빌라스/1.jpg",
+    "wifi_available": true,
+    "parking_available": true,
+    "check_in_time": "15:00",
+    "check_out_time": "11:00"
   },
   {
     "destination_name": "부여",
@@ -827,7 +1085,11 @@
     "price_per_night": 266000,
     "capacity": 4,
     "rating": null,
-    "image_url": "/static/img/accommodation/부여/롯데리조트 부여/1.jpg"
+    "image_url": "/static/img/accommodation/부여/롯데리조트 부여/1.jpg",
+    "wifi_available": true,
+    "parking_available": true,
+    "check_in_time": "15:00",
+    "check_out_time": "11:00"
   },
   {
     "destination_name": "포항",
@@ -837,7 +1099,11 @@
     "price_per_night": 100000,
     "capacity": 4,
     "rating": null,
-    "image_url": "/static/img/accommodation/포항/포항 포에버펜션/1.jpg"
+    "image_url": "/static/img/accommodation/포항/포항 포에버펜션/1.jpg",
+    "wifi_available": true,
+    "parking_available": true,
+    "check_in_time": "15:00",
+    "check_out_time": "11:00"
   },
   {
     "destination_name": "포항",
@@ -847,7 +1113,11 @@
     "price_per_night": 107000,
     "capacity": 2,
     "rating": null,
-    "image_url": "/static/img/accommodation/포항/라한호텔 포항/1.jpg"
+    "image_url": "/static/img/accommodation/포항/라한호텔 포항/1.jpg",
+    "wifi_available": true,
+    "parking_available": true,
+    "check_in_time": "15:00",
+    "check_out_time": "11:00"
   },
   {
     "destination_name": "포항",
@@ -857,7 +1127,11 @@
     "price_per_night": 235000,
     "capacity": 2,
     "rating": null,
-    "image_url": "/static/img/accommodation/포항/코랄트리풀빌라/1.jpg"
+    "image_url": "/static/img/accommodation/포항/코랄트리풀빌라/1.jpg",
+    "wifi_available": true,
+    "parking_available": true,
+    "check_in_time": "15:00",
+    "check_out_time": "11:00"
   },
   {
     "destination_name": "문경",
@@ -867,7 +1141,11 @@
     "price_per_night": 90000,
     "capacity": 4,
     "rating": null,
-    "image_url": "/static/img/accommodation/문경/문경 힐하우스펜션/1.jpg"
+    "image_url": "/static/img/accommodation/문경/문경 힐하우스펜션/1.jpg",
+    "wifi_available": true,
+    "parking_available": true,
+    "check_in_time": "15:00",
+    "check_out_time": "11:00"
   },
   {
     "destination_name": "문경",
@@ -877,7 +1155,11 @@
     "price_per_night": 70000,
     "capacity": 2,
     "rating": null,
-    "image_url": "/static/img/accommodation/문경/페트로호텔/1.jpg"
+    "image_url": "/static/img/accommodation/문경/페트로호텔/1.jpg",
+    "wifi_available": true,
+    "parking_available": true,
+    "check_in_time": "15:00",
+    "check_out_time": "11:00"
   },
   {
     "destination_name": "문경",
@@ -887,7 +1169,11 @@
     "price_per_night": 120000,
     "capacity": 4,
     "rating": null,
-    "image_url": "/static/img/accommodation/문경/STX리조트/1.jpg"
+    "image_url": "/static/img/accommodation/문경/STX리조트/1.jpg",
+    "wifi_available": true,
+    "parking_available": true,
+    "check_in_time": "15:00",
+    "check_out_time": "11:00"
   },
   {
     "destination_name": "청송",
@@ -897,7 +1183,11 @@
     "price_per_night": 120000,
     "capacity": 4,
     "rating": null,
-    "image_url": "/static/img/accommodation/청송/청송 한옥호텔 안/images (1).jpg"
+    "image_url": "/static/img/accommodation/청송/청송 한옥호텔 안/images (1).jpg",
+    "wifi_available": true,
+    "parking_available": true,
+    "check_in_time": "15:00",
+    "check_out_time": "11:00"
   },
   {
     "destination_name": "청송",
@@ -907,7 +1197,11 @@
     "price_per_night": 128000,
     "capacity": 2,
     "rating": null,
-    "image_url": "/static/img/accommodation/청송/주왕산 온천관광호텔/images (1).jpg"
+    "image_url": "/static/img/accommodation/청송/주왕산 온천관광호텔/images (1).jpg",
+    "wifi_available": true,
+    "parking_available": true,
+    "check_in_time": "15:00",
+    "check_out_time": "11:00"
   },
   {
     "destination_name": "청송",
@@ -917,7 +1211,11 @@
     "price_per_night": 100000,
     "capacity": 4,
     "rating": null,
-    "image_url": "/static/img/accommodation/청송/소노벨 청송/images (1).jpg"
+    "image_url": "/static/img/accommodation/청송/소노벨 청송/images (1).jpg",
+    "wifi_available": true,
+    "parking_available": true,
+    "check_in_time": "15:00",
+    "check_out_time": "11:00"
   },
   {
     "destination_name": "거제",
@@ -927,7 +1225,11 @@
     "price_per_night": 120000,
     "capacity": 4,
     "rating": null,
-    "image_url": "/static/img/accommodation/거제/더100펜션/다운로드 (1).jpg"
+    "image_url": "/static/img/accommodation/거제/더100펜션/main-upscaled-v1.png",
+    "wifi_available": true,
+    "parking_available": true,
+    "check_in_time": "15:00",
+    "check_out_time": "11:00"
   },
   {
     "destination_name": "거제",
@@ -937,7 +1239,11 @@
     "price_per_night": 140000,
     "capacity": 2,
     "rating": null,
-    "image_url": "/static/img/accommodation/거제/거제삼성호텔/images (1).jpg"
+    "image_url": "/static/img/accommodation/거제/거제삼성호텔/main-upscaled-v1.png",
+    "wifi_available": true,
+    "parking_available": true,
+    "check_in_time": "15:00",
+    "check_out_time": "11:00"
   },
   {
     "destination_name": "거제",
@@ -947,7 +1253,11 @@
     "price_per_night": 180000,
     "capacity": 4,
     "rating": null,
-    "image_url": "/static/img/accommodation/거제/소노캄 거제/images (1).jpg"
+    "image_url": "/static/img/accommodation/거제/소노캄 거제/images (1).jpg",
+    "wifi_available": true,
+    "parking_available": true,
+    "check_in_time": "15:00",
+    "check_out_time": "11:00"
   },
   {
     "destination_name": "통영",
@@ -957,7 +1267,11 @@
     "price_per_night": 100000,
     "capacity": 4,
     "rating": null,
-    "image_url": "/static/img/accommodation/통영/통영아이펜션/images (1).jpg"
+    "image_url": "/static/img/accommodation/통영/통영아이펜션/main-upscaled-v1.png",
+    "wifi_available": true,
+    "parking_available": true,
+    "check_in_time": "15:00",
+    "check_out_time": "11:00"
   },
   {
     "destination_name": "통영",
@@ -967,7 +1281,11 @@
     "price_per_night": 140000,
     "capacity": 2,
     "rating": null,
-    "image_url": "/static/img/accommodation/통영/스탠포드 호텔앤리조트 통영/1.jpg"
+    "image_url": "/static/img/accommodation/통영/스탠포드 호텔앤리조트 통영/1.jpg",
+    "wifi_available": true,
+    "parking_available": true,
+    "check_in_time": "15:00",
+    "check_out_time": "11:00"
   },
   {
     "destination_name": "통영",
@@ -977,7 +1295,11 @@
     "price_per_night": 120000,
     "capacity": 4,
     "rating": null,
-    "image_url": "/static/img/accommodation/통영/금호통영마리나리조트/1.jpg"
+    "image_url": "/static/img/accommodation/통영/금호통영마리나리조트/1.jpg",
+    "wifi_available": true,
+    "parking_available": true,
+    "check_in_time": "15:00",
+    "check_out_time": "11:00"
   },
   {
     "destination_name": "남해",
@@ -987,7 +1309,11 @@
     "price_per_night": 130000,
     "capacity": 4,
     "rating": null,
-    "image_url": "/static/img/accommodation/남해/푸르다 남해펜션/1.jpg"
+    "image_url": "/static/img/accommodation/남해/푸르다 남해펜션/1.jpg",
+    "wifi_available": true,
+    "parking_available": true,
+    "check_in_time": "15:00",
+    "check_out_time": "11:00"
   },
   {
     "destination_name": "남해",
@@ -997,7 +1323,11 @@
     "price_per_night": 86000,
     "capacity": 2,
     "rating": null,
-    "image_url": "/static/img/accommodation/남해/남해 라피스 호텔/61a8ffa7a78b62.57261690.jpg"
+    "image_url": "/static/img/accommodation/남해/남해 라피스 호텔/61a8ffa7a78b62.57261690.jpg",
+    "wifi_available": true,
+    "parking_available": true,
+    "check_in_time": "15:00",
+    "check_out_time": "11:00"
   },
   {
     "destination_name": "남해",
@@ -1007,7 +1337,11 @@
     "price_per_night": 438000,
     "capacity": 2,
     "rating": null,
-    "image_url": "/static/img/accommodation/남해/아난티 남해/images (1).jpg"
+    "image_url": "/static/img/accommodation/남해/아난티 남해/images (1).jpg",
+    "wifi_available": true,
+    "parking_available": true,
+    "check_in_time": "15:00",
+    "check_out_time": "11:00"
   },
   {
     "destination_name": "군산",
@@ -1017,7 +1351,11 @@
     "price_per_night": 120000,
     "capacity": 4,
     "rating": null,
-    "image_url": "/static/img/accommodation/군산/선유도 씨에스타펜션/images (1).jpg"
+    "image_url": "/static/img/accommodation/군산/선유도 씨에스타펜션/images (1).jpg",
+    "wifi_available": true,
+    "parking_available": true,
+    "check_in_time": "15:00",
+    "check_out_time": "11:00"
   },
   {
     "destination_name": "군산",
@@ -1027,7 +1365,11 @@
     "price_per_night": 90000,
     "capacity": 2,
     "rating": null,
-    "image_url": "/static/img/accommodation/군산/에이본 호텔 군산/images (1).jpg"
+    "image_url": "/static/img/accommodation/군산/에이본 호텔 군산/main-upscaled-v1.png",
+    "wifi_available": true,
+    "parking_available": true,
+    "check_in_time": "15:00",
+    "check_out_time": "11:00"
   },
   {
     "destination_name": "군산",
@@ -1037,7 +1379,11 @@
     "price_per_night": 100000,
     "capacity": 4,
     "rating": null,
-    "image_url": "/static/img/accommodation/군산/유로빌리지/images (1).jpg"
+    "image_url": "/static/img/accommodation/군산/유로빌리지/main-upscaled-v1.png",
+    "wifi_available": true,
+    "parking_available": true,
+    "check_in_time": "15:00",
+    "check_out_time": "11:00"
   },
   {
     "destination_name": "부안",
@@ -1047,7 +1393,11 @@
     "price_per_night": 100000,
     "capacity": 4,
     "rating": null,
-    "image_url": "/static/img/accommodation/부안/부안 아침바다 펜션/1.jpg"
+    "image_url": "/static/img/accommodation/부안/부안 아침바다 펜션/1.jpg",
+    "wifi_available": true,
+    "parking_available": true,
+    "check_in_time": "15:00",
+    "check_out_time": "11:00"
   },
   {
     "destination_name": "부안",
@@ -1057,7 +1407,11 @@
     "price_per_night": 123000,
     "capacity": 2,
     "rating": null,
-    "image_url": "/static/img/accommodation/부안/바다호텔/1.jpg"
+    "image_url": "/static/img/accommodation/부안/바다호텔/1.jpg",
+    "wifi_available": true,
+    "parking_available": true,
+    "check_in_time": "15:00",
+    "check_out_time": "11:00"
   },
   {
     "destination_name": "부안",
@@ -1067,7 +1421,11 @@
     "price_per_night": 132000,
     "capacity": 4,
     "rating": null,
-    "image_url": "/static/img/accommodation/부안/소노벨 변산/1.jpg"
+    "image_url": "/static/img/accommodation/부안/소노벨 변산/1.jpg",
+    "wifi_available": true,
+    "parking_available": true,
+    "check_in_time": "15:00",
+    "check_out_time": "11:00"
   },
   {
     "destination_name": "완주",
@@ -1077,7 +1435,11 @@
     "price_per_night": 100000,
     "capacity": 4,
     "rating": null,
-    "image_url": "/static/img/accommodation/완주/더펜션퍼스트/1.jpg"
+    "image_url": "/static/img/accommodation/완주/더펜션퍼스트/1.jpg",
+    "wifi_available": true,
+    "parking_available": true,
+    "check_in_time": "15:00",
+    "check_out_time": "11:00"
   },
   {
     "destination_name": "완주",
@@ -1087,7 +1449,11 @@
     "price_per_night": 70000,
     "capacity": 2,
     "rating": null,
-    "image_url": "/static/img/accommodation/완주/더 클래식 바이 호텔원/images (1).jpg"
+    "image_url": "/static/img/accommodation/완주/더 클래식 바이 호텔원/images (1).jpg",
+    "wifi_available": true,
+    "parking_available": true,
+    "check_in_time": "15:00",
+    "check_out_time": "11:00"
   },
   {
     "destination_name": "완주",
@@ -1097,17 +1463,11 @@
     "price_per_night": 120000,
     "capacity": 4,
     "rating": null,
-    "image_url": "/static/img/accommodation/완주/상관리조트&스파/images (1).jpg"
-  },
-  {
-    "destination_name": "신안",
-    "name": "신안 나무늘보펜션",
-    "address": "전라남도 신안군",
-    "description": "신안 섬 여행을 여유롭게 즐기는 펜션",
-    "price_per_night": 100000,
-    "capacity": 4,
-    "rating": null,
-    "image_url": null
+    "image_url": "/static/img/accommodation/완주/상관리조트&스파/images (1).jpg",
+    "wifi_available": true,
+    "parking_available": true,
+    "check_in_time": "15:00",
+    "check_out_time": "11:00"
   },
   {
     "destination_name": "신안",
@@ -1117,7 +1477,11 @@
     "price_per_night": 172000,
     "capacity": 4,
     "rating": null,
-    "image_url": "/static/img/accommodation/신안/라마다프라자호텔 & 씨원리조트 자은도/images (1).jpg"
+    "image_url": "/static/img/accommodation/신안/라마다프라자호텔 & 씨원리조트 자은도/images (1).jpg",
+    "wifi_available": true,
+    "parking_available": true,
+    "check_in_time": "15:00",
+    "check_out_time": "11:00"
   },
   {
     "destination_name": "신안",
@@ -1127,7 +1491,11 @@
     "price_per_night": 180000,
     "capacity": 4,
     "rating": null,
-    "image_url": "/static/img/accommodation/신안/엘도라도 리조트/images (1).jpg"
+    "image_url": "/static/img/accommodation/신안/엘도라도 리조트/images (1).jpg",
+    "wifi_available": true,
+    "parking_available": true,
+    "check_in_time": "15:00",
+    "check_out_time": "11:00"
   },
   {
     "destination_name": "제주 조천",
@@ -1137,7 +1505,11 @@
     "price_per_night": 100000,
     "capacity": 4,
     "rating": null,
-    "image_url": "/static/img/accommodation/제주 조천/제주 도유펜션/1.jpg"
+    "image_url": "/static/img/accommodation/제주 조천/제주 도유펜션/1.jpg",
+    "wifi_available": true,
+    "parking_available": true,
+    "check_in_time": "15:00",
+    "check_out_time": "11:00"
   },
   {
     "destination_name": "제주 조천",
@@ -1147,7 +1519,11 @@
     "price_per_night": 121000,
     "capacity": 2,
     "rating": null,
-    "image_url": "/static/img/accommodation/제주 조천/에코랜드 호텔/1.jpg"
+    "image_url": "/static/img/accommodation/제주 조천/에코랜드 호텔/1.jpg",
+    "wifi_available": true,
+    "parking_available": true,
+    "check_in_time": "15:00",
+    "check_out_time": "11:00"
   },
   {
     "destination_name": "제주 조천",
@@ -1157,7 +1533,11 @@
     "price_per_night": 132000,
     "capacity": 4,
     "rating": null,
-    "image_url": "/static/img/accommodation/제주 조천/소노벨 제주/1.jpg"
+    "image_url": "/static/img/accommodation/제주 조천/소노벨 제주/1.jpg",
+    "wifi_available": true,
+    "parking_available": true,
+    "check_in_time": "15:00",
+    "check_out_time": "11:00"
   },
   {
     "destination_name": "제주 조천",
@@ -1167,7 +1547,11 @@
     "price_per_night": 99000,
     "capacity": 4,
     "rating": null,
-    "image_url": "/static/img/accommodation/제주 조천/제주 베스트힐 글램핑 & 펜션/1.jpg"
+    "image_url": "/static/img/accommodation/제주 조천/제주 베스트힐 글램핑 & 펜션/1.jpg",
+    "wifi_available": false,
+    "parking_available": true,
+    "check_in_time": "15:00",
+    "check_out_time": "11:00"
   },
   {
     "destination_name": "제주 애월",
@@ -1177,7 +1561,11 @@
     "price_per_night": 100000,
     "capacity": 4,
     "rating": null,
-    "image_url": "/static/img/accommodation/제주 애월/제주 놀멍펜션/1.jpg"
+    "image_url": "/static/img/accommodation/제주 애월/제주 놀멍펜션/1.jpg",
+    "wifi_available": true,
+    "parking_available": true,
+    "check_in_time": "15:00",
+    "check_out_time": "11:00"
   },
   {
     "destination_name": "제주 애월",
@@ -1187,7 +1575,11 @@
     "price_per_night": 111000,
     "capacity": 2,
     "rating": null,
-    "image_url": "/static/img/accommodation/제주 애월/유니호텔 제주/1.jpg"
+    "image_url": "/static/img/accommodation/제주 애월/유니호텔 제주/1.jpg",
+    "wifi_available": true,
+    "parking_available": true,
+    "check_in_time": "15:00",
+    "check_out_time": "11:00"
   },
   {
     "destination_name": "제주 애월",
@@ -1197,7 +1589,11 @@
     "price_per_night": 100000,
     "capacity": 4,
     "rating": null,
-    "image_url": "/static/img/accommodation/제주 애월/제주리조트/1.jpg"
+    "image_url": "/static/img/accommodation/제주 애월/제주리조트/1.jpg",
+    "wifi_available": true,
+    "parking_available": true,
+    "check_in_time": "15:00",
+    "check_out_time": "11:00"
   },
   {
     "destination_name": "서귀포",
@@ -1207,7 +1603,11 @@
     "price_per_night": 90000,
     "capacity": 4,
     "rating": null,
-    "image_url": "/static/img/accommodation/서귀포/굿데이펜션/images (1).jpg"
+    "image_url": "/static/img/accommodation/서귀포/굿데이펜션/main-upscaled-v1.png",
+    "wifi_available": true,
+    "parking_available": true,
+    "check_in_time": "15:00",
+    "check_out_time": "11:00"
   },
   {
     "destination_name": "서귀포",
@@ -1217,7 +1617,11 @@
     "price_per_night": 70000,
     "capacity": 2,
     "rating": null,
-    "image_url": "/static/img/accommodation/서귀포/호텔 브릿지 서귀포/images (1).jpg"
+    "image_url": "/static/img/accommodation/서귀포/호텔 브릿지 서귀포/images (1).jpg",
+    "wifi_available": true,
+    "parking_available": true,
+    "check_in_time": "15:00",
+    "check_out_time": "11:00"
   },
   {
     "destination_name": "서귀포",
@@ -1227,7 +1631,11 @@
     "price_per_night": 150000,
     "capacity": 4,
     "rating": null,
-    "image_url": "/static/img/accommodation/서귀포/켄싱턴리조트 서귀포/images (1).jpg"
+    "image_url": "/static/img/accommodation/서귀포/켄싱턴리조트 서귀포/images (1).jpg",
+    "wifi_available": true,
+    "parking_available": true,
+    "check_in_time": "15:00",
+    "check_out_time": "11:00"
   },
   {
     "destination_name": "가평",
@@ -1237,7 +1645,11 @@
     "price_per_night": 140000,
     "capacity": 4,
     "rating": null,
-    "image_url": "/static/img/accommodation/가평/루체른글램핑/6a1e346eeea9b3.26308312.png"
+    "image_url": "/static/img/accommodation/가평/루체른글램핑/6a1e346eeea9b3.26308312.png",
+    "wifi_available": false,
+    "parking_available": true,
+    "check_in_time": "15:00",
+    "check_out_time": "11:00"
   },
   {
     "destination_name": "포천",
@@ -1247,7 +1659,11 @@
     "price_per_night": 110000,
     "capacity": 4,
     "rating": null,
-    "image_url": "/static/img/accommodation/포천/포천 아일랜드펜션/0584d12000t1ifgb8A9CD_R_960_660_R5_D.jpg"
+    "image_url": "/static/img/accommodation/포천/포천 아일랜드펜션/0584d12000t1ifgb8A9CD_R_960_660_R5_D.jpg",
+    "wifi_available": true,
+    "parking_available": true,
+    "check_in_time": "15:00",
+    "check_out_time": "11:00"
   },
   {
     "destination_name": "포천",
@@ -1257,7 +1673,11 @@
     "price_per_night": 90000,
     "capacity": 2,
     "rating": null,
-    "image_url": "/static/img/accommodation/포천/아도니스 호텔/1.gif"
+    "image_url": "/static/img/accommodation/포천/아도니스 호텔/1.gif",
+    "wifi_available": true,
+    "parking_available": true,
+    "check_in_time": "15:00",
+    "check_out_time": "11:00"
   },
   {
     "destination_name": "양평",
@@ -1267,7 +1687,11 @@
     "price_per_night": 140000,
     "capacity": 4,
     "rating": null,
-    "image_url": "/static/img/accommodation/양평/와이글램핑/images (1).jpg"
+    "image_url": "/static/img/accommodation/양평/와이글램핑/images (1).jpg",
+    "wifi_available": false,
+    "parking_available": true,
+    "check_in_time": "15:00",
+    "check_out_time": "11:00"
   },
   {
     "destination_name": "양양",
@@ -1277,7 +1701,11 @@
     "price_per_night": 140000,
     "capacity": 4,
     "rating": null,
-    "image_url": "/static/img/accommodation/양양/그랑블루글램핑 야영장&펜션/673d9fe5b98851.20921438.jpg"
+    "image_url": "/static/img/accommodation/양양/그랑블루글램핑 야영장&펜션/673d9fe5b98851.20921438.jpg",
+    "wifi_available": false,
+    "parking_available": true,
+    "check_in_time": "15:00",
+    "check_out_time": "11:00"
   },
   {
     "destination_name": "정선",
@@ -1287,7 +1715,11 @@
     "price_per_night": 90000,
     "capacity": 2,
     "rating": null,
-    "image_url": "/static/img/accommodation/정선/트라움벨리 호텔/images (1).jpg"
+    "image_url": "/static/img/accommodation/정선/트라움벨리 호텔/main-upscaled-v1.png",
+    "wifi_available": true,
+    "parking_available": true,
+    "check_in_time": "15:00",
+    "check_out_time": "11:00"
   },
   {
     "destination_name": "정선",
@@ -1297,7 +1729,11 @@
     "price_per_night": 150000,
     "capacity": 4,
     "rating": null,
-    "image_url": "/static/img/accommodation/정선/하이원 리조트/images (1).jpg"
+    "image_url": "/static/img/accommodation/정선/하이원 리조트/images (1).jpg",
+    "wifi_available": true,
+    "parking_available": true,
+    "check_in_time": "15:00",
+    "check_out_time": "11:00"
   },
   {
     "destination_name": "정선",
@@ -1307,7 +1743,11 @@
     "price_per_night": 140000,
     "capacity": 4,
     "rating": null,
-    "image_url": "/static/img/accommodation/정선/아우라지글램핑/images (1).jpg"
+    "image_url": "/static/img/accommodation/정선/아우라지글램핑/main-upscaled-v1.png",
+    "wifi_available": false,
+    "parking_available": true,
+    "check_in_time": "15:00",
+    "check_out_time": "11:00"
   },
   {
     "destination_name": "제천",
@@ -1317,7 +1757,11 @@
     "price_per_night": 90000,
     "capacity": 2,
     "rating": null,
-    "image_url": "/static/img/accommodation/제천/제천 하운드 호텔/1.jpg"
+    "image_url": "/static/img/accommodation/제천/제천 하운드 호텔/1.jpg",
+    "wifi_available": true,
+    "parking_available": true,
+    "check_in_time": "15:00",
+    "check_out_time": "11:00"
   },
   {
     "destination_name": "단양",
@@ -1327,7 +1771,11 @@
     "price_per_night": 110000,
     "capacity": 4,
     "rating": null,
-    "image_url": "/static/img/accommodation/단양/르블랑펜션/1.jpg"
+    "image_url": "/static/img/accommodation/단양/르블랑펜션/1.jpg",
+    "wifi_available": true,
+    "parking_available": true,
+    "check_in_time": "15:00",
+    "check_out_time": "11:00"
   },
   {
     "destination_name": "단양",
@@ -1337,7 +1785,11 @@
     "price_per_night": 140000,
     "capacity": 4,
     "rating": null,
-    "image_url": "/static/img/accommodation/단양/단양글램핑&펜션/6789ae3a49cbd0.34431162.jpg"
+    "image_url": "/static/img/accommodation/단양/단양글램핑&펜션/6789ae3a49cbd0.34431162.jpg",
+    "wifi_available": false,
+    "parking_available": true,
+    "check_in_time": "15:00",
+    "check_out_time": "11:00"
   },
   {
     "destination_name": "충주",
@@ -1347,7 +1799,11 @@
     "price_per_night": 110000,
     "capacity": 4,
     "rating": null,
-    "image_url": "/static/img/accommodation/충주/서유숙펜션/1.jpg"
+    "image_url": "/static/img/accommodation/충주/서유숙펜션/1.jpg",
+    "wifi_available": true,
+    "parking_available": true,
+    "check_in_time": "15:00",
+    "check_out_time": "11:00"
   },
   {
     "destination_name": "태안",
@@ -1357,7 +1813,11 @@
     "price_per_night": 110000,
     "capacity": 4,
     "rating": null,
-    "image_url": "/static/img/accommodation/태안/칸타빌레펜션/1.jpg"
+    "image_url": "/static/img/accommodation/태안/칸타빌레펜션/1.jpg",
+    "wifi_available": true,
+    "parking_available": true,
+    "check_in_time": "15:00",
+    "check_out_time": "11:00"
   },
   {
     "destination_name": "보령",
@@ -1367,7 +1827,11 @@
     "price_per_night": 110000,
     "capacity": 4,
     "rating": null,
-    "image_url": "/static/img/accommodation/보령/대천하루펜션/images (1).jpg"
+    "image_url": "/static/img/accommodation/보령/대천하루펜션/images (1).jpg",
+    "wifi_available": true,
+    "parking_available": true,
+    "check_in_time": "15:00",
+    "check_out_time": "11:00"
   },
   {
     "destination_name": "보령",
@@ -1377,7 +1841,11 @@
     "price_per_night": 140000,
     "capacity": 4,
     "rating": null,
-    "image_url": "/static/img/accommodation/보령/여기도글램핑펜션식당/images (1).jpg"
+    "image_url": "/static/img/accommodation/보령/여기도글램핑펜션식당/main-upscaled-v1.png",
+    "wifi_available": false,
+    "parking_available": true,
+    "check_in_time": "15:00",
+    "check_out_time": "11:00"
   },
   {
     "destination_name": "포항",
@@ -1387,7 +1855,11 @@
     "price_per_night": 140000,
     "capacity": 4,
     "rating": null,
-    "image_url": "/static/img/accommodation/포항/웨이브글램핑/1.jpg"
+    "image_url": "/static/img/accommodation/포항/웨이브글램핑/1.jpg",
+    "wifi_available": false,
+    "parking_available": true,
+    "check_in_time": "15:00",
+    "check_out_time": "11:00"
   },
   {
     "destination_name": "청송",
@@ -1397,7 +1869,11 @@
     "price_per_night": 140000,
     "capacity": 4,
     "rating": null,
-    "image_url": "/static/img/accommodation/청송/청송 주노글램핑 청송점/images (1).jpg"
+    "image_url": "/static/img/accommodation/청송/청송 주노글램핑 청송점/main-upscaled-v1.png",
+    "wifi_available": false,
+    "parking_available": true,
+    "check_in_time": "15:00",
+    "check_out_time": "11:00"
   },
   {
     "destination_name": "거제",
@@ -1407,7 +1883,11 @@
     "price_per_night": 140000,
     "capacity": 4,
     "rating": null,
-    "image_url": "/static/img/accommodation/거제/쉼표 글램핑&캠핑/images (1).jpg"
+    "image_url": "/static/img/accommodation/거제/쉼표 글램핑&캠핑/main-upscaled-v1.png",
+    "wifi_available": false,
+    "parking_available": true,
+    "check_in_time": "15:00",
+    "check_out_time": "11:00"
   },
   {
     "destination_name": "통영",
@@ -1417,7 +1897,11 @@
     "price_per_night": 140000,
     "capacity": 4,
     "rating": null,
-    "image_url": "/static/img/accommodation/통영/에이원글램핑/1.jpg"
+    "image_url": "/static/img/accommodation/통영/에이원글램핑/1.jpg",
+    "wifi_available": false,
+    "parking_available": true,
+    "check_in_time": "15:00",
+    "check_out_time": "11:00"
   },
   {
     "destination_name": "남해",
@@ -1427,7 +1911,11 @@
     "price_per_night": 140000,
     "capacity": 4,
     "rating": null,
-    "image_url": "/static/img/accommodation/남해/힐링아일랜드 글램핑캠핑장/1.jpg"
+    "image_url": "/static/img/accommodation/남해/힐링아일랜드 글램핑캠핑장/1.jpg",
+    "wifi_available": false,
+    "parking_available": true,
+    "check_in_time": "15:00",
+    "check_out_time": "11:00"
   },
   {
     "destination_name": "군산",
@@ -1437,7 +1925,11 @@
     "price_per_night": 140000,
     "capacity": 4,
     "rating": null,
-    "image_url": "/static/img/accommodation/군산/버드글램핑/images (1).jpg"
+    "image_url": "/static/img/accommodation/군산/버드글램핑/images (1).jpg",
+    "wifi_available": false,
+    "parking_available": true,
+    "check_in_time": "15:00",
+    "check_out_time": "11:00"
   },
   {
     "destination_name": "여수",
@@ -1447,7 +1939,11 @@
     "price_per_night": 110000,
     "capacity": 5,
     "rating": null,
-    "image_url": "/static/img/accommodation/여수/하이클래스 153펜션/images (1).jpg"
+    "image_url": "/static/img/accommodation/여수/하이클래스 153펜션/images (1).jpg",
+    "wifi_available": true,
+    "parking_available": true,
+    "check_in_time": "15:00",
+    "check_out_time": "11:00"
   },
   {
     "destination_name": "여수",
@@ -1457,7 +1953,11 @@
     "price_per_night": 110000,
     "capacity": 2,
     "rating": null,
-    "image_url": "/static/img/accommodation/여수/신라스테이 여수/images (1).jpg"
+    "image_url": "/static/img/accommodation/여수/신라스테이 여수/main-upscaled-v1.png",
+    "wifi_available": true,
+    "parking_available": true,
+    "check_in_time": "15:00",
+    "check_out_time": "11:00"
   },
   {
     "destination_name": "여수",
@@ -1467,7 +1967,11 @@
     "price_per_night": 150000,
     "capacity": 4,
     "rating": null,
-    "image_url": "/static/img/accommodation/여수/비고리조트/images (1).jpg"
+    "image_url": "/static/img/accommodation/여수/비고리조트/main-upscaled-v1.png",
+    "wifi_available": true,
+    "parking_available": true,
+    "check_in_time": "15:00",
+    "check_out_time": "11:00"
   },
   {
     "destination_name": "여수",
@@ -1477,17 +1981,11 @@
     "price_per_night": 140000,
     "capacity": 4,
     "rating": null,
-    "image_url": "/static/img/accommodation/여수/럭셔리글램핑 더스테이309/images (1).jpg"
-  },
-  {
-    "destination_name": "신안",
-    "name": "나무늘보펜션",
-    "address": "전라남도 신안군",
-    "description": "신안에서 편안하게 머무르기 좋은 숙소",
-    "price_per_night": 110000,
-    "capacity": 4,
-    "rating": null,
-    "image_url": "/static/img/accommodation/신안/나무늘보펜션/1.webp"
+    "image_url": "/static/img/accommodation/여수/럭셔리글램핑 더스테이309/images (1).jpg",
+    "wifi_available": false,
+    "parking_available": true,
+    "check_in_time": "15:00",
+    "check_out_time": "11:00"
   },
   {
     "destination_name": "신안",
@@ -1497,7 +1995,11 @@
     "price_per_night": 90000,
     "capacity": 2,
     "rating": null,
-    "image_url": "/static/img/accommodation/신안/라마다프라자호텔자은도/1.jpg"
+    "image_url": "/static/img/accommodation/신안/라마다프라자호텔자은도/1.jpg",
+    "wifi_available": true,
+    "parking_available": true,
+    "check_in_time": "15:00",
+    "check_out_time": "11:00"
   },
   {
     "destination_name": "구례",
@@ -1507,7 +2009,11 @@
     "price_per_night": 110000,
     "capacity": 4,
     "rating": null,
-    "image_url": "/static/img/accommodation/구례/지리산풍경펜션/1.jpg"
+    "image_url": "/static/img/accommodation/구례/지리산풍경펜션/1.jpg",
+    "wifi_available": true,
+    "parking_available": true,
+    "check_in_time": "15:00",
+    "check_out_time": "11:00"
   },
   {
     "destination_name": "구례",
@@ -1517,7 +2023,11 @@
     "price_per_night": 90000,
     "capacity": 2,
     "rating": null,
-    "image_url": "/static/img/accommodation/구례/지리산가족호텔/1.jpg"
+    "image_url": "/static/img/accommodation/구례/지리산가족호텔/1.jpg",
+    "wifi_available": true,
+    "parking_available": true,
+    "check_in_time": "15:00",
+    "check_out_time": "11:00"
   },
   {
     "destination_name": "구례",
@@ -1527,7 +2037,11 @@
     "price_per_night": 140000,
     "capacity": 4,
     "rating": null,
-    "image_url": "/static/img/accommodation/구례/지리산 구례돌풀마루 펜션&글램핑/1.jpg"
+    "image_url": "/static/img/accommodation/구례/지리산 구례돌풀마루 펜션&글램핑/1.jpg",
+    "wifi_available": false,
+    "parking_available": true,
+    "check_in_time": "15:00",
+    "check_out_time": "11:00"
   },
   {
     "destination_name": "서귀포",
@@ -1537,7 +2051,11 @@
     "price_per_night": 140000,
     "capacity": 4,
     "rating": null,
-    "image_url": "/static/img/accommodation/서귀포/팜핑제주카라반/images (1).jpg"
+    "image_url": "/static/img/accommodation/서귀포/팜핑제주카라반/main-upscaled-v1.png",
+    "wifi_available": false,
+    "parking_available": true,
+    "check_in_time": "15:00",
+    "check_out_time": "11:00"
   },
   {
     "destination_name": "양주",
@@ -1547,7 +2065,11 @@
     "price_per_night": 90000,
     "capacity": 2,
     "rating": null,
-    "image_url": "/static/img/accommodation/양주/양주 스타호텔/62c2cd2e5e9092.23263518.jpg"
+    "image_url": "/static/img/accommodation/양주/양주 스타호텔/62c2cd2e5e9092.23263518.jpg",
+    "wifi_available": true,
+    "parking_available": true,
+    "check_in_time": "15:00",
+    "check_out_time": "11:00"
   },
   {
     "destination_name": "양주",
@@ -1557,7 +2079,11 @@
     "price_per_night": 140000,
     "capacity": 4,
     "rating": null,
-    "image_url": "/static/img/accommodation/양주/양주스톤밸리캠핑장/964093e0-a483-4b5c-83f0-9fb84ab9dff2.jpg"
+    "image_url": "/static/img/accommodation/양주/양주스톤밸리캠핑장/964093e0-a483-4b5c-83f0-9fb84ab9dff2.jpg",
+    "wifi_available": false,
+    "parking_available": true,
+    "check_in_time": "15:00",
+    "check_out_time": "11:00"
   },
   {
     "destination_name": "양주",
@@ -1567,7 +2093,11 @@
     "price_per_night": 140000,
     "capacity": 4,
     "rating": null,
-    "image_url": "/static/img/accommodation/양주/포근마루 캠핑장/full_1762703258116_f3r53f.jpg"
+    "image_url": "/static/img/accommodation/양주/포근마루 캠핑장/full_1762703258116_f3r53f.jpg",
+    "wifi_available": false,
+    "parking_available": true,
+    "check_in_time": "15:00",
+    "check_out_time": "11:00"
   },
   {
     "destination_name": "양주",
@@ -1577,7 +2107,11 @@
     "price_per_night": 110000,
     "capacity": 4,
     "rating": null,
-    "image_url": "/static/img/accommodation/양주/양주 그레이캐슬펜션/6790a17b224fd7.86461482.jpg"
+    "image_url": "/static/img/accommodation/양주/양주 그레이캐슬펜션/6790a17b224fd7.86461482.jpg",
+    "wifi_available": true,
+    "parking_available": true,
+    "check_in_time": "15:00",
+    "check_out_time": "11:00"
   },
   {
     "destination_name": "연천",
@@ -1587,7 +2121,11 @@
     "price_per_night": 140000,
     "capacity": 4,
     "rating": null,
-    "image_url": "/static/img/accommodation/연천/옴니버스캠핑장/images (1).jpg"
+    "image_url": "/static/img/accommodation/연천/옴니버스캠핑장/images (1).jpg",
+    "wifi_available": false,
+    "parking_available": true,
+    "check_in_time": "15:00",
+    "check_out_time": "11:00"
   },
   {
     "destination_name": "연천",
@@ -1597,7 +2135,11 @@
     "price_per_night": 110000,
     "capacity": 4,
     "rating": null,
-    "image_url": "/static/img/accommodation/연천/연천 은대리 쉼나루 펜션/678ef9d96dbad4.06631397.jpg"
+    "image_url": "/static/img/accommodation/연천/연천 은대리 쉼나루 펜션/678ef9d96dbad4.06631397.jpg",
+    "wifi_available": true,
+    "parking_available": true,
+    "check_in_time": "15:00",
+    "check_out_time": "11:00"
   },
   {
     "destination_name": "연천",
@@ -1607,7 +2149,11 @@
     "price_per_night": 110000,
     "capacity": 4,
     "rating": null,
-    "image_url": "/static/img/accommodation/연천/연천 쉬는시간펜션/595615241.jpg"
+    "image_url": "/static/img/accommodation/연천/연천 쉬는시간펜션/595615241.jpg",
+    "wifi_available": true,
+    "parking_available": true,
+    "check_in_time": "15:00",
+    "check_out_time": "11:00"
   },
   {
     "destination_name": "연천",
@@ -1617,7 +2163,11 @@
     "price_per_night": 90000,
     "capacity": 2,
     "rating": null,
-    "image_url": "/static/img/accommodation/연천/조선 로얄 패밀리 호텔/1mc0h12000fn3elb53D95_W_600_0_R5.webp"
+    "image_url": "/static/img/accommodation/연천/조선 로얄 패밀리 호텔/1mc0h12000fn3elb53D95_W_600_0_R5.webp",
+    "wifi_available": true,
+    "parking_available": true,
+    "check_in_time": "15:00",
+    "check_out_time": "11:00"
   },
   {
     "destination_name": "이천",
@@ -1627,7 +2177,11 @@
     "price_per_night": 90000,
     "capacity": 2,
     "rating": null,
-    "image_url": "/static/img/accommodation/이천/이천 인트라다 호텔/unnamed (1).jpg"
+    "image_url": "/static/img/accommodation/이천/이천 인트라다 호텔/main-upscaled-v1.png",
+    "wifi_available": true,
+    "parking_available": true,
+    "check_in_time": "15:00",
+    "check_out_time": "11:00"
   },
   {
     "destination_name": "이천",
@@ -1637,7 +2191,11 @@
     "price_per_night": 110000,
     "capacity": 4,
     "rating": null,
-    "image_url": "/static/img/accommodation/이천/동하펜션/69b8e9f2c3e249.50367772.jpeg"
+    "image_url": "/static/img/accommodation/이천/동하펜션/69b8e9f2c3e249.50367772.jpeg",
+    "wifi_available": true,
+    "parking_available": true,
+    "check_in_time": "15:00",
+    "check_out_time": "11:00"
   },
   {
     "destination_name": "춘천",
@@ -1647,7 +2205,11 @@
     "price_per_night": 90000,
     "capacity": 2,
     "rating": null,
-    "image_url": "/static/img/accommodation/춘천/춘천 에스턴호텔/images (1).jpg"
+    "image_url": "/static/img/accommodation/춘천/춘천 에스턴호텔/main-upscaled-v1.png",
+    "wifi_available": true,
+    "parking_available": true,
+    "check_in_time": "15:00",
+    "check_out_time": "11:00"
   },
   {
     "destination_name": "춘천",
@@ -1657,7 +2219,11 @@
     "price_per_night": 150000,
     "capacity": 4,
     "rating": null,
-    "image_url": "/static/img/accommodation/춘천/원코리아리조트/6606dfc2aa6eb1.74974220.jpg"
+    "image_url": "/static/img/accommodation/춘천/원코리아리조트/6606dfc2aa6eb1.74974220.jpg",
+    "wifi_available": true,
+    "parking_available": true,
+    "check_in_time": "15:00",
+    "check_out_time": "11:00"
   },
   {
     "destination_name": "춘천",
@@ -1667,7 +2233,11 @@
     "price_per_night": 110000,
     "capacity": 4,
     "rating": null,
-    "image_url": "/static/img/accommodation/춘천/춘천숲펜션/images (1).jpg"
+    "image_url": "/static/img/accommodation/춘천/춘천숲펜션/images (1).jpg",
+    "wifi_available": true,
+    "parking_available": true,
+    "check_in_time": "15:00",
+    "check_out_time": "11:00"
   },
   {
     "destination_name": "원주",
@@ -1677,7 +2247,11 @@
     "price_per_night": 90000,
     "capacity": 2,
     "rating": null,
-    "image_url": "/static/img/accommodation/원주/원주 센트럴 호텔/images (1).jpg"
+    "image_url": "/static/img/accommodation/원주/원주 센트럴 호텔/main-upscaled-v1.png",
+    "wifi_available": true,
+    "parking_available": true,
+    "check_in_time": "15:00",
+    "check_out_time": "11:00"
   },
   {
     "destination_name": "원주",
@@ -1687,7 +2261,11 @@
     "price_per_night": 140000,
     "capacity": 4,
     "rating": null,
-    "image_url": "/static/img/accommodation/원주/원주 에코캠프/images (1).jpg"
+    "image_url": "/static/img/accommodation/원주/원주 에코캠프/images (1).jpg",
+    "wifi_available": true,
+    "parking_available": true,
+    "check_in_time": "15:00",
+    "check_out_time": "11:00"
   },
   {
     "destination_name": "원주",
@@ -1697,7 +2275,11 @@
     "price_per_night": 140000,
     "capacity": 4,
     "rating": null,
-    "image_url": "/static/img/accommodation/원주/감악산 캠핑숲/images (1).jpg"
+    "image_url": "/static/img/accommodation/원주/감악산 캠핑숲/images (1).jpg",
+    "wifi_available": false,
+    "parking_available": true,
+    "check_in_time": "15:00",
+    "check_out_time": "11:00"
   },
   {
     "destination_name": "철원",
@@ -1707,7 +2289,11 @@
     "price_per_night": 110000,
     "capacity": 4,
     "rating": null,
-    "image_url": "/static/img/accommodation/철원/철원 솔향기 펜션/unnamed (1).jpg"
+    "image_url": "/static/img/accommodation/철원/철원 솔향기 펜션/main-upscaled-v1.png",
+    "wifi_available": true,
+    "parking_available": true,
+    "check_in_time": "15:00",
+    "check_out_time": "11:00"
   },
   {
     "destination_name": "청주",
@@ -1717,7 +2303,11 @@
     "price_per_night": 90000,
     "capacity": 2,
     "rating": null,
-    "image_url": "/static/img/accommodation/청주/제이원 호텔 청주/635947a8875de6.59824459.png"
+    "image_url": "/static/img/accommodation/청주/제이원 호텔 청주/635947a8875de6.59824459.png",
+    "wifi_available": true,
+    "parking_available": true,
+    "check_in_time": "15:00",
+    "check_out_time": "11:00"
   },
   {
     "destination_name": "청주",
@@ -1727,7 +2317,11 @@
     "price_per_night": 110000,
     "capacity": 4,
     "rating": null,
-    "image_url": "/static/img/accommodation/청주/마린블루펜션/68087aa45fb560.97314000.jpg"
+    "image_url": "/static/img/accommodation/청주/마린블루펜션/68087aa45fb560.97314000.jpg",
+    "wifi_available": true,
+    "parking_available": true,
+    "check_in_time": "15:00",
+    "check_out_time": "11:00"
   },
   {
     "destination_name": "괴산",
@@ -1737,7 +2331,11 @@
     "price_per_night": 140000,
     "capacity": 4,
     "rating": null,
-    "image_url": "/static/img/accommodation/괴산/자연애캠핑장/images (1).jpg"
+    "image_url": "/static/img/accommodation/괴산/자연애캠핑장/images (1).jpg",
+    "wifi_available": false,
+    "parking_available": true,
+    "check_in_time": "15:00",
+    "check_out_time": "11:00"
   },
   {
     "destination_name": "괴산",
@@ -1747,7 +2345,11 @@
     "price_per_night": 110000,
     "capacity": 4,
     "rating": null,
-    "image_url": "/static/img/accommodation/괴산/농소막펜션&카페/6a96462467a4f2.14373873 (1).jpg"
+    "image_url": "/static/img/accommodation/괴산/농소막펜션&카페/6a96462467a4f2.14373873 (1).jpg",
+    "wifi_available": true,
+    "parking_available": true,
+    "check_in_time": "15:00",
+    "check_out_time": "11:00"
   },
   {
     "destination_name": "괴산",
@@ -1757,7 +2359,11 @@
     "price_per_night": 140000,
     "capacity": 4,
     "rating": null,
-    "image_url": "/static/img/accommodation/괴산/도명산캠핑장/7a5c78b3-e74c-4e0d-a7b6-b04b696f53fc.jpg"
+    "image_url": "/static/img/accommodation/괴산/도명산캠핑장/7a5c78b3-e74c-4e0d-a7b6-b04b696f53fc.jpg",
+    "wifi_available": false,
+    "parking_available": true,
+    "check_in_time": "15:00",
+    "check_out_time": "11:00"
   },
   {
     "destination_name": "괴산",
@@ -1767,7 +2373,11 @@
     "price_per_night": 110000,
     "capacity": 4,
     "rating": null,
-    "image_url": "/static/img/accommodation/괴산/괴산 그랑둘이 펜션/6676b3a2612566.20460267.jpg"
+    "image_url": "/static/img/accommodation/괴산/괴산 그랑둘이 펜션/6676b3a2612566.20460267.jpg",
+    "wifi_available": true,
+    "parking_available": true,
+    "check_in_time": "15:00",
+    "check_out_time": "11:00"
   },
   {
     "destination_name": "영동",
@@ -1777,7 +2387,11 @@
     "price_per_night": 110000,
     "capacity": 4,
     "rating": null,
-    "image_url": "/static/img/accommodation/영동/영동 스테이인터뷰/686b80c3cccd23.15269628.jpg"
+    "image_url": "/static/img/accommodation/영동/영동 스테이인터뷰/686b80c3cccd23.15269628.jpg",
+    "wifi_available": true,
+    "parking_available": true,
+    "check_in_time": "15:00",
+    "check_out_time": "11:00"
   },
   {
     "destination_name": "영동",
@@ -1787,7 +2401,11 @@
     "price_per_night": 110000,
     "capacity": 4,
     "rating": null,
-    "image_url": "/static/img/accommodation/영동/물한산장펜션/68040b2ded9596.29071405.jpg"
+    "image_url": "/static/img/accommodation/영동/물한산장펜션/68040b2ded9596.29071405.jpg",
+    "wifi_available": true,
+    "parking_available": true,
+    "check_in_time": "15:00",
+    "check_out_time": "11:00"
   },
   {
     "destination_name": "영동",
@@ -1797,7 +2415,11 @@
     "price_per_night": 110000,
     "capacity": 4,
     "rating": null,
-    "image_url": "/static/img/accommodation/영동/윤슬펜션/67a35fae9eaa30.70814184.jpg"
+    "image_url": "/static/img/accommodation/영동/윤슬펜션/67a35fae9eaa30.70814184.jpg",
+    "wifi_available": true,
+    "parking_available": true,
+    "check_in_time": "15:00",
+    "check_out_time": "11:00"
   },
   {
     "destination_name": "공주",
@@ -1807,7 +2429,11 @@
     "price_per_night": 110000,
     "capacity": 4,
     "rating": null,
-    "image_url": "/static/img/accommodation/공주/스테이 인터뷰 공주/images (1).jpg"
+    "image_url": "/static/img/accommodation/공주/스테이 인터뷰 공주/images (1).jpg",
+    "wifi_available": true,
+    "parking_available": true,
+    "check_in_time": "15:00",
+    "check_out_time": "11:00"
   },
   {
     "destination_name": "공주",
@@ -1817,7 +2443,11 @@
     "price_per_night": 70000,
     "capacity": 2,
     "rating": null,
-    "image_url": "/static/img/accommodation/공주/공주호텔어반티/5b809eedc0ab84f99d3a04de423cfff5.webp"
+    "image_url": "/static/img/accommodation/공주/공주호텔어반티/5b809eedc0ab84f99d3a04de423cfff5.webp",
+    "wifi_available": true,
+    "parking_available": true,
+    "check_in_time": "15:00",
+    "check_out_time": "11:00"
   },
   {
     "destination_name": "서산",
@@ -1827,7 +2457,11 @@
     "price_per_night": 90000,
     "capacity": 2,
     "rating": null,
-    "image_url": "/static/img/accommodation/서산/베니키아호텔 서산/655b67e4b5b219.05490688.jpg"
+    "image_url": "/static/img/accommodation/서산/베니키아호텔 서산/655b67e4b5b219.05490688.jpg",
+    "wifi_available": true,
+    "parking_available": true,
+    "check_in_time": "15:00",
+    "check_out_time": "11:00"
   },
   {
     "destination_name": "서천",
@@ -1837,7 +2471,11 @@
     "price_per_night": 110000,
     "capacity": 4,
     "rating": null,
-    "image_url": "/static/img/accommodation/서천/쌍도하우스펜션/6805ece8cb3ec6.98855345.png"
+    "image_url": "/static/img/accommodation/서천/쌍도하우스펜션/6805ece8cb3ec6.98855345.png",
+    "wifi_available": true,
+    "parking_available": true,
+    "check_in_time": "15:00",
+    "check_out_time": "11:00"
   },
   {
     "destination_name": "전주",
@@ -1847,7 +2485,11 @@
     "price_per_night": 90000,
     "capacity": 2,
     "rating": null,
-    "image_url": "/static/img/accommodation/전주/전주 시그니처 호텔/images (1).jpg"
+    "image_url": "/static/img/accommodation/전주/전주 시그니처 호텔/images (1).jpg",
+    "wifi_available": true,
+    "parking_available": true,
+    "check_in_time": "15:00",
+    "check_out_time": "11:00"
   },
   {
     "destination_name": "전주",
@@ -1857,7 +2499,11 @@
     "price_per_night": 90000,
     "capacity": 2,
     "rating": null,
-    "image_url": "/static/img/accommodation/전주/라한호텔 전주/images (1).jpg"
+    "image_url": "/static/img/accommodation/전주/라한호텔 전주/images (1).jpg",
+    "wifi_available": true,
+    "parking_available": true,
+    "check_in_time": "15:00",
+    "check_out_time": "11:00"
   },
   {
     "destination_name": "전주",
@@ -1867,7 +2513,11 @@
     "price_per_night": 110000,
     "capacity": 4,
     "rating": null,
-    "image_url": "/static/img/accommodation/전주/전주 한옥 토박이 펜션/images (1).jpg"
+    "image_url": "/static/img/accommodation/전주/전주 한옥 토박이 펜션/images (1).jpg",
+    "wifi_available": true,
+    "parking_available": true,
+    "check_in_time": "15:00",
+    "check_out_time": "11:00"
   },
   {
     "destination_name": "전주",
@@ -1877,7 +2527,11 @@
     "price_per_night": 110000,
     "capacity": 4,
     "rating": null,
-    "image_url": "/static/img/accommodation/전주/전주 나무그늘 펜션/images (1).jpg"
+    "image_url": "/static/img/accommodation/전주/전주 나무그늘 펜션/main-upscaled-v1.png",
+    "wifi_available": true,
+    "parking_available": true,
+    "check_in_time": "15:00",
+    "check_out_time": "11:00"
   },
   {
     "destination_name": "익산",
@@ -1887,7 +2541,11 @@
     "price_per_night": 110000,
     "capacity": 4,
     "rating": null,
-    "image_url": "/static/img/accommodation/익산/익산 하늘숲 펜션/images (1).jpg"
+    "image_url": "/static/img/accommodation/익산/익산 하늘숲 펜션/main-upscaled-v1.png",
+    "wifi_available": true,
+    "parking_available": true,
+    "check_in_time": "15:00",
+    "check_out_time": "11:00"
   },
   {
     "destination_name": "익산",
@@ -1897,7 +2555,11 @@
     "price_per_night": 90000,
     "capacity": 2,
     "rating": null,
-    "image_url": "/static/img/accommodation/익산/웨스턴라이프 호텔/images (1).jpg"
+    "image_url": "/static/img/accommodation/익산/웨스턴라이프 호텔/images (1).jpg",
+    "wifi_available": true,
+    "parking_available": true,
+    "check_in_time": "15:00",
+    "check_out_time": "11:00"
   },
   {
     "destination_name": "익산",
@@ -1907,7 +2569,11 @@
     "price_per_night": 90000,
     "capacity": 2,
     "rating": null,
-    "image_url": "/static/img/accommodation/익산/탑클라우드호텔 익산/images (1).jpg"
+    "image_url": "/static/img/accommodation/익산/탑클라우드호텔 익산/main-upscaled-v1.png",
+    "wifi_available": true,
+    "parking_available": true,
+    "check_in_time": "15:00",
+    "check_out_time": "11:00"
   },
   {
     "destination_name": "익산",
@@ -1917,7 +2583,11 @@
     "price_per_night": 90000,
     "capacity": 2,
     "rating": null,
-    "image_url": "/static/img/accommodation/익산/익산 봄나루 호텔/images (1).jpg"
+    "image_url": "/static/img/accommodation/익산/익산 봄나루 호텔/images (1).jpg",
+    "wifi_available": true,
+    "parking_available": true,
+    "check_in_time": "15:00",
+    "check_out_time": "11:00"
   },
   {
     "destination_name": "고창",
@@ -1927,7 +2597,11 @@
     "price_per_night": 110000,
     "capacity": 4,
     "rating": null,
-    "image_url": "/static/img/accommodation/고창/웰파크시티 힐링카운티/images (1).jpg"
+    "image_url": "/static/img/accommodation/고창/웰파크시티 힐링카운티/images (1).jpg",
+    "wifi_available": true,
+    "parking_available": true,
+    "check_in_time": "15:00",
+    "check_out_time": "11:00"
   },
   {
     "destination_name": "고창",
@@ -1937,7 +2611,11 @@
     "price_per_night": 110000,
     "capacity": 4,
     "rating": null,
-    "image_url": "/static/img/accommodation/고창/고창 람사르펜션/images (1).jpg"
+    "image_url": "/static/img/accommodation/고창/고창 람사르펜션/main-upscaled-v1.png",
+    "wifi_available": true,
+    "parking_available": true,
+    "check_in_time": "15:00",
+    "check_out_time": "11:00"
   },
   {
     "destination_name": "고창",
@@ -1947,7 +2625,11 @@
     "price_per_night": 90000,
     "capacity": 2,
     "rating": null,
-    "image_url": "/static/img/accommodation/고창/고창 웰파크 호텔/images (1).jpg"
+    "image_url": "/static/img/accommodation/고창/고창 웰파크 호텔/main-upscaled-v1.png",
+    "wifi_available": true,
+    "parking_available": true,
+    "check_in_time": "15:00",
+    "check_out_time": "11:00"
   },
   {
     "destination_name": "순천",
@@ -1957,7 +2639,11 @@
     "price_per_night": 110000,
     "capacity": 4,
     "rating": null,
-    "image_url": "/static/img/accommodation/순천/순천만 에코촌 유스호스텔/1.jpg"
+    "image_url": "/static/img/accommodation/순천/순천만 에코촌 유스호스텔/1.jpg",
+    "wifi_available": true,
+    "parking_available": false,
+    "check_in_time": "16:00",
+    "check_out_time": "10:00"
   },
   {
     "destination_name": "순천",
@@ -1967,17 +2653,11 @@
     "price_per_night": 110000,
     "capacity": 4,
     "rating": null,
-    "image_url": "/static/img/accommodation/순천/낙안읍성 초가민박/1.jpg"
-  },
-  {
-    "destination_name": "순천",
-    "name": "순천 디토 펜션",
-    "address": "전라남도 순천시",
-    "description": "순천에서 편안하게 머무르기 좋은 숙소",
-    "price_per_night": 110000,
-    "capacity": 4,
-    "rating": null,
-    "image_url": null
+    "image_url": "/static/img/accommodation/순천/낙안읍성 초가민박/1.jpg",
+    "wifi_available": true,
+    "parking_available": true,
+    "check_in_time": "15:00",
+    "check_out_time": "11:00"
   },
   {
     "destination_name": "목포",
@@ -1987,7 +2667,11 @@
     "price_per_night": 140000,
     "capacity": 4,
     "rating": null,
-    "image_url": "/static/img/accommodation/목포/천사섬 글램핑/1.jpg"
+    "image_url": "/static/img/accommodation/목포/천사섬 글램핑/1.jpg",
+    "wifi_available": false,
+    "parking_available": true,
+    "check_in_time": "15:00",
+    "check_out_time": "11:00"
   },
   {
     "destination_name": "목포",
@@ -1997,7 +2681,11 @@
     "price_per_night": 110000,
     "capacity": 4,
     "rating": null,
-    "image_url": "/static/img/accommodation/목포/한옥스테이 춘화당/1.png"
+    "image_url": "/static/img/accommodation/목포/한옥스테이 춘화당/1.png",
+    "wifi_available": true,
+    "parking_available": true,
+    "check_in_time": "15:00",
+    "check_out_time": "11:00"
   },
   {
     "destination_name": "목포",
@@ -2007,7 +2695,11 @@
     "price_per_night": 110000,
     "capacity": 4,
     "rating": null,
-    "image_url": "/static/img/accommodation/목포/외달도 한옥민박/1.jpg"
+    "image_url": "/static/img/accommodation/목포/외달도 한옥민박/1.jpg",
+    "wifi_available": true,
+    "parking_available": true,
+    "check_in_time": "15:00",
+    "check_out_time": "11:00"
   },
   {
     "destination_name": "목포",
@@ -2017,7 +2709,11 @@
     "price_per_night": 90000,
     "capacity": 2,
     "rating": null,
-    "image_url": "/static/img/accommodation/목포/호텔현대 바이 라한 목포/1.jpg"
+    "image_url": "/static/img/accommodation/목포/호텔현대 바이 라한 목포/1.jpg",
+    "wifi_available": true,
+    "parking_available": true,
+    "check_in_time": "15:00",
+    "check_out_time": "11:00"
   },
   {
     "destination_name": "보성",
@@ -2027,7 +2723,11 @@
     "price_per_night": 110000,
     "capacity": 4,
     "rating": null,
-    "image_url": "/static/img/accommodation/보성/제암산자연휴양림/1.jpg"
+    "image_url": "/static/img/accommodation/보성/제암산자연휴양림/1.jpg",
+    "wifi_available": true,
+    "parking_available": true,
+    "check_in_time": "15:00",
+    "check_out_time": "11:00"
   },
   {
     "destination_name": "보성",
@@ -2037,7 +2737,11 @@
     "price_per_night": 110000,
     "capacity": 4,
     "rating": null,
-    "image_url": "/static/img/accommodation/보성/해오름펜션/1.jpg"
+    "image_url": "/static/img/accommodation/보성/해오름펜션/1.jpg",
+    "wifi_available": true,
+    "parking_available": true,
+    "check_in_time": "15:00",
+    "check_out_time": "11:00"
   },
   {
     "destination_name": "보성",
@@ -2047,7 +2751,11 @@
     "price_per_night": 90000,
     "capacity": 2,
     "rating": null,
-    "image_url": "/static/img/accommodation/보성/벌교 보성여관/1.jpg"
+    "image_url": "/static/img/accommodation/보성/벌교 보성여관/1.jpg",
+    "wifi_available": true,
+    "parking_available": true,
+    "check_in_time": "15:00",
+    "check_out_time": "11:00"
   },
   {
     "destination_name": "보성",
@@ -2057,7 +2765,11 @@
     "price_per_night": 90000,
     "capacity": 4,
     "rating": null,
-    "image_url": "/static/img/accommodation/보성/보성다비치콘도/1.jpg"
+    "image_url": "/static/img/accommodation/보성/보성다비치콘도/1.jpg",
+    "wifi_available": true,
+    "parking_available": true,
+    "check_in_time": "15:00",
+    "check_out_time": "11:00"
   },
   {
     "destination_name": "영주",
@@ -2067,7 +2779,11 @@
     "price_per_night": 110000,
     "capacity": 4,
     "rating": null,
-    "image_url": "/static/img/accommodation/영주/영주 민트하우스/1.jpg"
+    "image_url": "/static/img/accommodation/영주/영주 민트하우스/1.jpg",
+    "wifi_available": true,
+    "parking_available": true,
+    "check_in_time": "15:00",
+    "check_out_time": "11:00"
   },
   {
     "destination_name": "영주",
@@ -2077,7 +2793,11 @@
     "price_per_night": 110000,
     "capacity": 4,
     "rating": null,
-    "image_url": "/static/img/accommodation/영주/무섬마을 마당넓은집/1.jpg"
+    "image_url": "/static/img/accommodation/영주/무섬마을 마당넓은집/1.jpg",
+    "wifi_available": true,
+    "parking_available": true,
+    "check_in_time": "15:00",
+    "check_out_time": "11:00"
   },
   {
     "destination_name": "영주",
@@ -2087,7 +2807,11 @@
     "price_per_night": 150000,
     "capacity": 4,
     "rating": null,
-    "image_url": "/static/img/accommodation/영주/소백산풍기온천리조트/1.jpg"
+    "image_url": "/static/img/accommodation/영주/소백산풍기온천리조트/1.jpg",
+    "wifi_available": true,
+    "parking_available": true,
+    "check_in_time": "15:00",
+    "check_out_time": "11:00"
   },
   {
     "destination_name": "울진",
@@ -2097,7 +2821,11 @@
     "price_per_night": 110000,
     "capacity": 4,
     "rating": null,
-    "image_url": "/static/img/accommodation/울진/소소온담/1.jpg"
+    "image_url": "/static/img/accommodation/울진/소소온담/1.jpg",
+    "wifi_available": true,
+    "parking_available": true,
+    "check_in_time": "15:00",
+    "check_out_time": "11:00"
   },
   {
     "destination_name": "울진",
@@ -2107,7 +2835,11 @@
     "price_per_night": 90000,
     "capacity": 2,
     "rating": null,
-    "image_url": "/static/img/accommodation/울진/덕구온천호텔 & 콘도/1.jpg"
+    "image_url": "/static/img/accommodation/울진/덕구온천호텔 & 콘도/1.jpg",
+    "wifi_available": true,
+    "parking_available": true,
+    "check_in_time": "15:00",
+    "check_out_time": "11:00"
   },
   {
     "destination_name": "울진",
@@ -2117,7 +2849,11 @@
     "price_per_night": 110000,
     "capacity": 4,
     "rating": null,
-    "image_url": "/static/img/accommodation/울진/금강송 에코리움/1.jpg"
+    "image_url": "/static/img/accommodation/울진/금강송 에코리움/1.jpg",
+    "wifi_available": true,
+    "parking_available": true,
+    "check_in_time": "15:00",
+    "check_out_time": "11:00"
   },
   {
     "destination_name": "울릉",
@@ -2127,7 +2863,11 @@
     "price_per_night": 110000,
     "capacity": 4,
     "rating": null,
-    "image_url": "/static/img/accommodation/울릉/스테이너와/1.jpg"
+    "image_url": "/static/img/accommodation/울릉/스테이너와/1.jpg",
+    "wifi_available": true,
+    "parking_available": true,
+    "check_in_time": "15:00",
+    "check_out_time": "11:00"
   },
   {
     "destination_name": "울릉",
@@ -2137,7 +2877,11 @@
     "price_per_night": 150000,
     "capacity": 4,
     "rating": null,
-    "image_url": "/static/img/accommodation/울릉/울릉 라페루즈 리조트/1.jpg"
+    "image_url": "/static/img/accommodation/울릉/울릉 라페루즈 리조트/1.jpg",
+    "wifi_available": true,
+    "parking_available": true,
+    "check_in_time": "15:00",
+    "check_out_time": "11:00"
   },
   {
     "destination_name": "울릉",
@@ -2147,17 +2891,11 @@
     "price_per_night": 110000,
     "capacity": 4,
     "rating": null,
-    "image_url": "/static/img/accommodation/울릉/코스모스 울릉도/1.jpg"
-  },
-  {
-    "destination_name": "진주",
-    "name": "그랜드파파하우스",
-    "address": "경상남도 진주시",
-    "description": "진주에서 편안하게 머무르기 좋은 숙소",
-    "price_per_night": 110000,
-    "capacity": 4,
-    "rating": null,
-    "image_url": null
+    "image_url": "/static/img/accommodation/울릉/코스모스 울릉도/1.jpg",
+    "wifi_available": true,
+    "parking_available": true,
+    "check_in_time": "15:00",
+    "check_out_time": "11:00"
   },
   {
     "destination_name": "진주",
@@ -2167,7 +2905,11 @@
     "price_per_night": 90000,
     "capacity": 2,
     "rating": null,
-    "image_url": "/static/img/accommodation/진주/아시아레이크사이드호텔/1.jpg"
+    "image_url": "/static/img/accommodation/진주/아시아레이크사이드호텔/1.jpg",
+    "wifi_available": true,
+    "parking_available": true,
+    "check_in_time": "15:00",
+    "check_out_time": "11:00"
   },
   {
     "destination_name": "진주",
@@ -2177,7 +2919,11 @@
     "price_per_night": 90000,
     "capacity": 2,
     "rating": null,
-    "image_url": "/static/img/accommodation/진주/골든튤립호텔 남강/1.jpg"
+    "image_url": "/static/img/accommodation/진주/골든튤립호텔 남강/1.jpg",
+    "wifi_available": true,
+    "parking_available": true,
+    "check_in_time": "15:00",
+    "check_out_time": "11:00"
   },
   {
     "destination_name": "진주",
@@ -2187,7 +2933,11 @@
     "price_per_night": 75000,
     "capacity": 2,
     "rating": null,
-    "image_url": "/static/img/accommodation/진주/호텔오름/1.png"
+    "image_url": "/static/img/accommodation/진주/호텔오름/1.png",
+    "wifi_available": true,
+    "parking_available": true,
+    "check_in_time": "15:00",
+    "check_out_time": "11:00"
   },
   {
     "destination_name": "밀양",
@@ -2197,7 +2947,11 @@
     "price_per_night": 140000,
     "capacity": 4,
     "rating": null,
-    "image_url": "/static/img/accommodation/밀양/별이랑달이랑 글램핑/1.jpg"
+    "image_url": "/static/img/accommodation/밀양/별이랑달이랑 글램핑/1.jpg",
+    "wifi_available": false,
+    "parking_available": true,
+    "check_in_time": "15:00",
+    "check_out_time": "11:00"
   },
   {
     "destination_name": "밀양",
@@ -2207,7 +2961,11 @@
     "price_per_night": 110000,
     "capacity": 4,
     "rating": null,
-    "image_url": "/static/img/accommodation/밀양/밀양로그/1.jpg"
+    "image_url": "/static/img/accommodation/밀양/밀양로그/1.jpg",
+    "wifi_available": true,
+    "parking_available": true,
+    "check_in_time": "15:00",
+    "check_out_time": "11:00"
   },
   {
     "destination_name": "밀양",
@@ -2217,7 +2975,11 @@
     "price_per_night": 110000,
     "capacity": 4,
     "rating": null,
-    "image_url": "/static/img/accommodation/밀양/진스테이/1.jpg"
+    "image_url": "/static/img/accommodation/밀양/진스테이/1.jpg",
+    "wifi_available": true,
+    "parking_available": true,
+    "check_in_time": "15:00",
+    "check_out_time": "11:00"
   },
   {
     "destination_name": "밀양",
@@ -2227,7 +2989,11 @@
     "price_per_night": 90000,
     "capacity": 2,
     "rating": null,
-    "image_url": "/static/img/accommodation/밀양/호텔아리나/1.png"
+    "image_url": "/static/img/accommodation/밀양/호텔아리나/1.png",
+    "wifi_available": true,
+    "parking_available": true,
+    "check_in_time": "15:00",
+    "check_out_time": "11:00"
   },
   {
     "destination_name": "산청",
@@ -2237,7 +3003,11 @@
     "price_per_night": 200000,
     "capacity": 4,
     "rating": null,
-    "image_url": "/static/img/accommodation/산청/월명 글램핑/1.jpg"
+    "image_url": "/static/img/accommodation/산청/월명 글램핑/1.jpg",
+    "wifi_available": false,
+    "parking_available": true,
+    "check_in_time": "15:00",
+    "check_out_time": "11:00"
   },
   {
     "destination_name": "산청",
@@ -2247,7 +3017,11 @@
     "price_per_night": 110000,
     "capacity": 4,
     "rating": null,
-    "image_url": "/static/img/accommodation/산청/지리산아침 펜션/images (1).jpg"
+    "image_url": "/static/img/accommodation/산청/지리산아침 펜션/images (1).jpg",
+    "wifi_available": true,
+    "parking_available": true,
+    "check_in_time": "15:00",
+    "check_out_time": "11:00"
   },
   {
     "destination_name": "산청",
@@ -2257,7 +3031,11 @@
     "price_per_night": 120000,
     "capacity": 4,
     "rating": null,
-    "image_url": "/static/img/accommodation/산청/동의본가/1.jpg"
+    "image_url": "/static/img/accommodation/산청/동의본가/1.jpg",
+    "wifi_available": true,
+    "parking_available": true,
+    "check_in_time": "15:00",
+    "check_out_time": "11:00"
   },
   {
     "destination_name": "산청",
@@ -2267,7 +3045,11 @@
     "price_per_night": 150000,
     "capacity": 4,
     "rating": null,
-    "image_url": "/static/img/accommodation/산청/휴롬산청빌리지/images (1).jpg"
+    "image_url": "/static/img/accommodation/산청/휴롬산청빌리지/main-upscaled-v1.png",
+    "wifi_available": true,
+    "parking_available": true,
+    "check_in_time": "15:00",
+    "check_out_time": "11:00"
   },
   {
     "destination_name": "제주 한림",
@@ -2277,7 +3059,11 @@
     "price_per_night": 110000,
     "capacity": 4,
     "rating": null,
-    "image_url": "/static/img/accommodation/제주 한림/광이멀스테이/1.png"
+    "image_url": "/static/img/accommodation/제주 한림/광이멀스테이/1.png",
+    "wifi_available": true,
+    "parking_available": true,
+    "check_in_time": "15:00",
+    "check_out_time": "11:00"
   },
   {
     "destination_name": "제주 한림",
@@ -2287,7 +3073,11 @@
     "price_per_night": 110000,
     "capacity": 4,
     "rating": null,
-    "image_url": "/static/img/accommodation/제주 한림/담스파빌/1.jpg"
+    "image_url": "/static/img/accommodation/제주 한림/담스파빌/1.jpg",
+    "wifi_available": true,
+    "parking_available": true,
+    "check_in_time": "15:00",
+    "check_out_time": "11:00"
   },
   {
     "destination_name": "제주 한림",
@@ -2297,7 +3087,11 @@
     "price_per_night": 67000,
     "capacity": 2,
     "rating": null,
-    "image_url": "/static/img/accommodation/제주 한림/아루미호텔 협재/1.jpg"
+    "image_url": "/static/img/accommodation/제주 한림/아루미호텔 협재/1.jpg",
+    "wifi_available": true,
+    "parking_available": true,
+    "check_in_time": "15:00",
+    "check_out_time": "11:00"
   },
   {
     "destination_name": "제주 한림",
@@ -2307,7 +3101,11 @@
     "price_per_night": 150000,
     "capacity": 4,
     "rating": null,
-    "image_url": "/static/img/accommodation/제주 한림/한림리조트/1.jpg"
+    "image_url": "/static/img/accommodation/제주 한림/한림리조트/1.jpg",
+    "wifi_available": true,
+    "parking_available": true,
+    "check_in_time": "15:00",
+    "check_out_time": "11:00"
   },
   {
     "destination_name": "제주 구좌",
@@ -2317,7 +3115,11 @@
     "price_per_night": 110000,
     "capacity": 4,
     "rating": null,
-    "image_url": "/static/img/accommodation/제주 구좌/임진고택/1.jpg"
+    "image_url": "/static/img/accommodation/제주 구좌/임진고택/1.jpg",
+    "wifi_available": true,
+    "parking_available": true,
+    "check_in_time": "15:00",
+    "check_out_time": "11:00"
   },
   {
     "destination_name": "제주 구좌",
@@ -2327,7 +3129,11 @@
     "price_per_night": 110000,
     "capacity": 4,
     "rating": null,
-    "image_url": "/static/img/accommodation/제주 구좌/루나마르/1.jpg"
+    "image_url": "/static/img/accommodation/제주 구좌/루나마르/1.jpg",
+    "wifi_available": true,
+    "parking_available": true,
+    "check_in_time": "15:00",
+    "check_out_time": "11:00"
   },
   {
     "destination_name": "제주 구좌",
@@ -2337,7 +3143,11 @@
     "price_per_night": 150000,
     "capacity": 4,
     "rating": null,
-    "image_url": "/static/img/accommodation/제주 구좌/MJ리조트/다운로드 (1).jpg"
+    "image_url": "/static/img/accommodation/제주 구좌/MJ리조트/다운로드 (1).jpg",
+    "wifi_available": true,
+    "parking_available": true,
+    "check_in_time": "15:00",
+    "check_out_time": "11:00"
   },
   {
     "destination_name": "제주 구좌",
@@ -2347,7 +3157,11 @@
     "price_per_night": 110000,
     "capacity": 4,
     "rating": null,
-    "image_url": "/static/img/accommodation/제주 구좌/비자림의 아침/1.jpg"
+    "image_url": "/static/img/accommodation/제주 구좌/비자림의 아침/1.jpg",
+    "wifi_available": true,
+    "parking_available": true,
+    "check_in_time": "15:00",
+    "check_out_time": "11:00"
   },
   {
     "destination_name": "제주 남원",
@@ -2357,7 +3171,11 @@
     "price_per_night": 110000,
     "capacity": 4,
     "rating": null,
-    "image_url": "/static/img/accommodation/제주 남원/빌라노이 제주/1.jpg"
+    "image_url": "/static/img/accommodation/제주 남원/빌라노이 제주/1.jpg",
+    "wifi_available": true,
+    "parking_available": true,
+    "check_in_time": "15:00",
+    "check_out_time": "11:00"
   },
   {
     "destination_name": "제주 남원",
@@ -2367,7 +3185,11 @@
     "price_per_night": 150000,
     "capacity": 4,
     "rating": null,
-    "image_url": "/static/img/accommodation/제주 남원/금호제주리조트/1.jpg"
+    "image_url": "/static/img/accommodation/제주 남원/금호제주리조트/1.jpg",
+    "wifi_available": true,
+    "parking_available": true,
+    "check_in_time": "15:00",
+    "check_out_time": "11:00"
   },
   {
     "destination_name": "제주 남원",
@@ -2377,7 +3199,11 @@
     "price_per_night": 90000,
     "capacity": 2,
     "rating": null,
-    "image_url": "/static/img/accommodation/제주 남원/코업시티호텔 하버뷰/1.png"
+    "image_url": "/static/img/accommodation/제주 남원/코업시티호텔 하버뷰/1.png",
+    "wifi_available": true,
+    "parking_available": true,
+    "check_in_time": "15:00",
+    "check_out_time": "11:00"
   },
   {
     "destination_name": "화성",
@@ -2387,7 +3213,11 @@
     "price_per_night": 90000,
     "capacity": 2,
     "rating": null,
-    "image_url": "/static/img/accommodation/화성/라마다동탄/0224y12000cahszww8F28_W_600_0_R5.webp"
+    "image_url": "/static/img/accommodation/화성/라마다동탄/0224y12000cahszww8F28_W_600_0_R5.webp",
+    "wifi_available": true,
+    "parking_available": true,
+    "check_in_time": "15:00",
+    "check_out_time": "11:00"
   },
   {
     "destination_name": "화성",
@@ -2397,7 +3227,11 @@
     "price_per_night": 110000,
     "capacity": 4,
     "rating": null,
-    "image_url": "/static/img/accommodation/화성/제부도브릭스테이/6804d8e682a522.48794600.jpg"
+    "image_url": "/static/img/accommodation/화성/제부도브릭스테이/6804d8e682a522.48794600.jpg",
+    "wifi_available": true,
+    "parking_available": true,
+    "check_in_time": "15:00",
+    "check_out_time": "11:00"
   },
   {
     "destination_name": "화성",
@@ -2407,7 +3241,11 @@
     "price_per_night": 80000,
     "capacity": 2,
     "rating": null,
-    "image_url": "/static/img/accommodation/화성/프로방스율암/agoda-4624173-70198017-929208.jpg"
+    "image_url": "/static/img/accommodation/화성/프로방스율암/agoda-4624173-70198017-929208.jpg",
+    "wifi_available": true,
+    "parking_available": true,
+    "check_in_time": "15:00",
+    "check_out_time": "11:00"
   },
   {
     "destination_name": "화성",
@@ -2417,7 +3255,11 @@
     "price_per_night": 140000,
     "capacity": 4,
     "rating": null,
-    "image_url": "/static/img/accommodation/화성/화성리프레시글램핑&카라반/0223s12000l73b82fF8E3_W_600_0_R5.webp"
+    "image_url": "/static/img/accommodation/화성/화성리프레시글램핑&카라반/0223s12000l73b82fF8E3_W_600_0_R5.webp",
+    "wifi_available": false,
+    "parking_available": true,
+    "check_in_time": "15:00",
+    "check_out_time": "11:00"
   },
   {
     "destination_name": "경주",
@@ -2427,7 +3269,11 @@
     "price_per_night": 180000,
     "capacity": 4,
     "rating": null,
-    "image_url": "/static/img/accommodation/경주/블루원 리조트/bbc5482a8688410aa5d779823d407206.jpg"
+    "image_url": "/static/img/accommodation/경주/블루원 리조트/bbc5482a8688410aa5d779823d407206.jpg",
+    "wifi_available": true,
+    "parking_available": true,
+    "check_in_time": "15:00",
+    "check_out_time": "11:00"
   },
   {
     "destination_name": "부산",
@@ -2437,7 +3283,11 @@
     "price_per_night": 180000,
     "capacity": 4,
     "rating": null,
-    "image_url": "/static/img/accommodation/부산/부산 폴마레펜션/images (1).jpg"
+    "image_url": "/static/img/accommodation/부산/부산 폴마레펜션/images (1).jpg",
+    "wifi_available": true,
+    "parking_available": true,
+    "check_in_time": "15:00",
+    "check_out_time": "11:00"
   },
   {
     "destination_name": "제주",
@@ -2447,7 +3297,11 @@
     "price_per_night": 250000,
     "capacity": 6,
     "rating": null,
-    "image_url": "/static/img/accommodation/제주/제주 씨사이드뷰 펜션/다운로드 (1).jpg"
+    "image_url": "/static/img/accommodation/제주/제주 씨사이드뷰 펜션/다운로드 (1).jpg",
+    "wifi_available": true,
+    "parking_available": true,
+    "check_in_time": "15:00",
+    "check_out_time": "11:00"
   },
   {
     "destination_name": "서귀포",
@@ -2457,7 +3311,11 @@
     "price_per_night": 120000,
     "capacity": 2,
     "rating": null,
-    "image_url": "/static/img/accommodation/서귀포/호텔더본제주/다운로드 (1).jpg"
+    "image_url": "/static/img/accommodation/서귀포/호텔더본제주/main-upscaled-v1.png",
+    "wifi_available": true,
+    "parking_available": true,
+    "check_in_time": "15:00",
+    "check_out_time": "11:00"
   },
   {
     "destination_name": "서귀포",
@@ -2467,7 +3325,11 @@
     "price_per_night": 300000,
     "capacity": 6,
     "rating": null,
-    "image_url": "/static/img/accommodation/서귀포/롯데아트빌라스/1.jpg"
+    "image_url": "/static/img/accommodation/서귀포/롯데아트빌라스/1.jpg",
+    "wifi_available": true,
+    "parking_available": true,
+    "check_in_time": "15:00",
+    "check_out_time": "11:00"
   },
   {
     "destination_name": "제주",
@@ -2477,7 +3339,11 @@
     "price_per_night": 60000,
     "capacity": 2,
     "rating": null,
-    "image_url": "/static/img/accommodation/제주/미르 게스트하우스/1.jpg"
+    "image_url": "/static/img/accommodation/제주/미르 게스트하우스/1.jpg",
+    "wifi_available": true,
+    "parking_available": false,
+    "check_in_time": "16:00",
+    "check_out_time": "10:00"
   },
   {
     "destination_name": "제주",
@@ -2487,7 +3353,11 @@
     "price_per_night": 120000,
     "capacity": 4,
     "rating": null,
-    "image_url": "/static/img/accommodation/제주/제주 올레로펜션/1.jpg"
+    "image_url": "/static/img/accommodation/제주/제주 올레로펜션/1.jpg",
+    "wifi_available": true,
+    "parking_available": true,
+    "check_in_time": "15:00",
+    "check_out_time": "11:00"
   },
   {
     "destination_name": "남해",
@@ -2497,7 +3367,11 @@
     "price_per_night": 86000,
     "capacity": 2,
     "rating": null,
-    "image_url": "/static/img/accommodation/남해/남해 스포츠파크 호텔/images (1).jpg"
+    "image_url": "/static/img/accommodation/남해/남해 스포츠파크 호텔/images (1).jpg",
+    "wifi_available": true,
+    "parking_available": true,
+    "check_in_time": "15:00",
+    "check_out_time": "11:00"
   },
   {
     "destination_name": "산청",
@@ -2507,7 +3381,11 @@
     "price_per_night": 105000,
     "capacity": 4,
     "rating": null,
-    "image_url": "/static/img/accommodation/산청/산청한방가족호텔/images (1).jpg"
+    "image_url": "/static/img/accommodation/산청/산청한방가족호텔/images (1).jpg",
+    "wifi_available": true,
+    "parking_available": true,
+    "check_in_time": "15:00",
+    "check_out_time": "11:00"
   },
   {
     "destination_name": "신안",
@@ -2517,7 +3395,11 @@
     "price_per_night": 110000,
     "capacity": 4,
     "rating": null,
-    "image_url": "/static/img/accommodation/신안/신안 1004 섬리조트 펜션/images (1).jpg"
+    "image_url": "/static/img/accommodation/신안/신안 1004 섬리조트 펜션/main-upscaled-v1.png",
+    "wifi_available": true,
+    "parking_available": true,
+    "check_in_time": "15:00",
+    "check_out_time": "11:00"
   },
   {
     "destination_name": "완주",
@@ -2527,6 +3409,122 @@
     "price_per_night": 180000,
     "capacity": 2,
     "rating": null,
-    "image_url": "/static/img/accommodation/완주/소양고택/05438e3a8ca47.jpg"
+    "image_url": "/static/img/accommodation/완주/소양고택/05438e3a8ca47.jpg",
+    "wifi_available": true,
+    "parking_available": true,
+    "check_in_time": "15:00",
+    "check_out_time": "11:00"
+  },
+  {
+    "destination_name": "공주",
+    "name": "공주 굿모닝펜션",
+    "address": "충청남도 공주시",
+    "description": "공주의 주요 여행지를 둘러본 뒤 여유롭게 쉬어가기 좋은 아늑한 펜션",
+    "price_per_night": 110000,
+    "capacity": 4,
+    "rating": null,
+    "image_url": "/static/img/accommodation/공주/공주 굿모닝펜션/64cb8fdf041c65.71520155.jpg",
+    "wifi_available": true,
+    "parking_available": true,
+    "check_in_time": "15:00",
+    "check_out_time": "11:00"
+  },
+  {
+    "destination_name": "서산",
+    "name": "서산 펫앤트리글램핑",
+    "address": "충청남도 서산시",
+    "description": "서산의 자연 속에서 반려동물과 함께 편안한 하루를 보내기 좋은 글램핑 숙소",
+    "price_per_night": 140000,
+    "capacity": 4,
+    "rating": null,
+    "image_url": "/static/img/accommodation/서산/서산 펫앤트리글램핑/676501f1c7ba09.26270870.jpg",
+    "wifi_available": false,
+    "parking_available": true,
+    "check_in_time": "15:00",
+    "check_out_time": "11:00"
+  },
+  {
+    "destination_name": "서천",
+    "name": "서천 파인트리글램핑",
+    "address": "충청남도 서천군",
+    "description": "서천의 숲과 바다 여행을 함께 즐기며 머물기 좋은 감성 글램핑 숙소",
+    "price_per_night": 140000,
+    "capacity": 4,
+    "rating": null,
+    "image_url": "/static/img/accommodation/서천/서천 파인트리글램핑/6804f5288411d6.51494600.jpg",
+    "wifi_available": false,
+    "parking_available": true,
+    "check_in_time": "15:00",
+    "check_out_time": "11:00"
+  },
+  {
+    "destination_name": "서천",
+    "name": "엘로라 호텔",
+    "address": "충청남도 서천군",
+    "description": "서천의 관광지와 해안으로 이동하기 편리한 깔끔한 호텔",
+    "price_per_night": 90000,
+    "capacity": 2,
+    "rating": null,
+    "image_url": "/static/img/accommodation/서천/엘로라 호텔/67908409afbbb6.09303834.jpg",
+    "wifi_available": true,
+    "parking_available": true,
+    "check_in_time": "15:00",
+    "check_out_time": "11:00"
+  },
+  {
+    "destination_name": "이천",
+    "name": "이천 숲속의 공간",
+    "address": "경기도 이천시",
+    "description": "이천의 한적한 자연 속에서 조용히 휴식을 즐기기 좋은 숲속 숙소",
+    "price_per_night": 110000,
+    "capacity": 4,
+    "rating": null,
+    "image_url": "/static/img/accommodation/이천/이천 숲속의 공간/69fab504d19ff4.73410190.jpg",
+    "wifi_available": true,
+    "parking_available": true,
+    "check_in_time": "15:00",
+    "check_out_time": "11:00"
+  },
+  {
+    "destination_name": "철원",
+    "name": "철원 학마루 펜션",
+    "address": "강원특별자치도 철원군",
+    "description": "철원의 넓은 자연과 평화로운 풍경을 가까이에서 누리기 좋은 펜션",
+    "price_per_night": 110000,
+    "capacity": 4,
+    "rating": null,
+    "image_url": "/static/img/accommodation/철원/철원 학마루 펜션/674acbe02d58e9.45471457.jpg",
+    "wifi_available": true,
+    "parking_available": true,
+    "check_in_time": "15:00",
+    "check_out_time": "11:00"
+  },
+  {
+    "destination_name": "철원",
+    "name": "한탄리버스파 호텔",
+    "address": "강원특별자치도 철원군",
+    "description": "한탄강 일대 여행 후 편안한 휴식과 스파를 즐기기 좋은 호텔",
+    "price_per_night": 120000,
+    "capacity": 2,
+    "rating": null,
+    "image_url": "/static/img/accommodation/철원/한탄리버스파 호텔/631083a7a009b3.70706987.jpg",
+    "wifi_available": true,
+    "parking_available": true,
+    "check_in_time": "15:00",
+    "check_out_time": "11:00"
+  },
+  {
+    "destination_name": "청주",
+    "name": "엔포드호텔",
+    "address": "충청북도 청주시",
+    "description": "청주의 도심 관광과 주변 명소로 이동하기 편리한 쾌적한 호텔",
+    "price_per_night": 100000,
+    "capacity": 2,
+    "rating": null,
+    "image_url": "/static/img/accommodation/청주/엔포드호텔/6852595bf22ef3.62420186.jpg",
+    "wifi_available": true,
+    "parking_available": true,
+    "check_in_time": "15:00",
+    "check_out_time": "11:00"
   }
 ]

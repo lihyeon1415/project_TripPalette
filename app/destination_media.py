@@ -937,4 +937,242 @@ DESTINATION_MEDIA = {
             },
         ),
     },
+    "전주": {
+        "cover": "img/destination/generated/jeonju-hanok-village-sunrise-v1.png",
+        "gallery": (
+            {
+                "filename": "img/destination/generated/jeonju-hanok-village-sunrise-v1.png",
+                "alt": "따뜻한 아침 햇살 아래 한옥 지붕과 골목이 이어지는 전주 한옥마을",
+            },
+            {
+                "filename": "img/destination/generated/jeonju-gyeonggijeon-spring-v1.png",
+                "alt": "봄꽃과 전통 전각이 어우러진 전주 경기전의 고즈넉한 뜰",
+            },
+            {
+                "filename": "img/destination/generated/jeonju-hanok-night-v1.png",
+                "alt": "푸른 저녁 하늘과 따뜻한 등불이 어우러진 전주 한옥 골목",
+            },
+        ),
+    },
+    "익산": {
+        "cover": "img/destination/generated/iksan-mireuksaji-sunrise-v1.png",
+        "gallery": (
+            {
+                "filename": "img/destination/generated/iksan-mireuksaji-sunrise-v1.png",
+                "alt": "아침 안개와 햇살 속에 우뚝 선 익산 미륵사지 석탑",
+            },
+            {
+                "filename": "img/destination/generated/iksan-wanggungri-sunset-v1.png",
+                "alt": "노을 진 들판 위로 모습을 드러낸 익산 왕궁리 오층석탑",
+            },
+            {
+                "filename": "img/destination/generated/iksan-baekje-lotus-spring-v1.png",
+                "alt": "연꽃과 전통 정자가 백제 문화의 정취를 전하는 익산의 봄 풍경",
+            },
+        ),
+    },
+    "고창": {
+        "cover": "img/destination/generated/gochang-barley-fields-spring-v1.png",
+        "gallery": (
+            {
+                "filename": "img/destination/generated/gochang-barley-fields-spring-v1.png",
+                "alt": "완만한 언덕을 초록빛으로 물들인 고창 청보리밭",
+            },
+            {
+                "filename": "img/destination/generated/gochang-seonunsa-autumn-v1.png",
+                "alt": "붉은 단풍 사이로 전각과 산길이 이어지는 고창 선운사",
+            },
+            {
+                "filename": "img/destination/generated/gochang-dolmen-sunrise-v1.png",
+                "alt": "아침 안개와 햇살 속 고인돌이 자리한 고창의 역사 풍경",
+            },
+        ),
+    },
+    "목포": {
+        "cover": "img/destination/generated/mokpo-yudalsan-harbor-sunset-v1.png",
+        "gallery": (
+            {
+                "filename": "img/destination/generated/mokpo-yudalsan-harbor-sunset-v1.png",
+                "alt": "유달산에서 바라본 목포 항구와 다도해의 황금빛 노을",
+            },
+            {
+                "filename": "img/destination/generated/mokpo-gatbawi-sunset-v1.png",
+                "alt": "붉은 노을과 잔잔한 바다에 비친 목포 갓바위",
+            },
+            {
+                "filename": "img/destination/generated/mokpo-cablecar-night-v1.png",
+                "alt": "도시 불빛과 바다 위를 가로지르는 목포 해상케이블카의 야경",
+            },
+        ),
+    },
+    "보성": {
+        "cover": "img/destination/generated/boseong-tea-fields-sunrise-v1.png",
+        "gallery": (
+            {
+                "filename": "img/destination/generated/boseong-tea-fields-sunrise-v1.png",
+                "alt": "아침 안개와 햇살 아래 곡선을 그리는 보성 녹차밭",
+            },
+            {
+                "filename": "img/destination/generated/boseong-yulpo-sunset-v1.png",
+                "alt": "주황빛 노을이 파도와 모래사장에 번지는 보성 율포해변",
+            },
+            {
+                "filename": "img/destination/generated/boseong-cedar-tea-path-v1.png",
+                "alt": "삼나무 숲길 너머로 녹차밭이 펼쳐지는 보성의 싱그러운 풍경",
+            },
+        ),
+    },
+    "영주": {
+        "cover": "img/destination/generated/yeongju-buseoksa-autumn-v1.png",
+        "gallery": (
+            {
+                "filename": "img/destination/generated/yeongju-buseoksa-autumn-v1.png",
+                "alt": "단풍 든 소백산 능선을 품은 영주 부석사의 가을 풍경",
+            },
+            {
+                "filename": "img/destination/generated/yeongju-museom-village-morning-v1.png",
+                "alt": "아침 안개 속 강물과 외나무다리가 이어지는 영주 무섬마을",
+            },
+            {
+                "filename": "img/destination/generated/yeongju-sosuseowon-autumn-v1.png",
+                "alt": "은행나무와 단풍이 고즈넉한 전각을 감싸는 영주 소수서원",
+            },
+        ),
+    },
+    "울진": {
+        "cover": "img/destination/generated/uljin-mangyangjeong-sunrise-v1.png",
+        "gallery": (
+            {
+                "filename": "img/destination/generated/uljin-mangyangjeong-sunrise-v1.png",
+                "alt": "동해의 아침 햇살과 해안 절경을 내려다보는 울진 망양정",
+            },
+            {
+                "filename": "img/destination/generated/uljin-geumgang-pine-forest-v1.png",
+                "alt": "아침 햇살과 옅은 안개가 스며든 울진 금강송 숲길",
+            },
+            {
+                "filename": "img/destination/generated/uljin-jukbyeon-coast-v1.png",
+                "alt": "푸른 동해와 기암, 등대가 어우러진 울진 죽변 해안",
+            },
+        ),
+    },
+    "울릉": {
+        "cover": "img/destination/generated/ulleung-dodong-coast-sunrise-v1.png",
+        "gallery": (
+            {
+                "filename": "img/destination/generated/ulleung-dodong-coast-sunrise-v1.png",
+                "alt": "깊고 푸른 동해와 화산 절벽이 펼쳐진 울릉 도동 해안의 일출",
+            },
+            {
+                "filename": "img/destination/generated/ulleung-nari-basin-v1.png",
+                "alt": "가파른 산줄기와 초록 들판이 포근하게 감싸는 울릉 나리분지",
+            },
+            {
+                "filename": "img/destination/generated/ulleung-coastal-road-sunset-v1.png",
+                "alt": "화산 절벽과 바위섬을 따라 이어지는 울릉 해안도로의 노을",
+            },
+        ),
+    },
+    "진주": {
+        "cover": "img/destination/generated/jinju-jinjuseong-lantern-night-v1.png",
+        "gallery": (
+            {
+                "filename": "img/destination/generated/jinju-jinjuseong-lantern-night-v1.png",
+                "alt": "남강에 유등 불빛이 반짝이는 진주성과 강변의 밤 풍경",
+            },
+            {
+                "filename": "img/destination/generated/jinju-chokseokru-spring-v1.png",
+                "alt": "봄빛 남강을 내려다보는 진주성 촉석루의 고즈넉한 풍경",
+            },
+            {
+                "filename": "img/destination/generated/jinju-namgang-sunset-v1.png",
+                "alt": "산호빛 노을과 강물의 반영이 아름다운 진주 남강",
+            },
+        ),
+    },
+    "밀양": {
+        "cover": "img/destination/generated/miryang-yeongnamnu-sunset-v1.png",
+        "gallery": (
+            {
+                "filename": "img/destination/generated/miryang-yeongnamnu-sunset-v1.png",
+                "alt": "밀양강과 산자락을 품은 영남루의 따뜻한 일몰 풍경",
+            },
+            {
+                "filename": "img/destination/generated/miryang-eoreumgol-valley-v1.png",
+                "alt": "짙은 숲과 맑은 물이 시원하게 이어지는 밀양 얼음골 계곡",
+            },
+            {
+                "filename": "img/destination/generated/miryang-wiyangji-spring-v1.png",
+                "alt": "이팝나무 꽃과 고택이 잔잔한 수면에 비치는 밀양 위양지",
+            },
+        ),
+    },
+    "산청": {
+        "cover": "img/destination/generated/sancheong-daewonsa-valley-autumn-v1.png",
+        "gallery": (
+            {
+                "filename": "img/destination/generated/sancheong-daewonsa-valley-autumn-v1.png",
+                "alt": "초가을 숲과 맑은 물이 어우러진 산청 지리산 대원사 계곡",
+            },
+            {
+                "filename": "img/destination/generated/sancheong-donguibogam-village-v1.png",
+                "alt": "한옥과 약초 정원이 지리산 자락에 자리한 산청 동의보감촌",
+            },
+            {
+                "filename": "img/destination/generated/sancheong-hwangmaesan-azalea-v1.png",
+                "alt": "분홍빛 철쭉이 능선을 가득 물들인 산청 황매산의 봄",
+            },
+        ),
+    },
+    "제주 한림": {
+        "cover": "img/destination/generated/jeju-hallim-hyeopjae-biyangdo-v1.png",
+        "gallery": (
+            {
+                "filename": "img/destination/generated/jeju-hallim-hyeopjae-biyangdo-v1.png",
+                "alt": "투명한 바다 너머 비양도가 보이는 제주 한림 협재해변",
+            },
+            {
+                "filename": "img/destination/generated/jeju-hallim-geumneung-sunset-v1.png",
+                "alt": "산호빛 노을이 얕은 바다에 번지는 제주 한림 금능해변",
+            },
+            {
+                "filename": "img/destination/generated/jeju-hallim-biyangdo-trail-v1.png",
+                "alt": "검은 현무암과 초록 들판 사이로 이어지는 비양도 해안길",
+            },
+        ),
+    },
+    "제주 구좌": {
+        "cover": "img/destination/generated/jeju-gujwa-woljeongri-beach-v1.png",
+        "gallery": (
+            {
+                "filename": "img/destination/generated/jeju-gujwa-woljeongri-beach-v1.png",
+                "alt": "검은 현무암 너머 에메랄드빛 바다가 펼쳐진 제주 구좌 월정리해변",
+            },
+            {
+                "filename": "img/destination/generated/jeju-gujwa-bijarim-forest-v1.png",
+                "alt": "오래된 비자나무와 이끼 낀 돌길 사이로 햇살이 스며드는 제주 구좌 비자림",
+            },
+            {
+                "filename": "img/destination/generated/jeju-gujwa-yongnuni-oreum-v1.png",
+                "alt": "금빛 억새와 부드러운 능선 너머 제주 동쪽 바다가 보이는 용눈이오름",
+            },
+        ),
+    },
+    "제주 남원": {
+        "cover": "img/destination/generated/jeju-namwon-keuneong-coast-v1.png",
+        "gallery": (
+            {
+                "filename": "img/destination/generated/jeju-namwon-keuneong-coast-v1.png",
+                "alt": "검은 현무암 절벽과 짙푸른 바다가 맞닿은 제주 남원 큰엉 해안",
+            },
+            {
+                "filename": "img/destination/generated/jeju-namwon-tangerine-orchard-v1.png",
+                "alt": "돌담길과 주황빛 감귤이 어우러진 제주 남원의 겨울 감귤밭",
+            },
+            {
+                "filename": "img/destination/generated/jeju-namwon-wimi-camellia-v1.png",
+                "alt": "붉은 동백꽃과 검은 돌담이 이어지는 제주 남원 위미리 동백길",
+            },
+        ),
+    },
 }

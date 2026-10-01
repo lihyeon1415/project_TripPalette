@@ -172,7 +172,7 @@
 .favorites-hero::after { width: 520px; height: 210px; right: -110px; bottom: -145px; background: rgba(150, 194, 205, .17); }
 .favorites-hero__inner { position: relative; z-index: 1; min-height: 410px; display: flex; align-items: center; }
 .favorites-hero__copy { position: relative; z-index: 2; width: 43%; padding-bottom: 8px; }
-.favorites-hero h1 { margin: 0 0 15px; color: #292f2d; font-family: "Maru Buri", Georgia, serif; font-size: clamp(2.55rem, 4.3vw, 4rem); letter-spacing: -.06em; }
+.favorites-hero h1 { margin: 0 0 15px; color: #292f2d; font-family: inherit; font-size: clamp(2.55rem, 4.3vw, 4rem); font-weight: 800; letter-spacing: -.06em; }
 .favorites-hero p { max-width: 390px; margin: 0; color: #68716d; font-size: .92rem; line-height: 1.75; }
 .favorites-hero__count { width: fit-content; margin-top: 25px; padding: 9px 15px; display: flex; align-items: center; gap: 7px; color: #555d59; background: rgba(255, 255, 255, .74); border: 1px solid rgba(198, 204, 198, .8); border-radius: 999px; box-shadow: 0 8px 24px rgba(54, 67, 61, .07); backdrop-filter: blur(6px); }
 .favorites-hero__count strong { color: #d05e4c; font-size: 1rem; line-height: 1; }
@@ -232,7 +232,7 @@
 .myreviews-hero::after { position: absolute; inset: 0; content: ""; background: linear-gradient(90deg, rgba(255, 252, 246, .54) 0%, rgba(255, 252, 246, .15) 40%, transparent 62%); }
 .myreviews-hero__inner { position: relative; z-index: 1; min-height: 410px; display: flex; align-items: center; }
 .myreviews-hero__copy { width: 43%; padding-bottom: 8px; }
-.myreviews-hero h1 { margin: 0 0 15px; color: #292f2d; font-family: "Maru Buri", Georgia, serif; font-size: clamp(2.55rem, 4.3vw, 4rem); letter-spacing: -.06em; }
+.myreviews-hero h1 { margin: 0 0 15px; color: #292f2d; font-family: inherit; font-size: clamp(2.55rem, 4.3vw, 4rem); font-weight: 800; letter-spacing: -.06em; }
 .myreviews-hero p { max-width: 390px; margin: 0; color: #68716d; font-size: .92rem; line-height: 1.75; }
 .myreviews-hero__count { width: fit-content; margin-top: 25px; padding: 9px 15px; display: flex; align-items: center; gap: 7px; color: #555d59; background: rgba(255, 255, 255, .78); border: 1px solid rgba(198, 204, 198, .8); border-radius: 999px; box-shadow: 0 8px 24px rgba(54, 67, 61, .07); backdrop-filter: blur(6px); }
 .myreviews-hero__count strong { color: #665d80; font-size: 1rem; line-height: 1; }
@@ -285,7 +285,7 @@
 .profile-hero::after { position: absolute; inset: 0; content: ""; background: linear-gradient(90deg, rgba(255, 252, 246, .54) 0%, rgba(255, 252, 246, .15) 40%, transparent 62%); }
 .profile-hero__inner { position: relative; z-index: 1; min-height: 410px; display: flex; align-items: center; }
 .profile-hero__copy { width: 43%; padding-bottom: 8px; }
-.profile-hero h1 { margin: 0 0 15px; color: #292f2d; font-family: "Maru Buri", Georgia, serif; font-size: clamp(2.55rem, 4.3vw, 4rem); letter-spacing: -.06em; }
+.profile-hero h1 { margin: 0 0 15px; color: #292f2d; font-family: inherit; font-size: clamp(2.55rem, 4.3vw, 4rem); font-weight: 800; letter-spacing: -.06em; }
 .profile-hero p { max-width: 390px; margin: 0; color: #68716d; font-size: .92rem; line-height: 1.75; }
 .profile-page__inner { max-width: 1120px; }
 

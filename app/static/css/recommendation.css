@@ -15,7 +15,7 @@
 .preference-options { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 12px; margin-top: 22px; }
 .preference-options--season,
 .preference-options--companion { grid-template-columns: repeat(4, minmax(0, 1fr)); }
-.preference-options--budget { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.preference-options--budget { grid-template-columns: repeat(4, minmax(0, 1fr)); }
 .preference-option { cursor: pointer; }
 .preference-option input { position: absolute; opacity: 0; pointer-events: none; }
 .preference-option span { display: grid; min-height: 54px; padding: 10px; place-items: center; color: var(--color-primary-dark); background: var(--color-background); border: 1px solid transparent; border-radius: 12px; font-weight: 700; text-align: center; transition: transform 0.18s ease, border-color 0.18s ease, background 0.18s ease; }
@@ -150,6 +150,17 @@
     box-shadow: 0 11px 24px rgba(189, 92, 84, .22);
 }
 .recommendation-page--survey .preference-submit:hover { background: linear-gradient(135deg, #ce6b57, #a9504b); }
+.recommendation-page--survey .preference-submit--secondary {
+    color: #2e3130;
+    background: #fff;
+    border: 1px solid #d7d9d7;
+    box-shadow: 0 8px 20px rgba(47, 43, 40, .1);
+}
+.recommendation-page--survey .preference-submit--secondary:hover {
+    color: #171918;
+    background: #f7f7f5;
+    border-color: #aeb2b0;
+}
 
 @media (max-width: 900px) {
     .recommendation-page--survey .preference-form { grid-template-columns: 1fr; }
@@ -228,8 +239,19 @@
 .result-featured__reasons { display: grid; gap: 8px; color: #444846; font-size: .82rem; }
 .result-featured__reasons span { display: flex; align-items: center; gap: 8px; }
 .result-featured__reasons i { width: 20px; height: 20px; flex: 0 0 auto; display: grid; place-items: center; color: #fff; background: #db7563; border-radius: 50%; font-size: .68rem; font-style: normal; }
-.result-featured__button { width: 100%; margin-top: 24px; color: #fff; background: linear-gradient(135deg, #dc7963, #bd5c54); border: 0; box-shadow: 0 10px 22px rgba(189, 92, 84, .2); }
-.result-featured__button:hover { background: linear-gradient(135deg, #ce6b57, #a9504b); }
+.result-featured__button {
+    width: 100%;
+    margin-top: 24px;
+    color: #2e3130;
+    background: #fff;
+    border: 1px solid #d7d9d7;
+    box-shadow: 0 8px 20px rgba(47, 43, 40, .1);
+}
+.result-featured__button:hover {
+    color: #171918;
+    background: #f7f7f5;
+    border-color: #aeb2b0;
+}
 
 .result-secondary { margin-top: 28px; }
 .result-secondary > h2 { margin: 0 0 14px; color: #292d2b; font-size: 1.35rem; }

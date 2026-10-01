@@ -249,7 +249,7 @@
 .stay-booking-card__price span { color: #858b88; font-size: .72rem; }
 
 .stay-booking-card__facts { margin: 4px 0 18px; }
-.stay-booking-card__facts > div { padding: 12px 0; display: flex; justify-content: space-between; gap: 12px; border-bottom: 1px solid #eceeeb; }
+.stay-booking-card__facts > div { padding: 9px 0; display: flex; justify-content: space-between; gap: 12px; border-bottom: 1px solid #eceeeb; }
 .stay-booking-card__facts dt { color: #8a908e; font-size: .74rem; }
 .stay-booking-card__facts dd { margin: 0; color: #414845; font-size: .78rem; font-weight: 750; text-align: right; }
 
@@ -324,7 +324,7 @@
     box-shadow: 0 10px 30px rgba(36, 45, 42, .06);
 }
 
-.stay-room-card__media { min-height: 150px; overflow: hidden; display: grid; place-items: center; color: #a3aaa7; background: linear-gradient(145deg, #e9efed, #f7f5ef); font-family: Georgia, serif; letter-spacing: .15em; }
+.stay-room-card__media { min-height: 150px; overflow: hidden; display: grid; place-items: center; color: #a3aaa7; background: linear-gradient(145deg, #e9efed, #f7f5ef); font-family: inherit; letter-spacing: .15em; }
 .stay-room-card__media img { width: 100%; height: 100%; object-fit: cover; }
 .stay-room-card__body { min-width: 0; padding: 20px 22px; }
 .stay-room-card__body > span { color: #d36b50; font-size: .65rem; font-weight: 800; }
@@ -402,7 +402,7 @@
 .stay-nearby__grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
 .stay-nearby-card { overflow: hidden; background: #fff; border: 1px solid #e7e4de; border-radius: 13px; transition: transform .2s ease, box-shadow .2s ease; }
 .stay-nearby-card:hover { transform: translateY(-4px); box-shadow: 0 14px 34px rgba(42, 47, 44, .1); }
-.stay-nearby-card__media { height: 160px; overflow: hidden; display: grid; place-items: center; color: #a6aaa7; background: linear-gradient(145deg, #e5ece9, #f5efe7); font-family: Georgia, serif; letter-spacing: .15em; }
+.stay-nearby-card__media { height: 160px; overflow: hidden; display: grid; place-items: center; color: #a6aaa7; background: linear-gradient(145deg, #e5ece9, #f5efe7); font-family: inherit; letter-spacing: .15em; }
 .stay-nearby-card__media img { width: 100%; height: 100%; object-fit: cover; transition: transform .3s ease; }
 .stay-nearby-card:hover img { transform: scale(1.06); }
 .stay-nearby-card__body { padding: 15px 17px 17px; }

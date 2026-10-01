@@ -21,7 +21,7 @@
 .reservation-back:hover { color: #bd5d45; }
 .reservation-kicker { margin-top: 30px; display: block; color: #d36b50; font-size: .7rem; font-weight: 850; letter-spacing: .08em; }
 .reservation-form-panel h1,
-.reservation-complete-card h1 { margin: 7px 0 12px; color: #272d2b; font-family: "Maru Buri", Georgia, serif; font-size: clamp(2rem, 4vw, 2.8rem); line-height: 1.38; letter-spacing: -.045em; }
+.reservation-complete-card h1 { margin: 7px 0 12px; color: #272d2b; font-family: inherit; font-size: clamp(2rem, 4vw, 2.8rem); font-weight: 800; line-height: 1.38; letter-spacing: -.045em; }
 .reservation-form-panel > p,
 .reservation-complete-card > p { margin: 0; color: #7c8380; font-size: .84rem; line-height: 1.75; }
 
@@ -42,7 +42,7 @@
 .reservation-form button:hover { background: #414d49; }
 
 .reservation-summary { background: #f6f3ed; border-left: 1px solid #e6e4de; }
-.reservation-summary__media { height: 310px; overflow: hidden; display: grid; place-items: center; color: #a4aaa6; background: linear-gradient(145deg, #dce8e5, #efe7dc); font-family: Georgia, serif; font-size: .74rem; letter-spacing: .16em; }
+.reservation-summary__media { height: 310px; overflow: hidden; display: grid; place-items: center; color: #a4aaa6; background: linear-gradient(145deg, #dce8e5, #efe7dc); font-family: inherit; font-size: .74rem; letter-spacing: .16em; }
 .reservation-summary__media img { width: 100%; height: 100%; object-fit: cover; }
 .reservation-summary__body { padding: 30px; }
 .reservation-summary__body > span { color: #d36b50; font-size: .68rem; font-weight: 800; }
@@ -76,7 +76,7 @@
 .reservation-history-hero::after { position: absolute; inset: 0; content: ""; background: linear-gradient(90deg, rgba(255, 252, 246, .52) 0%, rgba(255, 252, 246, .14) 40%, transparent 62%); }
 .reservation-history-hero__inner { position: relative; z-index: 1; min-height: 410px; display: flex; align-items: center; }
 .reservation-history-hero__copy { width: 43%; padding-bottom: 8px; }
-.reservation-history-hero h1 { margin: 0 0 15px; color: #292f2d; font-family: "Maru Buri", Georgia, serif; font-size: clamp(2.55rem, 4.3vw, 4rem); letter-spacing: -.06em; }
+.reservation-history-hero h1 { margin: 0 0 15px; color: #292f2d; font-family: inherit; font-size: clamp(2.55rem, 4.3vw, 4rem); font-weight: 800; letter-spacing: -.06em; }
 .reservation-history-hero p { max-width: 390px; margin: 0; color: #68716d; font-size: .92rem; line-height: 1.75; }
 .reservation-history-hero__count { width: fit-content; margin-top: 25px; padding: 9px 15px; display: flex; align-items: center; gap: 7px; color: #555d59; background: rgba(255, 255, 255, .78); border: 1px solid rgba(198, 204, 198, .8); border-radius: 999px; box-shadow: 0 8px 24px rgba(54, 67, 61, .07); backdrop-filter: blur(6px); }
 .reservation-history-hero__count strong { color: #d05e4c; font-size: 1rem; line-height: 1; }
