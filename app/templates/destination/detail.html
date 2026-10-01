@@ -1,0 +1,344 @@
+{% extends "base.html" %}
+
+{% block title %}{{ destination.name }} | TripPalette{% endblock %}
+
+{% block css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/destination-detail.css') }}">
+{% endblock %}
+
+{% block content %}
+{% set media = destination_media.get(destination.name) %}
+{% set review_count = reviews|length %}
+{% set rating_total = reviews|map(attribute='rating')|sum %}
+{% set average_rating = (rating_total / review_count) if review_count else none %}
+
+<div class="destination-detail">
+    <section class="detail-hero" aria-label="{{ destination.name }} 대표 여행 사진">
+        {% if media %}
+            <img
+                class="detail-hero__image"
+                src="{{ url_for('static', filename=media.cover) }}"
+                alt="{{ destination.name }} 대표 풍경"
+            >
+        {% else %}
+            <div class="detail-hero__fallback" aria-hidden="true"></div>
+        {% endif %}
+
+        <div class="detail-hero__shade"></div>
+        <div class="detail-hero__inner">
+            <div class="detail-hero__copy">
+                {% if destination.region %}
+                    <span class="detail-hero__region">
+                        <span aria-hidden="true">●</span>
+                        {{ destination.region }}
+                    </span>
+                {% endif %}
+                <h1>{{ destination.name }}</h1>
+                <div class="detail-hero__rating">
+                    {% if average_rating %}
+                        <strong><span aria-hidden="true">★</span> {{ "%.1f"|format(average_rating) }}</strong>
+                        <span>여행자 리뷰 {{ review_count }}개</span>
+                    {% else %}
+                        <span>새로운 여행지의 첫 후기를 기다리고 있어요.</span>
+                    {% endif %}
+                </div>
+            </div>
+
+            <div class="detail-hero__actions">
+                {% if g.user %}
+                    <form method="post" action="{{ url_for('destination.toggle_favorite', id=destination.id) }}">
+                        <button
+                            class="favorite-btn{% if is_favorite %} favorite-btn--active{% endif %}"
+                            type="submit"
+                            aria-label="{% if is_favorite %}{{ destination.name }} 찜 해제{% else %}{{ destination.name }} 찜하기{% endif %}"
+                        >
+                            <span aria-hidden="true">{% if is_favorite %}♥{% else %}♡{% endif %}</span>
+                        </button>
+                    </form>
+                {% else %}
+                    <a
+                        class="favorite-btn"
+                        href="{{ url_for('auth.login', next=request.path) }}"
+                        aria-label="로그인하고 {{ destination.name }} 찜하기"
+                    >
+                        <span aria-hidden="true">♡</span>
+                    </a>
+                {% endif %}
+            </div>
+        </div>
+    </section>
+
+    <div class="detail-container">
+        <section class="destination-intro" aria-labelledby="destination-about-title">
+            <div class="destination-intro__copy">
+                <span class="section-kicker">여행지 소개</span>
+                <h2 id="destination-about-title">
+                    {{ destination.name }}에서<br>
+                    특별한 여행을 시작해보세요.
+                </h2>
+                {% if destination.description %}
+                    <p>{{ destination.description }}</p>
+                {% else %}
+                    <p>{{ destination.name }}의 풍경과 이야기를 천천히 만나보세요. 나만의 속도로 둘러보는 특별한 여행이 기다리고 있습니다.</p>
+                {% endif %}
+                <a href="{{ url_for('destination.list') }}" class="detail-back-link">← 여행지 목록으로</a>
+            </div>
+
+            {% if media %}
+                <div class="destination-intro__gallery destination-detail-gallery">
+                    {% for image in media.gallery %}
+                        <button
+                            class="destination-gallery__item"
+                            type="button"
+                            data-gallery-src="{{ url_for('static', filename=image.filename) }}"
+                            data-gallery-alt="{{ image.alt }}"
+                            aria-label="{{ image.alt }} 크게 보기"
+                        >
+                            <img
+                                src="{{ url_for('static', filename=image.filename) }}"
+                                alt="{{ image.alt }}"
+                                loading="lazy"
+                            >
+                            <span class="destination-gallery__zoom" aria-hidden="true">
+                                <svg viewBox="0 0 24 24">
+                                    <circle cx="10.5" cy="10.5" r="5.5"></circle>
+                                    <path d="m15 15 4 4M10.5 8v5M8 10.5h5"></path>
+                                </svg>
+                            </span>
+                        </button>
+                    {% endfor %}
+                </div>
+            {% else %}
+                <div class="destination-intro__placeholder">
+                    <strong>{{ destination.name }}</strong>
+                    <span>여행 사진 준비 중</span>
+                </div>
+            {% endif %}
+        </section>
+
+        <section class="travel-information" aria-labelledby="destination-information-title">
+            <div class="section-heading">
+                <div>
+                    <span class="section-kicker">한눈에 보는 여행</span>
+                    <h2 id="destination-information-title">여행 정보</h2>
+                </div>
+                <p>여행을 준비할 때 필요한 기본 정보를 확인해보세요.</p>
+            </div>
+
+            <div class="information-grid">
+                <article class="information-item">
+                    <span class="information-item__icon information-item__icon--coral" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" focusable="false">
+                            <path d="M20 10c0 5-8 11-8 11S4 15 4 10a8 8 0 1 1 16 0Z"></path>
+                            <circle cx="12" cy="10" r="2.5"></circle>
+                        </svg>
+                    </span>
+                    <h3>지역</h3>
+                    <p>{{ destination.region or "전국" }}</p>
+                </article>
+                <article class="information-item">
+                    <span class="information-item__icon information-item__icon--leaf" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" focusable="false">
+                            <path d="M20.5 3.5C13.8 3.4 7.9 6.2 5.4 11c-1.8 3.5-.5 7.2-.5 7.2s3.7 1.3 7.2-.5c4.8-2.5 7.6-8.4 7.5-15.1Z"></path>
+                            <path d="M5 19c2.4-4.1 5.8-7.4 10.3-9.8"></path>
+                        </svg>
+                    </span>
+                    <h3>여행 스타일</h3>
+                    <p>{{ destination.atmosphere or "여유로운 여행" }}</p>
+                </article>
+                <article class="information-item">
+                    <span class="information-item__icon information-item__icon--blue" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" focusable="false">
+                            <path d="M4 7.5h3l1.4-2h7.2l1.4 2h3a2 2 0 0 1 2 2v8.5a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V9.5a2 2 0 0 1 2-2Z"></path>
+                            <circle cx="12" cy="13.5" r="4"></circle>
+                        </svg>
+                    </span>
+                    <h3>추천 활동</h3>
+                    <p>{{ destination.purpose or "관광 · 산책" }}</p>
+                </article>
+                <article class="information-item">
+                    <span class="information-item__icon information-item__icon--gold" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" focusable="false">
+                            <circle cx="12" cy="12" r="4"></circle>
+                            <path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"></path>
+                        </svg>
+                    </span>
+                    <h3>추천 계절</h3>
+                    <p>{{ destination.season or "사계절" }}</p>
+                </article>
+            </div>
+        </section>
+    </div>
+
+    <section id="nearby-accommodations" class="nearby-accommodations" aria-labelledby="nearby-accommodations-title">
+        <div class="detail-container">
+            <div class="section-heading section-heading--stays">
+                <div>
+                    <span class="section-kicker">편안한 여행의 마무리</span>
+                    <h2 id="nearby-accommodations-title">여행지에서 머물 곳</h2>
+                    <p>{{ destination.name }} 여행을 더 특별하게 만들어줄 숙소를 만나보세요.</p>
+                </div>
+                {% if accommodation_count >= 3 %}
+                    <a
+                        class="stay-more-link"
+                        href="{{ url_for('accommodation.list', destination_id=destination.id) }}"
+                        aria-label="{{ destination.name }} 주변 숙소 전체 보기"
+                    >
+                        숙소 더보기 <span aria-hidden="true">→</span>
+                    </a>
+                {% endif %}
+            </div>
+
+            {% if accommodations %}
+                <div class="stay-grid">
+                    {% for accommodation in accommodations %}
+                        {% set has_local_image = accommodation.image_url and accommodation.image_url.startswith('/static/') %}
+                        <article class="stay-card{% if loop.first %} stay-card--featured{% endif %}">
+                            <a class="stay-card__media" href="{{ url_for('accommodation.detail', id=accommodation.id) }}">
+                                {% if has_local_image %}
+                                    <img
+                                        src="{{ accommodation.image_url }}"
+                                        alt="{{ accommodation.name }} 숙소 전경"
+                                        {% if not loop.first %}loading="lazy"{% endif %}
+                                        onerror="this.hidden=true; this.nextElementSibling.hidden=false;"
+                                    >
+                                {% endif %}
+                                <div class="stay-card__placeholder" {% if has_local_image %}hidden{% endif %}>
+                                    <span aria-hidden="true">⌂</span>
+                                    <strong>{{ accommodation.name }}</strong>
+                                    <small>숙소 이미지 준비 중</small>
+                                </div>
+                            </a>
+
+                            <div class="stay-card__body">
+                                <p class="stay-card__location">
+                                    <span aria-hidden="true">●</span>
+                                    {{ accommodation.address }}
+                                </p>
+                                <h3>{{ accommodation.name }}</h3>
+                                <div class="stay-card__bottom">
+                                    <p class="stay-card__price">
+                                        <span>1박 기준</span>
+                                        <strong>{{ "{:,}".format(accommodation.price_per_night) }}원~</strong>
+                                    </p>
+                                    <a class="stay-card__button" href="{{ url_for('accommodation.detail', id=accommodation.id) }}">
+                                        숙소 보기 <span aria-hidden="true">→</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </article>
+                    {% endfor %}
+                </div>
+            {% else %}
+                <div class="stay-empty">
+                    <strong>등록된 주변 숙소가 없습니다.</strong>
+                    <p>새로운 숙소 정보를 준비하고 있습니다.</p>
+                </div>
+            {% endif %}
+        </div>
+    </section>
+
+    <div class="detail-container">
+        <section class="destination-reviews" aria-labelledby="destination-review-title">
+            <div class="section-heading section-heading--reviews">
+                <div>
+                    <span class="section-kicker">직접 다녀온 여행자들의 기록</span>
+                    <h2 id="destination-review-title">여행자들의 이야기</h2>
+                </div>
+                {% if average_rating %}
+                    <p class="review-score"><span aria-hidden="true">★</span> {{ "%.1f"|format(average_rating) }} <span>· 리뷰 {{ review_count }}개</span></p>
+                {% endif %}
+            </div>
+
+            {% if reviews %}
+                <div class="review-list">
+                    {% for review in reviews[:3] %}
+                        <article class="review-card">
+                            <div class="review-user">
+                                <span class="review-profile" aria-hidden="true">{{ review.user.name[:1] if review.user and review.user.name else '여' }}</span>
+                                <div>
+                                    <strong>{{ review.user.name if review.user and review.user.name else '여행자' }}</strong>
+                                    <p class="review-rating" aria-label="평점 {{ review.rating }}점">
+                                        {% for score in range(1, 6) %}<span aria-hidden="true">{% if score <= review.rating %}★{% else %}☆{% endif %}</span>{% endfor %}
+                                    </p>
+                                </div>
+                            </div>
+                            <p class="review-content">{{ review.content }}</p>
+                            {% if review.created_at %}
+                                <time datetime="{{ review.created_at.strftime('%Y-%m-%d') }}">{{ review.created_at.strftime('%Y.%m.%d') }}</time>
+                            {% endif %}
+                        </article>
+                    {% endfor %}
+                </div>
+            {% else %}
+                <div class="review-empty">
+                    <h3>아직 등록된 여행 이야기가 없습니다.</h3>
+                    <p>이 여행지의 첫 번째 후기를 남겨보세요.</p>
+                </div>
+            {% endif %}
+
+            <div class="review-write">
+                {% if g.user and can_review %}
+                    <h3>여행 후기 남기기</h3>
+                    <form method="post" action="{{ url_for('destination.create_review', id=destination.id) }}">
+                        <div class="review-write__rating">
+                            <label for="rating">별점 선택</label>
+                            <select id="rating" name="rating" required>
+                                <option value="">선택</option>
+                                {% for score in range(5, 0, -1) %}
+                                    <option value="{{ score }}">{{ score }}점</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                        <label class="sr-only" for="content">후기 내용</label>
+                        <textarea id="content" name="content" rows="2" maxlength="1000" required placeholder="이 여행지에 대한 여러분의 이야기를 들려주세요."></textarea>
+                        <button type="submit">리뷰 등록하기</button>
+                    </form>
+                {% elif g.user %}
+                    <p class="review-write__notice">이 여행지에 이미 리뷰를 작성했습니다.</p>
+                {% else %}
+                    <p class="review-write__notice">
+                        <a href="{{ url_for('auth.login', next=request.path) }}">로그인</a>하고 여행 후기를 남겨보세요.
+                    </p>
+                {% endif %}
+            </div>
+        </section>
+    </div>
+
+    <section class="detail-cta" aria-labelledby="detail-cta-title">
+        {% if media %}
+            <img src="{{ url_for('static', filename=media.gallery[-1].filename) }}" alt="" loading="lazy">
+        {% endif %}
+        <div class="detail-cta__shade"></div>
+        <div class="detail-cta__content">
+            <h2 id="detail-cta-title">당신의 다음 여행을<br>지금 시작해보세요.</h2>
+            <a href="{{ url_for('destination.list') }}">다른 여행지 둘러보기 <span aria-hidden="true">→</span></a>
+        </div>
+    </section>
+</div>
+
+{% if media %}
+    <dialog class="destination-lightbox" aria-labelledby="destination-lightbox-caption">
+        <div class="destination-lightbox__panel">
+            <button class="destination-lightbox__close" type="button" aria-label="사진 크게 보기 닫기">×</button>
+            <button class="destination-lightbox__nav destination-lightbox__nav--prev" type="button" aria-label="이전 사진">
+                <span aria-hidden="true">‹</span>
+            </button>
+            <figure>
+                <img class="destination-lightbox__image" src="" alt="">
+                <figcaption id="destination-lightbox-caption">
+                    <span class="destination-lightbox__caption"></span>
+                    <span class="destination-lightbox__counter" aria-live="polite"></span>
+                </figcaption>
+            </figure>
+            <button class="destination-lightbox__nav destination-lightbox__nav--next" type="button" aria-label="다음 사진">
+                <span aria-hidden="true">›</span>
+            </button>
+        </div>
+    </dialog>
+{% endif %}
+{% endblock %}
+
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/destination-detail.js') }}" defer></script>
+{% endblock %}

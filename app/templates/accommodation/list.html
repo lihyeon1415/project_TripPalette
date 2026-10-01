@@ -1,0 +1,126 @@
+{% extends "base.html" %}
+
+{% block title %}{% if destination %}{{ destination.name }} 주변 숙소{% else %}전체 숙소{% endif %} | TripPalette{% endblock %}
+
+{% block css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/accommodation.css') }}">
+{% endblock %}
+
+{% block content %}
+<section class="accommodation-page" aria-labelledby="accommodation-page-title">
+    <header class="accommodation-hero">
+        <img
+            class="accommodation-hero__image"
+            src="{{ url_for('static', filename='img/base/accommodation-list-hero-v1.png') }}"
+            alt=""
+            aria-hidden="true"
+        >
+        <div class="container accommodation-hero__inner">
+            {% if destination %}
+                <a class="accommodation-back-link" href="{{ url_for('destination.detail', id=destination.id) }}">
+                    <span aria-hidden="true">←</span>
+                    {{ destination.name }} 여행지로 돌아가기
+                </a>
+            {% endif %}
+
+            <div class="accommodation-heading">
+                <div>
+                    <h1 id="accommodation-page-title">
+                        {% if destination %}{{ destination.name }} 주변 숙소{% else %}전체 숙소{% endif %}
+                    </h1>
+                    <p>
+                        {% if destination %}
+                            {{ destination.name }} 여행의 하루를 편안하게 마무리할 숙소를 살펴보세요.
+                        {% else %}
+                            여행지를 정했다면, 그곳에서 머물 숙소를 찾아보세요.
+                        {% endif %}
+                    </p>
+                </div>
+                <p class="accommodation-heading__count">
+                    <span>검색 결과</span>
+                    <strong>{{ accommodations|length }}</strong>개
+                </p>
+            </div>
+        </div>
+    </header>
+
+    <div class="container accommodation-page__content">
+        {% if accommodations %}
+            <div class="accommodation-grid">
+                {% for accommodation in accommodations %}
+                    <article class="accommodation-card">
+                        <a
+                            class="accommodation-card__link"
+                            href="{{ url_for('accommodation.detail', id=accommodation.id) }}"
+                        >
+                            <div class="accommodation-card__media">
+                                {% if accommodation.image_url and accommodation.image_url.startswith('/static/') %}
+                                    <img
+                                        src="{{ accommodation.image_url }}"
+                                        alt="{{ accommodation.name }} 숙소 전경"
+                                        loading="lazy"
+                                        onerror="this.hidden=true; this.nextElementSibling.hidden=false;"
+                                    >
+                                {% endif %}
+                                <div class="accommodation-placeholder" {% if accommodation.image_url and accommodation.image_url.startswith('/static/') %}hidden{% endif %}>
+                                    <span class="accommodation-placeholder__mark" aria-hidden="true">⌂</span>
+                                    <strong>{{ accommodation.name }}</strong>
+                                    <span>숙소 이미지 준비 중</span>
+                                </div>
+                            </div>
+
+                            <div class="accommodation-card__body">
+                                <h2>{{ accommodation.name }}</h2>
+
+                                <p class="accommodation-card__address">
+                                    <span class="accommodation-location-mark" aria-hidden="true"></span>
+                                    {{ accommodation.address }}
+                                </p>
+
+                                <div class="accommodation-card__meta">
+                                    {% if accommodation.rating is not none %}
+                                        <span class="accommodation-rating">
+                                            <span aria-hidden="true">★</span>
+                                            <span class="sr-only">평점</span>
+                                            {{ accommodation.rating }}
+                                        </span>
+                                    {% else %}
+                                        <span class="accommodation-rating accommodation-rating--empty">평점 정보 없음</span>
+                                    {% endif %}
+
+                                    <span class="accommodation-capacity">
+                                        <span class="sr-only">최대 수용 인원</span>
+                                        최대 {{ accommodation.capacity }}명
+                                    </span>
+                                </div>
+
+                                <div class="accommodation-card__footer">
+                                    <p class="accommodation-price">
+                                        <span>1박</span>
+                                        <strong>{{ "{:,}".format(accommodation.price_per_night) }}원</strong>
+                                    </p>
+                                    <span class="accommodation-card__detail" aria-hidden="true">상세보기 →</span>
+                                </div>
+                            </div>
+                        </a>
+                    </article>
+                {% endfor %}
+            </div>
+        {% else %}
+            <div class="accommodation-empty">
+                <span class="accommodation-empty__icon" aria-hidden="true">⌂</span>
+                <p class="accommodation-eyebrow">NO STAY FOUND</p>
+                <h2>표시할 숙소가 없습니다.</h2>
+                <p>
+                    {% if destination %}
+                        다른 여행지의 숙소를 둘러보며 다음 여행을 찾아보세요.
+                    {% else %}
+                        여행지를 먼저 둘러보고 마음에 드는 곳을 찾아보세요.
+                    {% endif %}
+                </p>
+                <a class="button button--primary" href="{{ url_for('destination.list') }}">여행지 둘러보기</a>
+            </div>
+        {% endif %}
+    </div>
+</section>
+{% endblock %}

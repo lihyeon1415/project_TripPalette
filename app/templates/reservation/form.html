@@ -1,0 +1,91 @@
+
+{% extends "base.html" %}
+
+{% block title %}{{ accommodation.name }} 예약 | TripPalette{% endblock %}
+
+{% block css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/reservation.css') }}">
+{% endblock %}
+
+{% block content %}
+<section class="reservation-page">
+    <div class="container reservation-layout">
+        <div class="reservation-form-panel">
+            <a class="reservation-back" href="{{ url_for('accommodation.detail', id=accommodation.id) }}">← 숙소 상세로</a>
+            <span class="reservation-kicker">숙소 예약</span>
+            <h1>여행 날짜와 인원을<br>선택해 주세요.</h1>
+            <p>예약 정보를 확인한 뒤 대기 상태로 접수됩니다. 결제 기능은 아직 연결되지 않습니다.</p>
+
+            <form method="post" class="reservation-form" data-reservation-form data-nightly-price="{{ accommodation.price_per_night }}">
+                <div class="reservation-form__dates">
+                    <label>
+                        <span>체크인</span>
+                        <input
+                            type="date"
+                            name="check_in"
+                            value="{{ form_data.check_in }}"
+                            min="{{ today }}"
+                            required
+                            data-check-in
+                        >
+                    </label>
+                    <label>
+                        <span>체크아웃</span>
+                        <input
+                            type="date"
+                            name="check_out"
+                            value="{{ form_data.check_out }}"
+                            min="{{ today }}"
+                            required
+                            data-check-out
+                        >
+                    </label>
+                </div>
+
+                <label>
+                    <span>예약 인원</span>
+                    <select name="people_count" required>
+                        {% for count in range(1, accommodation.capacity + 1) %}
+                            <option value="{{ count }}" {% if form_data.people_count|string == count|string %}selected{% endif %}>
+                                {{ count }}명
+                            </option>
+                        {% endfor %}
+                    </select>
+                    <small>이 숙소는 최대 {{ accommodation.capacity }}명까지 이용할 수 있습니다.</small>
+                </label>
+
+                <div class="reservation-form__total" aria-live="polite">
+                    <span><strong data-night-count>1박</strong> 예상 금액</span>
+                    <strong data-total-price>₩ {{ "{:,}".format(accommodation.price_per_night) }}</strong>
+                </div>
+
+                <button type="submit">예약 접수하기 <span aria-hidden="true">→</span></button>
+            </form>
+        </div>
+
+        <aside class="reservation-summary">
+            <div class="reservation-summary__media">
+                {% if accommodation.image_url and accommodation.image_url.startswith('/static/') %}
+                    <img src="{{ accommodation.image_url }}" alt="{{ accommodation.name }}">
+                {% else %}
+                    <span>TRIPPALETTE STAY</span>
+                {% endif %}
+            </div>
+            <div class="reservation-summary__body">
+                <span>{{ accommodation.destination.name if accommodation.destination else '숙소' }}</span>
+                <h2>{{ accommodation.name }}</h2>
+                <p>{{ accommodation.address }}</p>
+                <dl>
+                    <div><dt>1박 요금</dt><dd>₩ {{ "{:,}".format(accommodation.price_per_night) }}</dd></div>
+                    <div><dt>최대 인원</dt><dd>{{ accommodation.capacity }}명</dd></div>
+                    <div><dt>예약 상태</dt><dd>대기</dd></div>
+                </dl>
+            </div>
+        </aside>
+    </div>
+</section>
+{% endblock %}
+
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/reservation.js') }}" defer></script>
+{% endblock %}

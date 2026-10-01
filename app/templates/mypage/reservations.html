@@ -1,0 +1,113 @@
+{% extends "base.html" %}
+
+{% block title %}예약 내역 | TripPalette{% endblock %}
+
+{% block css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/reservation.css') }}">
+{% endblock %}
+
+{% block content %}
+<section class="reservation-history">
+    <header class="reservation-history-hero">
+        <img
+            class="reservation-history-hero__art"
+            src="{{ url_for('static', filename='img/mypage/reservations-traveler-v1.png') }}"
+            alt=""
+            aria-hidden="true"
+        >
+        <div class="container reservation-history-hero__inner">
+            <div class="reservation-history-hero__copy">
+                <h1>예약 내역</h1>
+                <p>다가오는 숙소 예약과 여행 일정을 한눈에 확인해 보세요.</p>
+                {% if reservations %}
+                    <div class="reservation-history-hero__count" aria-label="현재 예약 {{ reservations|length }}건">
+                        <strong>{{ reservations|length }}</strong>
+                        <span>건의 여행 일정이 있어요</span>
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+    </header>
+
+    <div class="container reservation-history__inner">
+        {% if reservations %}
+            <div class="reservation-history__heading">
+                <div>
+                    <h2>머무를 숙소를 확인해 보세요.</h2>
+                </div>
+                <a href="{{ url_for('accommodation.list') }}">다른 숙소 둘러보기 →</a>
+            </div>
+
+            <div class="reservation-history__list">
+                {% for reservation in reservations %}
+                    <article class="reservation-history-card">
+                        <div class="reservation-history-card__date" aria-label="체크인 {{ reservation.check_in.strftime('%Y년 %m월 %d일') }}">
+                            <span>{{ reservation.check_in.strftime('%Y') }}</span>
+                            <strong>{{ reservation.check_in.strftime('%m.%d') }}</strong>
+                            <small>체크인</small>
+                        </div>
+
+                        <div class="reservation-history-card__content">
+                            <span class="reservation-history-card__region">
+                                {{ reservation.accommodation.destination.name }}
+                            </span>
+                            <h3>{{ reservation.accommodation.name }}</h3>
+                            <p class="reservation-history-card__address">
+                                <svg viewBox="0 0 24 24" aria-hidden="true">
+                                    <path d="M20 10c0 5-8 11-8 11S4 15 4 10a8 8 0 1 1 16 0Z"></path>
+                                    <circle cx="12" cy="10" r="2.5"></circle>
+                                </svg>
+                                {{ reservation.accommodation.address }}
+                            </p>
+
+                            <dl class="reservation-history-card__meta">
+                                <div>
+                                    <dt>여행 일정</dt>
+                                    <dd>{{ reservation.check_in.strftime('%Y.%m.%d') }} – {{ reservation.check_out.strftime('%Y.%m.%d') }}</dd>
+                                </div>
+                                <div>
+                                    <dt>예약 인원</dt>
+                                    <dd>{{ reservation.people_count }}명</dd>
+                                </div>
+                                <div>
+                                    <dt>예상 금액</dt>
+                                    <dd>₩ {{ "{:,}".format(reservation.total_price) }}</dd>
+                                </div>
+                            </dl>
+                        </div>
+
+                        <div class="reservation-history-card__aside">
+                            <span class="reservation-status reservation-status--{{ reservation.status|lower }}">
+                                {% if reservation.status == 'CONFIRMED' %}예약 확정{% else %}예약 대기{% endif %}
+                            </span>
+                            <div class="reservation-history-card__actions">
+                                <a href="{{ url_for('reservation.complete', id=reservation.id) }}">상세 보기</a>
+                                <form
+                                    method="post"
+                                    action="{{ url_for('reservation.cancel', id=reservation.id) }}"
+                                    onsubmit="return confirm('이 예약을 취소하시겠습니까? 취소한 예약은 내역에서 사라집니다.');"
+                                >
+                                    <button type="submit">예약 취소</button>
+                                </form>
+                            </div>
+                        </div>
+                    </article>
+                {% endfor %}
+            </div>
+        {% else %}
+            <div class="reservation-history__empty">
+                <span class="reservation-history__empty-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24">
+                        <rect x="3" y="5" width="18" height="16" rx="3"></rect>
+                        <path d="M7 3v4M17 3v4M3 10h18"></path>
+                        <path d="m8 15 2.2 2.2L16 12"></path>
+                    </svg>
+                </span>
+                <h2>현재 예약된 숙소가 없습니다.</h2>
+                <p>마음에 드는 여행지를 찾고 편안하게 머물 숙소를 골라보세요.</p>
+                <a href="{{ url_for('accommodation.list') }}">숙소 둘러보기 <span aria-hidden="true">→</span></a>
+            </div>
+        {% endif %}
+    </div>
+</section>
+{% endblock %}

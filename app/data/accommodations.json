@@ -1,0 +1,2532 @@
+[
+  {
+    "destination_name": "창원 진해",
+    "name": "그랜드 머큐어 앰배서더 창원",
+    "address": "경상남도 창원시 성산구 원이대로 332",
+    "description": "창원컨벤션센터와 시티세븐에 인접한 도심형 특급 호텔",
+    "price_per_night": 160000,
+    "capacity": 2,
+    "rating": null,
+    "image_url": "/static/img/accommodation/창원 진해/그랜드 머큐어 앰배서더 창원/images (1).jpg"
+  },
+  {
+    "destination_name": "창원 진해",
+    "name": "진해 인터시티호텔",
+    "address": "경상남도 창원시 진해구",
+    "description": "진해 도심과 관광지 이동이 편리한 호텔",
+    "price_per_night": 120000,
+    "capacity": 2,
+    "rating": null,
+    "image_url": "/static/img/accommodation/창원 진해/진해 인터시티호텔/unnamed (1).jpg"
+  },
+  {
+    "destination_name": "창원 진해",
+    "name": "글로리아 글램핑",
+    "address": "경상남도 창원시 마산합포구",
+    "description": "해안 인근에서 머무는 글램핑 숙소",
+    "price_per_night": 190000,
+    "capacity": 4,
+    "rating": null,
+    "image_url": "/static/img/accommodation/창원 진해/글로리아 글램핑/다운로드 (1).jpg"
+  },
+  {
+    "destination_name": "삼척",
+    "name": "산티아고펜션",
+    "address": "강원특별자치도 삼척시 근덕면",
+    "description": "삼척 해안 인근의 펜션형 숙소",
+    "price_per_night": 69000,
+    "capacity": 2,
+    "rating": null,
+    "image_url": "/static/img/accommodation/삼척/산티아고펜션/다운로드 (1).jpg"
+  },
+  {
+    "destination_name": "삼척",
+    "name": "힐스노클비치호텔",
+    "address": "강원특별자치도 삼척시",
+    "description": "삼척 바다 여행을 위한 해안형 숙소",
+    "price_per_night": 120000,
+    "capacity": 2,
+    "rating": null,
+    "image_url": "/static/img/accommodation/삼척/힐스노클비치호텔/다운로드 (1).jpg"
+  },
+  {
+    "destination_name": "삼척",
+    "name": "쏠비치 삼척",
+    "address": "강원특별자치도 삼척시 수로부인길 453",
+    "description": "해안 전망과 부대시설을 갖춘 리조트",
+    "price_per_night": 153000,
+    "capacity": 4,
+    "rating": null,
+    "image_url": "/static/img/accommodation/삼척/쏠비치 삼척/다운로드 (1).jpg"
+  },
+  {
+    "destination_name": "구례",
+    "name": "더케이 지리산가족호텔",
+    "address": "전라남도 구례군 산동면",
+    "description": "지리산 여행을 위한 가족형 호텔",
+    "price_per_night": 120000,
+    "capacity": 4,
+    "rating": null,
+    "image_url": null
+  },
+  {
+    "destination_name": "구례",
+    "name": "지리산호수리조트",
+    "address": "전라남도 구례군 산동면",
+    "description": "지리산과 호수 풍경을 즐기는 리조트",
+    "price_per_night": 100000,
+    "capacity": 4,
+    "rating": null,
+    "image_url": null
+  },
+  {
+    "destination_name": "구례",
+    "name": "노고단게스트하우스",
+    "address": "전라남도 구례군 산동면",
+    "description": "지리산 탐방객을 위한 게스트하우스",
+    "price_per_night": 50000,
+    "capacity": 2,
+    "rating": null,
+    "image_url": null
+  },
+  {
+    "destination_name": "속초",
+    "name": "HJ하우스펜션",
+    "address": "강원특별자치도 속초시",
+    "description": "속초해수욕장 인근의 펜션형 숙소",
+    "price_per_night": 80000,
+    "capacity": 2,
+    "rating": null,
+    "image_url": "/static/img/accommodation/속초/HJ하우스펜션/다운로드 (1).jpg"
+  },
+  {
+    "destination_name": "속초",
+    "name": "씨크루즈호텔 속초",
+    "address": "강원특별자치도 속초시 청초호반로 273",
+    "description": "청초호 인근의 도심형 호텔",
+    "price_per_night": 73000,
+    "capacity": 2,
+    "rating": null,
+    "image_url": "/static/img/accommodation/속초/씨크루즈호텔 속초/다운로드 (1).jpg"
+  },
+  {
+    "destination_name": "속초",
+    "name": "롯데리조트 속초",
+    "address": "강원특별자치도 속초시 대포항길 186",
+    "description": "동해 전망과 부대시설을 갖춘 리조트",
+    "price_per_night": 260000,
+    "capacity": 4,
+    "rating": null,
+    "image_url": "/static/img/accommodation/속초/롯데리조트 속초/다운로드 (1).jpg"
+  },
+  {
+    "destination_name": "무주",
+    "name": "나오스펜션",
+    "address": "전북특별자치도 무주군 설천면",
+    "description": "덕유산 인근의 펜션형 숙소",
+    "price_per_night": 131000,
+    "capacity": 4,
+    "rating": null,
+    "image_url": "/static/img/accommodation/무주/나오스펜션/다운로드 (1).jpg"
+  },
+  {
+    "destination_name": "무주",
+    "name": "무주아일랜드",
+    "address": "전북특별자치도 무주군",
+    "description": "무주 자연 여행을 위한 펜션형 숙소",
+    "price_per_night": 120000,
+    "capacity": 4,
+    "rating": null,
+    "image_url": "/static/img/accommodation/무주/무주아일랜드/다운로드 (1).jpg"
+  },
+  {
+    "destination_name": "무주",
+    "name": "무주 랜드글램핑",
+    "address": "전북특별자치도 무주군 설천면 구천동로",
+    "description": "계곡과 가까운 글램핑 숙소",
+    "price_per_night": 150000,
+    "capacity": 4,
+    "rating": null,
+    "image_url": "/static/img/accommodation/무주/무주 랜드글램핑/6a95148b08c721.33241048.jpg"
+  },
+  {
+    "destination_name": "태백",
+    "name": "태백산한옥펜션",
+    "address": "강원특별자치도 태백시 소롯골길 34",
+    "description": "태백산 인근의 한옥형 펜션",
+    "price_per_night": 100000,
+    "capacity": 4,
+    "rating": null,
+    "image_url": "/static/img/accommodation/태백/태백산한옥펜션/다운로드 (1).jpg"
+  },
+  {
+    "destination_name": "태백",
+    "name": "태백호텔",
+    "address": "강원특별자치도 태백시 태백산로 4761",
+    "description": "태백산 여행에 편리한 호텔",
+    "price_per_night": 118000,
+    "capacity": 2,
+    "rating": null,
+    "image_url": "/static/img/accommodation/태백/태백호텔/다운로드 (1).jpg"
+  },
+  {
+    "destination_name": "태백",
+    "name": "오투리조트",
+    "address": "강원특별자치도 태백시 서학로 861",
+    "description": "고원 휴양과 레저를 위한 리조트",
+    "price_per_night": 120000,
+    "capacity": 4,
+    "rating": null,
+    "image_url": "/static/img/accommodation/태백/오투리조트/다운로드 (1).jpg"
+  },
+  {
+    "destination_name": "보령",
+    "name": "호텔 쏠레르",
+    "address": "충청남도 보령시 해수욕장8길 28",
+    "description": "대천해수욕장 인근의 호텔",
+    "price_per_night": 104000,
+    "capacity": 2,
+    "rating": null,
+    "image_url": "/static/img/accommodation/보령/호텔 쏠레르/images (1).jpg"
+  },
+  {
+    "destination_name": "보령",
+    "name": "대천 우연플로라호텔",
+    "address": "충청남도 보령시 신흑동 2273-1",
+    "description": "대천해수욕장 인근의 소규모 호텔",
+    "price_per_night": 83000,
+    "capacity": 2,
+    "rating": null,
+    "image_url": "/static/img/accommodation/보령/대천 우연플로라호텔/63232ff78af1a1.33603693.jpg"
+  },
+  {
+    "destination_name": "보령",
+    "name": "한화리조트 대천 파로스",
+    "address": "충청남도 보령시 해수욕장3길 11-10",
+    "description": "서해안 가족 여행을 위한 리조트",
+    "price_per_night": 115000,
+    "capacity": 4,
+    "rating": null,
+    "image_url": "/static/img/accommodation/보령/한화리조트 대천 파로스/images (1).jpg"
+  },
+  {
+    "destination_name": "정읍",
+    "name": "앨리스데이",
+    "address": "전북특별자치도 정읍시",
+    "description": "정읍과 내장산 여행을 위한 숙소",
+    "price_per_night": 90000,
+    "capacity": 2,
+    "rating": null,
+    "image_url": "/static/img/accommodation/정읍/앨리스데이/다운로드 (1).jpg"
+  },
+  {
+    "destination_name": "정읍",
+    "name": "내장산한옥펜션",
+    "address": "전북특별자치도 정읍시 내장산로",
+    "description": "내장산 인근의 한옥형 펜션",
+    "price_per_night": 120000,
+    "capacity": 4,
+    "rating": null,
+    "image_url": "/static/img/accommodation/정읍/내장산한옥펜션/다운로드 (1).jpg"
+  },
+  {
+    "destination_name": "정읍",
+    "name": "금강두승산글램핑",
+    "address": "전북특별자치도 정읍시",
+    "description": "정읍 자연 속에서 머무는 글램핑 숙소",
+    "price_per_night": 150000,
+    "capacity": 4,
+    "rating": null,
+    "image_url": "/static/img/accommodation/정읍/금강두승산글램핑/images (1).jpg"
+  },
+  {
+    "destination_name": "담양",
+    "name": "그라스풀빌라리조트",
+    "address": "전라남도 담양군",
+    "description": "개별 휴식을 위한 풀빌라형 리조트",
+    "price_per_night": 250000,
+    "capacity": 4,
+    "rating": null,
+    "image_url": "/static/img/accommodation/담양/그라스풀빌라리조트/images (1).jpg"
+  },
+  {
+    "destination_name": "담양",
+    "name": "담양메타펜션",
+    "address": "전라남도 담양군 담양읍 메타프로방스3길 4-6",
+    "description": "메타프로방스 인근의 펜션형 숙소",
+    "price_per_night": 50000,
+    "capacity": 2,
+    "rating": null,
+    "image_url": "/static/img/accommodation/담양/담양메타펜션/다운로드 (1).jpg"
+  },
+  {
+    "destination_name": "담양",
+    "name": "라온글램핑",
+    "address": "전라남도 담양군",
+    "description": "담양 자연을 가까이에서 즐기는 글램핑 숙소",
+    "price_per_night": 150000,
+    "capacity": 4,
+    "rating": null,
+    "image_url": "/static/img/accommodation/담양/라온글램핑/다운로드 (1).jpg"
+  },
+  {
+    "destination_name": "안동",
+    "name": "전통리조트 구름에",
+    "address": "경상북도 안동시 민속촌길 190",
+    "description": "전통 고택을 현대적으로 활용한 한옥 리조트",
+    "price_per_night": 385000,
+    "capacity": 4,
+    "rating": null,
+    "image_url": "/static/img/accommodation/안동/전통리조트 구름에/images (1).jpg"
+  },
+  {
+    "destination_name": "안동",
+    "name": "안동마애펜션",
+    "address": "경상북도 안동시",
+    "description": "안동 문화 여행을 위한 펜션형 숙소",
+    "price_per_night": 100000,
+    "capacity": 4,
+    "rating": null,
+    "image_url": "/static/img/accommodation/안동/안동마애펜션/images (1).jpg"
+  },
+  {
+    "destination_name": "안동",
+    "name": "안동 럭셔리 글램핑 라피네",
+    "address": "경상북도 안동시",
+    "description": "안동 자연 속에서 머무는 글램핑 숙소",
+    "price_per_night": 150000,
+    "capacity": 4,
+    "rating": null,
+    "image_url": "/static/img/accommodation/안동/안동 럭셔리 글램핑 라피네/다운로드 (1).jpg"
+  },
+  {
+    "destination_name": "순천",
+    "name": "에코그라드호텔",
+    "address": "전라남도 순천시 백강로 234",
+    "description": "순천 도심과 관광지 이동이 편리한 호텔",
+    "price_per_night": 75000,
+    "capacity": 2,
+    "rating": null,
+    "image_url": null
+  },
+  {
+    "destination_name": "순천",
+    "name": "호텔지뜨 순천",
+    "address": "전라남도 순천시",
+    "description": "순천만국가정원 인근의 호텔",
+    "price_per_night": 70000,
+    "capacity": 2,
+    "rating": null,
+    "image_url": null
+  },
+  {
+    "destination_name": "순천",
+    "name": "포라이즌글램핑",
+    "address": "전라남도 순천시 별량면 오실길 333-1",
+    "description": "편백나무 숲에서 순천만 풍경과 바비큐를 즐기는 자연 친화형 글램핑",
+    "price_per_night": 150000,
+    "capacity": 4,
+    "rating": null,
+    "image_url": "/static/img/accommodation/순천/포라이즌글램핑/1.jpg"
+  },
+  {
+    "destination_name": "평창",
+    "name": "휘닉스파크 평창",
+    "address": "강원특별자치도 평창군 봉평면 태기로 174",
+    "description": "겨울 스포츠와 휴양을 위한 복합 리조트",
+    "price_per_night": 120000,
+    "capacity": 4,
+    "rating": null,
+    "image_url": "/static/img/accommodation/평창/휘닉스파크 평창/images (1).jpg"
+  },
+  {
+    "destination_name": "평창",
+    "name": "숲앤숲펜션",
+    "address": "강원특별자치도 평창군",
+    "description": "평창 숲속에서 머무는 펜션형 숙소",
+    "price_per_night": 120000,
+    "capacity": 4,
+    "rating": null,
+    "image_url": "/static/img/accommodation/평창/숲앤숲펜션/images (1).jpg"
+  },
+  {
+    "destination_name": "평창",
+    "name": "AM호텔",
+    "address": "강원특별자치도 평창군 대관령면",
+    "description": "대관령과 겨울 관광지 이동이 편리한 호텔",
+    "price_per_night": 80000,
+    "capacity": 2,
+    "rating": null,
+    "image_url": "/static/img/accommodation/평창/AM호텔/다운로드 (3).jpg"
+  },
+  {
+    "destination_name": "인제",
+    "name": "인제 스피디움 호텔앤리조트",
+    "address": "강원특별자치도 인제군 기린면 상하답로 130",
+    "description": "레저 시설을 갖춘 호텔형 리조트",
+    "price_per_night": 110000,
+    "capacity": 2,
+    "rating": null,
+    "image_url": "/static/img/accommodation/인제/인제 스피디움 호텔앤리조트/images (1).jpg"
+  },
+  {
+    "destination_name": "인제",
+    "name": "자작나무숲 자작향기펜션",
+    "address": "강원특별자치도 인제군",
+    "description": "자작나무숲 여행을 위한 펜션형 숙소",
+    "price_per_night": 100000,
+    "capacity": 4,
+    "rating": null,
+    "image_url": "/static/img/accommodation/인제/자작나무숲 자작향기펜션/images (1).jpg"
+  },
+  {
+    "destination_name": "인제",
+    "name": "맑은물리조트",
+    "address": "강원특별자치도 인제군 기린면 내린천로 4723",
+    "description": "내린천 전망의 테라스와 수영장·세미나실을 갖춘 가족형 리조트",
+    "price_per_night": 162000,
+    "capacity": 4,
+    "rating": null,
+    "image_url": "/static/img/accommodation/인제/맑은물리조트/images (1).jpg"
+  },
+  {
+    "destination_name": "강릉",
+    "name": "라카이 샌드파인",
+    "address": "강원특별자치도 강릉시 해안로 536",
+    "description": "경포해변 인근의 오션 리조트",
+    "price_per_night": 100000,
+    "capacity": 2,
+    "rating": null,
+    "image_url": "/static/img/accommodation/강릉/라카이 샌드파인/images (1).jpg"
+  },
+  {
+    "destination_name": "강릉",
+    "name": "오션힐펜션",
+    "address": "강원특별자치도 강릉시",
+    "description": "강릉 바다 여행을 위한 펜션형 숙소",
+    "price_per_night": 90000,
+    "capacity": 4,
+    "rating": null,
+    "image_url": "/static/img/accommodation/강릉/오션힐펜션/1.png"
+  },
+  {
+    "destination_name": "강릉",
+    "name": "스카이베이호텔 경포",
+    "address": "강원특별자치도 강릉시 해안로 476",
+    "description": "경포호와 해변 인근의 호텔",
+    "price_per_night": 100000,
+    "capacity": 2,
+    "rating": null,
+    "image_url": "/static/img/accommodation/강릉/스카이베이호텔 경포/images (1).jpg"
+  },
+  {
+    "destination_name": "정선",
+    "name": "하이원 그랜드호텔",
+    "address": "강원특별자치도 정선군 사북읍 하이원길 265",
+    "description": "겨울 스포츠와 휴양을 위한 대형 호텔",
+    "price_per_night": 120000,
+    "capacity": 2,
+    "rating": null,
+    "image_url": "/static/img/accommodation/정선/하이원 그랜드호텔/unnamed (1).jpg"
+  },
+  {
+    "destination_name": "정선",
+    "name": "파크로쉬 리조트앤웰니스",
+    "address": "강원특별자치도 정선군 북평면 중봉길 9-12",
+    "description": "산악 풍경 속 웰니스 휴양 리조트",
+    "price_per_night": 250000,
+    "capacity": 2,
+    "rating": null,
+    "image_url": "/static/img/accommodation/정선/파크로쉬 리조트앤웰니스/images (1).jpg"
+  },
+  {
+    "destination_name": "정선",
+    "name": "메이힐스리조트",
+    "address": "강원특별자치도 정선군 고한읍 물한리길 8",
+    "description": "하이원 관광지 인근의 가족형 리조트",
+    "price_per_night": 90000,
+    "capacity": 4,
+    "rating": null,
+    "image_url": "/static/img/accommodation/정선/메이힐스리조트/unnamed (1).jpg"
+  },
+  {
+    "destination_name": "제주",
+    "name": "휘닉스 아일랜드 제주",
+    "address": "제주특별자치도 서귀포시 성산읍 섭지코지로 107",
+    "description": "섭지코지 인근의 가족형 리조트",
+    "price_per_night": 185000,
+    "capacity": 4,
+    "rating": null,
+    "image_url": "/static/img/accommodation/제주/휘닉스 아일랜드 제주/1.jpg"
+  },
+  {
+    "destination_name": "제주",
+    "name": "호텔 리젠트마린 제주",
+    "address": "제주특별자치도 제주시 서부두2길 20",
+    "description": "제주시 해안과 도심 이동이 편리한 호텔",
+    "price_per_night": 85000,
+    "capacity": 2,
+    "rating": null,
+    "image_url": "/static/img/accommodation/제주/호텔 리젠트마린 제주/1.jpg"
+  },
+  {
+    "destination_name": "제주",
+    "name": "제주자연인펜션글램핑",
+    "address": "제주특별자치도 제주시",
+    "description": "제주의 자연을 가까이에서 즐기기 좋은 펜션형 글램핑 숙소",
+    "price_per_night": 100000,
+    "capacity": 4,
+    "rating": null,
+    "image_url": "/static/img/accommodation/제주/제주자연인펜션글램핑/1.jpg"
+  },
+  {
+    "destination_name": "경주",
+    "name": "경주엔한옥펜션",
+    "address": "경상북도 경주시",
+    "description": "경주의 전통 분위기를 느낄 수 있는 한옥형 펜션",
+    "price_per_night": 120000,
+    "capacity": 4,
+    "rating": null,
+    "image_url": "/static/img/accommodation/경주/경주엔한옥펜션/images (1).jpg"
+  },
+  {
+    "destination_name": "경주",
+    "name": "경주 파도소리 스파글램핑 펜션",
+    "address": "경상북도 경주시",
+    "description": "해안 여행과 스파를 함께 즐기는 펜션형 숙소",
+    "price_per_night": 150000,
+    "capacity": 4,
+    "rating": null,
+    "image_url": "/static/img/accommodation/경주/경주 파도소리 스파글램핑 펜션/images (1).jpg"
+  },
+  {
+    "destination_name": "경주",
+    "name": "라한셀렉트 경주",
+    "address": "경상북도 경주시 보문로 338",
+    "description": "보문관광단지에 위치한 가족형 호텔",
+    "price_per_night": 150000,
+    "capacity": 3,
+    "rating": null,
+    "image_url": "/static/img/accommodation/경주/라한셀렉트 경주/images (1).jpg"
+  },
+  {
+    "destination_name": "부산",
+    "name": "제이스 스파 글램핑",
+    "address": "부산광역시",
+    "description": "부산 여행을 위한 글램핑형 숙소",
+    "price_per_night": 180000,
+    "capacity": 4,
+    "rating": null,
+    "image_url": "/static/img/accommodation/부산/제이스 스파 글램핑/images (1).jpg"
+  },
+  {
+    "destination_name": "부산",
+    "name": "신라스테이 해운대",
+    "address": "부산광역시 해운대구 해운대로570번길 46",
+    "description": "해운대 해변과 도심 이동이 편리한 호텔",
+    "price_per_night": 135000,
+    "capacity": 2,
+    "rating": null,
+    "image_url": "/static/img/accommodation/부산/신라스테이 해운대/images (1).jpg"
+  },
+  {
+    "destination_name": "부산",
+    "name": "아난티 앳 부산 코브",
+    "address": "부산광역시 기장군 기장읍 기장해안로 268-32",
+    "description": "기장 해안에 위치한 고급 휴양 호텔",
+    "price_per_night": 317000,
+    "capacity": 2,
+    "rating": null,
+    "image_url": "/static/img/accommodation/부산/아난티 앳 부산 코브/images (1).jpg"
+  },
+  {
+    "destination_name": "가평",
+    "name": "가평 슈가펜션",
+    "address": "경기도 가평군",
+    "description": "가평 자연 여행을 위한 펜션형 숙소",
+    "price_per_night": 100000,
+    "capacity": 4,
+    "rating": null,
+    "image_url": "/static/img/accommodation/가평/가평 슈가펜션/1.jpg"
+  },
+  {
+    "destination_name": "가평",
+    "name": "아늑에어호텔",
+    "address": "경기도 가평군",
+    "description": "가평 관광지 이동이 편리한 호텔",
+    "price_per_night": 80000,
+    "capacity": 2,
+    "rating": null,
+    "image_url": "/static/img/accommodation/가평/아늑에어호텔/1.jpg"
+  },
+  {
+    "destination_name": "가평",
+    "name": "더스테이힐링파크",
+    "address": "경기도 가평군 설악면",
+    "description": "자연과 휴양 시설을 함께 즐기는 복합형 숙소",
+    "price_per_night": 180000,
+    "capacity": 2,
+    "rating": null,
+    "image_url": "/static/img/accommodation/가평/더스테이힐링파크/1.jpg"
+  },
+  {
+    "destination_name": "포천",
+    "name": "산정호수계곡 늘푸른허브펜션",
+    "address": "경기도 포천시 영북면",
+    "description": "산정호수와 계곡 여행을 위한 펜션",
+    "price_per_night": 100000,
+    "capacity": 4,
+    "rating": null,
+    "image_url": "/static/img/accommodation/포천/산정호수계곡 늘푸른허브펜션/1.jpg"
+  },
+  {
+    "destination_name": "포천",
+    "name": "포천 아도니스호텔",
+    "address": "경기도 포천시 신북면 포천로2414번길 24",
+    "description": "포천 자연 관광지와 가까운 호텔",
+    "price_per_night": 98000,
+    "capacity": 2,
+    "rating": null,
+    "image_url": "/static/img/accommodation/포천/포천 아도니스호텔/1mc5m12000iph7amj29C8_W_600_0_R5.webp"
+  },
+  {
+    "destination_name": "포천",
+    "name": "한화리조트 산정호수 안시",
+    "address": "경기도 포천시 영북면 산정호수로 402",
+    "description": "산정호수 인근의 가족형 리조트",
+    "price_per_night": 123000,
+    "capacity": 4,
+    "rating": null,
+    "image_url": "/static/img/accommodation/포천/한화리조트 산정호수 안시/1.png"
+  },
+  {
+    "destination_name": "양평",
+    "name": "양평 포레스트펜션",
+    "address": "경기도 양평군",
+    "description": "양평 숲과 강변 여행을 위한 펜션",
+    "price_per_night": 100000,
+    "capacity": 4,
+    "rating": null,
+    "image_url": "/static/img/accommodation/양평/양평 포레스트펜션/1.jpg"
+  },
+  {
+    "destination_name": "양평",
+    "name": "블룸비스타 호텔앤컨퍼런스",
+    "address": "경기도 양평군 강하면",
+    "description": "남한강 인근의 호텔형 연수·휴양 숙소",
+    "price_per_night": 130000,
+    "capacity": 2,
+    "rating": null,
+    "image_url": "/static/img/accommodation/양평/블룸비스타 호텔앤컨퍼런스/1.jpg"
+  },
+  {
+    "destination_name": "양평",
+    "name": "소노벨 양평",
+    "address": "경기도 양평군 개군면 신내길7번길 55",
+    "description": "가족 여행을 위한 양평 리조트",
+    "price_per_night": 174000,
+    "capacity": 4,
+    "rating": null,
+    "image_url": "/static/img/accommodation/양평/소노벨 양평/1.jpg"
+  },
+  {
+    "destination_name": "홍천",
+    "name": "오유원",
+    "address": "강원특별자치도 홍천군 서면 한치골길 83-5",
+    "description": "계곡과 산 전망, 개별 수영장을 갖춘 프라이빗 독채 풀빌라 스테이",
+    "price_per_night": 468000,
+    "capacity": 6,
+    "rating": null,
+    "image_url": "/static/img/accommodation/홍천/오유원/1.jpg"
+  },
+  {
+    "destination_name": "홍천",
+    "name": "사가우드 홍천",
+    "address": "강원특별자치도 홍천군",
+    "description": "숲과 어우러진 독립형 휴양 숙소",
+    "price_per_night": 180000,
+    "capacity": 4,
+    "rating": null,
+    "image_url": "/static/img/accommodation/홍천/사가우드 홍천/1.jpg"
+  },
+  {
+    "destination_name": "홍천",
+    "name": "소노펠리체 빌리지 비발디파크",
+    "address": "강원특별자치도 홍천군 서면 한치골길 262",
+    "description": "레저 시설과 휴양 공간을 갖춘 리조트",
+    "price_per_night": 210000,
+    "capacity": 4,
+    "rating": null,
+    "image_url": "/static/img/accommodation/홍천/소노펠리체 빌리지 비발디파크/1.webp"
+  },
+  {
+    "destination_name": "양양",
+    "name": "양양 프리지아 펜션",
+    "address": "강원특별자치도 양양군",
+    "description": "양양 해안 여행을 위한 펜션",
+    "price_per_night": 100000,
+    "capacity": 4,
+    "rating": null,
+    "image_url": "/static/img/accommodation/양양/양양 프리지아 펜션/1.jpg"
+  },
+  {
+    "destination_name": "양양",
+    "name": "디그니티 호텔",
+    "address": "강원특별자치도 양양군 양양읍 일출로 159-5",
+    "description": "동해안 관광지와 가까운 호텔",
+    "price_per_night": 61000,
+    "capacity": 2,
+    "rating": null,
+    "image_url": "/static/img/accommodation/양양/디그니티 호텔/1.jpg"
+  },
+  {
+    "destination_name": "양양",
+    "name": "쏠비치 양양",
+    "address": "강원특별자치도 양양군 손양면 선사유적로 678",
+    "description": "프라이빗 비치와 부대시설을 갖춘 리조트",
+    "price_per_night": 114000,
+    "capacity": 4,
+    "rating": null,
+    "image_url": "/static/img/accommodation/양양/쏠비치 양양/1.jpg"
+  },
+  {
+    "destination_name": "제천",
+    "name": "제천힐링펜션",
+    "address": "충청북도 제천시",
+    "description": "제천 자연 여행을 위한 펜션형 숙소",
+    "price_per_night": 100000,
+    "capacity": 4,
+    "rating": null,
+    "image_url": "/static/img/accommodation/제천/제천힐링펜션/1.webp"
+  },
+  {
+    "destination_name": "제천",
+    "name": "하운드호텔 제천역",
+    "address": "충청북도 제천시 의림대로 33",
+    "description": "제천역과 도심 이동이 편리한 호텔",
+    "price_per_night": 66000,
+    "capacity": 2,
+    "rating": null,
+    "image_url": "/static/img/accommodation/제천/하운드호텔 제천역/unnamed (1).jpg"
+  },
+  {
+    "destination_name": "제천",
+    "name": "레스트리 리솜",
+    "address": "충청북도 제천시 백운면 금봉로 365",
+    "description": "숲속 웰니스 휴양을 위한 리조트",
+    "price_per_night": 224000,
+    "capacity": 4,
+    "rating": null,
+    "image_url": "/static/img/accommodation/제천/레스트리 리솜/1.jpg"
+  },
+  {
+    "destination_name": "단양",
+    "name": "단양관광호텔 에델바이스",
+    "address": "충청북도 단양군 단양읍",
+    "description": "단양 도심과 관광지 이동이 편리한 호텔",
+    "price_per_night": 80000,
+    "capacity": 2,
+    "rating": null,
+    "image_url": "/static/img/accommodation/단양/단양관광호텔 에델바이스/1.webp"
+  },
+  {
+    "destination_name": "단양",
+    "name": "소노벨 단양",
+    "address": "충청북도 단양군 단양읍 삼봉로 187-17",
+    "description": "남한강 전망과 부대시설을 갖춘 리조트",
+    "price_per_night": 100000,
+    "capacity": 4,
+    "rating": null,
+    "image_url": "/static/img/accommodation/단양/소노벨 단양/1.jpg"
+  },
+  {
+    "destination_name": "충주",
+    "name": "충주 서유숙펜션",
+    "address": "충청북도 충주시",
+    "description": "충주 자연 여행을 위한 펜션형 숙소",
+    "price_per_night": 90000,
+    "capacity": 4,
+    "rating": null,
+    "image_url": "/static/img/accommodation/충주/충주 서유숙펜션/images (1).jpg"
+  },
+  {
+    "destination_name": "충주",
+    "name": "호텔 더베이스",
+    "address": "충청북도 충주시 호암대로 8",
+    "description": "충주 도심 관광에 편리한 호텔",
+    "price_per_night": 70000,
+    "capacity": 2,
+    "rating": null,
+    "image_url": "/static/img/accommodation/충주/호텔 더베이스/1.webp"
+  },
+  {
+    "destination_name": "충주",
+    "name": "켄싱턴리조트 충주",
+    "address": "충청북도 충주시 앙성면 산전장수1길 103",
+    "description": "가족과 반려동물 여행에 적합한 리조트",
+    "price_per_night": 199000,
+    "capacity": 4,
+    "rating": null,
+    "image_url": "/static/img/accommodation/충주/켄싱턴리조트 충주/1.jpg"
+  },
+  {
+    "destination_name": "태안",
+    "name": "태안 칸타빌레펜션",
+    "address": "충청남도 태안군",
+    "description": "태안 해변 여행을 위한 펜션형 숙소",
+    "price_per_night": 100000,
+    "capacity": 4,
+    "rating": null,
+    "image_url": "/static/img/accommodation/태안/태안 칸타빌레펜션/0584i12000t2lsy1508BC_R_960_660_R5_D.jpg"
+  },
+  {
+    "destination_name": "태안",
+    "name": "롱비치 패밀리 호텔",
+    "address": "충청남도 태안군",
+    "description": "서해안 가족 여행을 위한 호텔",
+    "price_per_night": 90000,
+    "capacity": 4,
+    "rating": null,
+    "image_url": "/static/img/accommodation/태안/롱비치 패밀리 호텔/1.jpg"
+  },
+  {
+    "destination_name": "태안",
+    "name": "아일랜드 리솜",
+    "address": "충청남도 태안군 안면읍 꽃지해안로 204",
+    "description": "꽃지해변 인근의 가족형 휴양 리조트",
+    "price_per_night": 199000,
+    "capacity": 5,
+    "rating": null,
+    "image_url": "/static/img/accommodation/태안/아일랜드 리솜/1.jpg"
+  },
+  {
+    "destination_name": "부여",
+    "name": "부여 억새정원 펜션",
+    "address": "충청남도 부여군",
+    "description": "부여 문화 여행을 위한 전원형 펜션",
+    "price_per_night": 100000,
+    "capacity": 4,
+    "rating": null,
+    "image_url": "/static/img/accommodation/부여/부여 억새정원 펜션/1.webp"
+  },
+  {
+    "destination_name": "부여",
+    "name": "부여파크아트빌라스",
+    "address": "충청남도 부여군 규암면",
+    "description": "취사 가능한 객실을 갖춘 빌라형 숙소",
+    "price_per_night": 130000,
+    "capacity": 4,
+    "rating": null,
+    "image_url": "/static/img/accommodation/부여/부여파크아트빌라스/1.jpg"
+  },
+  {
+    "destination_name": "부여",
+    "name": "롯데리조트 부여",
+    "address": "충청남도 부여군 규암면 백제문로 400",
+    "description": "백제문화단지 인근의 가족형 리조트",
+    "price_per_night": 266000,
+    "capacity": 4,
+    "rating": null,
+    "image_url": "/static/img/accommodation/부여/롯데리조트 부여/1.jpg"
+  },
+  {
+    "destination_name": "포항",
+    "name": "포항 포에버펜션",
+    "address": "경상북도 포항시",
+    "description": "포항 해안 여행을 위한 펜션형 숙소",
+    "price_per_night": 100000,
+    "capacity": 4,
+    "rating": null,
+    "image_url": "/static/img/accommodation/포항/포항 포에버펜션/1.jpg"
+  },
+  {
+    "destination_name": "포항",
+    "name": "라한호텔 포항",
+    "address": "경상북도 포항시 북구 삼호로265번길 1",
+    "description": "영일대 해변의 오션뷰 호텔",
+    "price_per_night": 107000,
+    "capacity": 2,
+    "rating": null,
+    "image_url": "/static/img/accommodation/포항/라한호텔 포항/1.jpg"
+  },
+  {
+    "destination_name": "포항",
+    "name": "코랄트리풀빌라",
+    "address": "경상북도 포항시 남구 호미곶면 구만길 188",
+    "description": "호미곶 바다 전망과 개별 수영장을 갖춘 프라이빗 풀빌라",
+    "price_per_night": 235000,
+    "capacity": 2,
+    "rating": null,
+    "image_url": "/static/img/accommodation/포항/코랄트리풀빌라/1.jpg"
+  },
+  {
+    "destination_name": "문경",
+    "name": "문경 힐하우스펜션",
+    "address": "경상북도 문경시",
+    "description": "문경새재와 자연 여행을 위한 펜션",
+    "price_per_night": 90000,
+    "capacity": 4,
+    "rating": null,
+    "image_url": "/static/img/accommodation/문경/문경 힐하우스펜션/1.jpg"
+  },
+  {
+    "destination_name": "문경",
+    "name": "페트로호텔",
+    "address": "경상북도 문경시",
+    "description": "문경 관광지 이동이 편리한 호텔",
+    "price_per_night": 70000,
+    "capacity": 2,
+    "rating": null,
+    "image_url": "/static/img/accommodation/문경/페트로호텔/1.jpg"
+  },
+  {
+    "destination_name": "문경",
+    "name": "STX리조트",
+    "address": "경상북도 문경시 농암면 청화로 509",
+    "description": "산악 자연 속 종합 휴양 리조트",
+    "price_per_night": 120000,
+    "capacity": 4,
+    "rating": null,
+    "image_url": "/static/img/accommodation/문경/STX리조트/1.jpg"
+  },
+  {
+    "destination_name": "청송",
+    "name": "청송 한옥호텔 안",
+    "address": "경상북도 청송군 주왕산면 청송백자로 12",
+    "description": "전통 한옥의 분위기를 경험할 수 있는 숙소",
+    "price_per_night": 120000,
+    "capacity": 4,
+    "rating": null,
+    "image_url": "/static/img/accommodation/청송/청송 한옥호텔 안/images (1).jpg"
+  },
+  {
+    "destination_name": "청송",
+    "name": "주왕산 온천관광호텔",
+    "address": "경상북도 청송군 주왕산면",
+    "description": "주왕산 여행과 온천을 함께 즐기는 호텔",
+    "price_per_night": 128000,
+    "capacity": 2,
+    "rating": null,
+    "image_url": "/static/img/accommodation/청송/주왕산 온천관광호텔/images (1).jpg"
+  },
+  {
+    "destination_name": "청송",
+    "name": "소노벨 청송",
+    "address": "경상북도 청송군 주왕산면 소노로 38",
+    "description": "주왕산과 온천을 가까이에서 즐기는 리조트",
+    "price_per_night": 100000,
+    "capacity": 4,
+    "rating": null,
+    "image_url": "/static/img/accommodation/청송/소노벨 청송/images (1).jpg"
+  },
+  {
+    "destination_name": "거제",
+    "name": "더100펜션",
+    "address": "경상남도 거제시",
+    "description": "거제 바다 여행을 위한 가족형 펜션",
+    "price_per_night": 120000,
+    "capacity": 4,
+    "rating": null,
+    "image_url": "/static/img/accommodation/거제/더100펜션/다운로드 (1).jpg"
+  },
+  {
+    "destination_name": "거제",
+    "name": "거제삼성호텔",
+    "address": "경상남도 거제시 장평3로 80-37",
+    "description": "도심과 주요 관광지 이동이 편리한 호텔",
+    "price_per_night": 140000,
+    "capacity": 2,
+    "rating": null,
+    "image_url": "/static/img/accommodation/거제/거제삼성호텔/images (1).jpg"
+  },
+  {
+    "destination_name": "거제",
+    "name": "소노캄 거제",
+    "address": "경상남도 거제시 일운면 거제대로 2660",
+    "description": "해양 전망과 부대시설을 갖춘 리조트",
+    "price_per_night": 180000,
+    "capacity": 4,
+    "rating": null,
+    "image_url": "/static/img/accommodation/거제/소노캄 거제/images (1).jpg"
+  },
+  {
+    "destination_name": "통영",
+    "name": "통영아이펜션",
+    "address": "경상남도 통영시",
+    "description": "통영 바다 여행을 위한 펜션형 숙소",
+    "price_per_night": 100000,
+    "capacity": 4,
+    "rating": null,
+    "image_url": "/static/img/accommodation/통영/통영아이펜션/images (1).jpg"
+  },
+  {
+    "destination_name": "통영",
+    "name": "스탠포드 호텔앤리조트 통영",
+    "address": "경상남도 통영시 도남로 347",
+    "description": "바다 전망과 휴식을 함께 즐기는 호텔",
+    "price_per_night": 140000,
+    "capacity": 2,
+    "rating": null,
+    "image_url": "/static/img/accommodation/통영/스탠포드 호텔앤리조트 통영/1.jpg"
+  },
+  {
+    "destination_name": "통영",
+    "name": "금호통영마리나리조트",
+    "address": "경상남도 통영시 큰발개1길 33",
+    "description": "마리나와 해양 관광에 편리한 리조트",
+    "price_per_night": 120000,
+    "capacity": 4,
+    "rating": null,
+    "image_url": "/static/img/accommodation/통영/금호통영마리나리조트/1.jpg"
+  },
+  {
+    "destination_name": "남해",
+    "name": "푸르다 남해펜션",
+    "address": "경상남도 남해군",
+    "description": "남해의 자연과 바다를 즐기는 펜션",
+    "price_per_night": 130000,
+    "capacity": 4,
+    "rating": null,
+    "image_url": "/static/img/accommodation/남해/푸르다 남해펜션/1.jpg"
+  },
+  {
+    "destination_name": "남해",
+    "name": "남해 라피스 호텔",
+    "address": "경상남도 남해군 서면 스포츠파크길 73",
+    "description": "남해 여행에서 편안하게 머무르기 좋은 호텔",
+    "price_per_night": 86000,
+    "capacity": 2,
+    "rating": null,
+    "image_url": "/static/img/accommodation/남해/남해 라피스 호텔/61a8ffa7a78b62.57261690.jpg"
+  },
+  {
+    "destination_name": "남해",
+    "name": "아난티 남해",
+    "address": "경상남도 남해군 남면 남서대로1179번길 40-109",
+    "description": "바다와 골프장을 함께 즐기는 휴양 리조트",
+    "price_per_night": 438000,
+    "capacity": 2,
+    "rating": null,
+    "image_url": "/static/img/accommodation/남해/아난티 남해/images (1).jpg"
+  },
+  {
+    "destination_name": "군산",
+    "name": "선유도 씨에스타펜션",
+    "address": "전북특별자치도 군산시 옥도면",
+    "description": "선유도 섬 여행에 알맞은 펜션",
+    "price_per_night": 120000,
+    "capacity": 4,
+    "rating": null,
+    "image_url": "/static/img/accommodation/군산/선유도 씨에스타펜션/images (1).jpg"
+  },
+  {
+    "destination_name": "군산",
+    "name": "에이본 호텔 군산",
+    "address": "전북특별자치도 군산시 해망로 10",
+    "description": "군산 도심 관광에 편리한 호텔",
+    "price_per_night": 90000,
+    "capacity": 2,
+    "rating": null,
+    "image_url": "/static/img/accommodation/군산/에이본 호텔 군산/images (1).jpg"
+  },
+  {
+    "destination_name": "군산",
+    "name": "유로빌리지",
+    "address": "전북특별자치도 군산시",
+    "description": "가족과 머물기 좋은 독립형 숙소",
+    "price_per_night": 100000,
+    "capacity": 4,
+    "rating": null,
+    "image_url": "/static/img/accommodation/군산/유로빌리지/images (1).jpg"
+  },
+  {
+    "destination_name": "부안",
+    "name": "부안 아침바다 펜션",
+    "address": "전북특별자치도 부안군 변산면",
+    "description": "변산 해안 여행을 위한 펜션",
+    "price_per_night": 100000,
+    "capacity": 4,
+    "rating": null,
+    "image_url": "/static/img/accommodation/부안/부안 아침바다 펜션/1.jpg"
+  },
+  {
+    "destination_name": "부안",
+    "name": "바다호텔",
+    "address": "전북특별자치도 부안군 변산면 채석강길 38",
+    "description": "채석강과 변산 해변에 가까운 호텔",
+    "price_per_night": 123000,
+    "capacity": 2,
+    "rating": null,
+    "image_url": "/static/img/accommodation/부안/바다호텔/1.jpg"
+  },
+  {
+    "destination_name": "부안",
+    "name": "소노벨 변산",
+    "address": "전북특별자치도 부안군 변산면 변산해변로 51",
+    "description": "변산 해변과 부대시설을 갖춘 리조트",
+    "price_per_night": 132000,
+    "capacity": 4,
+    "rating": null,
+    "image_url": "/static/img/accommodation/부안/소노벨 변산/1.jpg"
+  },
+  {
+    "destination_name": "완주",
+    "name": "더펜션퍼스트",
+    "address": "전북특별자치도 완주군",
+    "description": "완주의 자연 속에서 쉬기 좋은 펜션",
+    "price_per_night": 100000,
+    "capacity": 4,
+    "rating": null,
+    "image_url": "/static/img/accommodation/완주/더펜션퍼스트/1.jpg"
+  },
+  {
+    "destination_name": "완주",
+    "name": "더 클래식 바이 호텔원",
+    "address": "전북특별자치도 완주군 이서면 오공로 21-19",
+    "description": "전주 혁신도시에 자리해 관광과 비즈니스 이동이 편리한 호텔",
+    "price_per_night": 70000,
+    "capacity": 2,
+    "rating": null,
+    "image_url": "/static/img/accommodation/완주/더 클래식 바이 호텔원/images (1).jpg"
+  },
+  {
+    "destination_name": "완주",
+    "name": "상관리조트&스파",
+    "address": "전북특별자치도 완주군 상관면",
+    "description": "휴식과 스파를 함께 즐길 수 있는 리조트",
+    "price_per_night": 120000,
+    "capacity": 4,
+    "rating": null,
+    "image_url": "/static/img/accommodation/완주/상관리조트&스파/images (1).jpg"
+  },
+  {
+    "destination_name": "신안",
+    "name": "신안 나무늘보펜션",
+    "address": "전라남도 신안군",
+    "description": "신안 섬 여행을 여유롭게 즐기는 펜션",
+    "price_per_night": 100000,
+    "capacity": 4,
+    "rating": null,
+    "image_url": null
+  },
+  {
+    "destination_name": "신안",
+    "name": "라마다프라자호텔 & 씨원리조트 자은도",
+    "address": "전라남도 신안군 자은면",
+    "description": "자은도 해변과 부대시설을 갖춘 복합 숙소",
+    "price_per_night": 172000,
+    "capacity": 4,
+    "rating": null,
+    "image_url": "/static/img/accommodation/신안/라마다프라자호텔 & 씨원리조트 자은도/images (1).jpg"
+  },
+  {
+    "destination_name": "신안",
+    "name": "엘도라도 리조트",
+    "address": "전라남도 신안군 증도면 지도증도로 1766-15",
+    "description": "증도의 자연과 해변을 즐기는 휴양 리조트",
+    "price_per_night": 180000,
+    "capacity": 4,
+    "rating": null,
+    "image_url": "/static/img/accommodation/신안/엘도라도 리조트/images (1).jpg"
+  },
+  {
+    "destination_name": "제주 조천",
+    "name": "제주 도유펜션",
+    "address": "제주특별자치도 제주시 조천읍",
+    "description": "제주 동부 여행에 알맞은 펜션",
+    "price_per_night": 100000,
+    "capacity": 4,
+    "rating": null,
+    "image_url": "/static/img/accommodation/제주 조천/제주 도유펜션/1.jpg"
+  },
+  {
+    "destination_name": "제주 조천",
+    "name": "에코랜드 호텔",
+    "address": "제주특별자치도 제주시 조천읍 번영로 1278-169",
+    "description": "곶자왈 자연 속에서 쉬기 좋은 호텔",
+    "price_per_night": 121000,
+    "capacity": 2,
+    "rating": null,
+    "image_url": "/static/img/accommodation/제주 조천/에코랜드 호텔/1.jpg"
+  },
+  {
+    "destination_name": "제주 조천",
+    "name": "소노벨 제주",
+    "address": "제주특별자치도 제주시 조천읍 신북로 577",
+    "description": "함덕 해변과 제주 동부 관광에 편리한 리조트",
+    "price_per_night": 132000,
+    "capacity": 4,
+    "rating": null,
+    "image_url": "/static/img/accommodation/제주 조천/소노벨 제주/1.jpg"
+  },
+  {
+    "destination_name": "제주 조천",
+    "name": "제주 베스트힐 글램핑 & 펜션",
+    "address": "제주특별자치도 제주시 조천읍 남조로 2109-36",
+    "description": "곶자왈 숲과 바농오름 자락에서 자연을 가까이 즐기는 펜션형 글램핑 숙소",
+    "price_per_night": 99000,
+    "capacity": 4,
+    "rating": null,
+    "image_url": "/static/img/accommodation/제주 조천/제주 베스트힐 글램핑 & 펜션/1.jpg"
+  },
+  {
+    "destination_name": "제주 애월",
+    "name": "제주 놀멍펜션",
+    "address": "제주특별자치도 제주시 애월읍",
+    "description": "애월 해안 여행을 위한 펜션형 숙소",
+    "price_per_night": 100000,
+    "capacity": 4,
+    "rating": null,
+    "image_url": "/static/img/accommodation/제주 애월/제주 놀멍펜션/1.jpg"
+  },
+  {
+    "destination_name": "제주 애월",
+    "name": "유니호텔 제주",
+    "address": "제주특별자치도 제주시 애월읍 애월해안로 656",
+    "description": "애월 바다 전망을 즐길 수 있는 호텔",
+    "price_per_night": 111000,
+    "capacity": 2,
+    "rating": null,
+    "image_url": "/static/img/accommodation/제주 애월/유니호텔 제주/1.jpg"
+  },
+  {
+    "destination_name": "제주 애월",
+    "name": "제주리조트",
+    "address": "제주특별자치도 제주시 애월읍",
+    "description": "가족 단위 제주 여행에 편리한 리조트",
+    "price_per_night": 100000,
+    "capacity": 4,
+    "rating": null,
+    "image_url": "/static/img/accommodation/제주 애월/제주리조트/1.jpg"
+  },
+  {
+    "destination_name": "서귀포",
+    "name": "굿데이펜션",
+    "address": "제주특별자치도 서귀포시",
+    "description": "서귀포 관광을 여유롭게 즐기는 펜션",
+    "price_per_night": 90000,
+    "capacity": 4,
+    "rating": null,
+    "image_url": "/static/img/accommodation/서귀포/굿데이펜션/images (1).jpg"
+  },
+  {
+    "destination_name": "서귀포",
+    "name": "호텔 브릿지 서귀포",
+    "address": "제주특별자치도 서귀포시 태평로 436",
+    "description": "서귀포 도심과 해안 관광에 편리한 호텔",
+    "price_per_night": 70000,
+    "capacity": 2,
+    "rating": null,
+    "image_url": "/static/img/accommodation/서귀포/호텔 브릿지 서귀포/images (1).jpg"
+  },
+  {
+    "destination_name": "서귀포",
+    "name": "켄싱턴리조트 서귀포",
+    "address": "제주특별자치도 서귀포시 이어도로 684",
+    "description": "제주 남부의 바다와 정원을 즐기는 리조트",
+    "price_per_night": 150000,
+    "capacity": 4,
+    "rating": null,
+    "image_url": "/static/img/accommodation/서귀포/켄싱턴리조트 서귀포/images (1).jpg"
+  },
+  {
+    "destination_name": "가평",
+    "name": "루체른글램핑",
+    "address": "경기도 가평군",
+    "description": "가평의 자연을 가까이에서 즐기는 캠핑형 숙소",
+    "price_per_night": 140000,
+    "capacity": 4,
+    "rating": null,
+    "image_url": "/static/img/accommodation/가평/루체른글램핑/6a1e346eeea9b3.26308312.png"
+  },
+  {
+    "destination_name": "포천",
+    "name": "포천 아일랜드펜션",
+    "address": "경기도 포천시 영북면 산정호수로 911",
+    "description": "산정호수와 가까워 가족 여행에서 편안하게 머물기 좋은 펜션",
+    "price_per_night": 110000,
+    "capacity": 4,
+    "rating": null,
+    "image_url": "/static/img/accommodation/포천/포천 아일랜드펜션/0584d12000t1ifgb8A9CD_R_960_660_R5_D.jpg"
+  },
+  {
+    "destination_name": "포천",
+    "name": "아도니스 호텔",
+    "address": "경기도 포천시",
+    "description": "포천의 주요 여행지로 이동하기 편리한 호텔",
+    "price_per_night": 90000,
+    "capacity": 2,
+    "rating": null,
+    "image_url": "/static/img/accommodation/포천/아도니스 호텔/1.gif"
+  },
+  {
+    "destination_name": "양평",
+    "name": "와이글램핑",
+    "address": "경기도 양평군",
+    "description": "양평의 자연을 가까이에서 즐기는 캠핑형 숙소",
+    "price_per_night": 140000,
+    "capacity": 4,
+    "rating": null,
+    "image_url": "/static/img/accommodation/양평/와이글램핑/images (1).jpg"
+  },
+  {
+    "destination_name": "양양",
+    "name": "그랑블루글램핑 야영장&펜션",
+    "address": "강원특별자치도 양양",
+    "description": "양양의 자연을 가까이에서 즐기는 캠핑형 숙소",
+    "price_per_night": 140000,
+    "capacity": 4,
+    "rating": null,
+    "image_url": "/static/img/accommodation/양양/그랑블루글램핑 야영장&펜션/673d9fe5b98851.20921438.jpg"
+  },
+  {
+    "destination_name": "정선",
+    "name": "트라움벨리 호텔",
+    "address": "강원특별자치도 정선군",
+    "description": "정선의 주요 여행지로 이동하기 편리한 호텔",
+    "price_per_night": 90000,
+    "capacity": 2,
+    "rating": null,
+    "image_url": "/static/img/accommodation/정선/트라움벨리 호텔/images (1).jpg"
+  },
+  {
+    "destination_name": "정선",
+    "name": "하이원 리조트",
+    "address": "강원특별자치도 정선군",
+    "description": "정선 여행에서 여유롭게 쉬기 좋은 리조트형 숙소",
+    "price_per_night": 150000,
+    "capacity": 4,
+    "rating": null,
+    "image_url": "/static/img/accommodation/정선/하이원 리조트/images (1).jpg"
+  },
+  {
+    "destination_name": "정선",
+    "name": "아우라지글램핑",
+    "address": "강원특별자치도 정선군",
+    "description": "정선의 자연을 가까이에서 즐기는 캠핑형 숙소",
+    "price_per_night": 140000,
+    "capacity": 4,
+    "rating": null,
+    "image_url": "/static/img/accommodation/정선/아우라지글램핑/images (1).jpg"
+  },
+  {
+    "destination_name": "제천",
+    "name": "제천 하운드 호텔",
+    "address": "충청북도 제천시",
+    "description": "제천의 주요 여행지로 이동하기 편리한 호텔",
+    "price_per_night": 90000,
+    "capacity": 2,
+    "rating": null,
+    "image_url": "/static/img/accommodation/제천/제천 하운드 호텔/1.jpg"
+  },
+  {
+    "destination_name": "단양",
+    "name": "르블랑펜션",
+    "address": "충청북도 단양군",
+    "description": "단양에서 편안하게 머무르기 좋은 숙소",
+    "price_per_night": 110000,
+    "capacity": 4,
+    "rating": null,
+    "image_url": "/static/img/accommodation/단양/르블랑펜션/1.jpg"
+  },
+  {
+    "destination_name": "단양",
+    "name": "단양글램핑&펜션",
+    "address": "충청북도 단양군",
+    "description": "단양의 자연을 가까이에서 즐기는 캠핑형 숙소",
+    "price_per_night": 140000,
+    "capacity": 4,
+    "rating": null,
+    "image_url": "/static/img/accommodation/단양/단양글램핑&펜션/6789ae3a49cbd0.34431162.jpg"
+  },
+  {
+    "destination_name": "충주",
+    "name": "서유숙펜션",
+    "address": "충청북도 충주시",
+    "description": "충주에서 편안하게 머무르기 좋은 숙소",
+    "price_per_night": 110000,
+    "capacity": 4,
+    "rating": null,
+    "image_url": "/static/img/accommodation/충주/서유숙펜션/1.jpg"
+  },
+  {
+    "destination_name": "태안",
+    "name": "칸타빌레펜션",
+    "address": "충청남도 태안군",
+    "description": "태안에서 편안하게 머무르기 좋은 숙소",
+    "price_per_night": 110000,
+    "capacity": 4,
+    "rating": null,
+    "image_url": "/static/img/accommodation/태안/칸타빌레펜션/1.jpg"
+  },
+  {
+    "destination_name": "보령",
+    "name": "대천하루펜션",
+    "address": "충청남도 보령시",
+    "description": "보령에서 편안하게 머무르기 좋은 숙소",
+    "price_per_night": 110000,
+    "capacity": 4,
+    "rating": null,
+    "image_url": "/static/img/accommodation/보령/대천하루펜션/images (1).jpg"
+  },
+  {
+    "destination_name": "보령",
+    "name": "여기도글램핑펜션식당",
+    "address": "충청남도 보령시",
+    "description": "보령의 자연을 가까이에서 즐기는 캠핑형 숙소",
+    "price_per_night": 140000,
+    "capacity": 4,
+    "rating": null,
+    "image_url": "/static/img/accommodation/보령/여기도글램핑펜션식당/images (1).jpg"
+  },
+  {
+    "destination_name": "포항",
+    "name": "웨이브글램핑",
+    "address": "경상북도 포항시",
+    "description": "포항의 자연을 가까이에서 즐기는 캠핑형 숙소",
+    "price_per_night": 140000,
+    "capacity": 4,
+    "rating": null,
+    "image_url": "/static/img/accommodation/포항/웨이브글램핑/1.jpg"
+  },
+  {
+    "destination_name": "청송",
+    "name": "청송 주노글램핑 청송점",
+    "address": "경상북도 청송군",
+    "description": "청송의 자연을 가까이에서 즐기는 캠핑형 숙소",
+    "price_per_night": 140000,
+    "capacity": 4,
+    "rating": null,
+    "image_url": "/static/img/accommodation/청송/청송 주노글램핑 청송점/images (1).jpg"
+  },
+  {
+    "destination_name": "거제",
+    "name": "쉼표 글램핑&캠핑",
+    "address": "경상남도 거제시",
+    "description": "거제의 자연을 가까이에서 즐기는 캠핑형 숙소",
+    "price_per_night": 140000,
+    "capacity": 4,
+    "rating": null,
+    "image_url": "/static/img/accommodation/거제/쉼표 글램핑&캠핑/images (1).jpg"
+  },
+  {
+    "destination_name": "통영",
+    "name": "에이원글램핑",
+    "address": "경상남도 통영시",
+    "description": "통영의 자연을 가까이에서 즐기는 캠핑형 숙소",
+    "price_per_night": 140000,
+    "capacity": 4,
+    "rating": null,
+    "image_url": "/static/img/accommodation/통영/에이원글램핑/1.jpg"
+  },
+  {
+    "destination_name": "남해",
+    "name": "힐링아일랜드 글램핑캠핑장",
+    "address": "경상남도 남해군",
+    "description": "남해의 자연을 가까이에서 즐기는 캠핑형 숙소",
+    "price_per_night": 140000,
+    "capacity": 4,
+    "rating": null,
+    "image_url": "/static/img/accommodation/남해/힐링아일랜드 글램핑캠핑장/1.jpg"
+  },
+  {
+    "destination_name": "군산",
+    "name": "버드글램핑",
+    "address": "전북특별자치도 군산시",
+    "description": "군산의 자연을 가까이에서 즐기는 캠핑형 숙소",
+    "price_per_night": 140000,
+    "capacity": 4,
+    "rating": null,
+    "image_url": "/static/img/accommodation/군산/버드글램핑/images (1).jpg"
+  },
+  {
+    "destination_name": "여수",
+    "name": "하이클래스 153펜션",
+    "address": "전라남도 여수시 돌산읍 무술목길 116",
+    "description": "여수예술랜드 인근에서 바다 전망과 야외 인피니티풀을 즐길 수 있는 돌산 풀빌라 펜션",
+    "price_per_night": 110000,
+    "capacity": 5,
+    "rating": null,
+    "image_url": "/static/img/accommodation/여수/하이클래스 153펜션/images (1).jpg"
+  },
+  {
+    "destination_name": "여수",
+    "name": "신라스테이 여수",
+    "address": "전라남도 여수시 수정3길 8",
+    "description": "여수엑스포 해양공원과 오동도에 인접해 바다 여행과 도심 관광을 함께 즐기기 좋은 호텔",
+    "price_per_night": 110000,
+    "capacity": 2,
+    "rating": null,
+    "image_url": "/static/img/accommodation/여수/신라스테이 여수/images (1).jpg"
+  },
+  {
+    "destination_name": "여수",
+    "name": "비고리조트",
+    "address": "전라남도 여수시 돌산읍 돌산로 3155-1",
+    "description": "돌산 해안의 탁 트인 바다 전망과 객실형 풀, 인피니티풀을 갖춘 오션뷰 리조트",
+    "price_per_night": 150000,
+    "capacity": 4,
+    "rating": null,
+    "image_url": "/static/img/accommodation/여수/비고리조트/images (1).jpg"
+  },
+  {
+    "destination_name": "여수",
+    "name": "럭셔리글램핑 더스테이309",
+    "address": "전라남도 여수시 돌산읍 백초길 62",
+    "description": "여수 밤바다 전망과 개별 자쿠지, 전용 바비큐 공간을 갖춘 돌산의 오션뷰 글램핑장",
+    "price_per_night": 140000,
+    "capacity": 4,
+    "rating": null,
+    "image_url": "/static/img/accommodation/여수/럭셔리글램핑 더스테이309/images (1).jpg"
+  },
+  {
+    "destination_name": "신안",
+    "name": "나무늘보펜션",
+    "address": "전라남도 신안군",
+    "description": "신안에서 편안하게 머무르기 좋은 숙소",
+    "price_per_night": 110000,
+    "capacity": 4,
+    "rating": null,
+    "image_url": "/static/img/accommodation/신안/나무늘보펜션/1.webp"
+  },
+  {
+    "destination_name": "신안",
+    "name": "라마다프라자호텔자은도",
+    "address": "전라남도 신안군",
+    "description": "신안의 주요 여행지로 이동하기 편리한 호텔",
+    "price_per_night": 90000,
+    "capacity": 2,
+    "rating": null,
+    "image_url": "/static/img/accommodation/신안/라마다프라자호텔자은도/1.jpg"
+  },
+  {
+    "destination_name": "구례",
+    "name": "지리산풍경펜션",
+    "address": "전라남도 구례군",
+    "description": "구례에서 편안하게 머무르기 좋은 숙소",
+    "price_per_night": 110000,
+    "capacity": 4,
+    "rating": null,
+    "image_url": "/static/img/accommodation/구례/지리산풍경펜션/1.jpg"
+  },
+  {
+    "destination_name": "구례",
+    "name": "지리산가족호텔",
+    "address": "전라남도 구례군",
+    "description": "구례의 주요 여행지로 이동하기 편리한 호텔",
+    "price_per_night": 90000,
+    "capacity": 2,
+    "rating": null,
+    "image_url": "/static/img/accommodation/구례/지리산가족호텔/1.jpg"
+  },
+  {
+    "destination_name": "구례",
+    "name": "지리산 구례돌풀마루 펜션&글램핑",
+    "address": "전라남도 구례군",
+    "description": "구례의 자연을 가까이에서 즐기는 캠핑형 숙소",
+    "price_per_night": 140000,
+    "capacity": 4,
+    "rating": null,
+    "image_url": "/static/img/accommodation/구례/지리산 구례돌풀마루 펜션&글램핑/1.jpg"
+  },
+  {
+    "destination_name": "서귀포",
+    "name": "팜핑제주카라반",
+    "address": "제주특별자치도 서귀포시",
+    "description": "서귀포의 자연을 가까이에서 즐기는 캠핑형 숙소",
+    "price_per_night": 140000,
+    "capacity": 4,
+    "rating": null,
+    "image_url": "/static/img/accommodation/서귀포/팜핑제주카라반/images (1).jpg"
+  },
+  {
+    "destination_name": "양주",
+    "name": "양주 스타호텔",
+    "address": "경기도 양주시",
+    "description": "양주의 주요 여행지로 이동하기 편리한 호텔",
+    "price_per_night": 90000,
+    "capacity": 2,
+    "rating": null,
+    "image_url": "/static/img/accommodation/양주/양주 스타호텔/62c2cd2e5e9092.23263518.jpg"
+  },
+  {
+    "destination_name": "양주",
+    "name": "양주스톤밸리캠핑장",
+    "address": "경기도 양주시",
+    "description": "양주의 자연을 가까이에서 즐기는 캠핑형 숙소",
+    "price_per_night": 140000,
+    "capacity": 4,
+    "rating": null,
+    "image_url": "/static/img/accommodation/양주/양주스톤밸리캠핑장/964093e0-a483-4b5c-83f0-9fb84ab9dff2.jpg"
+  },
+  {
+    "destination_name": "양주",
+    "name": "포근마루 캠핑장",
+    "address": "경기도 양주시",
+    "description": "양주의 자연을 가까이에서 즐기는 캠핑형 숙소",
+    "price_per_night": 140000,
+    "capacity": 4,
+    "rating": null,
+    "image_url": "/static/img/accommodation/양주/포근마루 캠핑장/full_1762703258116_f3r53f.jpg"
+  },
+  {
+    "destination_name": "양주",
+    "name": "양주 그레이캐슬펜션",
+    "address": "경기도 양주시",
+    "description": "양주에서 편안하게 머무르기 좋은 숙소",
+    "price_per_night": 110000,
+    "capacity": 4,
+    "rating": null,
+    "image_url": "/static/img/accommodation/양주/양주 그레이캐슬펜션/6790a17b224fd7.86461482.jpg"
+  },
+  {
+    "destination_name": "연천",
+    "name": "옴니버스캠핑장",
+    "address": "경기도 연천군",
+    "description": "연천의 자연을 가까이에서 즐기는 캠핑형 숙소",
+    "price_per_night": 140000,
+    "capacity": 4,
+    "rating": null,
+    "image_url": "/static/img/accommodation/연천/옴니버스캠핑장/images (1).jpg"
+  },
+  {
+    "destination_name": "연천",
+    "name": "연천 은대리 쉼나루 펜션",
+    "address": "경기도 연천군",
+    "description": "연천에서 편안하게 머무르기 좋은 숙소",
+    "price_per_night": 110000,
+    "capacity": 4,
+    "rating": null,
+    "image_url": "/static/img/accommodation/연천/연천 은대리 쉼나루 펜션/678ef9d96dbad4.06631397.jpg"
+  },
+  {
+    "destination_name": "연천",
+    "name": "연천 쉬는시간펜션",
+    "address": "경기도 연천군",
+    "description": "연천에서 편안하게 머무르기 좋은 숙소",
+    "price_per_night": 110000,
+    "capacity": 4,
+    "rating": null,
+    "image_url": "/static/img/accommodation/연천/연천 쉬는시간펜션/595615241.jpg"
+  },
+  {
+    "destination_name": "연천",
+    "name": "조선 로얄 패밀리 호텔",
+    "address": "경기도 연천군",
+    "description": "연천의 주요 여행지로 이동하기 편리한 호텔",
+    "price_per_night": 90000,
+    "capacity": 2,
+    "rating": null,
+    "image_url": "/static/img/accommodation/연천/조선 로얄 패밀리 호텔/1mc0h12000fn3elb53D95_W_600_0_R5.webp"
+  },
+  {
+    "destination_name": "이천",
+    "name": "이천 인트라다 호텔",
+    "address": "경기도 이천시",
+    "description": "이천의 주요 여행지로 이동하기 편리한 호텔",
+    "price_per_night": 90000,
+    "capacity": 2,
+    "rating": null,
+    "image_url": "/static/img/accommodation/이천/이천 인트라다 호텔/unnamed (1).jpg"
+  },
+  {
+    "destination_name": "이천",
+    "name": "동하펜션",
+    "address": "경기도 이천시",
+    "description": "이천에서 편안하게 머무르기 좋은 숙소",
+    "price_per_night": 110000,
+    "capacity": 4,
+    "rating": null,
+    "image_url": "/static/img/accommodation/이천/동하펜션/69b8e9f2c3e249.50367772.jpeg"
+  },
+  {
+    "destination_name": "춘천",
+    "name": "춘천 에스턴호텔",
+    "address": "강원특별자치도 춘천시",
+    "description": "춘천의 주요 여행지로 이동하기 편리한 호텔",
+    "price_per_night": 90000,
+    "capacity": 2,
+    "rating": null,
+    "image_url": "/static/img/accommodation/춘천/춘천 에스턴호텔/images (1).jpg"
+  },
+  {
+    "destination_name": "춘천",
+    "name": "원코리아리조트",
+    "address": "강원특별자치도 춘천시",
+    "description": "춘천 여행에서 여유롭게 쉬기 좋은 리조트형 숙소",
+    "price_per_night": 150000,
+    "capacity": 4,
+    "rating": null,
+    "image_url": "/static/img/accommodation/춘천/원코리아리조트/6606dfc2aa6eb1.74974220.jpg"
+  },
+  {
+    "destination_name": "춘천",
+    "name": "춘천숲펜션",
+    "address": "강원특별자치도 춘천시",
+    "description": "춘천에서 편안하게 머무르기 좋은 숙소",
+    "price_per_night": 110000,
+    "capacity": 4,
+    "rating": null,
+    "image_url": "/static/img/accommodation/춘천/춘천숲펜션/images (1).jpg"
+  },
+  {
+    "destination_name": "원주",
+    "name": "원주 센트럴 호텔",
+    "address": "강원특별자치도 원주시",
+    "description": "원주의 주요 여행지로 이동하기 편리한 호텔",
+    "price_per_night": 90000,
+    "capacity": 2,
+    "rating": null,
+    "image_url": "/static/img/accommodation/원주/원주 센트럴 호텔/images (1).jpg"
+  },
+  {
+    "destination_name": "원주",
+    "name": "원주 에코캠프",
+    "address": "강원특별자치도 원주시",
+    "description": "원주의 자연을 가까이에서 즐기는 캠핑형 숙소",
+    "price_per_night": 140000,
+    "capacity": 4,
+    "rating": null,
+    "image_url": "/static/img/accommodation/원주/원주 에코캠프/images (1).jpg"
+  },
+  {
+    "destination_name": "원주",
+    "name": "감악산 캠핑숲",
+    "address": "강원특별자치도 원주시",
+    "description": "원주의 자연을 가까이에서 즐기는 캠핑형 숙소",
+    "price_per_night": 140000,
+    "capacity": 4,
+    "rating": null,
+    "image_url": "/static/img/accommodation/원주/감악산 캠핑숲/images (1).jpg"
+  },
+  {
+    "destination_name": "철원",
+    "name": "철원 솔향기 펜션",
+    "address": "강원특별자치도 철원군",
+    "description": "철원에서 편안하게 머무르기 좋은 숙소",
+    "price_per_night": 110000,
+    "capacity": 4,
+    "rating": null,
+    "image_url": "/static/img/accommodation/철원/철원 솔향기 펜션/unnamed (1).jpg"
+  },
+  {
+    "destination_name": "청주",
+    "name": "제이원 호텔 청주",
+    "address": "충청북도 청주시",
+    "description": "청주의 주요 여행지로 이동하기 편리한 호텔",
+    "price_per_night": 90000,
+    "capacity": 2,
+    "rating": null,
+    "image_url": "/static/img/accommodation/청주/제이원 호텔 청주/635947a8875de6.59824459.png"
+  },
+  {
+    "destination_name": "청주",
+    "name": "마린블루펜션",
+    "address": "충청북도 청주시",
+    "description": "청주에서 편안하게 머무르기 좋은 숙소",
+    "price_per_night": 110000,
+    "capacity": 4,
+    "rating": null,
+    "image_url": "/static/img/accommodation/청주/마린블루펜션/68087aa45fb560.97314000.jpg"
+  },
+  {
+    "destination_name": "괴산",
+    "name": "자연애캠핑장",
+    "address": "충청북도 괴산군",
+    "description": "괴산의 자연을 가까이에서 즐기는 캠핑형 숙소",
+    "price_per_night": 140000,
+    "capacity": 4,
+    "rating": null,
+    "image_url": "/static/img/accommodation/괴산/자연애캠핑장/images (1).jpg"
+  },
+  {
+    "destination_name": "괴산",
+    "name": "농소막펜션&카페",
+    "address": "충청북도 괴산군",
+    "description": "괴산에서 편안하게 머무르기 좋은 숙소",
+    "price_per_night": 110000,
+    "capacity": 4,
+    "rating": null,
+    "image_url": "/static/img/accommodation/괴산/농소막펜션&카페/6a96462467a4f2.14373873 (1).jpg"
+  },
+  {
+    "destination_name": "괴산",
+    "name": "도명산캠핑장",
+    "address": "충청북도 괴산군",
+    "description": "괴산의 자연을 가까이에서 즐기는 캠핑형 숙소",
+    "price_per_night": 140000,
+    "capacity": 4,
+    "rating": null,
+    "image_url": "/static/img/accommodation/괴산/도명산캠핑장/7a5c78b3-e74c-4e0d-a7b6-b04b696f53fc.jpg"
+  },
+  {
+    "destination_name": "괴산",
+    "name": "괴산 그랑둘이 펜션",
+    "address": "충청북도 괴산군",
+    "description": "괴산에서 편안하게 머무르기 좋은 숙소",
+    "price_per_night": 110000,
+    "capacity": 4,
+    "rating": null,
+    "image_url": "/static/img/accommodation/괴산/괴산 그랑둘이 펜션/6676b3a2612566.20460267.jpg"
+  },
+  {
+    "destination_name": "영동",
+    "name": "영동 스테이인터뷰",
+    "address": "충청북도 영동군",
+    "description": "영동에서 편안하게 머무르기 좋은 숙소",
+    "price_per_night": 110000,
+    "capacity": 4,
+    "rating": null,
+    "image_url": "/static/img/accommodation/영동/영동 스테이인터뷰/686b80c3cccd23.15269628.jpg"
+  },
+  {
+    "destination_name": "영동",
+    "name": "물한산장펜션",
+    "address": "충청북도 영동군",
+    "description": "영동에서 편안하게 머무르기 좋은 숙소",
+    "price_per_night": 110000,
+    "capacity": 4,
+    "rating": null,
+    "image_url": "/static/img/accommodation/영동/물한산장펜션/68040b2ded9596.29071405.jpg"
+  },
+  {
+    "destination_name": "영동",
+    "name": "윤슬펜션",
+    "address": "충청북도 영동군",
+    "description": "영동에서 편안하게 머무르기 좋은 숙소",
+    "price_per_night": 110000,
+    "capacity": 4,
+    "rating": null,
+    "image_url": "/static/img/accommodation/영동/윤슬펜션/67a35fae9eaa30.70814184.jpg"
+  },
+  {
+    "destination_name": "공주",
+    "name": "스테이 인터뷰 공주",
+    "address": "충청남도 공주시",
+    "description": "공주에서 편안하게 머무르기 좋은 숙소",
+    "price_per_night": 110000,
+    "capacity": 4,
+    "rating": null,
+    "image_url": "/static/img/accommodation/공주/스테이 인터뷰 공주/images (1).jpg"
+  },
+  {
+    "destination_name": "공주",
+    "name": "공주호텔어반티",
+    "address": "충청남도 공주시 번영1로 13",
+    "description": "공주종합버스터미널과 금강신관공원에서 가까운 도심형 호텔",
+    "price_per_night": 70000,
+    "capacity": 2,
+    "rating": null,
+    "image_url": "/static/img/accommodation/공주/공주호텔어반티/5b809eedc0ab84f99d3a04de423cfff5.webp"
+  },
+  {
+    "destination_name": "서산",
+    "name": "베니키아호텔 서산",
+    "address": "충청남도 서산시",
+    "description": "서산의 주요 여행지로 이동하기 편리한 호텔",
+    "price_per_night": 90000,
+    "capacity": 2,
+    "rating": null,
+    "image_url": "/static/img/accommodation/서산/베니키아호텔 서산/655b67e4b5b219.05490688.jpg"
+  },
+  {
+    "destination_name": "서천",
+    "name": "쌍도하우스펜션",
+    "address": "충청남도 서천군",
+    "description": "서천에서 편안하게 머무르기 좋은 숙소",
+    "price_per_night": 110000,
+    "capacity": 4,
+    "rating": null,
+    "image_url": "/static/img/accommodation/서천/쌍도하우스펜션/6805ece8cb3ec6.98855345.png"
+  },
+  {
+    "destination_name": "전주",
+    "name": "전주 시그니처 호텔",
+    "address": "전북특별자치도 전주시",
+    "description": "전주의 주요 여행지로 이동하기 편리한 호텔",
+    "price_per_night": 90000,
+    "capacity": 2,
+    "rating": null,
+    "image_url": "/static/img/accommodation/전주/전주 시그니처 호텔/images (1).jpg"
+  },
+  {
+    "destination_name": "전주",
+    "name": "라한호텔 전주",
+    "address": "전북특별자치도 전주시",
+    "description": "전주의 주요 여행지로 이동하기 편리한 호텔",
+    "price_per_night": 90000,
+    "capacity": 2,
+    "rating": null,
+    "image_url": "/static/img/accommodation/전주/라한호텔 전주/images (1).jpg"
+  },
+  {
+    "destination_name": "전주",
+    "name": "전주 한옥 토박이 펜션",
+    "address": "전북특별자치도 전주시",
+    "description": "전주에서 편안하게 머무르기 좋은 숙소",
+    "price_per_night": 110000,
+    "capacity": 4,
+    "rating": null,
+    "image_url": "/static/img/accommodation/전주/전주 한옥 토박이 펜션/images (1).jpg"
+  },
+  {
+    "destination_name": "전주",
+    "name": "전주 나무그늘 펜션",
+    "address": "전북특별자치도 전주시",
+    "description": "전주에서 편안하게 머무르기 좋은 숙소",
+    "price_per_night": 110000,
+    "capacity": 4,
+    "rating": null,
+    "image_url": "/static/img/accommodation/전주/전주 나무그늘 펜션/images (1).jpg"
+  },
+  {
+    "destination_name": "익산",
+    "name": "익산 하늘숲 펜션",
+    "address": "전북특별자치도 익산시",
+    "description": "익산에서 편안하게 머무르기 좋은 숙소",
+    "price_per_night": 110000,
+    "capacity": 4,
+    "rating": null,
+    "image_url": "/static/img/accommodation/익산/익산 하늘숲 펜션/images (1).jpg"
+  },
+  {
+    "destination_name": "익산",
+    "name": "웨스턴라이프 호텔",
+    "address": "전북특별자치도 익산시",
+    "description": "익산의 주요 여행지로 이동하기 편리한 호텔",
+    "price_per_night": 90000,
+    "capacity": 2,
+    "rating": null,
+    "image_url": "/static/img/accommodation/익산/웨스턴라이프 호텔/images (1).jpg"
+  },
+  {
+    "destination_name": "익산",
+    "name": "탑클라우드호텔 익산",
+    "address": "전북특별자치도 익산시",
+    "description": "익산의 주요 여행지로 이동하기 편리한 호텔",
+    "price_per_night": 90000,
+    "capacity": 2,
+    "rating": null,
+    "image_url": "/static/img/accommodation/익산/탑클라우드호텔 익산/images (1).jpg"
+  },
+  {
+    "destination_name": "익산",
+    "name": "익산 봄나루 호텔",
+    "address": "전북특별자치도 익산시",
+    "description": "익산의 주요 여행지로 이동하기 편리한 호텔",
+    "price_per_night": 90000,
+    "capacity": 2,
+    "rating": null,
+    "image_url": "/static/img/accommodation/익산/익산 봄나루 호텔/images (1).jpg"
+  },
+  {
+    "destination_name": "고창",
+    "name": "웰파크시티 힐링카운티",
+    "address": "전북특별자치도 고창군",
+    "description": "고창에서 편안하게 머무르기 좋은 숙소",
+    "price_per_night": 110000,
+    "capacity": 4,
+    "rating": null,
+    "image_url": "/static/img/accommodation/고창/웰파크시티 힐링카운티/images (1).jpg"
+  },
+  {
+    "destination_name": "고창",
+    "name": "고창 람사르펜션",
+    "address": "전북특별자치도 고창군",
+    "description": "고창에서 편안하게 머무르기 좋은 숙소",
+    "price_per_night": 110000,
+    "capacity": 4,
+    "rating": null,
+    "image_url": "/static/img/accommodation/고창/고창 람사르펜션/images (1).jpg"
+  },
+  {
+    "destination_name": "고창",
+    "name": "고창 웰파크 호텔",
+    "address": "전북특별자치도 고창군",
+    "description": "고창의 주요 여행지로 이동하기 편리한 호텔",
+    "price_per_night": 90000,
+    "capacity": 2,
+    "rating": null,
+    "image_url": "/static/img/accommodation/고창/고창 웰파크 호텔/images (1).jpg"
+  },
+  {
+    "destination_name": "순천",
+    "name": "순천만 에코촌 유스호스텔",
+    "address": "전라남도 순천시",
+    "description": "순천에서 편안하게 머무르기 좋은 숙소",
+    "price_per_night": 110000,
+    "capacity": 4,
+    "rating": null,
+    "image_url": "/static/img/accommodation/순천/순천만 에코촌 유스호스텔/1.jpg"
+  },
+  {
+    "destination_name": "순천",
+    "name": "낙안읍성 초가민박",
+    "address": "전라남도 순천시",
+    "description": "순천에서 편안하게 머무르기 좋은 숙소",
+    "price_per_night": 110000,
+    "capacity": 4,
+    "rating": null,
+    "image_url": "/static/img/accommodation/순천/낙안읍성 초가민박/1.jpg"
+  },
+  {
+    "destination_name": "순천",
+    "name": "순천 디토 펜션",
+    "address": "전라남도 순천시",
+    "description": "순천에서 편안하게 머무르기 좋은 숙소",
+    "price_per_night": 110000,
+    "capacity": 4,
+    "rating": null,
+    "image_url": null
+  },
+  {
+    "destination_name": "목포",
+    "name": "천사섬 글램핑",
+    "address": "전라남도 목포시",
+    "description": "목포의 자연을 가까이에서 즐기는 캠핑형 숙소",
+    "price_per_night": 140000,
+    "capacity": 4,
+    "rating": null,
+    "image_url": "/static/img/accommodation/목포/천사섬 글램핑/1.jpg"
+  },
+  {
+    "destination_name": "목포",
+    "name": "한옥스테이 춘화당",
+    "address": "전라남도 목포시",
+    "description": "목포에서 편안하게 머무르기 좋은 숙소",
+    "price_per_night": 110000,
+    "capacity": 4,
+    "rating": null,
+    "image_url": "/static/img/accommodation/목포/한옥스테이 춘화당/1.png"
+  },
+  {
+    "destination_name": "목포",
+    "name": "외달도 한옥민박",
+    "address": "전라남도 목포시",
+    "description": "목포에서 편안하게 머무르기 좋은 숙소",
+    "price_per_night": 110000,
+    "capacity": 4,
+    "rating": null,
+    "image_url": "/static/img/accommodation/목포/외달도 한옥민박/1.jpg"
+  },
+  {
+    "destination_name": "목포",
+    "name": "호텔현대 바이 라한 목포",
+    "address": "전라남도 목포시",
+    "description": "목포의 주요 여행지로 이동하기 편리한 호텔",
+    "price_per_night": 90000,
+    "capacity": 2,
+    "rating": null,
+    "image_url": "/static/img/accommodation/목포/호텔현대 바이 라한 목포/1.jpg"
+  },
+  {
+    "destination_name": "보성",
+    "name": "제암산자연휴양림",
+    "address": "전라남도 보성군",
+    "description": "보성에서 편안하게 머무르기 좋은 숙소",
+    "price_per_night": 110000,
+    "capacity": 4,
+    "rating": null,
+    "image_url": "/static/img/accommodation/보성/제암산자연휴양림/1.jpg"
+  },
+  {
+    "destination_name": "보성",
+    "name": "해오름펜션",
+    "address": "전라남도 보성군 회천면",
+    "description": "보성 율포 해변 여행에서 편안하게 머물기 좋은 펜션",
+    "price_per_night": 110000,
+    "capacity": 4,
+    "rating": null,
+    "image_url": "/static/img/accommodation/보성/해오름펜션/1.jpg"
+  },
+  {
+    "destination_name": "보성",
+    "name": "벌교 보성여관",
+    "address": "전라남도 보성군",
+    "description": "보성의 주요 여행지로 이동하기 편리한 호텔",
+    "price_per_night": 90000,
+    "capacity": 2,
+    "rating": null,
+    "image_url": "/static/img/accommodation/보성/벌교 보성여관/1.jpg"
+  },
+  {
+    "destination_name": "보성",
+    "name": "보성다비치콘도",
+    "address": "전라남도 보성군 회천면 충의로 36",
+    "description": "율포해수욕장 인근에서 바다 여행과 휴식을 함께 즐기기 좋은 콘도",
+    "price_per_night": 90000,
+    "capacity": 4,
+    "rating": null,
+    "image_url": "/static/img/accommodation/보성/보성다비치콘도/1.jpg"
+  },
+  {
+    "destination_name": "영주",
+    "name": "영주 민트하우스",
+    "address": "경상북도 영주시",
+    "description": "영주에서 편안하게 머무르기 좋은 숙소",
+    "price_per_night": 110000,
+    "capacity": 4,
+    "rating": null,
+    "image_url": "/static/img/accommodation/영주/영주 민트하우스/1.jpg"
+  },
+  {
+    "destination_name": "영주",
+    "name": "무섬마을 마당넓은집",
+    "address": "경상북도 영주시",
+    "description": "영주에서 편안하게 머무르기 좋은 숙소",
+    "price_per_night": 110000,
+    "capacity": 4,
+    "rating": null,
+    "image_url": "/static/img/accommodation/영주/무섬마을 마당넓은집/1.jpg"
+  },
+  {
+    "destination_name": "영주",
+    "name": "소백산풍기온천리조트",
+    "address": "경상북도 영주시",
+    "description": "영주 여행에서 여유롭게 쉬기 좋은 리조트형 숙소",
+    "price_per_night": 150000,
+    "capacity": 4,
+    "rating": null,
+    "image_url": "/static/img/accommodation/영주/소백산풍기온천리조트/1.jpg"
+  },
+  {
+    "destination_name": "울진",
+    "name": "소소온담",
+    "address": "경상북도 울진군",
+    "description": "울진에서 편안하게 머무르기 좋은 숙소",
+    "price_per_night": 110000,
+    "capacity": 4,
+    "rating": null,
+    "image_url": "/static/img/accommodation/울진/소소온담/1.jpg"
+  },
+  {
+    "destination_name": "울진",
+    "name": "덕구온천호텔 & 콘도",
+    "address": "경상북도 울진군",
+    "description": "울진의 주요 여행지로 이동하기 편리한 호텔",
+    "price_per_night": 90000,
+    "capacity": 2,
+    "rating": null,
+    "image_url": "/static/img/accommodation/울진/덕구온천호텔 & 콘도/1.jpg"
+  },
+  {
+    "destination_name": "울진",
+    "name": "금강송 에코리움",
+    "address": "경상북도 울진군",
+    "description": "울진에서 편안하게 머무르기 좋은 숙소",
+    "price_per_night": 110000,
+    "capacity": 4,
+    "rating": null,
+    "image_url": "/static/img/accommodation/울진/금강송 에코리움/1.jpg"
+  },
+  {
+    "destination_name": "울릉",
+    "name": "스테이너와",
+    "address": "경상북도 울릉군",
+    "description": "울릉에서 편안하게 머무르기 좋은 숙소",
+    "price_per_night": 110000,
+    "capacity": 4,
+    "rating": null,
+    "image_url": "/static/img/accommodation/울릉/스테이너와/1.jpg"
+  },
+  {
+    "destination_name": "울릉",
+    "name": "울릉 라페루즈 리조트",
+    "address": "경상북도 울릉군",
+    "description": "울릉 여행에서 여유롭게 쉬기 좋은 리조트형 숙소",
+    "price_per_night": 150000,
+    "capacity": 4,
+    "rating": null,
+    "image_url": "/static/img/accommodation/울릉/울릉 라페루즈 리조트/1.jpg"
+  },
+  {
+    "destination_name": "울릉",
+    "name": "코스모스 울릉도",
+    "address": "경상북도 울릉군",
+    "description": "울릉에서 편안하게 머무르기 좋은 숙소",
+    "price_per_night": 110000,
+    "capacity": 4,
+    "rating": null,
+    "image_url": "/static/img/accommodation/울릉/코스모스 울릉도/1.jpg"
+  },
+  {
+    "destination_name": "진주",
+    "name": "그랜드파파하우스",
+    "address": "경상남도 진주시",
+    "description": "진주에서 편안하게 머무르기 좋은 숙소",
+    "price_per_night": 110000,
+    "capacity": 4,
+    "rating": null,
+    "image_url": null
+  },
+  {
+    "destination_name": "진주",
+    "name": "아시아레이크사이드호텔",
+    "address": "경상남도 진주시",
+    "description": "진주의 주요 여행지로 이동하기 편리한 호텔",
+    "price_per_night": 90000,
+    "capacity": 2,
+    "rating": null,
+    "image_url": "/static/img/accommodation/진주/아시아레이크사이드호텔/1.jpg"
+  },
+  {
+    "destination_name": "진주",
+    "name": "골든튤립호텔 남강",
+    "address": "경상남도 진주시",
+    "description": "진주의 주요 여행지로 이동하기 편리한 호텔",
+    "price_per_night": 90000,
+    "capacity": 2,
+    "rating": null,
+    "image_url": "/static/img/accommodation/진주/골든튤립호텔 남강/1.jpg"
+  },
+  {
+    "destination_name": "진주",
+    "name": "호텔오름",
+    "address": "경상남도 진주시 판문로 64-9",
+    "description": "진양호 인근에서 조용하고 편안하게 머물기 좋은 도심형 호텔",
+    "price_per_night": 75000,
+    "capacity": 2,
+    "rating": null,
+    "image_url": "/static/img/accommodation/진주/호텔오름/1.png"
+  },
+  {
+    "destination_name": "밀양",
+    "name": "별이랑달이랑 글램핑",
+    "address": "경상남도 밀양시",
+    "description": "밀양의 자연을 가까이에서 즐기는 캠핑형 숙소",
+    "price_per_night": 140000,
+    "capacity": 4,
+    "rating": null,
+    "image_url": "/static/img/accommodation/밀양/별이랑달이랑 글램핑/1.jpg"
+  },
+  {
+    "destination_name": "밀양",
+    "name": "밀양로그",
+    "address": "경상남도 밀양시",
+    "description": "밀양에서 편안하게 머무르기 좋은 숙소",
+    "price_per_night": 110000,
+    "capacity": 4,
+    "rating": null,
+    "image_url": "/static/img/accommodation/밀양/밀양로그/1.jpg"
+  },
+  {
+    "destination_name": "밀양",
+    "name": "진스테이",
+    "address": "경상남도 밀양시",
+    "description": "밀양에서 편안하게 머무르기 좋은 숙소",
+    "price_per_night": 110000,
+    "capacity": 4,
+    "rating": null,
+    "image_url": "/static/img/accommodation/밀양/진스테이/1.jpg"
+  },
+  {
+    "destination_name": "밀양",
+    "name": "호텔아리나",
+    "address": "경상남도 밀양시",
+    "description": "밀양의 주요 여행지로 이동하기 편리한 호텔",
+    "price_per_night": 90000,
+    "capacity": 2,
+    "rating": null,
+    "image_url": "/static/img/accommodation/밀양/호텔아리나/1.png"
+  },
+  {
+    "destination_name": "산청",
+    "name": "월명 글램핑",
+    "address": "경상남도 산청군 산청읍 웅석봉로285번길 80-20",
+    "description": "웅석봉 자연 속에서 바베큐와 휴식을 즐길 수 있는 글램핑 숙소",
+    "price_per_night": 200000,
+    "capacity": 4,
+    "rating": null,
+    "image_url": "/static/img/accommodation/산청/월명 글램핑/1.jpg"
+  },
+  {
+    "destination_name": "산청",
+    "name": "지리산아침 펜션",
+    "address": "경상남도 산청군",
+    "description": "산청에서 편안하게 머무르기 좋은 숙소",
+    "price_per_night": 110000,
+    "capacity": 4,
+    "rating": null,
+    "image_url": "/static/img/accommodation/산청/지리산아침 펜션/images (1).jpg"
+  },
+  {
+    "destination_name": "산청",
+    "name": "동의본가",
+    "address": "경상남도 산청군 금서면 동의보감로555번길 45-6",
+    "description": "동의보감촌에서 한옥 숙박과 한방 치유 체험을 함께 즐길 수 있는 한옥스테이",
+    "price_per_night": 120000,
+    "capacity": 4,
+    "rating": null,
+    "image_url": "/static/img/accommodation/산청/동의본가/1.jpg"
+  },
+  {
+    "destination_name": "산청",
+    "name": "휴롬산청빌리지",
+    "address": "경상남도 산청군",
+    "description": "산청 여행에서 여유롭게 쉬기 좋은 리조트형 숙소",
+    "price_per_night": 150000,
+    "capacity": 4,
+    "rating": null,
+    "image_url": "/static/img/accommodation/산청/휴롬산청빌리지/images (1).jpg"
+  },
+  {
+    "destination_name": "제주 한림",
+    "name": "광이멀스테이",
+    "address": "제주특별자치도 제주시 한림읍",
+    "description": "제주 한림에서 편안하게 머무르기 좋은 숙소",
+    "price_per_night": 110000,
+    "capacity": 4,
+    "rating": null,
+    "image_url": "/static/img/accommodation/제주 한림/광이멀스테이/1.png"
+  },
+  {
+    "destination_name": "제주 한림",
+    "name": "담스파빌",
+    "address": "제주특별자치도 제주시 한림읍",
+    "description": "제주 한림에서 편안하게 머무르기 좋은 숙소",
+    "price_per_night": 110000,
+    "capacity": 4,
+    "rating": null,
+    "image_url": "/static/img/accommodation/제주 한림/담스파빌/1.jpg"
+  },
+  {
+    "destination_name": "제주 한림",
+    "name": "아루미호텔 협재",
+    "address": "제주특별자치도 제주시 한림읍 한림로 545",
+    "description": "협재해수욕장과 한림공원으로 이동하기 편리한 한림 지역 호텔",
+    "price_per_night": 67000,
+    "capacity": 2,
+    "rating": null,
+    "image_url": "/static/img/accommodation/제주 한림/아루미호텔 협재/1.jpg"
+  },
+  {
+    "destination_name": "제주 한림",
+    "name": "한림리조트",
+    "address": "제주특별자치도 제주시 한림읍",
+    "description": "제주 한림 여행에서 여유롭게 쉬기 좋은 리조트형 숙소",
+    "price_per_night": 150000,
+    "capacity": 4,
+    "rating": null,
+    "image_url": "/static/img/accommodation/제주 한림/한림리조트/1.jpg"
+  },
+  {
+    "destination_name": "제주 구좌",
+    "name": "임진고택",
+    "address": "제주특별자치도 제주시 구좌읍",
+    "description": "제주 구좌에서 편안하게 머무르기 좋은 숙소",
+    "price_per_night": 110000,
+    "capacity": 4,
+    "rating": null,
+    "image_url": "/static/img/accommodation/제주 구좌/임진고택/1.jpg"
+  },
+  {
+    "destination_name": "제주 구좌",
+    "name": "루나마르",
+    "address": "제주특별자치도 제주시 구좌읍",
+    "description": "제주 구좌에서 편안하게 머무르기 좋은 숙소",
+    "price_per_night": 110000,
+    "capacity": 4,
+    "rating": null,
+    "image_url": "/static/img/accommodation/제주 구좌/루나마르/1.jpg"
+  },
+  {
+    "destination_name": "제주 구좌",
+    "name": "MJ리조트",
+    "address": "제주특별자치도 제주시 구좌읍",
+    "description": "제주 구좌 여행에서 여유롭게 쉬기 좋은 리조트형 숙소",
+    "price_per_night": 150000,
+    "capacity": 4,
+    "rating": null,
+    "image_url": "/static/img/accommodation/제주 구좌/MJ리조트/다운로드 (1).jpg"
+  },
+  {
+    "destination_name": "제주 구좌",
+    "name": "비자림의 아침",
+    "address": "제주특별자치도 제주시 구좌읍",
+    "description": "제주 구좌에서 편안하게 머무르기 좋은 숙소",
+    "price_per_night": 110000,
+    "capacity": 4,
+    "rating": null,
+    "image_url": "/static/img/accommodation/제주 구좌/비자림의 아침/1.jpg"
+  },
+  {
+    "destination_name": "제주 남원",
+    "name": "빌라노이 제주",
+    "address": "제주특별자치도 서귀포시 남원읍",
+    "description": "제주 남원에서 편안하게 머무르기 좋은 숙소",
+    "price_per_night": 110000,
+    "capacity": 4,
+    "rating": null,
+    "image_url": "/static/img/accommodation/제주 남원/빌라노이 제주/1.jpg"
+  },
+  {
+    "destination_name": "제주 남원",
+    "name": "금호제주리조트",
+    "address": "제주특별자치도 서귀포시 남원읍",
+    "description": "제주 남원 여행에서 여유롭게 쉬기 좋은 리조트형 숙소",
+    "price_per_night": 150000,
+    "capacity": 4,
+    "rating": null,
+    "image_url": "/static/img/accommodation/제주 남원/금호제주리조트/1.jpg"
+  },
+  {
+    "destination_name": "제주 남원",
+    "name": "코업시티호텔 하버뷰",
+    "address": "제주특별자치도 서귀포시 남원읍",
+    "description": "제주 남원의 주요 여행지로 이동하기 편리한 호텔",
+    "price_per_night": 90000,
+    "capacity": 2,
+    "rating": null,
+    "image_url": "/static/img/accommodation/제주 남원/코업시티호텔 하버뷰/1.png"
+  },
+  {
+    "destination_name": "화성",
+    "name": "라마다동탄",
+    "address": "경기도 화성시 동탄중심상가1길",
+    "description": "동탄 도심의 식당과 편의시설을 이용하기 좋은 비즈니스호텔",
+    "price_per_night": 90000,
+    "capacity": 2,
+    "rating": null,
+    "image_url": "/static/img/accommodation/화성/라마다동탄/0224y12000cahszww8F28_W_600_0_R5.webp"
+  },
+  {
+    "destination_name": "화성",
+    "name": "제부도브릭스테이",
+    "address": "경기도 화성시 서신면 제부리",
+    "description": "제부도 바다와 노을을 가까이에서 즐기기 좋은 감성 숙소",
+    "price_per_night": 110000,
+    "capacity": 4,
+    "rating": null,
+    "image_url": "/static/img/accommodation/화성/제부도브릭스테이/6804d8e682a522.48794600.jpg"
+  },
+  {
+    "destination_name": "화성",
+    "name": "프로방스율암",
+    "address": "경기도 화성시 팔탄면 율암리",
+    "description": "율암온천과 화성 서부권 여행에 편리한 휴식형 숙소",
+    "price_per_night": 80000,
+    "capacity": 2,
+    "rating": null,
+    "image_url": "/static/img/accommodation/화성/프로방스율암/agoda-4624173-70198017-929208.jpg"
+  },
+  {
+    "destination_name": "화성",
+    "name": "화성리프레시글램핑&카라반",
+    "address": "경기도 화성시 서신면 사곶리 9-18",
+    "description": "궁평항 인근에서 바비큐와 불멍을 즐길 수 있는 반려견 동반 글램핑·카라반 숙소",
+    "price_per_night": 140000,
+    "capacity": 4,
+    "rating": null,
+    "image_url": "/static/img/accommodation/화성/화성리프레시글램핑&카라반/0223s12000l73b82fF8E3_W_600_0_R5.webp"
+  },
+  {
+    "destination_name": "경주",
+    "name": "블루원 리조트",
+    "address": "경상북도 경주시 보불로 391",
+    "description": "보문관광단지 인근에서 워터파크와 넓은 콘도 객실을 함께 이용할 수 있는 가족형 리조트",
+    "price_per_night": 180000,
+    "capacity": 4,
+    "rating": null,
+    "image_url": "/static/img/accommodation/경주/블루원 리조트/bbc5482a8688410aa5d779823d407206.jpg"
+  },
+  {
+    "destination_name": "부산",
+    "name": "부산 폴마레펜션",
+    "address": "부산광역시 해운대구 송정중앙로6번길 86",
+    "description": "송정해수욕장 인근에서 오션뷰와 인피니티 수영장, 노천탕을 즐길 수 있는 펜션",
+    "price_per_night": 180000,
+    "capacity": 4,
+    "rating": null,
+    "image_url": "/static/img/accommodation/부산/부산 폴마레펜션/images (1).jpg"
+  },
+  {
+    "destination_name": "제주",
+    "name": "제주 씨사이드뷰 펜션",
+    "address": "제주특별자치도 제주시 한경면 용수리 4219",
+    "description": "신창해안도로와 차귀도 바다 전망을 바라보며 머무는 독채형 가족 펜션",
+    "price_per_night": 250000,
+    "capacity": 6,
+    "rating": null,
+    "image_url": "/static/img/accommodation/제주/제주 씨사이드뷰 펜션/다운로드 (1).jpg"
+  },
+  {
+    "destination_name": "서귀포",
+    "name": "호텔더본제주",
+    "address": "제주특별자치도 서귀포시 색달로 18",
+    "description": "중문관광단지와 가까우며 제주 식재료를 활용한 다이닝을 함께 경험하기 좋은 관광호텔",
+    "price_per_night": 120000,
+    "capacity": 2,
+    "rating": null,
+    "image_url": "/static/img/accommodation/서귀포/호텔더본제주/다운로드 (1).jpg"
+  },
+  {
+    "destination_name": "서귀포",
+    "name": "롯데아트빌라스",
+    "address": "제주특별자치도 서귀포시 색달중앙로252번길 124",
+    "description": "세계적인 건축가들의 설계와 독립적인 빌라 공간, 제주 자연 전망을 갖춘 프라이빗 리조트",
+    "price_per_night": 300000,
+    "capacity": 6,
+    "rating": null,
+    "image_url": "/static/img/accommodation/서귀포/롯데아트빌라스/1.jpg"
+  },
+  {
+    "destination_name": "제주",
+    "name": "미르 게스트하우스",
+    "address": "제주특별자치도 제주시 용담로7길 4",
+    "description": "제주공항과 용두암에서 가까우며 공용 주방과 루프톱을 갖춘 용담 지역 게스트하우스",
+    "price_per_night": 60000,
+    "capacity": 2,
+    "rating": null,
+    "image_url": "/static/img/accommodation/제주/미르 게스트하우스/1.jpg"
+  },
+  {
+    "destination_name": "제주",
+    "name": "제주 올레로펜션",
+    "address": "제주특별자치도 제주시 외도이동 343",
+    "description": "객실에서 제주 바다를 조망할 수 있고 야외 수영장을 갖춘 외도동의 바다 전망 펜션",
+    "price_per_night": 120000,
+    "capacity": 4,
+    "rating": null,
+    "image_url": "/static/img/accommodation/제주/제주 올레로펜션/1.jpg"
+  },
+  {
+    "destination_name": "남해",
+    "name": "남해 스포츠파크 호텔",
+    "address": "경상남도 남해군 서면 스포츠파크길 73",
+    "description": "남해 스포츠파크와 가까우며 산 전망과 편안한 휴식을 제공하는 호텔",
+    "price_per_night": 86000,
+    "capacity": 2,
+    "rating": null,
+    "image_url": "/static/img/accommodation/남해/남해 스포츠파크 호텔/images (1).jpg"
+  },
+  {
+    "destination_name": "산청",
+    "name": "산청한방가족호텔",
+    "address": "경상남도 산청군 금서면 동의보감로479번길 43",
+    "description": "동의보감촌 안에서 한방 체험과 지리산 자락의 휴식을 함께 즐기기 좋은 가족호텔",
+    "price_per_night": 105000,
+    "capacity": 4,
+    "rating": null,
+    "image_url": "/static/img/accommodation/산청/산청한방가족호텔/images (1).jpg"
+  },
+  {
+    "destination_name": "신안",
+    "name": "신안 1004 섬리조트 펜션",
+    "address": "전라남도 신안군",
+    "description": "신안의 섬과 바다 풍경을 가까이에서 즐기며 머물기 좋은 리조트형 펜션",
+    "price_per_night": 110000,
+    "capacity": 4,
+    "rating": null,
+    "image_url": "/static/img/accommodation/신안/신안 1004 섬리조트 펜션/images (1).jpg"
+  },
+  {
+    "destination_name": "완주",
+    "name": "소양고택",
+    "address": "전북특별자치도 완주군 소양면 송광수만로 472-23",
+    "description": "오성한옥마을에서 전통 한옥과 정원, 책방의 고즈넉한 분위기를 경험하는 한옥스테이",
+    "price_per_night": 180000,
+    "capacity": 2,
+    "rating": null,
+    "image_url": "/static/img/accommodation/완주/소양고택/05438e3a8ca47.jpg"
+  }
+]

@@ -1,0 +1,422 @@
+@charset "utf-8";
+
+.mypage-page {
+    min-height: calc(100vh - 326px);
+    padding: 64px 0 88px;
+    background: var(--color-background-warm);
+}
+
+.mypage-heading { margin-bottom: 36px; }
+.mypage-eyebrow {
+    margin: 0 0 8px;
+    color: var(--color-accent-strong);
+    font-size: 0.82rem;
+    font-weight: 800;
+    letter-spacing: 0.16em;
+}
+.mypage-heading__row {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 24px;
+}
+.mypage-heading h1 {
+    margin: 0;
+    color: var(--color-text);
+    font-size: clamp(2rem, 4vw, 3rem);
+    line-height: 1.2;
+}
+.mypage-heading__row > div > p {
+    margin: 10px 0 0;
+    color: var(--color-muted);
+}
+.mypage-count {
+    flex: 0 0 auto;
+    margin: 0;
+    color: var(--color-muted);
+    font-size: 0.92rem;
+}
+.mypage-count strong { color: var(--color-text); font-size: 1.1rem; }
+
+.favorites-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px;
+}
+.favorite-card {
+    min-width: 0;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: 16px;
+    box-shadow: 0 6px 20px rgba(30, 64, 59, 0.07);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.favorite-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-card); }
+.favorite-card:focus-within { box-shadow: var(--shadow-card); }
+.favorite-card__link { display: block; flex: 1; }
+.favorite-card__media {
+    position: relative;
+    overflow: hidden;
+    background: rgba(144, 172, 155, 0.24);
+}
+.favorite-card__image,
+.favorite-card__placeholder { width: 100%; height: 220px; }
+.favorite-card__image { object-fit: cover; transition: transform 0.35s ease; }
+.favorite-card:hover .favorite-card__image { transform: scale(1.035); }
+.favorite-card__placeholder {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    color: var(--color-muted);
+    font-size: 0.88rem;
+}
+.favorite-card__placeholder img { width: 38px; height: 38px; opacity: 0.55; }
+.favorite-card__heart {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    width: 36px;
+    height: 36px;
+    display: grid;
+    place-items: center;
+    color: var(--color-accent-strong);
+    background: rgba(255, 255, 255, 0.92);
+    border-radius: 50%;
+    box-shadow: 0 5px 14px rgba(0, 0, 0, 0.15);
+    font-size: 1.08rem;
+}
+.favorite-card__body { padding: 20px; }
+.favorite-card__title-row {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 12px;
+}
+.favorite-card__title-row h2 {
+    min-width: 0;
+    margin: 0;
+    color: var(--color-text);
+    font-size: 1.25rem;
+    line-height: 1.35;
+}
+.favorite-card__region {
+    flex: 0 0 auto;
+    max-width: 46%;
+    overflow: hidden;
+    color: var(--color-muted);
+    font-size: 0.8rem;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.favorite-card__description {
+    min-height: 3.2em;
+    margin: 12px 0 16px;
+    display: -webkit-box;
+    overflow: hidden;
+    color: var(--color-muted);
+    font-size: 0.92rem;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+}
+.favorite-card__tags {
+    min-height: 28px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 7px;
+}
+.favorite-card__tags span {
+    padding: 4px 9px;
+    color: var(--color-text);
+    background: rgba(144, 172, 155, 0.24);
+    border-radius: 999px;
+    font-size: 0.76rem;
+    font-weight: 700;
+}
+
+.favorites-empty {
+    min-height: 320px;
+    padding: 64px 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: 16px;
+    box-shadow: 0 8px 24px rgba(30, 64, 59, 0.05);
+}
+.favorites-empty__icon {
+    width: 52px;
+    height: 52px;
+    margin-bottom: 18px;
+    opacity: 0.75;
+}
+.favorites-empty h2 {
+    margin: 0;
+    color: var(--color-text);
+    font-size: clamp(1.35rem, 3vw, 1.7rem);
+}
+.favorites-empty p { margin: 8px 0 24px; color: var(--color-muted); }
+
+.favorites-page { min-height: calc(100vh - 326px); padding-bottom: 90px; background: #fff; }
+.favorites-hero { position: relative; overflow: hidden; min-height: 410px; margin-bottom: 54px; background: linear-gradient(112deg, #fff9ef 0%, #f4f8f4 45%, #e7f2f6 100%); border-bottom: 1px solid #ece9e2; }
+.favorites-hero::before,
+.favorites-hero::after { position: absolute; content: ""; border-radius: 50%; }
+.favorites-hero::before { width: 390px; height: 390px; top: -250px; left: 24%; background: rgba(242, 188, 105, .12); }
+.favorites-hero::after { width: 520px; height: 210px; right: -110px; bottom: -145px; background: rgba(150, 194, 205, .17); }
+.favorites-hero__inner { position: relative; z-index: 1; min-height: 410px; display: flex; align-items: center; }
+.favorites-hero__copy { position: relative; z-index: 2; width: 43%; padding-bottom: 8px; }
+.favorites-hero h1 { margin: 0 0 15px; color: #292f2d; font-family: "Maru Buri", Georgia, serif; font-size: clamp(2.55rem, 4.3vw, 4rem); letter-spacing: -.06em; }
+.favorites-hero p { max-width: 390px; margin: 0; color: #68716d; font-size: .92rem; line-height: 1.75; }
+.favorites-hero__count { width: fit-content; margin-top: 25px; padding: 9px 15px; display: flex; align-items: center; gap: 7px; color: #555d59; background: rgba(255, 255, 255, .74); border: 1px solid rgba(198, 204, 198, .8); border-radius: 999px; box-shadow: 0 8px 24px rgba(54, 67, 61, .07); backdrop-filter: blur(6px); }
+.favorites-hero__count strong { color: #d05e4c; font-size: 1rem; line-height: 1; }
+.favorites-hero__count span { font-size: .72rem; font-weight: 750; }
+.favorites-hero__visual { position: absolute; z-index: 1; right: -62px; bottom: -1px; width: min(68%, 810px); height: 390px; display: flex; align-items: flex-end; justify-content: flex-end; pointer-events: none; }
+.favorites-hero__visual img { width: 100%; max-height: 100%; display: block; object-fit: contain; object-position: right bottom; }
+.favorites-page__inner { max-width: 1200px; }
+.favorites-page__heading { margin-bottom: 22px; display: flex; align-items: flex-end; justify-content: space-between; gap: 24px; }
+.favorites-page__heading h2 { margin: 0; color: #303633; font-size: 1.55rem; letter-spacing: -.035em; }
+.favorites-page__heading > a { color: #5d6562; font-size: .76rem; font-weight: 800; }
+.favorites-page__heading > a:hover { color: #b6533b; }
+
+.saved-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; }
+.saved-card { min-width: 0; overflow: hidden; background: #fff; border: 1px solid #e1e4e0; border-radius: 16px; box-shadow: 0 10px 30px rgba(43, 52, 49, .06); transition: transform .22s ease, box-shadow .22s ease; }
+.saved-card:hover { transform: translateY(-4px); box-shadow: 0 17px 40px rgba(43, 52, 49, .11); }
+.saved-card__media { position: relative; height: 224px; overflow: hidden; background: linear-gradient(145deg, #e2ebe8, #f2eae0); }
+.saved-card__media > a { width: 100%; height: 100%; display: block; }
+.saved-card__media img { width: 100%; height: 100%; object-fit: cover; transition: transform .35s ease; }
+.saved-card:hover .saved-card__media img { transform: scale(1.06); }
+.saved-card__placeholder { width: 100%; height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; color: #747c79; }
+.saved-card__placeholder svg { width: 46px; fill: none; stroke: #929b97; stroke-width: 1.6; }
+.saved-card__placeholder strong { font-size: .86rem; }
+.saved-card__shade { position: absolute; inset: 0; pointer-events: none; background: linear-gradient(180deg, transparent 52%, rgba(24, 31, 29, .62)); }
+.saved-card__region { position: absolute; z-index: 1; left: 15px; bottom: 13px; color: rgba(255, 255, 255, .92); font-size: .68rem; font-weight: 750; }
+.saved-card__media form { position: absolute; z-index: 2; top: 13px; right: 13px; margin: 0; }
+.saved-card__media button { width: 38px; height: 38px; display: grid; place-items: center; color: #d35f48; background: rgba(255, 255, 255, .94); border: 0; border-radius: 50%; box-shadow: 0 6px 17px rgba(23, 31, 28, .17); cursor: pointer; transition: transform .2s ease, background .2s ease; }
+.saved-card__media button:hover { background: #fff4f0; transform: scale(1.06); }
+.saved-card__media button svg { width: 19px; fill: currentColor; stroke: currentColor; stroke-width: 1.5; }
+.saved-card__body { padding: 19px 19px 17px; }
+.saved-card__kicker { color: #747d79; font-size: .64rem; font-weight: 800; }
+.saved-card h3 { margin: 4px 0 8px; color: #303633; font-size: 1.18rem; letter-spacing: -.025em; }
+.saved-card h3 a:hover { color: #b6533b; }
+.saved-card__body > p { min-height: 3.4em; margin: 0; display: -webkit-box; overflow: hidden; color: #777f7c; font-size: .76rem; line-height: 1.7; -webkit-box-orient: vertical; -webkit-line-clamp: 2; }
+.saved-card__tags { min-height: 26px; margin-top: 15px; display: flex; flex-wrap: wrap; gap: 6px; }
+.saved-card__tags span { padding: 4px 8px; color: #606865; background: #f1f2ef; border-radius: 999px; font-size: .63rem; font-weight: 750; }
+.saved-card__tags span:nth-child(2) { color: #8a644e; background: #f9eee7; }
+.saved-card__tags span:nth-child(3) { color: #526d76; background: #eaf1f3; }
+.saved-card__footer { margin-top: 17px; padding-top: 14px; display: flex; align-items: center; justify-content: space-between; gap: 12px; border-top: 1px solid #eceeeb; }
+.saved-card__footer small { color: #a0a5a2; font-size: .62rem; }
+.saved-card__footer a { color: #4e5754; font-size: .69rem; font-weight: 800; }
+.saved-card__footer a:hover { color: #b6533b; }
+
+.saved-empty { max-width: 760px; margin: 0 auto; padding: 76px 28px; text-align: center; background: #fff; border: 1px solid #e2e5e1; border-radius: 18px; box-shadow: 0 14px 38px rgba(43, 52, 49, .06); }
+.saved-empty__icon { width: 64px; height: 64px; margin: 0 auto 17px; display: grid; place-items: center; color: #cf624b; background: #fcedea; border-radius: 50%; }
+.saved-empty__icon svg { width: 29px; fill: none; stroke: currentColor; stroke-width: 1.7; }
+.saved-empty h2 { margin: 7px 0 0; color: #303633; font-size: 1.55rem; }
+.saved-empty p { margin: 8px 0 24px; color: #858c89; }
+.saved-empty__actions { display: flex; justify-content: center; flex-wrap: wrap; gap: 9px; }
+.saved-empty__actions a { min-height: 44px; padding: 10px 18px; display: inline-flex; align-items: center; gap: 15px; color: #fff; background: #303a37; border: 1px solid #303a37; border-radius: 8px; font-size: .78rem; font-weight: 800; }
+.saved-empty__actions a:hover { background: #46524e; }
+.saved-empty__actions a + a { color: #525a57; background: #fff; border-color: #d8ddda; }
+.saved-empty__actions a + a:hover { color: #b6533b; border-color: #d7a498; }
+
+.myreviews-page { min-height: calc(100vh - 326px); padding-bottom: 90px; background: #fff; }
+.myreviews-hero { position: relative; overflow: hidden; min-height: 410px; margin-bottom: 54px; border-bottom: 1px solid #ece9e2; }
+.myreviews-hero__art { position: absolute; inset: 0; width: 100%; height: 100%; display: block; object-fit: cover; object-position: center; }
+.myreviews-hero::after { position: absolute; inset: 0; content: ""; background: linear-gradient(90deg, rgba(255, 252, 246, .54) 0%, rgba(255, 252, 246, .15) 40%, transparent 62%); }
+.myreviews-hero__inner { position: relative; z-index: 1; min-height: 410px; display: flex; align-items: center; }
+.myreviews-hero__copy { width: 43%; padding-bottom: 8px; }
+.myreviews-hero h1 { margin: 0 0 15px; color: #292f2d; font-family: "Maru Buri", Georgia, serif; font-size: clamp(2.55rem, 4.3vw, 4rem); letter-spacing: -.06em; }
+.myreviews-hero p { max-width: 390px; margin: 0; color: #68716d; font-size: .92rem; line-height: 1.75; }
+.myreviews-hero__count { width: fit-content; margin-top: 25px; padding: 9px 15px; display: flex; align-items: center; gap: 7px; color: #555d59; background: rgba(255, 255, 255, .78); border: 1px solid rgba(198, 204, 198, .8); border-radius: 999px; box-shadow: 0 8px 24px rgba(54, 67, 61, .07); backdrop-filter: blur(6px); }
+.myreviews-hero__count strong { color: #665d80; font-size: 1rem; line-height: 1; }
+.myreviews-hero__count span { font-size: .72rem; font-weight: 750; }
+.myreviews-page__inner { max-width: 1120px; }
+.myreviews-page__heading { margin-bottom: 22px; display: flex; align-items: flex-end; justify-content: space-between; gap: 24px; }
+.myreviews-page__heading h2 { margin: 0; color: #303633; font-size: 1.55rem; letter-spacing: -.035em; }
+.myreviews-page__summary { display: flex; gap: 7px; }
+.myreviews-page__summary span { padding: 5px 9px; color: #666e6b; background: #f0f1ee; border-radius: 999px; font-size: .67rem; font-weight: 750; }
+.myreviews-page__summary span + span { color: #8a5d4d; background: #f9ece7; }
+.myreviews-list { display: grid; gap: 14px; }
+.myreview-card { min-height: 178px; padding: 24px 25px; display: grid; grid-template-columns: 82px minmax(0, 1fr) 95px; align-items: stretch; gap: 24px; background: #fff; border: 1px solid #e1e4e0; border-radius: 16px; box-shadow: 0 10px 30px rgba(43, 52, 49, .055); transition: transform .2s ease, box-shadow .2s ease; }
+.myreview-card:hover { transform: translateY(-2px); box-shadow: 0 16px 38px rgba(43, 52, 49, .09); }
+.myreview-card__type { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 7px; border-radius: 12px; }
+.myreview-card__type--destination { color: #ba5b45; background: #fcedea; }
+.myreview-card__type--accommodation { color: #536f78; background: #eaf2f4; }
+.myreview-card__type svg { width: 25px; height: 25px; fill: none; stroke: currentColor; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
+.myreview-card__type span { font-size: .65rem; font-weight: 850; }
+.myreview-card__content { min-width: 0; display: flex; flex-direction: column; justify-content: center; }
+.myreview-card__region { color: #747d79; font-size: .66rem; font-weight: 800; }
+.myreview-card h3 { margin: 3px 0 5px; overflow: hidden; color: #303633; font-size: 1.13rem; text-overflow: ellipsis; white-space: nowrap; }
+.myreview-card h3 a:hover { color: #b6533b; }
+.myreview-card__rating { display: flex; align-items: center; gap: 1px; }
+.myreview-card__rating span { color: #d9dcd9; font-size: .76rem; }
+.myreview-card__rating span.is-filled { color: #eba13a; }
+.myreview-card__rating strong { margin-left: 6px; color: #545c59; font-size: .69rem; }
+.myreview-card__content > p { margin: 12px 0 0; display: -webkit-box; overflow: hidden; color: #6e7673; font-size: .76rem; line-height: 1.65; word-break: break-word; -webkit-box-orient: vertical; -webkit-line-clamp: 2; }
+.myreview-card__aside { display: flex; flex-direction: column; align-items: flex-end; justify-content: space-between; }
+.myreview-card__aside time { color: #a0a5a2; font-size: .63rem; }
+.myreview-card__actions { display: grid; justify-items: end; gap: 7px; }
+.myreview-card__actions > a { min-width: 82px; padding: 7px 10px; color: #fff; background: #343e3b; border-radius: 7px; font-size: .67rem; font-weight: 800; text-align: center; }
+.myreview-card__actions > a:hover { background: #4a5652; }
+.myreview-card__actions form { margin: 0; }
+.myreview-card__actions button { min-width: 82px; padding: 6px 9px; color: #835347; background: #fff; border: 1px solid #dfc7c0; border-radius: 7px; font-size: .65rem; font-weight: 750; cursor: pointer; }
+.myreview-card__actions button:hover { color: #b4472e; background: #fff6f3; border-color: #d9a092; }
+.myreviews-empty { max-width: 760px; margin: 0 auto; padding: 76px 28px; text-align: center; background: #fff; border: 1px solid #e2e5e1; border-radius: 18px; box-shadow: 0 14px 38px rgba(43, 52, 49, .06); }
+.myreviews-empty__icon { width: 64px; height: 64px; margin: 0 auto 17px; display: grid; place-items: center; color: #c75f48; background: #fcedea; border-radius: 50%; }
+.myreviews-empty__icon svg { width: 30px; fill: none; stroke: currentColor; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
+.myreviews-empty h2 { margin: 0; color: #303633; font-size: 1.55rem; }
+.myreviews-empty p { margin: 8px 0 24px; color: #858c89; }
+.myreviews-empty__actions { display: flex; justify-content: center; flex-wrap: wrap; gap: 9px; }
+.myreviews-empty__actions a { min-height: 44px; padding: 10px 18px; display: inline-flex; align-items: center; color: #fff; background: #303a37; border: 1px solid #303a37; border-radius: 8px; font-size: .78rem; font-weight: 800; }
+.myreviews-empty__actions a + a { color: #525a57; background: #fff; border-color: #d8ddda; }
+.myreviews-empty__actions a:hover { background: #46524e; }
+.myreviews-empty__actions a + a:hover { color: #b6533b; background: #fff; border-color: #d7a498; }
+
+.profile-page { min-height: calc(100vh - 326px); padding-bottom: 90px; background: #fff; }
+.profile-hero { position: relative; overflow: hidden; min-height: 410px; margin-bottom: 54px; border-bottom: 1px solid #ece9e2; }
+.profile-hero__art { position: absolute; inset: 0; width: 100%; height: 100%; display: block; object-fit: cover; object-position: center; }
+.profile-hero::after { position: absolute; inset: 0; content: ""; background: linear-gradient(90deg, rgba(255, 252, 246, .54) 0%, rgba(255, 252, 246, .15) 40%, transparent 62%); }
+.profile-hero__inner { position: relative; z-index: 1; min-height: 410px; display: flex; align-items: center; }
+.profile-hero__copy { width: 43%; padding-bottom: 8px; }
+.profile-hero h1 { margin: 0 0 15px; color: #292f2d; font-family: "Maru Buri", Georgia, serif; font-size: clamp(2.55rem, 4.3vw, 4rem); letter-spacing: -.06em; }
+.profile-hero p { max-width: 390px; margin: 0; color: #68716d; font-size: .92rem; line-height: 1.75; }
+.profile-page__inner { max-width: 1120px; }
+
+.profile-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1.15fr) minmax(320px, .85fr);
+    align-items: start;
+    gap: 24px;
+}
+
+.profile-card,
+.account-withdrawal {
+    padding: 36px;
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: 18px;
+    box-shadow: 0 12px 34px rgba(38, 48, 45, .07);
+}
+
+.profile-card__heading { margin-bottom: 28px; display: flex; align-items: center; gap: 14px; }
+.profile-card__icon { width: 46px; height: 46px; flex: 0 0 auto; display: grid; place-items: center; color: #586f78; background: #eaf1f3; border-radius: 13px; }
+.profile-card__icon svg { width: 23px; height: 23px; fill: none; stroke: currentColor; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
+.profile-card__heading h2,
+.account-withdrawal h2 { margin: 0; color: #292d2b; font-size: 1.35rem; }
+.profile-card__heading p { margin: 4px 0 0; color: #858c89; font-size: .76rem; }
+.profile-card form { padding-top: 2px; }
+.profile-card .form-group { margin-bottom: 20px; }
+.profile-card .form-group small { margin-top: 7px; display: block; color: var(--color-muted); font-size: .76rem; }
+.profile-card input:disabled { color: #777b79; background: #f3f3f1; cursor: not-allowed; }
+.profile-save { width: 100%; min-height: 48px; margin-top: 4px; color: #fff; background: #4b4f4d; border-color: #4b4f4d; }
+.profile-save:hover { background: #343735; }
+
+.account-withdrawal { border-color: #eadfd9; background: #fffcfa; }
+.account-withdrawal__status {
+    width: fit-content;
+    margin-bottom: 14px;
+    padding: 5px 9px;
+    display: block;
+    color: #8a5146;
+    background: #f7ebe7;
+    border-radius: 999px;
+    font-size: .68rem;
+    font-weight: 800;
+}
+.account-withdrawal h2 { margin-bottom: 12px; }
+.account-withdrawal > p { margin: 0 0 24px; color: #696664; font-size: .88rem; line-height: 1.7; }
+.account-withdrawal time { margin-bottom: 12px; display: block; color: #a9504b; font-size: 1.25rem; font-weight: 800; }
+.withdrawal-form .form-group { margin-bottom: 15px; }
+.withdrawal-confirm { display: flex; align-items: flex-start; gap: 9px; color: #5f5d5b; font-size: .8rem; line-height: 1.5; cursor: pointer; }
+.withdrawal-confirm input { width: 16px; height: 16px; margin-top: 2px; flex: 0 0 auto; accent-color: #b95d55; }
+.account-withdrawal__submit,
+.account-withdrawal__cancel { width: 100%; margin-top: 20px; }
+.account-withdrawal__submit { color: #a9504b; background: #fff; border-color: #cf8a7d; box-shadow: none; }
+.account-withdrawal__submit:hover { color: #fff; background: #a9504b; border-color: #a9504b; }
+.account-withdrawal__cancel { color: #fff; background: #4b4f4d; border-color: #4b4f4d; }
+.account-withdrawal__cancel:hover { background: #343735; }
+
+@media (max-width: 900px) {
+    .favorites-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .favorites-hero__copy { width: 50%; }
+    .favorites-hero__visual { right: -110px; width: 72%; opacity: .92; }
+    .saved-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .myreviews-hero__copy { width: 50%; }
+    .myreviews-hero__art { object-position: 56% center; }
+    .myreview-card { grid-template-columns: 72px minmax(0, 1fr); }
+    .myreview-card__aside { grid-column: 1 / -1; flex-direction: row; }
+    .myreview-card__actions { display: flex; }
+    .profile-hero__copy { width: 50%; }
+    .profile-hero__art { object-position: 56% center; }
+    .profile-layout { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 620px) {
+    .mypage-page { padding: 42px 0 64px; }
+    .mypage-heading { margin-bottom: 28px; }
+    .mypage-heading__row {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 12px;
+    }
+    .favorites-grid { grid-template-columns: 1fr; }
+    .favorite-card__image,
+    .favorite-card__placeholder { height: 210px; }
+    .favorites-empty { min-height: 300px; padding: 48px 20px; }
+    .favorites-page { padding-bottom: 60px; }
+    .favorites-hero { min-height: 540px; margin-bottom: 40px; }
+    .favorites-hero__inner { min-height: 540px; align-items: flex-start; padding-top: 54px; }
+    .favorites-hero__copy { width: 100%; }
+    .favorites-hero h1 { font-size: 2.6rem; }
+    .favorites-hero p { max-width: 310px; font-size: .84rem; }
+    .favorites-hero__visual { right: -72px; bottom: -8px; width: 118%; height: 330px; opacity: 1; }
+    .favorites-hero__count { padding: 9px 13px; gap: 7px; border-radius: 999px; }
+    .favorites-hero__count strong { font-size: 1rem; }
+    .favorites-hero__count span { margin: 0; }
+    .favorites-page__heading { align-items: flex-start; flex-direction: column; gap: 8px; }
+    .saved-grid { grid-template-columns: 1fr; }
+    .saved-card__media { height: 230px; }
+    .saved-empty { padding: 56px 20px; }
+    .myreviews-page { padding-bottom: 60px; }
+    .myreviews-hero { min-height: 520px; margin-bottom: 40px; }
+    .myreviews-hero::after { background: linear-gradient(90deg, rgba(255, 252, 246, .76) 0%, rgba(255, 252, 246, .4) 48%, rgba(255, 252, 246, .05) 78%); }
+    .myreviews-hero__inner { min-height: 520px; align-items: flex-start; padding-top: 52px; }
+    .myreviews-hero__copy { width: 100%; }
+    .myreviews-hero__art { object-position: 57% center; }
+    .myreviews-hero h1 { font-size: 2.6rem; }
+    .myreviews-hero p { max-width: 300px; font-size: .84rem; }
+    .myreviews-hero__count { padding: 9px 13px; gap: 7px; border-radius: 999px; }
+    .myreviews-hero__count strong { font-size: 1rem; }
+    .myreviews-hero__count span { margin: 0; }
+    .myreviews-page__heading { align-items: flex-start; flex-direction: column; gap: 10px; }
+    .myreview-card { min-height: 0; padding: 18px; grid-template-columns: 1fr; gap: 16px; }
+    .myreview-card__type { min-height: 70px; flex-direction: row; }
+    .myreview-card__aside { grid-column: auto; }
+    .myreviews-empty { padding: 56px 20px; }
+    .profile-page { padding-bottom: 60px; }
+    .profile-hero { min-height: 520px; margin-bottom: 40px; }
+    .profile-hero::after { background: linear-gradient(90deg, rgba(255, 252, 246, .76) 0%, rgba(255, 252, 246, .4) 48%, rgba(255, 252, 246, .05) 78%); }
+    .profile-hero__inner { min-height: 520px; align-items: flex-start; padding-top: 52px; }
+    .profile-hero__copy { width: 100%; }
+    .profile-hero__art { object-position: 57% center; }
+    .profile-hero h1 { font-size: 2.6rem; }
+    .profile-hero p { max-width: 300px; font-size: .84rem; }
+    .profile-card,
+    .account-withdrawal { padding: 24px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .favorite-card,
+    .favorite-card__image,
+    .saved-card,
+    .saved-card__media img,
+    .saved-card__media button,
+    .myreview-card { transition: none; }
+}

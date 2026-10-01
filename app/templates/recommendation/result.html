@@ -1,0 +1,118 @@
+{% extends "base.html" %}
+
+{% block title %}맞춤 여행 추천 | TripPalette{% endblock %}
+
+{% block head %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/recommendation.css') }}">
+{% endblock %}
+
+{% block content %}
+<section class="recommendation-page recommendation-page--result" aria-labelledby="result-title">
+    <div class="container recommendation-shell">
+        <div class="survey-progress result-progress" aria-label="추천 진행 단계">
+            <span class="is-complete"><i aria-hidden="true">✓</i>취향 선택</span>
+            <b aria-hidden="true"></b>
+            <span class="is-active"><i>2</i>추천 결과</span>
+        </div>
+
+        <header class="recommendation-heading recommendation-heading--result">
+            <div>
+                <h1 id="result-title">{% if preference_summary %}당신의 취향을 닮은 여행지{% else %}먼저 둘러보기 좋은 여행지{% endif %}</h1>
+                <p>{% if fallback_mode %}새로운 취향을 발견할 수 있는 여행지를 준비했어요.{% else %}선택한 취향을 바탕으로 잘 맞는 순서대로 골랐어요.{% endif %}</p>
+            </div>
+            <a class="recommendation-edit" href="{{ url_for('recommendation.survey') }}">
+                {% if preference_summary %}취향 다시 설정하기{% else %}내 취향 설정하기{% endif %}
+            </a>
+        </header>
+
+        {% if preference_summary %}
+            {% set duration_labels = {'1': '당일', '2': '1박 2일', '3': '2박 3일', '4': '3박 4일', '5': '4박 5일'} %}
+            <div class="preference-summary result-preference-summary" aria-label="선택한 여행 취향">
+                <span>{{ preference_summary.season }}</span>
+                <span>{{ preference_summary.companion }}</span>
+                <span>{{ preference_summary.purpose }}</span>
+                <span>{{ preference_summary.atmosphere }}</span>
+                <span>{{ '{:,}'.format(preference_summary.budget|int) }}원 이하</span>
+                <span>{{ duration_labels.get(preference_summary.trip_duration|string, preference_summary.trip_duration ~ '일') }}</span>
+            </div>
+        {% endif %}
+
+        {% if recommendations %}
+            {% set best_item = recommendations[0] %}
+            {% set best = best_item.destination %}
+            {% set best_media = destination_media.get(best.name) %}
+            <article class="result-featured">
+                <a class="result-featured__media" href="{{ url_for('destination.detail', id=best.id) }}">
+                    {% if best_media %}
+                        <img src="{{ url_for('static', filename=best_media.cover) }}" alt="{{ best.name }} 풍경">
+                    {% else %}
+                        <span class="recommendation-placeholder"><strong>{{ best.name }}</strong></span>
+                    {% endif %}
+                    <span class="result-featured__rank">
+                        <strong>BEST MATCH</strong>
+                        <small>1순위</small>
+                    </span>
+                </a>
+
+                <div class="result-featured__body">
+                    <span class="result-featured__region">{{ best.region }}</span>
+                    <div class="result-featured__title-row">
+                        <h2>{{ best.name }}</h2>
+                        {% if best_item.score %}<span>취향 점수 {{ best_item.score }}</span>{% endif %}
+                    </div>
+                    <p>{{ best.description or '새로운 여행의 장면을 만나보세요.' }}</p>
+                    <div class="result-featured__reasons">
+                        {% for reason in best_item.reasons %}
+                            <span><i aria-hidden="true">✓</i>{{ reason }}</span>
+                        {% endfor %}
+                    </div>
+                    <a class="button result-featured__button" href="{{ url_for('destination.detail', id=best.id) }}">
+                        {{ best.name }} 자세히 보기 <span aria-hidden="true">→</span>
+                    </a>
+                </div>
+            </article>
+
+            {% if recommendations|length > 1 %}
+                <section class="result-secondary" aria-labelledby="secondary-title">
+                    <h2 id="secondary-title">함께 보면 좋은 여행지</h2>
+                    <div class="result-secondary__grid">
+                        {% for item in recommendations[1:] %}
+                            {% set destination = item.destination %}
+                            {% set media = destination_media.get(destination.name) %}
+                            <article class="result-card result-card--tone-{{ (loop.index0 % 3) + 1 }}">
+                                <a href="{{ url_for('destination.detail', id=destination.id) }}">
+                                    <span class="result-card__media">
+                                        {% if media %}
+                                            <img src="{{ url_for('static', filename=media.cover) }}" alt="{{ destination.name }} 풍경" loading="lazy">
+                                        {% else %}
+                                            <span class="recommendation-placeholder"><strong>{{ destination.name }}</strong></span>
+                                        {% endif %}
+                                        <strong class="result-card__rank">{{ loop.index + 1 }}</strong>
+                                    </span>
+                                    <span class="result-card__body">
+                                        <small>{{ destination.region }}</small>
+                                        <span class="result-card__title-row">
+                                            <strong>{{ destination.name }}</strong>
+                                            {% if item.score %}<i>취향 점수 {{ item.score }}</i>{% endif %}
+                                        </span>
+                                        <span class="result-card__reasons">
+                                            {% for reason in item.reasons[:2] %}<span><b aria-hidden="true">✓</b>{{ reason }}</span>{% endfor %}
+                                        </span>
+                                        <span class="result-card__more">{{ destination.name }} 자세히 보기 <i aria-hidden="true">→</i></span>
+                                    </span>
+                                </a>
+                            </article>
+                        {% endfor %}
+                    </div>
+                </section>
+            {% endif %}
+        {% else %}
+            <div class="recommendation-empty">
+                <h2>추천할 여행지를 준비하고 있어요.</h2>
+                <p>여행지 데이터가 등록되면 취향에 맞춰 바로 추천해드릴게요.</p>
+                <a class="button" href="{{ url_for('destination.list') }}">전체 여행지 둘러보기</a>
+            </div>
+        {% endif %}
+    </div>
+</section>
+{% endblock %}

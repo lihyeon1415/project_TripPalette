@@ -1,0 +1,692 @@
+[
+  {
+    "name": "창원 진해",
+    "region": "경상남도",
+    "description": "분홍빛 벚꽃이 도시를 물들이고 잔잔한 바다가 곁을 채우는, 봄날의 낭만을 천천히 걷기 좋은 여행지입니다. 여좌천과 경화역을 따라 흐드러진 꽃길을 거닐고, 해 질 무렵에는 진해루 앞바다의 여유로운 풍경을 만나보세요. 봄의 설렘과 항구 도시의 정취를 함께 담을 수 있습니다.",
+    "season": "봄",
+    "purpose": "자연",
+    "atmosphere": "낭만적인",
+    "budget_level": "보통",
+    "recommended_days": 2
+  },
+  {
+    "name": "삼척",
+    "region": "강원특별자치도",
+    "description": "투명한 동해와 기암절벽을 따라 걷고 신비로운 동굴까지 만날 수 있는, 자연의 장면이 다채로운 여행지입니다. 해안 산책로에서는 파도와 맞닿은 절경을 감상하고, 내륙에서는 웅장한 석회동굴의 시간을 느껴보세요. 바다와 산, 지질의 신비가 한 여정 안에 이어집니다.",
+    "season": "봄",
+    "purpose": "자연",
+    "atmosphere": "조용한",
+    "budget_level": "보통",
+    "recommended_days": 2
+  },
+  {
+    "name": "여수",
+    "region": "전라남도",
+    "description": "낮에는 푸른 다도해를 누비고 밤에는 반짝이는 항구를 바라보며, 바다의 두 가지 표정을 즐기는 여행지입니다. 오동도의 산책길과 해상 케이블카에서 섬과 바다를 한눈에 담아보세요. 해가 진 뒤에는 낭만포차와 돌산대교의 불빛이 여수다운 밤을 완성합니다.",
+    "season": "봄",
+    "purpose": "휴양",
+    "atmosphere": "낭만적인",
+    "budget_level": "높음",
+    "recommended_days": 2
+  },
+  {
+    "name": "구례",
+    "region": "전라남도",
+    "description": "지리산 자락과 섬진강을 따라 산수유와 벚꽃이 피어나는, 포근한 봄 풍경 속에서 쉬어가기 좋은 여행지입니다. 산수유마을의 노란 꽃길을 걷고 섬진강변에서 한적한 풍경을 바라보세요. 사찰과 숲길까지 이어지는 여정에는 조용한 위로가 머뭅니다.",
+    "season": "봄",
+    "purpose": "자연",
+    "atmosphere": "자연친화적",
+    "budget_level": "보통",
+    "recommended_days": 2
+  },
+  {
+    "name": "속초",
+    "region": "강원특별자치도",
+    "description": "설악산의 웅장한 능선과 청량한 동해, 활기찬 시장의 맛까지 한 번에 만날 수 있는 여행지입니다. 아침에는 해변에서 떠오르는 해를 보고 낮에는 설악의 계곡과 숲을 걸어보세요. 저녁에는 중앙시장의 다채로운 먹거리가 여행의 즐거움을 더합니다.",
+    "season": "여름",
+    "purpose": "휴양",
+    "atmosphere": "활기찬",
+    "budget_level": "보통",
+    "recommended_days": 2
+  },
+  {
+    "name": "무주",
+    "region": "전북특별자치도",
+    "description": "덕유산의 깊은 숲과 맑은 계곡을 가까이 두고, 계절마다 새로운 자연의 즐거움을 발견하는 여행지입니다. 여름에는 시원한 계곡과 레저를, 겨울에는 눈꽃 핀 능선과 설원을 만나보세요. 밤이 되면 반딧불이의 고장다운 맑고 고요한 자연이 여행자를 감쌉니다.",
+    "season": "여름",
+    "purpose": "액티비티",
+    "atmosphere": "자연친화적",
+    "budget_level": "보통",
+    "recommended_days": 2
+  },
+  {
+    "name": "태백",
+    "region": "강원특별자치도",
+    "description": "높고 선선한 고원 위에서 장대한 산맥과 별빛 가득한 밤을 마주하는, 하늘과 가까운 여행지입니다. 태백산 능선과 바람의 언덕을 걸으며 탁 트인 풍경을 만끽해 보세요. 겨울의 설경부터 여름의 청량함까지 고원 도시만의 선명한 계절을 느낄 수 있습니다.",
+    "season": "여름",
+    "purpose": "자연",
+    "atmosphere": "조용한",
+    "budget_level": "저렴",
+    "recommended_days": 2
+  },
+  {
+    "name": "보령",
+    "region": "충청남도",
+    "description": "넓게 펼쳐진 대천해변과 붉게 번지는 서해의 노을 속에서 여름의 활기를 만끽하기 좋은 여행지입니다. 낮에는 바다와 갯벌을 가까이에서 즐기고, 해 질 무렵에는 수평선을 물들이는 낙조를 바라보세요. 섬과 해안길을 잇는 여정도 보령의 색다른 매력을 보여줍니다.",
+    "season": "여름",
+    "purpose": "휴양",
+    "atmosphere": "활기찬",
+    "budget_level": "보통",
+    "recommended_days": 2
+  },
+  {
+    "name": "정읍",
+    "region": "전북특별자치도",
+    "description": "내장산을 수놓은 붉은 단풍과 고요한 호수 풍경이 어우러져, 가을의 깊은 색을 느끼기 좋은 여행지입니다. 단풍 터널을 따라 천천히 걷고 정자와 호수가 만드는 고즈넉한 장면에 머물러 보세요. 계절의 빛과 전통적인 풍경이 차분한 여행을 완성합니다.",
+    "season": "가을",
+    "purpose": "자연",
+    "atmosphere": "낭만적인",
+    "budget_level": "보통",
+    "recommended_days": 2
+  },
+  {
+    "name": "담양",
+    "region": "전라남도",
+    "description": "바람이 머무는 대나무숲과 곧게 뻗은 메타세쿼이아길을 걸으며 초록빛 여유를 누릴 수 있는 여행지입니다. 죽녹원의 잔잔한 대숲 소리에 귀 기울이고 소쇄원의 정갈한 풍경도 둘러보세요. 걷는 길마다 자연과 정원의 아름다움이 다른 분위기로 펼쳐집니다.",
+    "season": "가을",
+    "purpose": "자연",
+    "atmosphere": "조용한",
+    "budget_level": "보통",
+    "recommended_days": 2
+  },
+  {
+    "name": "안동",
+    "region": "경상북도",
+    "description": "하회마을의 고택과 굽이치는 낙동강 풍경 속에서 오래된 이야기와 안동의 깊은 맛을 만나는 여행지입니다. 서원과 한옥 사이를 거닐며 선비 문화의 흔적을 만나고, 밤에는 월영교의 은은한 불빛을 바라보세요. 전통이 오늘의 풍경 속에 자연스럽게 이어집니다.",
+    "season": "가을",
+    "purpose": "문화",
+    "atmosphere": "전통적인",
+    "budget_level": "보통",
+    "recommended_days": 2
+  },
+  {
+    "name": "순천",
+    "region": "전라남도",
+    "description": "순천만의 황금빛 갈대와 사계절 꽃이 피는 정원을 거닐며 자연의 느린 호흡을 느끼는 여행지입니다. 습지를 따라 난 길 끝에서 드넓은 갈대밭과 저녁 노을을 감상해 보세요. 낙안읍성의 정겨운 풍경까지 더하면 자연과 시간이 어우러진 하루가 완성됩니다.",
+    "season": "가을",
+    "purpose": "자연",
+    "atmosphere": "자연친화적",
+    "budget_level": "보통",
+    "recommended_days": 2
+  },
+  {
+    "name": "평창",
+    "region": "강원특별자치도",
+    "description": "드넓은 목장과 울창한 숲길, 새하얀 설원까지 계절마다 다른 고원의 매력을 펼쳐 보이는 여행지입니다. 대관령의 바람을 맞으며 초원을 걷고 겨울에는 눈 덮인 슬로프에서 활기찬 시간을 보내보세요. 자연 속 휴식과 계절 레저를 모두 즐기기 좋습니다.",
+    "season": "겨울",
+    "purpose": "액티비티",
+    "atmosphere": "활기찬",
+    "budget_level": "높음",
+    "recommended_days": 3
+  },
+  {
+    "name": "인제",
+    "region": "강원특별자치도",
+    "description": "하얀 자작나무숲과 굽이치는 산길을 따라 걸으며 고요하고 청정한 강원의 자연을 만나는 여행지입니다. 원대리 숲의 맑은 공기 속에서 천천히 호흡하고 내린천의 힘찬 물길도 만나보세요. 깊은 산과 계곡이 일상에서 멀어진 듯한 해방감을 선물합니다.",
+    "season": "겨울",
+    "purpose": "자연",
+    "atmosphere": "조용한",
+    "budget_level": "보통",
+    "recommended_days": 2
+  },
+  {
+    "name": "강릉",
+    "region": "강원특별자치도",
+    "description": "경포의 푸른 바다와 솔향 가득한 길, 커피 향이 머무는 골목에서 느긋한 하루를 보내기 좋은 여행지입니다. 새벽에는 정동진과 해변의 일출을 만나고 낮에는 오죽헌과 오래된 도시의 이야기를 둘러보세요. 바다와 문화, 향긋한 쉼이 자연스럽게 이어집니다.",
+    "season": "겨울",
+    "purpose": "휴양",
+    "atmosphere": "낭만적인",
+    "budget_level": "보통",
+    "recommended_days": 2
+  },
+  {
+    "name": "정선",
+    "region": "강원특별자치도",
+    "description": "깊은 산과 굽이진 계곡, 겨울 설원이 어우러져 사계절 내내 모험과 쉼을 함께 즐길 수 있는 여행지입니다. 레일바이크를 타고 산골 풍경을 지나거나 고요한 숲길을 천천히 걸어보세요. 정선아리랑과 오일장에는 이 지역의 소박하고 따뜻한 정서가 담겨 있습니다.",
+    "season": "겨울",
+    "purpose": "액티비티",
+    "atmosphere": "자연친화적",
+    "budget_level": "높음",
+    "recommended_days": 3
+  },
+  {
+    "name": "제주",
+    "region": "제주특별자치도",
+    "description": "에메랄드빛 바다와 부드러운 오름, 돌담 너머의 마을 풍경까지 저마다의 색으로 기억되는 여행지입니다. 해안도로를 따라 달리다 마음에 드는 바다 앞에 멈추고, 숲과 오름에서 제주의 바람을 느껴보세요. 익숙한 일상을 벗어나 나만의 속도로 여행하기 좋습니다.",
+    "season": "사계절",
+    "purpose": "휴양",
+    "atmosphere": "자연친화적",
+    "budget_level": "높음",
+    "recommended_days": 3
+  },
+  {
+    "name": "경주",
+    "region": "경상북도",
+    "description": "천년 신라의 유적과 고즈넉한 돌담길, 밤이면 빛나는 궁궐 풍경이 시간 여행을 선물하는 도시입니다. 대릉원과 첨성대를 따라 걷고 황리단길의 감각적인 공간에서 잠시 쉬어보세요. 낮의 문화유산과 밤의 동궁과 월지가 서로 다른 아름다움을 보여줍니다.",
+    "season": "사계절",
+    "purpose": "문화",
+    "atmosphere": "전통적인",
+    "budget_level": "보통",
+    "recommended_days": 2
+  },
+  {
+    "name": "부산",
+    "region": "부산광역시",
+    "description": "눈부신 해변과 활기찬 도심, 골목마다 이어지는 맛과 이야기가 끊임없는 즐거움을 주는 여행지입니다. 해운대와 광안리의 탁 트인 바다를 즐기고 산복도로와 전통시장에서 부산의 생생한 표정을 만나보세요. 낮부터 밤까지 여행의 리듬이 멈추지 않습니다.",
+    "season": "사계절",
+    "purpose": "미식",
+    "atmosphere": "활기찬",
+    "budget_level": "높음",
+    "recommended_days": 3
+  },
+  {
+    "name": "가평",
+    "region": "경기도",
+    "description": "북한강의 잔잔한 물결과 울창한 숲 사이에서 드라이브와 레저, 달콤한 휴식을 모두 즐기는 여행지입니다. 강변을 따라 달리거나 숲속 정원을 산책하며 계절의 색을 가까이 느껴보세요. 도심에서 멀지 않아 가볍게 떠나 충분히 쉬고 돌아오기 좋습니다.",
+    "season": "사계절",
+    "purpose": "자연",
+    "atmosphere": "낭만적인",
+    "budget_level": "보통",
+    "recommended_days": 2
+  },
+  {
+    "name": "포천",
+    "region": "경기도",
+    "description": "산정호수의 고요한 물빛과 넓은 숲, 장엄한 바위산 풍경이 도심 가까이에서 깊은 쉼을 건네는 여행지입니다. 호숫가 산책로를 걷고 드넓은 자연 속에서 계절의 공기를 천천히 마셔보세요. 온천과 정원을 더한 여정은 편안한 휴식에 잘 어울립니다.",
+    "season": "사계절",
+    "purpose": "자연",
+    "atmosphere": "자연친화적",
+    "budget_level": "보통",
+    "recommended_days": 2
+  },
+  {
+    "name": "양평",
+    "region": "경기도",
+    "description": "두 강이 만나는 물안개 풍경과 한적한 숲길을 따라 천천히 걷고 머물기 좋은 여행지입니다. 이른 아침 두물머리의 잔잔한 강물을 바라보고 세미원의 정원과 주변 카페에서 여유를 이어가 보세요. 서두르지 않는 하루가 가장 잘 어울리는 곳입니다.",
+    "season": "사계절",
+    "purpose": "휴양",
+    "atmosphere": "조용한",
+    "budget_level": "보통",
+    "recommended_days": 2
+  },
+  {
+    "name": "홍천",
+    "region": "강원특별자치도",
+    "description": "맑은 계곡과 푸른 산세를 무대로 짜릿한 레저를 즐기고 숲속의 밤으로 하루를 마무리하는 여행지입니다. 여름에는 시원한 물길을 따라 활동적인 시간을 보내고 가을에는 단풍 든 산길을 달려보세요. 자연 속 캠핑과 리조트 휴식도 함께 누릴 수 있습니다.",
+    "season": "사계절",
+    "purpose": "액티비티",
+    "atmosphere": "자연친화적",
+    "budget_level": "보통",
+    "recommended_days": 2
+  },
+  {
+    "name": "양양",
+    "region": "강원특별자치도",
+    "description": "파도 좋은 동해에서 서핑을 즐기고 한적한 해변과 소나무숲을 따라 여유를 되찾는 여행지입니다. 서핑 해변의 자유로운 분위기를 만끽한 뒤 낙산사에서 탁 트인 바다를 바라보세요. 활기와 고요함을 원하는 만큼 골라 담을 수 있습니다.",
+    "season": "사계절",
+    "purpose": "휴양",
+    "atmosphere": "낭만적인",
+    "budget_level": "보통",
+    "recommended_days": 2
+  },
+  {
+    "name": "제천",
+    "region": "충청북도",
+    "description": "청풍호의 푸른 물길과 포근한 산자락을 바라보며 몸과 마음을 가볍게 쉬어가기 좋은 여행지입니다. 호수 위 케이블카에서 넓은 풍경을 감상하고 숲길과 한방 체험으로 느긋한 하루를 채워보세요. 조용한 자연과 웰니스 여행을 찾는 이들에게 잘 어울립니다.",
+    "season": "사계절",
+    "purpose": "자연",
+    "atmosphere": "조용한",
+    "budget_level": "보통",
+    "recommended_days": 2
+  },
+  {
+    "name": "단양",
+    "region": "충청북도",
+    "description": "남한강 위로 솟은 기암과 산봉우리를 바라보며 하늘길과 물길을 다채롭게 즐길 수 있는 여행지입니다. 도담삼봉의 아침 풍경을 만나고 전망대에 올라 굽이치는 강을 한눈에 담아보세요. 패러글라이딩과 잔도길은 단양의 입체적인 자연을 더욱 가까이 보여줍니다.",
+    "season": "사계절",
+    "purpose": "액티비티",
+    "atmosphere": "자연친화적",
+    "budget_level": "보통",
+    "recommended_days": 2
+  },
+  {
+    "name": "충주",
+    "region": "충청북도",
+    "description": "충주호의 너른 물빛과 수안보의 따뜻한 온천이 어우러져 편안한 재충전을 누리기 좋은 여행지입니다. 호수를 따라 드라이브하며 잔잔한 산수 풍경을 감상하고, 하루 끝에는 온천에서 여행의 피로를 풀어보세요. 자연과 휴식의 균형이 편안하게 이어집니다.",
+    "season": "사계절",
+    "purpose": "휴양",
+    "atmosphere": "조용한",
+    "budget_level": "보통",
+    "recommended_days": 2
+  },
+  {
+    "name": "태안",
+    "region": "충청남도",
+    "description": "끝없이 이어지는 모래해변과 꽃지의 황홀한 낙조를 바라보며 바다 곁에 오래 머물고 싶은 여행지입니다. 해안길을 달리다 한적한 해변에 내려 산책하고, 갯벌과 수목원에서 색다른 자연도 만나보세요. 하루를 붉게 물들이는 서해의 저녁이 오래 기억에 남습니다.",
+    "season": "사계절",
+    "purpose": "휴양",
+    "atmosphere": "낭만적인",
+    "budget_level": "보통",
+    "recommended_days": 2
+  },
+  {
+    "name": "부여",
+    "region": "충청남도",
+    "description": "백제의 찬란한 유산과 연꽃 피는 정원, 느긋한 강변 풍경 속에서 옛 시간을 만나는 여행지입니다. 궁남지와 부소산성을 거닐며 오래된 왕도의 이야기를 따라가 보세요. 화려하기보다 차분한 풍경 속에서 역사 여행의 깊은 여운을 느낄 수 있습니다.",
+    "season": "사계절",
+    "purpose": "문화",
+    "atmosphere": "전통적인",
+    "budget_level": "보통",
+    "recommended_days": 2
+  },
+  {
+    "name": "포항",
+    "region": "경상북도",
+    "description": "영일대의 시원한 바다와 호미곶의 일출, 활기찬 시장의 맛이 하루를 풍성하게 채우는 여행지입니다. 해안도로를 따라 동해의 탁 트인 풍경을 즐기고 죽도시장에서 신선한 지역의 맛을 만나보세요. 아침부터 저녁까지 바다 도시의 생동감이 이어집니다.",
+    "season": "사계절",
+    "purpose": "휴양",
+    "atmosphere": "활기찬",
+    "budget_level": "보통",
+    "recommended_days": 2
+  },
+  {
+    "name": "문경",
+    "region": "경상북도",
+    "description": "문경새재의 옛길과 울창한 숲을 따라 걸으며 산과 역사, 전통의 정취를 함께 느끼는 여행지입니다. 선비와 보부상이 넘던 고갯길을 천천히 걷고 산자락의 맑은 공기 속에서 쉬어보세요. 자연과 옛이야기가 발걸음마다 포개집니다.",
+    "season": "사계절",
+    "purpose": "자연",
+    "atmosphere": "전통적인",
+    "budget_level": "보통",
+    "recommended_days": 2
+  },
+  {
+    "name": "청송",
+    "region": "경상북도",
+    "description": "주왕산의 깊은 협곡과 고택의 정취, 달기약수의 맑은 기운 속에서 조용히 쉬어가는 여행지입니다. 기암 사이로 이어지는 계곡길을 걷고 오래된 마을에서 시간의 흔적을 만나보세요. 화려한 관광보다 자연 속 고요한 머무름을 원하는 여행에 잘 어울립니다.",
+    "season": "사계절",
+    "purpose": "자연",
+    "atmosphere": "조용한",
+    "budget_level": "보통",
+    "recommended_days": 2
+  },
+  {
+    "name": "거제",
+    "region": "경상남도",
+    "description": "바람을 따라 이어지는 해안도로와 크고 작은 섬, 짙푸른 바다가 눈앞에 펼쳐지는 여행지입니다. 전망 좋은 언덕과 몽돌해변을 오가며 남해안의 시원한 풍경을 충분히 담아보세요. 섬 곳곳의 정원과 마을은 저마다 다른 표정으로 여행자를 맞이합니다.",
+    "season": "사계절",
+    "purpose": "휴양",
+    "atmosphere": "낭만적인",
+    "budget_level": "높음",
+    "recommended_days": 2
+  },
+  {
+    "name": "통영",
+    "region": "경상남도",
+    "description": "그림 같은 항구와 케이블카 너머의 섬들, 싱싱한 바다의 맛까지 오감으로 즐기는 여행지입니다. 동피랑의 알록달록한 골목을 걷고 배를 타고 한려수도의 섬으로 향해보세요. 바다와 예술, 시장의 활기가 통영다운 여행의 맛을 완성합니다.",
+    "season": "사계절",
+    "purpose": "미식",
+    "atmosphere": "낭만적인",
+    "budget_level": "보통",
+    "recommended_days": 2
+  },
+  {
+    "name": "남해",
+    "region": "경상남도",
+    "description": "다도해의 보석 같은 섬과 다랭이논, 바다를 품은 마을 풍경이 느린 쉼을 선물하는 여행지입니다. 굽이치는 해안도로를 따라 작은 포구와 전망 좋은 언덕에 잠시 머물러 보세요. 잔잔한 바다와 소박한 마을의 시간이 마음까지 느긋하게 만듭니다.",
+    "season": "사계절",
+    "purpose": "휴양",
+    "atmosphere": "자연친화적",
+    "budget_level": "높음",
+    "recommended_days": 2
+  },
+  {
+    "name": "군산",
+    "region": "전북특별자치도",
+    "description": "시간이 멈춘 듯한 근대 골목과 고요한 섬, 오래된 항구의 낭만을 함께 만날 수 있는 여행지입니다. 붉은 벽돌 건물 사이를 걷고 선유도의 바다와 해변으로 여정을 이어가 보세요. 서로 다른 시대의 풍경이 한 편의 이야기처럼 연결됩니다.",
+    "season": "사계절",
+    "purpose": "문화",
+    "atmosphere": "전통적인",
+    "budget_level": "보통",
+    "recommended_days": 2
+  },
+  {
+    "name": "부안",
+    "region": "전북특별자치도",
+    "description": "채석강의 신비로운 절벽과 변산의 너른 바다, 붉은 노을이 한 폭의 그림처럼 이어지는 여행지입니다. 바닷물이 빠진 해안의 지층을 가까이 살펴보고 내소사의 전나무길도 천천히 걸어보세요. 산과 바다가 맞닿은 풍경이 여행을 다채롭게 채웁니다.",
+    "season": "사계절",
+    "purpose": "휴양",
+    "atmosphere": "자연친화적",
+    "budget_level": "보통",
+    "recommended_days": 2
+  },
+  {
+    "name": "완주",
+    "region": "전북특별자치도",
+    "description": "대둔산의 힘찬 능선과 포근한 숲, 소박한 마을 풍경 속에서 일상의 속도를 늦추기 좋은 여행지입니다. 산길과 계곡을 따라 맑은 자연을 만나고 지역의 정겨운 공간에서 잠시 쉬어보세요. 붐비지 않는 풍경과 담백한 여유가 완주의 매력입니다.",
+    "season": "사계절",
+    "purpose": "자연",
+    "atmosphere": "조용한",
+    "budget_level": "보통",
+    "recommended_days": 2
+  },
+  {
+    "name": "신안",
+    "region": "전라남도",
+    "description": "햇살 머금은 염전과 바람 좋은 섬길을 따라 천천히 이동하며 다도해의 고요함을 누리는 여행지입니다. 섬을 잇는 다리를 건너 보랏빛 바다와 드넓은 갯벌, 한적한 해변을 만나보세요. 목적지보다 이동하는 시간까지 아름다운 곳입니다.",
+    "season": "사계절",
+    "purpose": "휴양",
+    "atmosphere": "조용한",
+    "budget_level": "높음",
+    "recommended_days": 2
+  },
+  {
+    "name": "제주 조천",
+    "region": "제주특별자치도",
+    "description": "고요한 숲길과 부드러운 오름, 투명한 동부 바다가 이어져 제주의 원초적인 자연을 느끼는 여행지입니다. 사려니숲길의 짙은 초록 속을 걷고 함덕의 맑은 바다에서 잠시 쉬어보세요. 바쁜 관광보다 자연의 결을 따라 움직이는 하루에 잘 어울립니다.",
+    "season": "사계절",
+    "purpose": "자연",
+    "atmosphere": "자연친화적",
+    "budget_level": "높음",
+    "recommended_days": 2
+  },
+  {
+    "name": "제주 애월",
+    "region": "제주특별자치도",
+    "description": "바다를 끼고 달리는 해안도로와 감각적인 공간, 수평선 너머의 노을이 낭만을 더하는 여행지입니다. 한담해변을 따라 산책하고 바다가 보이는 공간에서 천천히 시간을 보내보세요. 해 질 무렵 주황빛으로 물드는 서쪽 바다가 여행의 마지막 장면을 완성합니다.",
+    "season": "사계절",
+    "purpose": "휴양",
+    "atmosphere": "낭만적인",
+    "budget_level": "높음",
+    "recommended_days": 2
+  },
+  {
+    "name": "서귀포",
+    "region": "제주특별자치도",
+    "description": "웅장한 폭포와 따뜻한 남쪽 바다, 싱그러운 숲과 시장의 활기가 조화롭게 어우러진 여행지입니다. 천지연의 물소리를 듣고 올레길을 걸으며 제주 남쪽의 여유로운 풍경을 만나보세요. 자연 속 산책부터 미식과 휴양까지 한곳에서 풍성하게 즐길 수 있습니다.",
+    "season": "사계절",
+    "purpose": "자연",
+    "atmosphere": "활기찬",
+    "budget_level": "높음",
+    "recommended_days": 3
+  },
+  {
+    "name": "양주",
+    "region": "경기도",
+    "description": "북한산과 불곡산의 숲길, 장흥의 예술 공간을 함께 둘러보며 수도권 가까이에서 자연과 문화를 즐기기 좋은 여행지입니다.",
+    "season": "봄",
+    "purpose": "문화",
+    "atmosphere": "여유로운",
+    "budget_level": "보통",
+    "recommended_days": 2
+  },
+  {
+    "name": "연천",
+    "region": "경기도",
+    "description": "한탄강의 주상절리와 넓은 들판, 역사 유적이 어우러져 한적한 자연 속에서 천천히 머물기 좋은 여행지입니다.",
+    "season": "가을",
+    "purpose": "자연",
+    "atmosphere": "조용한",
+    "budget_level": "보통",
+    "recommended_days": 2
+  },
+  {
+    "name": "이천",
+    "region": "경기도",
+    "description": "도자기 마을과 온천, 쌀밥으로 유명한 미식 공간을 함께 만나며 편안한 주말을 보내기 좋은 여행지입니다.",
+    "season": "사계절",
+    "purpose": "문화",
+    "atmosphere": "여유로운",
+    "budget_level": "보통",
+    "recommended_days": 2
+  },
+  {
+    "name": "춘천",
+    "region": "강원특별자치도",
+    "description": "의암호와 북한강의 물길, 숲과 섬이 이어져 산책과 레저, 닭갈비 여행을 함께 즐기기 좋은 호반 도시입니다.",
+    "season": "봄",
+    "purpose": "휴양",
+    "atmosphere": "낭만적인",
+    "budget_level": "보통",
+    "recommended_days": 2
+  },
+  {
+    "name": "원주",
+    "region": "강원특별자치도",
+    "description": "치악산의 깊은 숲과 섬강의 풍경, 감각적인 문화 공간이 어우러져 자연과 도심을 함께 누리기 좋은 여행지입니다.",
+    "season": "가을",
+    "purpose": "자연",
+    "atmosphere": "자연친화적",
+    "budget_level": "보통",
+    "recommended_days": 2
+  },
+  {
+    "name": "철원",
+    "region": "강원특별자치도",
+    "description": "한탄강 협곡과 드넓은 평야, 평화 전망대가 이어져 웅장한 자연과 묵직한 역사를 마주할 수 있는 여행지입니다.",
+    "season": "가을",
+    "purpose": "자연",
+    "atmosphere": "조용한",
+    "budget_level": "보통",
+    "recommended_days": 2
+  },
+  {
+    "name": "청주",
+    "region": "충청북도",
+    "description": "상당산성과 청남대, 도심의 문화 공간을 따라 역사와 산책을 균형 있게 즐기기 좋은 충북의 중심 도시입니다.",
+    "season": "사계절",
+    "purpose": "문화",
+    "atmosphere": "여유로운",
+    "budget_level": "보통",
+    "recommended_days": 2
+  },
+  {
+    "name": "괴산",
+    "region": "충청북도",
+    "description": "맑은 계곡과 산막이옛길, 짙은 숲이 이어져 복잡한 일상에서 벗어나 자연 속에서 쉬기 좋은 여행지입니다.",
+    "season": "여름",
+    "purpose": "자연",
+    "atmosphere": "자연친화적",
+    "budget_level": "저렴",
+    "recommended_days": 2
+  },
+  {
+    "name": "영동",
+    "region": "충청북도",
+    "description": "포도밭과 와이너리, 월류봉의 수려한 풍경을 함께 만나며 계절의 맛과 자연을 즐기기 좋은 여행지입니다.",
+    "season": "가을",
+    "purpose": "미식",
+    "atmosphere": "여유로운",
+    "budget_level": "보통",
+    "recommended_days": 2
+  },
+  {
+    "name": "공주",
+    "region": "충청남도",
+    "description": "공산성과 무령왕릉, 금강의 잔잔한 풍경 속에서 백제의 역사와 고즈넉한 도시의 시간을 느끼기 좋은 여행지입니다.",
+    "season": "봄",
+    "purpose": "문화",
+    "atmosphere": "전통적인",
+    "budget_level": "보통",
+    "recommended_days": 2
+  },
+  {
+    "name": "서산",
+    "region": "충청남도",
+    "description": "간월암의 낙조와 해미읍성, 드넓은 갯벌이 어우러져 서해의 여유와 역사를 함께 만날 수 있는 여행지입니다.",
+    "season": "가을",
+    "purpose": "자연",
+    "atmosphere": "조용한",
+    "budget_level": "보통",
+    "recommended_days": 2
+  },
+  {
+    "name": "서천",
+    "region": "충청남도",
+    "description": "국립생태원과 신성리 갈대밭, 잔잔한 서해가 이어져 생태와 산책을 중심으로 쉬어가기 좋은 여행지입니다.",
+    "season": "봄",
+    "purpose": "자연",
+    "atmosphere": "자연친화적",
+    "budget_level": "보통",
+    "recommended_days": 2
+  },
+  {
+    "name": "전주",
+    "region": "전북특별자치도",
+    "description": "한옥마을의 골목과 풍성한 음식, 전통문화가 어우러져 걷고 맛보며 한국적인 정취를 즐기기 좋은 여행지입니다.",
+    "season": "사계절",
+    "purpose": "문화",
+    "atmosphere": "전통적인",
+    "budget_level": "보통",
+    "recommended_days": 2
+  },
+  {
+    "name": "익산",
+    "region": "전북특별자치도",
+    "description": "미륵사지와 왕궁리 유적을 따라 백제의 시간을 만나고 보석과 근대 문화 공간까지 둘러보기 좋은 여행지입니다.",
+    "season": "봄",
+    "purpose": "문화",
+    "atmosphere": "전통적인",
+    "budget_level": "보통",
+    "recommended_days": 2
+  },
+  {
+    "name": "고창",
+    "region": "전북특별자치도",
+    "description": "선운산의 단풍과 고인돌 유적, 청보리밭이 계절마다 다른 색을 보여주는 자연과 역사의 여행지입니다.",
+    "season": "가을",
+    "purpose": "자연",
+    "atmosphere": "자연친화적",
+    "budget_level": "보통",
+    "recommended_days": 2
+  },
+  {
+    "name": "목포",
+    "region": "전라남도",
+    "description": "유달산과 근대 골목, 다도해를 바라보는 항구가 어우러져 남도의 맛과 바다 풍경을 함께 즐기기 좋은 여행지입니다.",
+    "season": "사계절",
+    "purpose": "미식",
+    "atmosphere": "낭만적인",
+    "budget_level": "보통",
+    "recommended_days": 2
+  },
+  {
+    "name": "보성",
+    "region": "전라남도",
+    "description": "초록빛 차밭과 율포의 바다, 완만한 산길이 이어져 싱그러운 풍경 속에서 천천히 쉬기 좋은 여행지입니다.",
+    "season": "봄",
+    "purpose": "자연",
+    "atmosphere": "자연친화적",
+    "budget_level": "보통",
+    "recommended_days": 2
+  },
+  {
+    "name": "영주",
+    "region": "경상북도",
+    "description": "부석사와 소수서원, 무섬마을을 따라 고즈넉한 전통과 소백산 자락의 자연을 함께 느끼기 좋은 여행지입니다.",
+    "season": "가을",
+    "purpose": "문화",
+    "atmosphere": "전통적인",
+    "budget_level": "보통",
+    "recommended_days": 2
+  },
+  {
+    "name": "울진",
+    "region": "경상북도",
+    "description": "맑은 동해와 금강송 숲, 온천과 계곡이 이어져 바다와 산에서 모두 쉬어갈 수 있는 여행지입니다.",
+    "season": "여름",
+    "purpose": "휴양",
+    "atmosphere": "자연친화적",
+    "budget_level": "보통",
+    "recommended_days": 2
+  },
+  {
+    "name": "울릉",
+    "region": "경상북도",
+    "description": "깊고 푸른 바다와 가파른 화산 지형, 섬을 따라 이어지는 전망길에서 독특한 자연을 만나는 여행지입니다.",
+    "season": "여름",
+    "purpose": "자연",
+    "atmosphere": "신비로운",
+    "budget_level": "높음",
+    "recommended_days": 3
+  },
+  {
+    "name": "진주",
+    "region": "경상남도",
+    "description": "진주성과 남강의 야경, 유등의 빛이 어우러져 역사 산책과 낭만적인 강변 풍경을 함께 즐기기 좋은 여행지입니다.",
+    "season": "가을",
+    "purpose": "문화",
+    "atmosphere": "전통적인",
+    "budget_level": "보통",
+    "recommended_days": 2
+  },
+  {
+    "name": "밀양",
+    "region": "경상남도",
+    "description": "영남루와 얼음골, 깊은 계곡과 고택이 이어져 시원한 자연과 지역의 옛 정취를 함께 느끼기 좋은 여행지입니다.",
+    "season": "여름",
+    "purpose": "자연",
+    "atmosphere": "조용한",
+    "budget_level": "보통",
+    "recommended_days": 2
+  },
+  {
+    "name": "산청",
+    "region": "경상남도",
+    "description": "지리산의 깊은 숲과 맑은 계곡, 한방 문화를 가까이에서 만나며 몸과 마음을 쉬어가기 좋은 여행지입니다.",
+    "season": "가을",
+    "purpose": "자연",
+    "atmosphere": "자연친화적",
+    "budget_level": "보통",
+    "recommended_days": 2
+  },
+  {
+    "name": "제주 한림",
+    "region": "제주특별자치도",
+    "description": "협재와 금능의 투명한 바다, 비양도와 오름 풍경이 어우러져 제주 서쪽의 여유를 즐기기 좋은 여행지입니다.",
+    "season": "사계절",
+    "purpose": "휴양",
+    "atmosphere": "낭만적인",
+    "budget_level": "높음",
+    "recommended_days": 2
+  },
+  {
+    "name": "제주 구좌",
+    "region": "제주특별자치도",
+    "description": "월정리 바다와 비자림, 용눈이오름을 따라 제주 동쪽의 맑고 담백한 자연을 만나기 좋은 여행지입니다.",
+    "season": "사계절",
+    "purpose": "자연",
+    "atmosphere": "자연친화적",
+    "budget_level": "높음",
+    "recommended_days": 2
+  },
+  {
+    "name": "제주 남원",
+    "region": "제주특별자치도",
+    "description": "큰엉 해안과 감귤밭, 한적한 바닷길이 이어져 제주 남동쪽의 따뜻하고 느긋한 시간을 보내기 좋은 여행지입니다.",
+    "season": "사계절",
+    "purpose": "휴양",
+    "atmosphere": "조용한",
+    "budget_level": "높음",
+    "recommended_days": 2
+  },
+  {
+    "name": "화성",
+    "region": "경기도",
+    "description": "제부도의 바닷길과 궁평항의 노을, 융건릉의 고즈넉한 숲을 오가며 서해의 자연과 역사, 도심의 편리함을 함께 즐기기 좋은 여행지입니다.",
+    "season": "사계절",
+    "purpose": "휴양",
+    "atmosphere": "낭만적인",
+    "budget_level": "보통",
+    "recommended_days": 2
+  }
+]

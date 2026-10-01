@@ -1,0 +1,121 @@
+{% extends "base.html" %}
+
+{% block title %}작성한 리뷰 | TripPalette{% endblock %}
+
+{% block css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/mypage.css') }}">
+{% endblock %}
+
+{% block content %}
+<section class="myreviews-page" aria-labelledby="myreviews-title">
+    <header class="myreviews-hero">
+        <img
+            class="myreviews-hero__art"
+            src="{{ url_for('static', filename='img/mypage/reviews-traveler-v2.png') }}"
+            alt=""
+            aria-hidden="true"
+        >
+        <div class="container myreviews-hero__inner">
+            <div class="myreviews-hero__copy">
+                <h1 id="myreviews-title">작성한 리뷰</h1>
+                <p>여행지와 숙소에서 느꼈던 순간을 다시 꺼내보세요.</p>
+                {% if review_items %}
+                    <div class="myreviews-hero__count" aria-label="작성한 리뷰 {{ review_items|length }}개">
+                        <strong>{{ review_items|length }}</strong>
+                        <span>개의 여행 이야기를 남겼어요</span>
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+    </header>
+
+    <div class="container myreviews-page__inner">
+        {% if review_items %}
+            <div class="myreviews-page__heading">
+                <div>
+                    <h2>여행의 기억을 모아봤어요.</h2>
+                </div>
+                <div class="myreviews-page__summary" aria-label="리뷰 종류별 개수">
+                    <span>여행지 {{ reviews|length }}</span>
+                    <span>숙소 {{ accommodation_reviews|length }}</span>
+                </div>
+            </div>
+
+            <div class="myreviews-list">
+                {% for kind, review in review_items %}
+                    {% if kind == 'destination' %}
+                        {% set target = review.destination %}
+                        {% set target_url = url_for('destination.detail', id=target.id) %}
+                        {% set target_name = target.name %}
+                        {% set target_region = target.region %}
+                    {% else %}
+                        {% set target = review.accommodation %}
+                        {% set target_url = url_for('accommodation.detail', id=target.id) ~ '#stay-reviews' %}
+                        {% set target_name = target.name %}
+                        {% set target_region = target.destination.name if target.destination else target.address %}
+                    {% endif %}
+
+                    <article class="myreview-card">
+                        <div class="myreview-card__type myreview-card__type--{{ kind }}">
+                            {% if kind == 'destination' %}
+                                <svg viewBox="0 0 24 24" aria-hidden="true">
+                                    <path d="M20 10c0 5-8 11-8 11S4 15 4 10a8 8 0 1 1 16 0Z"></path>
+                                    <circle cx="12" cy="10" r="2.5"></circle>
+                                </svg>
+                                <span>여행지</span>
+                            {% else %}
+                                <svg viewBox="0 0 24 24" aria-hidden="true">
+                                    <path d="M4 20V9l8-5 8 5v11"></path>
+                                    <path d="M9 20v-6h6v6M8 10h.01M16 10h.01"></path>
+                                </svg>
+                                <span>숙소</span>
+                            {% endif %}
+                        </div>
+
+                        <div class="myreview-card__content">
+                            <span class="myreview-card__region">{{ target_region }}</span>
+                            <h3><a href="{{ target_url }}">{{ target_name }}</a></h3>
+                            <div class="myreview-card__rating" aria-label="5점 만점 중 {{ review.rating }}점">
+                                {% for score in range(1, 6) %}
+                                    <span class="{% if score <= review.rating %}is-filled{% endif %}" aria-hidden="true">★</span>
+                                {% endfor %}
+                                <strong>{{ review.rating }}.0</strong>
+                            </div>
+                            <p>{{ review.content }}</p>
+                        </div>
+
+                        <div class="myreview-card__aside">
+                            <time datetime="{{ review.created_at.strftime('%Y-%m-%d') }}">{{ review.created_at.strftime('%Y.%m.%d') }}</time>
+                            <div class="myreview-card__actions">
+                                <a href="{{ target_url }}">다시 보기</a>
+                                <form
+                                    method="post"
+                                    action="{% if kind == 'destination' %}{{ url_for('mypage.delete_destination_review', review_id=review.id) }}{% else %}{{ url_for('mypage.delete_accommodation_review', review_id=review.id) }}{% endif %}"
+                                    onsubmit="return confirm('이 리뷰를 삭제하시겠습니까? 삭제한 리뷰는 복구할 수 없습니다.');"
+                                >
+                                    <button type="submit">리뷰 삭제</button>
+                                </form>
+                            </div>
+                        </div>
+                    </article>
+                {% endfor %}
+            </div>
+        {% else %}
+            <div class="myreviews-empty">
+                <span class="myreviews-empty__icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M4 5h16v13H8l-4 3V5Z"></path>
+                        <path d="M8 10h8M8 14h5"></path>
+                    </svg>
+                </span>
+                <h2>아직 작성한 리뷰가 없습니다.</h2>
+                <p>다녀온 여행지와 숙소에 나만의 이야기를 남겨보세요.</p>
+                <div class="myreviews-empty__actions">
+                    <a href="{{ url_for('destination.list') }}">여행지 둘러보기</a>
+                    <a href="{{ url_for('accommodation.list') }}">숙소 둘러보기</a>
+                </div>
+            </div>
+        {% endif %}
+    </div>
+</section>
+{% endblock %}

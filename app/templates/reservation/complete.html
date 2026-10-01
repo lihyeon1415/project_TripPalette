@@ -1,0 +1,53 @@
+
+{% extends "base.html" %}
+
+{% block title %}예약 접수 완료 | TripPalette{% endblock %}
+
+{% block css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/reservation.css') }}">
+{% endblock %}
+
+{% block content %}
+<section class="reservation-complete-page">
+    <div class="reservation-complete-card">
+        <span class="reservation-complete-card__icon{% if reservation.status == 'CANCELLED' %} reservation-complete-card__icon--cancelled{% endif %}" aria-hidden="true">
+            {{ '×' if reservation.status == 'CANCELLED' else '✓' }}
+        </span>
+        {% if reservation.status == 'CANCELLED' %}
+            <span class="reservation-kicker">예약 취소</span>
+            <h1>취소된 예약입니다.</h1>
+            <p>예약 정보는 내역 확인을 위해 보관되며 실제 숙소에는 전달되지 않습니다.</p>
+        {% else %}
+            <span class="reservation-kicker">예약 접수 완료</span>
+            <h1>여행을 위한 숙소가<br>예약 대기 상태로 접수됐어요.</h1>
+            <p>현재 프로젝트에서는 결제 없이 예약 정보만 저장됩니다.</p>
+        {% endif %}
+
+        <dl class="reservation-complete-card__details">
+            <div><dt>숙소</dt><dd>{{ reservation.accommodation.name }}</dd></div>
+            <div><dt>일정</dt><dd>{{ reservation.check_in.strftime('%Y.%m.%d') }} – {{ reservation.check_out.strftime('%Y.%m.%d') }}</dd></div>
+            <div><dt>인원</dt><dd>{{ reservation.people_count }}명</dd></div>
+            <div><dt>예상 금액</dt><dd>₩ {{ "{:,}".format(reservation.total_price) }}</dd></div>
+            <div>
+                <dt>상태</dt>
+                <dd>{% if reservation.status == 'CANCELLED' %}예약 취소{% elif reservation.status == 'CONFIRMED' %}예약 확정{% else %}예약 대기{% endif %}</dd>
+            </div>
+        </dl>
+
+        <div class="reservation-complete-card__actions">
+            <a href="{{ url_for('mypage.reservations') }}">예약 내역 보기</a>
+            <a href="{{ url_for('accommodation.detail', id=reservation.accommodation.id) }}">숙소로 돌아가기</a>
+        </div>
+        {% if reservation.status in ('PENDING', 'CONFIRMED') %}
+            <form
+                class="reservation-complete-card__cancel"
+                method="post"
+                action="{{ url_for('reservation.cancel', id=reservation.id) }}"
+                onsubmit="return confirm('이 예약을 취소하시겠습니까?');"
+            >
+                <button type="submit">예약 취소하기</button>
+            </form>
+        {% endif %}
+    </div>
+</section>
+{% endblock %}

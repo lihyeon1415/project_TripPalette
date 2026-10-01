@@ -1,0 +1,112 @@
+{% extends "base.html" %}
+
+{% block title %}찜한 여행지 | TripPalette{% endblock %}
+
+{% block head %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/mypage.css') }}">
+{% endblock %}
+
+{% block content %}
+<section class="favorites-page" aria-labelledby="favorites-title">
+    <header class="favorites-hero">
+        <div class="container favorites-hero__inner">
+            <div class="favorites-hero__copy">
+                <h1 id="favorites-title">찜한 여행지</h1>
+                <p>마음에 담아둔 여행지를 다시 살펴보고 다음 여행을 준비해 보세요.</p>
+                {% if favorites %}
+                    <div class="favorites-hero__count" aria-label="찜한 여행지 {{ favorites|length }}곳">
+                        <strong>{{ favorites|length }}</strong>
+                        <span>개의 여행지를 담아두었어요</span>
+                    </div>
+                {% endif %}
+            </div>
+            <div class="favorites-hero__visual" aria-hidden="true">
+                <img src="{{ url_for('static', filename='img/mypage/favorites-traveler-v1.png') }}" alt="">
+            </div>
+        </div>
+    </header>
+
+    <div class="container favorites-page__inner">
+        {% if favorites %}
+            <div class="favorites-page__heading">
+                <div>
+                    <h2>어디부터 떠나볼까요?</h2>
+                </div>
+                <a href="{{ url_for('recommendation.survey') }}">맞춤 여행 설정 →</a>
+            </div>
+
+            <div class="saved-grid">
+                {% for favorite in favorites %}
+                    {% set destination = favorite.destination %}
+                    {% set media = destination_media.get(destination.name) %}
+                    <article class="saved-card">
+                        <div class="saved-card__media">
+                            <a
+                                href="{{ url_for('destination.detail', id=destination.id) }}"
+                                aria-label="{{ destination.name }} 여행지 상세 보기"
+                            >
+                                {% if media %}
+                                    <img
+                                        src="{{ url_for('static', filename=media.cover) }}"
+                                        alt="{{ destination.name }} 대표 풍경"
+                                        loading="lazy"
+                                    >
+                                {% else %}
+                                    <span class="saved-card__placeholder">
+                                        <svg viewBox="0 0 48 48" aria-hidden="true">
+                                            <path d="M7 36V12a4 4 0 0 1 4-4h26a4 4 0 0 1 4 4v24"></path>
+                                            <path d="m8 33 9-10 7 7 5-5 11 11"></path>
+                                            <circle cx="32" cy="17" r="3"></circle>
+                                        </svg>
+                                        <strong>{{ destination.name }}</strong>
+                                    </span>
+                                {% endif %}
+                                <span class="saved-card__shade"></span>
+                                <span class="saved-card__region">{{ destination.region }}</span>
+                            </a>
+                            <form method="post" action="{{ url_for('destination.toggle_favorite', id=destination.id) }}">
+                                <button type="submit" aria-label="{{ destination.name }} 찜 해제">
+                                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                                        <path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1.1-1.1a5.5 5.5 0 0 0-7.8 7.8l1.1 1.1L12 21l7.8-7.5 1.1-1.1a5.5 5.5 0 0 0-.1-7.8Z"></path>
+                                    </svg>
+                                </button>
+                            </form>
+                        </div>
+
+                        <div class="saved-card__body">
+                            <span class="saved-card__kicker">{{ destination.region }}</span>
+                            <h3><a href="{{ url_for('destination.detail', id=destination.id) }}">{{ destination.name }}</a></h3>
+                            <p>{{ destination.description or destination.name ~ '의 새로운 여행 풍경을 만나보세요.' }}</p>
+
+                            <div class="saved-card__tags" aria-label="여행지 정보">
+                                {% if destination.season %}<span>{{ destination.season }}</span>{% endif %}
+                                {% if destination.purpose %}<span>{{ destination.purpose }}</span>{% endif %}
+                                {% if destination.atmosphere %}<span>{{ destination.atmosphere }}</span>{% endif %}
+                            </div>
+
+                            <div class="saved-card__footer">
+                                <small>{{ favorite.created_at.strftime('%Y.%m.%d') }} 저장</small>
+                                <a href="{{ url_for('destination.detail', id=destination.id) }}" aria-label="{{ destination.name }} 상세 보기">자세히 보기 →</a>
+                            </div>
+                        </div>
+                    </article>
+                {% endfor %}
+            </div>
+        {% else %}
+            <div class="saved-empty">
+                <span class="saved-empty__icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1.1-1.1a5.5 5.5 0 0 0-7.8 7.8l1.1 1.1L12 21l7.8-7.5 1.1-1.1a5.5 5.5 0 0 0-.1-7.8Z"></path>
+                    </svg>
+                </span>
+                <h2>아직 찜한 여행지가 없습니다.</h2>
+                <p>마음에 드는 여행지의 하트를 누르면 이곳에서 다시 볼 수 있어요.</p>
+                <div class="saved-empty__actions">
+                    <a href="{{ url_for('destination.list') }}">여행지 둘러보기 <span aria-hidden="true">→</span></a>
+                    <a href="{{ url_for('recommendation.survey') }}">맞춤 여행 설정</a>
+                </div>
+            </div>
+        {% endif %}
+    </div>
+</section>
+{% endblock %}

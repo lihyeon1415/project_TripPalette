@@ -1,0 +1,71 @@
+{% extends "base.html" %}
+
+{% block title %}로그인 | TripPalette{% endblock %}
+
+{% block css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/auth.css') }}">
+{% endblock %}
+
+{% block content %}
+<div class="auth-login-page">
+    <div class="container auth-login-container">
+        <article class="auth-login-card">
+            <div class="auth-login-visual" aria-hidden="true">
+                <img
+                    src="{{ url_for('static', filename='img/main/hero-jeju-sunset.png') }}"
+                    alt=""
+                >
+                <div class="auth-login-visual-copy">
+                    <span>TripPalette</span>
+                    <strong>여행도 나만의 색으로</strong>
+                </div>
+            </div>
+
+            <div class="auth-login-panel">
+                <div class="auth-login-panel__inner">
+                    <h1>로그인</h1>
+
+                    <form class="auth-login-form" method="post" action="{{ url_for('auth.login') }}">
+                        {% if next_url %}
+                            <input type="hidden" name="next" value="{{ next_url }}">
+                        {% endif %}
+
+                        <div class="form-group">
+                            <label for="email">이메일</label>
+                            <input
+                                type="email"
+                                id="email"
+                                name="email"
+                                value="{{ form_data.get('email', '') }}"
+                                placeholder="이메일을 입력해주세요"
+                                autocomplete="email"
+                                required
+                            >
+                        </div>
+
+                        <div class="form-group">
+                            <label for="password">비밀번호</label>
+                            <input
+                                type="password"
+                                id="password"
+                                name="password"
+                                placeholder="비밀번호를 입력해주세요"
+                                autocomplete="current-password"
+                                required
+                            >
+                        </div>
+
+                        <button class="button auth-login-submit" type="submit">로그인</button>
+                    </form>
+
+                    <nav class="auth-login-links" aria-label="계정 도움말">
+                        <a href="{{ url_for('auth.find_email') }}">이메일 찾기</a>
+                        <a href="{{ url_for('auth.reset_password') }}">비밀번호 찾기</a>
+                        <a class="auth-login-links__signup" href="{{ url_for('auth.signup') }}">회원가입</a>
+                    </nav>
+                </div>
+            </div>
+        </article>
+    </div>
+</div>
+{% endblock %}
