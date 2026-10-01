@@ -105,7 +105,7 @@
             </fieldset>
 
             <div class="preference-form__actions">
-                <button class="button button--primary preference-submit" type="submit">
+                <button class="button button--primary preference-submit{% if has_preference %} preference-submit--secondary{% endif %}" type="submit">
                     {% if has_preference %}취향 다시 저장하기{% else %}내 여행지 추천받기{% endif %}
                     <span aria-hidden="true">→</span>
                 </button>

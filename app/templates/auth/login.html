@@ -4,68 +4,80 @@
 
 {% block css %}
 <link rel="stylesheet" href="{{ url_for('static', filename='css/auth.css') }}">
+<script>document.documentElement.classList.add("auth-motion-enabled");</script>
 {% endblock %}
 
 {% block content %}
-<div class="auth-login-page">
-    <div class="container auth-login-container">
-        <article class="auth-login-card">
-            <div class="auth-login-visual" aria-hidden="true">
-                <img
-                    src="{{ url_for('static', filename='img/main/hero-jeju-sunset.png') }}"
-                    alt=""
-                >
-                <div class="auth-login-visual-copy">
-                    <span>TripPalette</span>
-                    <strong>여행도 나만의 색으로</strong>
-                </div>
+<main class="palette-auth-page palette-auth-page--login">
+    <div class="container palette-auth-layout">
+        <section class="palette-auth-story" aria-labelledby="login-story-title">
+            <p class="palette-auth-story__eyebrow">당신의 취향으로 채우는 여행</p>
+            <div class="palette-auth-story__title-row">
+                <h2 id="login-story-title">당신의 여행에<br>색을 더하세요</h2>
+                <span class="palette-pin" aria-hidden="true"></span>
+            </div>
+            <p class="palette-auth-story__lead">좋아하는 풍경을 모아, 나만의 여행 팔레트로.</p>
+
+            <div class="travel-palette" aria-hidden="true">
+                <figure class="travel-palette__card travel-palette__card--blue">
+                    <img src="{{ url_for('static', filename='img/destination/generated/busan-gamcheon-village-v1.png') }}" alt="">
+                    <figcaption><small>01 /</small><strong>OCEAN BLUE</strong></figcaption>
+                </figure>
+                <figure class="travel-palette__card travel-palette__card--green">
+                    <img src="{{ url_for('static', filename='img/destination/generated/jeju-sea-v1.png') }}" alt="">
+                    <figcaption><small>02 /</small><strong>JEJU GREEN</strong></figcaption>
+                </figure>
+                <figure class="travel-palette__card travel-palette__card--coral">
+                    <img src="{{ url_for('static', filename='img/main/hero-busan-gwangalli-hd.png') }}" alt="">
+                    <figcaption><small>03 /</small><strong>SUNSET CORAL</strong></figcaption>
+                </figure>
+            </div>
+        </section>
+
+        <section class="palette-auth-panel" aria-labelledby="login-title">
+            <div class="palette-auth-panel__heading palette-auth-panel__heading--without-logo">
+                <h1 id="login-title">다시 만나 반가워요!</h1>
+                <p>당신의 여행 팔레트를 이어가세요.</p>
             </div>
 
-            <div class="auth-login-panel">
-                <div class="auth-login-panel__inner">
-                    <h1>로그인</h1>
+            <form class="palette-auth-form" method="post" action="{{ url_for('auth.login') }}">
+                {% if next_url %}
+                    <input type="hidden" name="next" value="{{ next_url }}">
+                {% endif %}
 
-                    <form class="auth-login-form" method="post" action="{{ url_for('auth.login') }}">
-                        {% if next_url %}
-                            <input type="hidden" name="next" value="{{ next_url }}">
-                        {% endif %}
-
-                        <div class="form-group">
-                            <label for="email">이메일</label>
-                            <input
-                                type="email"
-                                id="email"
-                                name="email"
-                                value="{{ form_data.get('email', '') }}"
-                                placeholder="이메일을 입력해주세요"
-                                autocomplete="email"
-                                required
-                            >
-                        </div>
-
-                        <div class="form-group">
-                            <label for="password">비밀번호</label>
-                            <input
-                                type="password"
-                                id="password"
-                                name="password"
-                                placeholder="비밀번호를 입력해주세요"
-                                autocomplete="current-password"
-                                required
-                            >
-                        </div>
-
-                        <button class="button auth-login-submit" type="submit">로그인</button>
-                    </form>
-
-                    <nav class="auth-login-links" aria-label="계정 도움말">
-                        <a href="{{ url_for('auth.find_email') }}">이메일 찾기</a>
-                        <a href="{{ url_for('auth.reset_password') }}">비밀번호 찾기</a>
-                        <a class="auth-login-links__signup" href="{{ url_for('auth.signup') }}">회원가입</a>
-                    </nav>
+                <div class="form-group">
+                    <label for="email">이메일</label>
+                    <input type="email" id="email" name="email" value="{{ form_data.get('email', '') }}" placeholder="이메일을 입력해주세요" autocomplete="email" required>
                 </div>
-            </div>
-        </article>
+
+                <div class="form-group">
+                    <label for="password">비밀번호</label>
+                    <div class="password-field">
+                        <input type="password" id="password" name="password" placeholder="비밀번호를 입력해주세요" autocomplete="current-password" required>
+                        <button type="button" class="password-toggle" data-password-toggle="password" aria-label="비밀번호 보기">
+                            <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M2.5 12s3.5-6 9.5-6 9.5 6 9.5 6-3.5 6-9.5 6-9.5-6-9.5-6Z"></path><circle cx="12" cy="12" r="2.8"></circle></svg>
+                        </button>
+                    </div>
+                </div>
+
+                <button class="palette-auth-submit" type="submit">로그인</button>
+            </form>
+
+            <nav class="palette-auth-help" aria-label="계정 도움말">
+                <div>
+                    <a href="{{ url_for('auth.find_email') }}">이메일 찾기</a>
+                    <a href="{{ url_for('auth.reset_password') }}">비밀번호 찾기</a>
+                </div>
+                <div class="palette-auth-switch">
+                    <span>아직 계정이 없으신가요?</span>
+                    <a href="{{ url_for('auth.signup') }}">회원가입</a>
+                </div>
+            </nav>
+        </section>
     </div>
-</div>
+</main>
+{% endblock %}
+
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/auth.js') }}" defer></script>
 {% endblock %}

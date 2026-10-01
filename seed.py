@@ -1,4 +1,5 @@
 import json
+import re
 from decimal import Decimal, InvalidOperation
 from pathlib import Path
 
@@ -116,6 +117,14 @@ def validate_accommodations(items, destination_names):
         positive_integer(item["price_per_night"], "price_per_night", label)
         positive_integer(item["capacity"], "capacity", label)
         optional_rating(item.get("rating"), label)
+
+        for field in ("wifi_available", "parking_available"):
+            if not isinstance(item.get(field), bool):
+                raise ValueError(f"{label}의 {field}는 true 또는 false여야 합니다.")
+
+        for field in ("check_in_time", "check_out_time"):
+            if not re.fullmatch(r"(?:[01]\d|2[0-3]):[0-5]\d", item.get(field, "")):
+                raise ValueError(f"{label}의 {field}는 HH:MM 형식이어야 합니다.")
 
 
 def upsert_destinations(items):

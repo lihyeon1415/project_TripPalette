@@ -16,6 +16,7 @@ CHOICES = {
         (150000, "15만원 이하"),
         (300000, "30만원 이하"),
         (500000, "50만원 이하"),
+        (1000000, "50만원 이상"),
     ),
     "trip_duration": (
         (1, "당일"),
@@ -115,5 +116,6 @@ def result():
         "recommendation/result.html",
         recommendations=recommendations,
         preference_summary=_preference_form_data(preference),
+        budget_labels={str(value): label for value, label in CHOICES["budget"]},
         fallback_mode=fallback_mode,
     )

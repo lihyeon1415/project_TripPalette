@@ -10,12 +10,16 @@ document.addEventListener("DOMContentLoaded", () => {
     const dots = Array.from(carousel.querySelectorAll("[data-hero-dot]"));
     const previousButton = carousel.querySelector("[data-hero-prev]");
     const nextButton = carousel.querySelector("[data-hero-next]");
+    const currentCounter = carousel.querySelector("[data-hero-current]");
+    const autoplayButton = carousel.querySelector("[data-hero-autoplay]");
+    const autoplayIcon = carousel.querySelector("[data-hero-autoplay-icon]");
     const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
     const intervalMilliseconds = 3000;
     let currentIndex = 0;
     let physicalIndex = 1;
     let timerId = null;
     let isAnimating = false;
+    let isManuallyPaused = false;
 
     if (slides.length < 2) {
         carousel.querySelector(".hero__controls")?.setAttribute("hidden", "");
@@ -44,6 +48,10 @@ document.addEventListener("DOMContentLoaded", () => {
             dot.classList.toggle("is-active", isCurrent);
             dot.toggleAttribute("aria-current", isCurrent);
         });
+
+        if (currentCounter) {
+            currentCounter.textContent = String(currentIndex + 1).padStart(2, "0");
+        }
     };
 
     const setTrackPosition = (index, animate = true) => {
@@ -117,7 +125,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const startAutoplay = () => {
         stopAutoplay();
 
-        if (!reduceMotion.matches && !document.hidden) {
+        if (!reduceMotion.matches && !document.hidden && !isManuallyPaused) {
             timerId = window.setInterval(() => moveBy(1), intervalMilliseconds);
         }
     };
@@ -134,6 +142,23 @@ document.addEventListener("DOMContentLoaded", () => {
     nextButton.addEventListener("click", () => {
         moveBy(1);
         startAutoplay();
+    });
+    autoplayButton?.addEventListener("click", () => {
+        isManuallyPaused = !isManuallyPaused;
+        autoplayButton.setAttribute("aria-pressed", String(isManuallyPaused));
+        autoplayButton.setAttribute(
+            "aria-label",
+            isManuallyPaused ? "자동 재생 시작" : "자동 재생 일시정지",
+        );
+        if (autoplayIcon) {
+            autoplayIcon.textContent = isManuallyPaused ? "▶" : "Ⅱ";
+        }
+
+        if (isManuallyPaused) {
+            stopAutoplay();
+        } else {
+            startAutoplay();
+        }
     });
     dots.forEach((dot, index) => {
         dot.addEventListener("click", () => selectSlide(index));
@@ -170,6 +195,7 @@ document.addEventListener("DOMContentLoaded", () => {
         panelSelector,
         tabDataKey,
         panelDataKey,
+        onActivate,
     }) => {
         const tabs = Array.from(document.querySelectorAll(tabSelector));
         const panels = Array.from(document.querySelectorAll(panelSelector));
@@ -201,6 +227,10 @@ document.addEventListener("DOMContentLoaded", () => {
                     });
                 }
             });
+
+            if (onActivate) {
+                onActivate(key);
+            }
         };
 
         tabs.forEach((tab, index) => {
@@ -237,18 +267,59 @@ document.addEventListener("DOMContentLoaded", () => {
         activate(initialTab.dataset[tabDataKey]);
     };
 
+    const updateRegionMap = (key) => {
+        const map = document.querySelector("[data-region-map]");
+
+        if (!map) {
+            return;
+        }
+
+        const activeTab = document.querySelector(`[data-region-tab="${key}"]`);
+        const activeLabel = activeTab ? activeTab.textContent.trim() : "선택 지역";
+
+        map.querySelectorAll("[data-map-image]").forEach((image) => {
+            const isActive = image.dataset.mapImage === key;
+            image.classList.toggle("is-active", isActive);
+            image.setAttribute("aria-hidden", String(!isActive));
+        });
+
+        const status = map.querySelector("[data-region-map-status]");
+        if (status) {
+            status.textContent = `${activeLabel} 권역이 선택되었습니다.`;
+        }
+    };
+
     initializeTabs({
         tabSelector: "[data-region-tab]",
         panelSelector: "[data-region-panel]",
         tabDataKey: "regionTab",
         panelDataKey: "regionPanel",
+        onActivate: updateRegionMap,
     });
+
+    const updateCompanionHeading = (key) => {
+        const heading = document.querySelector("[data-companion-heading]");
+
+        if (!heading) {
+            return;
+        }
+
+        heading.dataset.companionActive = key;
+        heading.querySelectorAll("[data-companion-scene]").forEach((scene) => {
+            const isActive = scene.dataset.companionScene === key;
+            scene.classList.toggle("is-active", isActive);
+        });
+        heading.querySelectorAll("[data-companion-message]").forEach((message) => {
+            message.hidden = message.dataset.companionMessage !== key;
+        });
+    };
 
     initializeTabs({
         tabSelector: "[data-companion-tab]",
         panelSelector: "[data-companion-panel]",
         tabDataKey: "companionTab",
         panelDataKey: "companionPanel",
+        onActivate: updateCompanionHeading,
     });
 });
 
@@ -339,5 +410,42 @@ document.addEventListener("DOMContentLoaded", () => {
         } else {
             observer.observe(item);
         }
+    });
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+    const goodsAd = document.querySelector("[data-pally-goods-ad]");
+    const closeButton = goodsAd?.querySelector("[data-pally-goods-close]");
+    const storageKey = "tripPalettePallyGoodsDismissed";
+
+    if (!goodsAd || !closeButton) {
+        return;
+    }
+
+    try {
+        if (sessionStorage.getItem(storageKey) === "true") {
+            goodsAd.hidden = true;
+            return;
+        }
+    } catch (_error) {
+        // The close action still works when browser storage is unavailable.
+    }
+
+    closeButton.addEventListener("click", () => {
+        try {
+            sessionStorage.setItem(storageKey, "true");
+        } catch (_error) {
+            // Hiding the ad does not depend on browser storage.
+        }
+
+        if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+            goodsAd.hidden = true;
+            return;
+        }
+
+        goodsAd.classList.add("is-closing");
+        window.setTimeout(() => {
+            goodsAd.hidden = true;
+        }, 220);
     });
 });

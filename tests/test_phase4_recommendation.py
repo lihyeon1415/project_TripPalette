@@ -193,6 +193,24 @@ class RecommendationRouteTestCase(unittest.TestCase):
         self.assertTrue(context["has_preference"])
         self.assertEqual(context["form_data"]["budget"], "500000")
 
+    def test_long_trip_accepts_over_500k_budget_and_returns_recommendations(self):
+        self.login_as(self.user_id)
+        response = self.client.post(
+            "/recommend/survey",
+            data=self.preference_data(budget="1000000", trip_duration="5"),
+        )
+        self.assertEqual(response.status_code, 302)
+
+        preference = db.session.scalar(
+            db.select(UserPreference).where(UserPreference.user_id == self.user_id)
+        )
+        self.assertEqual(preference.budget, 1000000)
+        self.assertEqual(preference.trip_duration, 5)
+
+        response, _, context = self.get_context("/recommend/result")
+        self.assertTrue(context["recommendations"])
+        self.assertIn("50만원 이상", response.get_data(as_text=True))
+
     def test_invalid_or_missing_values_do_not_save(self):
         self.login_as(self.user_id)
         response = self.client.post(

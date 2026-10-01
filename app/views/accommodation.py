@@ -1,4 +1,6 @@
+import json
 import re
+from functools import lru_cache
 from pathlib import Path, PurePosixPath
 
 from flask import (
@@ -30,6 +32,41 @@ ACCOMMODATION_IMAGE_SUFFIXES = {
     ".avif",
     ".gif",
 }
+ACCOMMODATION_DATA_PATH = (
+    Path(__file__).resolve().parents[1] / "data" / "accommodations.json"
+)
+
+
+@lru_cache(maxsize=1)
+def _accommodation_booking_facts():
+    """JSON에 정의된 숙소별 편의·입퇴실 정보를 조회용 사전으로 만든다."""
+    with ACCOMMODATION_DATA_PATH.open(encoding="utf-8") as data_file:
+        accommodations = json.load(data_file)
+
+    return {
+        (item["destination_name"], item["name"]): {
+            "wifi_available": item.get("wifi_available", True),
+            "parking_available": item.get("parking_available", True),
+            "check_in_time": item.get("check_in_time", "15:00"),
+            "check_out_time": item.get("check_out_time", "11:00"),
+        }
+        for item in accommodations
+    }
+
+
+def _booking_facts_for(accommodation):
+    destination_name = (
+        accommodation.destination.name if accommodation.destination else ""
+    )
+    return _accommodation_booking_facts().get(
+        (destination_name, accommodation.name),
+        {
+            "wifi_available": True,
+            "parking_available": True,
+            "check_in_time": "15:00",
+            "check_out_time": "11:00",
+        },
+    )
 
 
 def _natural_filename_key(path):
@@ -139,6 +176,7 @@ def detail(id):
         "accommodation/detail.html",
         accommodation=accommodation,
         accommodation_images=accommodation_images,
+        booking_facts=_booking_facts_for(accommodation),
         accommodation_reviews=reviews,
         average_rating=average_rating,
         can_review=can_review,

@@ -110,10 +110,21 @@ class Phase2RouteTestCase(unittest.TestCase):
         )
         page = response.get_data(as_text=True)
         self.assertEqual(page.count('class="hero__slide"'), 4)
-        self.assertEqual(page.count("data-hero-dot="), 4)
+        self.assertIn("data-hero-current", page)
+        self.assertIn("data-hero-prev", page)
+        self.assertIn("data-hero-next", page)
+        self.assertIn("data-hero-autoplay", page)
         self.assertIn('action="/destinations"', page)
         self.assertIn('name="keyword"', page)
-        self.assertIn("검색하기", page)
+        self.assertIn("여행지 찾기", page)
+        self.assertIn("img/main/pally-popular-title-v1.png", page)
+        self.assertIn("data-region-map", page)
+        self.assertEqual(page.count('data-map-image="'), 6)
+        self.assertIn("regional-map-gangwon.png", page)
+        self.assertIn("지역 여행지 더보기", page)
+        self.assertIn("data-pally-goods-ad", page)
+        self.assertIn("pally-goods-ad-v1.png", page)
+        self.assertIn('<button class="pally-goods-ad__button"', page)
         self.assertIn("바다와 섬이 빚어낸 쉼", page)
         self.assertIn(
             "img/destination/generated/jeju-dol-hareubang-v1.png",
@@ -292,10 +303,23 @@ class Phase2RouteTestCase(unittest.TestCase):
         self.assertEqual(template, "accommodation/detail.html")
         self.assertEqual(context["accommodation"].name, "제주 테스트 호텔")
         self.assertEqual(context["accommodation"].destination.name, "제주")
+        self.assertEqual(
+            context["booking_facts"],
+            {
+                "wifi_available": True,
+                "parking_available": True,
+                "check_in_time": "15:00",
+                "check_out_time": "11:00",
+            },
+        )
         detail_page = response.get_data(as_text=True)
         self.assertIn("제주 테스트 숙소", detail_page)
         self.assertIn("여행지 상세 보기", detail_page)
         self.assertIn("예약하기", detail_page)
+        self.assertIn("와이파이", detail_page)
+        self.assertIn("주차 가능", detail_page)
+        self.assertIn("입실 시간", detail_page)
+        self.assertIn("퇴실 시간", detail_page)
         self.assertIn(f'/reservations/new/{self.jeju_hotel.id}', detail_page)
         self.assertNotIn("external.example", detail_page)
         self.assertEqual(self.client.get("/accommodations/9999").status_code, 404)

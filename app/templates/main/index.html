@@ -83,6 +83,11 @@
                     <span class="hero__destination-copy">
                         <small>{{ slide.caption }}</small>
                         <strong>{{ slide.destination_name }}</strong>
+                        <span class="hero__destination-rule"></span>
+                        <span class="hero__destination-english">
+                            <svg aria-hidden="true"><use href="#main-icon-location"></use></svg>
+                            {{ slide.english_name }}
+                        </span>
                     </span>
                 </a>
             </div>
@@ -92,11 +97,11 @@
 
     <div class="container hero__content">
         <div class="hero__copy">
-            <p class="eyebrow">GOOD TRAVEL, BETTER LIFE</p>
-            <h1 id="hero-title">어디로 떠나볼까요?</h1>
-            <p class="hero__description">
-                오늘도, 특별한 여행이 당신을 기다리고 있어요.
-            </p>
+            <h1 id="hero-title">
+                <span>Your Color,</span>
+                <span>Your Journey <small>TRIP PALETTE</small></span>
+            </h1>
+            <p class="hero__description">좋아하는 순간들로 채우는, 나만의 여행</p>
         </div>
 
         <form
@@ -122,25 +127,30 @@
                 type="submit"
                 aria-label="여행지 검색하기"
             >
-                검색하기
+                여행지 찾기
             </button>
         </form>
+
+        <nav class="hero__keywords" aria-label="추천 여행 키워드">
+            <strong>추천</strong>
+            <a href="{{ url_for('destination.list', keyword='바다') }}">바다 여행</a>
+            <a href="{{ url_for('destination.list', keyword='단풍') }}">가을 단풍</a>
+            <a href="{{ url_for('destination.list', keyword='힐링') }}">주말 힐링</a>
+        </nav>
     </div>
 
-    <div class="hero__controls" aria-label="배경 사진 선택">
+    <div class="hero__controls" aria-label="배경 사진 제어">
         <button class="hero__arrow" type="button" data-hero-prev aria-label="이전 사진">‹</button>
-        <div class="hero__dots">
-            {% for slide in hero_slides %}
-                <button
-                    class="hero__dot{% if loop.first %} is-active{% endif %}"
-                    type="button"
-                    data-hero-dot="{{ loop.index0 }}"
-                    aria-label="{{ loop.index }}번째 사진 보기"
-                    {% if loop.first %}aria-current="true"{% endif %}
-                ></button>
-            {% endfor %}
-        </div>
+        <span class="hero__counter" aria-live="polite">
+            <strong data-hero-current>01</strong>
+            <span>/</span>
+            <span>{{ '%02d'|format(hero_slides|length) }}</span>
+        </span>
         <button class="hero__arrow" type="button" data-hero-next aria-label="다음 사진">›</button>
+        <span class="hero__control-divider" aria-hidden="true"></span>
+        <button class="hero__autoplay" type="button" data-hero-autoplay aria-label="자동 재생 일시정지" aria-pressed="false">
+            <span aria-hidden="true" data-hero-autoplay-icon>Ⅱ</span>
+        </button>
     </div>
 </section>
 
@@ -155,6 +165,12 @@
                         <strong>여행지</strong>
                     </h2>
                 </div>
+                <img
+                    class="popular-heading__pally"
+                    src="{{ url_for('static', filename='img/main/pally-popular-title-v1.png') }}"
+                    alt=""
+                    aria-hidden="true"
+                >
             </div>
             <a class="text-link" href="{{ url_for('destination.list') }}">전체보기 <span>→</span></a>
         </div>
@@ -220,6 +236,18 @@
                 </div>
             </div>
 
+            <div class="regional-map" data-region-map aria-label="선택 지역 지도">
+                <div class="regional-map__images">
+                    <img class="regional-map__image is-active" src="{{ url_for('static', filename='img/main/regional-map-seoul-gyeonggi.png') }}" alt="서울·경기 권역이 강조된 대한민국 지도" data-map-image="1">
+                    <img class="regional-map__image" src="{{ url_for('static', filename='img/main/regional-map-gangwon.png') }}" alt="강원 권역이 강조된 대한민국 지도" data-map-image="2" loading="lazy" aria-hidden="true">
+                    <img class="regional-map__image" src="{{ url_for('static', filename='img/main/regional-map-chungcheong.png') }}" alt="충청 권역이 강조된 대한민국 지도" data-map-image="3" loading="lazy" aria-hidden="true">
+                    <img class="regional-map__image" src="{{ url_for('static', filename='img/main/regional-map-jeolla.png') }}" alt="전라 권역이 강조된 대한민국 지도" data-map-image="4" loading="lazy" aria-hidden="true">
+                    <img class="regional-map__image" src="{{ url_for('static', filename='img/main/regional-map-gyeongsang.png') }}" alt="경상 권역이 강조된 대한민국 지도" data-map-image="5" loading="lazy" aria-hidden="true">
+                    <img class="regional-map__image" src="{{ url_for('static', filename='img/main/regional-map-jeju.png') }}" alt="제주 권역이 강조된 대한민국 지도" data-map-image="6" loading="lazy" aria-hidden="true">
+                </div>
+                <p class="sr-only" data-region-map-status aria-live="polite">서울·경기 권역이 선택되었습니다.</p>
+            </div>
+
             <div class="regional-content">
                 <div data-region-panels>
                     {% for group in region_groups %}
@@ -263,26 +291,46 @@
 
 <section class="companion-section" aria-labelledby="companion-title">
     <div class="container">
-        <div class="section-heading section-heading--companion">
-            <div>
-                <h2 id="companion-title">누구와 함께 떠나나요?</h2>
-                <p>동행을 선택하면 우리에게 꼭 맞는 여행지를 보여드릴게요.</p>
-            </div>
-            <div class="filter-chips companion-tabs" role="tablist" aria-label="동행자 선택" data-companion-tabs>
+        <div class="section-heading section-heading--companion" data-companion-heading data-companion-active="2">
+            <div class="companion-heading__scenes" aria-hidden="true">
                 {% for group in companion_groups %}
-                    <button
-                        type="button"
-                        role="tab"
-                        id="companion-tab-{{ loop.index }}"
-                        aria-controls="companion-panel-{{ loop.index }}"
-                        aria-selected="{{ 'true' if loop.index == 2 else 'false' }}"
-                        data-companion-tab="{{ loop.index }}"
-                        {% if loop.index == 2 %}class="is-active"{% endif %}
+                    <img
+                        class="companion-heading__scene{% if loop.index == 2 %} is-active{% endif %}"
+                        src="{{ url_for('static', filename=group.scene_image) }}"
+                        alt=""
+                        loading="{{ 'eager' if loop.index == 2 else 'lazy' }}"
+                        decoding="async"
+                        data-companion-scene="{{ loop.index }}"
                     >
-                        <svg aria-hidden="true"><use href="#main-icon-{{ group.icon }}"></use></svg>
-                        <span>{{ group.label }}</span>
-                    </button>
                 {% endfor %}
+                <span class="companion-heading__wash"></span>
+            </div>
+
+            <div class="companion-heading__content">
+                <div class="companion-heading__copy">
+                    <h2 id="companion-title">누구와 함께 떠나나요?</h2>
+                    <div class="companion-heading__messages" aria-live="polite">
+                        {% for group in companion_groups %}
+                            <p data-companion-message="{{ loop.index }}"{% if loop.index != 2 %} hidden{% endif %}>{{ group.headline }}</p>
+                        {% endfor %}
+                    </div>
+                </div>
+                <div class="filter-chips companion-tabs" role="tablist" aria-label="동행자 선택" data-companion-tabs>
+                    {% for group in companion_groups %}
+                        <button
+                            type="button"
+                            role="tab"
+                            id="companion-tab-{{ loop.index }}"
+                            aria-controls="companion-panel-{{ loop.index }}"
+                            aria-selected="{{ 'true' if loop.index == 2 else 'false' }}"
+                            data-companion-tab="{{ loop.index }}"
+                            {% if loop.index == 2 %}class="is-active"{% endif %}
+                        >
+                            <svg aria-hidden="true"><use href="#main-icon-{{ group.icon }}"></use></svg>
+                            <span>{{ group.label }}</span>
+                        </button>
+                    {% endfor %}
+                </div>
             </div>
         </div>
 
@@ -401,6 +449,23 @@
         </div>
     </div>
 </section>
+
+<aside class="pally-goods-ad" data-pally-goods-ad aria-labelledby="pally-goods-title">
+    <button class="pally-goods-ad__close" type="button" aria-label="팰리 굿즈 광고 닫기" data-pally-goods-close>
+        <span aria-hidden="true">×</span>
+    </button>
+    <img
+        class="pally-goods-ad__image"
+        src="{{ url_for('static', filename='img/main/pally-goods-ad-v1.png') }}"
+        alt="여행하는 팰리와 키링, 에코백, 텀블러, 노트 굿즈"
+    >
+    <div class="pally-goods-ad__body">
+        <p class="pally-goods-ad__kicker">PALLY GOODS</p>
+        <h2 id="pally-goods-title">여행을 닮은 작은 굿즈</h2>
+        <p>팰리와 여행의 순간을 간직해보세요.</p>
+        <button class="pally-goods-ad__button" type="button">굿즈 구경하기 <span aria-hidden="true">→</span></button>
+    </div>
+</aside>
 {% endblock %}
 
 {% block scripts %}

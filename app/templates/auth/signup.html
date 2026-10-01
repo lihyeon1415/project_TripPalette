@@ -4,15 +4,49 @@
 
 {% block css %}
 <link rel="stylesheet" href="{{ url_for('static', filename='css/auth.css') }}">
+<script>document.documentElement.classList.add("auth-motion-enabled");</script>
 {% endblock %}
 
 {% block content %}
-<div class="auth-signup-page">
-    <div class="container auth-signup-container">
-        <section class="auth-signup-card" aria-labelledby="signup-title">
-            <h1 id="signup-title">회원가입</h1>
+<main class="palette-auth-page palette-auth-page--signup">
+    <div class="container palette-auth-layout">
+        <section class="palette-auth-story" aria-labelledby="signup-story-title">
+            <p class="palette-auth-story__eyebrow">나만의 여행 팔레트 만들기</p>
+            <div class="palette-auth-story__title-row">
+                <h2 id="signup-story-title">새로운 여행,<br>당신의 색으로</h2>
+                <span class="palette-pin" aria-hidden="true"></span>
+            </div>
+            <p class="palette-auth-story__lead">취향을 담은 여행이 지금 시작됩니다.</p>
 
-            <form class="auth-signup-form" method="post" action="{{ url_for('auth.signup') }}">
+            <div class="travel-palette" aria-hidden="true">
+                <figure class="travel-palette__card travel-palette__card--blue">
+                    <img src="{{ url_for('static', filename='img/destination/generated/busan-gamcheon-village-v1.png') }}" alt="">
+                    <figcaption><small>01 /</small><strong>OCEAN BLUE</strong></figcaption>
+                </figure>
+                <figure class="travel-palette__card travel-palette__card--green">
+                    <img src="{{ url_for('static', filename='img/destination/generated/jeju-sea-v1.png') }}" alt="">
+                    <figcaption><small>02 /</small><strong>JEJU GREEN</strong></figcaption>
+                </figure>
+                <figure class="travel-palette__card travel-palette__card--coral">
+                    <img src="{{ url_for('static', filename='img/main/hero-busan-gwangalli-hd.png') }}" alt="">
+                    <figcaption><small>03 /</small><strong>SUNSET CORAL</strong></figcaption>
+                </figure>
+            </div>
+        </section>
+
+        <section class="palette-auth-panel palette-auth-panel--signup" aria-labelledby="signup-title">
+            <div class="palette-auth-panel__heading">
+                <span class="palette-pin palette-pin--small" aria-hidden="true"></span>
+                <h1 id="signup-title">나만의 팔레트 만들기</h1>
+                <p>회원가입하고 여행을 시작하세요.</p>
+            </div>
+
+            <form class="palette-auth-form palette-auth-form--signup" method="post" action="{{ url_for('auth.signup') }}">
+                <div class="form-group">
+                    <label for="name">닉네임</label>
+                    <input type="text" id="name" name="name" value="{{ form_data.get('name', '') }}" placeholder="여행에서 사용할 이름" autocomplete="name" required>
+                </div>
+
                 <div class="form-group">
                     <label for="email">이메일</label>
                     <input type="email" id="email" name="email" value="{{ form_data.get('email', '') }}" placeholder="이메일을 입력해주세요" autocomplete="email" required>
@@ -20,32 +54,91 @@
 
                 <div class="form-group">
                     <label for="password">비밀번호</label>
-                    <input type="password" id="password" name="password" minlength="8" placeholder="8자 이상 입력해주세요" autocomplete="new-password" required>
+                    <div class="password-field">
+                        <input type="password" id="password" name="password" minlength="8" placeholder="8자 이상 입력해주세요" autocomplete="new-password" required>
+                        <button type="button" class="password-toggle" data-password-toggle="password" aria-label="비밀번호 보기">
+                            <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M2.5 12s3.5-6 9.5-6 9.5 6 9.5 6-3.5 6-9.5 6-9.5-6-9.5-6Z"></path><circle cx="12" cy="12" r="2.8"></circle></svg>
+                        </button>
+                    </div>
                 </div>
 
                 <div class="form-group">
                     <label for="password-confirm">비밀번호 확인</label>
-                    <input type="password" id="password-confirm" name="password_confirm" minlength="8" placeholder="비밀번호를 다시 입력해주세요" autocomplete="new-password" required>
+                    <div class="password-field">
+                        <input type="password" id="password-confirm" name="password_confirm" minlength="8" placeholder="비밀번호를 다시 입력해주세요" autocomplete="new-password" required>
+                        <button type="button" class="password-toggle" data-password-toggle="password-confirm" aria-label="비밀번호 확인 보기">
+                            <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M2.5 12s3.5-6 9.5-6 9.5 6 9.5 6-3.5 6-9.5 6-9.5-6-9.5-6Z"></path><circle cx="12" cy="12" r="2.8"></circle></svg>
+                        </button>
+                    </div>
                 </div>
 
-                <div class="form-group">
-                    <label for="name">이름</label>
-                    <input type="text" id="name" name="name" value="{{ form_data.get('name', '') }}" placeholder="이름을 입력해주세요" autocomplete="name" required>
-                </div>
+                <input type="hidden" id="phone" name="phone" value="{{ form_data.get('phone', '010-0000-0000') }}">
 
-                <div class="form-group">
-                    <label for="phone">휴대폰 번호</label>
-                    <input type="tel" id="phone" name="phone" value="{{ form_data.get('phone', '') }}" placeholder="010-0000-0000" autocomplete="tel" required>
-                </div>
+                <fieldset class="terms-fieldset">
+                    <legend class="sr-only">회원가입 약관 동의</legend>
+                    <label class="terms-check terms-check--all">
+                        <input type="checkbox" data-terms-all>
+                        <span>전체 동의</span>
+                    </label>
+                    <div class="terms-divider"></div>
+                    <label class="terms-check">
+                        <input type="checkbox" data-terms-item required>
+                        <span>[필수] 이용약관 동의</span>
+                        <button type="button" data-terms-open="service-terms">보기</button>
+                    </label>
+                    <label class="terms-check">
+                        <input type="checkbox" data-terms-item required>
+                        <span>[필수] 개인정보 수집 및 이용 동의</span>
+                        <button type="button" data-terms-open="privacy-terms">보기</button>
+                    </label>
+                </fieldset>
 
-                <button class="button auth-signup-submit" type="submit">회원가입</button>
+                <button class="palette-auth-submit" type="submit">회원가입</button>
             </form>
 
-            <div class="auth-signup-login">
-                <span>이미 회원이신가요?</span>
+            <div class="palette-auth-switch palette-auth-switch--signup">
+                <span>이미 계정이 있으신가요?</span>
                 <a href="{{ url_for('auth.login') }}">로그인</a>
             </div>
         </section>
     </div>
-</div>
+
+    <dialog class="terms-dialog" data-terms-dialog>
+        <div class="terms-dialog__header">
+            <h2 data-terms-title>약관 안내</h2>
+            <button type="button" class="terms-dialog__close" data-terms-close aria-label="약관 닫기">×</button>
+        </div>
+        <div class="terms-dialog__content" data-terms-content></div>
+        <button type="button" class="terms-dialog__confirm" data-terms-close>확인</button>
+    </dialog>
+
+    <template id="service-terms">
+        <div class="terms-copy">
+            <h3>TripPalette 이용약관</h3>
+            <p>TripPalette는 여행지 탐색, 취향 추천, 숙소 정보 확인 및 프로젝트용 예약 관리 기능을 제공합니다.</p>
+            <h4>1. 서비스 이용</h4>
+            <p>회원은 정확한 정보를 입력하고 본인의 계정을 안전하게 관리해야 합니다. 다른 이용자의 권리를 침해하거나 서비스 운영을 방해하는 행위는 제한될 수 있습니다.</p>
+            <h4>2. 콘텐츠와 예약</h4>
+            <p>여행지와 숙소 정보는 프로젝트 시연을 위한 참고 정보이며, 실제 운영 정보와 다를 수 있습니다. 화면에서 생성되는 예약은 실제 숙소 결제나 예약으로 연결되지 않습니다.</p>
+            <h4>3. 계정 관리</h4>
+            <p>회원은 마이페이지에서 정보를 수정하거나 탈퇴를 신청할 수 있습니다. 탈퇴 처리와 데이터 보관은 서비스에 안내된 절차를 따릅니다.</p>
+        </div>
+    </template>
+
+    <template id="privacy-terms">
+        <div class="terms-copy">
+            <h3>개인정보 수집 및 이용 안내</h3>
+            <dl class="terms-summary">
+                <div><dt>수집 항목</dt><dd>닉네임, 이메일, 비밀번호, 서비스 이용 기록</dd></div>
+                <div><dt>이용 목적</dt><dd>회원 식별, 로그인, 맞춤 여행 추천 및 계정 관리</dd></div>
+                <div><dt>보유 기간</dt><dd>회원 탈퇴 처리 완료 시까지. 관계 법령상 보관 의무가 있는 경우 해당 기간까지 보관</dd></div>
+            </dl>
+            <p>동의를 거부할 수 있으나, 필수 정보 수집에 동의하지 않으면 회원가입과 회원 전용 기능을 이용할 수 없습니다.</p>
+        </div>
+    </template>
+</main>
+{% endblock %}
+
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/auth.js') }}" defer></script>
 {% endblock %}

@@ -32,7 +32,7 @@
                 <span>{{ preference_summary.companion }}</span>
                 <span>{{ preference_summary.purpose }}</span>
                 <span>{{ preference_summary.atmosphere }}</span>
-                <span>{{ '{:,}'.format(preference_summary.budget|int) }}원 이하</span>
+                <span>{{ budget_labels.get(preference_summary.budget|string, '{:,}원'.format(preference_summary.budget|int)) }}</span>
                 <span>{{ duration_labels.get(preference_summary.trip_duration|string, preference_summary.trip_duration ~ '일') }}</span>
             </div>
         {% endif %}

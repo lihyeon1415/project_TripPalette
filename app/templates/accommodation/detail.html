@@ -101,6 +101,18 @@
                             <dd>최대 {{ accommodation.capacity }}명</dd>
                         </div>
                         <div>
+                            <dt>와이파이</dt>
+                            <dd>{{ '이용 가능' if booking_facts.wifi_available else '제공 안 함' }}</dd>
+                        </div>
+                        <div>
+                            <dt>주차</dt>
+                            <dd>{{ '주차 가능' if booking_facts.parking_available else '주차 불가' }}</dd>
+                        </div>
+                        <div>
+                            <dt>입실 시간 /퇴실 시간</dt>
+                            <dd>PM{{ booking_facts.check_in_time }} ~ AM {{ booking_facts.check_out_time }}</dd>
+                        </div>
+                        <div>
                             <dt>예약 상태</dt>
                             <dd>날짜 확인 후 예약</dd>
                         </div>
