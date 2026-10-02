@@ -39,8 +39,30 @@
                                 src="{{ accommodation_images[0] }}"
                                 alt="{{ accommodation.name }} 전경 1"
                                 data-accommodation-main-image
-                                onerror="this.hidden=true; this.nextElementSibling.hidden=false;"
+                                onerror="this.hidden=true; this.parentElement.querySelector('.stay-photo-placeholder').hidden=false;"
                             >
+                            {% if accommodation_images|length > 1 %}
+                                <button
+                                    class="stay-gallery-arrow stay-gallery-arrow--previous"
+                                    type="button"
+                                    data-gallery-previous
+                                    aria-label="이전 숙소 사진"
+                                >
+                                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                                        <path d="m14.5 5-7 7 7 7"></path>
+                                    </svg>
+                                </button>
+                                <button
+                                    class="stay-gallery-arrow stay-gallery-arrow--next"
+                                    type="button"
+                                    data-gallery-next
+                                    aria-label="다음 숙소 사진"
+                                >
+                                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                                        <path d="m9.5 5 7 7-7 7"></path>
+                                    </svg>
+                                </button>
+                            {% endif %}
                         {% endif %}
                         <div class="stay-photo-placeholder" {% if local_image %}hidden{% endif %}>
                             <svg viewBox="0 0 48 48" aria-hidden="true">
@@ -54,12 +76,7 @@
                     </div>
 
                     {% if accommodation_images|length > 1 %}
-                        <div class="stay-photo-strip{% if accommodation_images|length > 3 %} stay-photo-strip--scrollable{% endif %}">
-                            {% if accommodation_images|length > 3 %}
-                                <button class="stay-photo-strip__arrow" type="button" data-gallery-previous aria-label="이전 숙소 사진" disabled>
-                                    <span aria-hidden="true">‹</span>
-                                </button>
-                            {% endif %}
+                        <div class="stay-photo-strip">
                             <div class="stay-photo-strip__viewport" data-gallery-viewport>
                                 <div class="stay-photo-thumbnails" aria-label="{{ accommodation.name }} 사진 선택">
                                     {% for image_url in accommodation_images %}
@@ -77,11 +94,6 @@
                                     {% endfor %}
                                 </div>
                             </div>
-                            {% if accommodation_images|length > 3 %}
-                                <button class="stay-photo-strip__arrow" type="button" data-gallery-next aria-label="다음 숙소 사진">
-                                    <span aria-hidden="true">›</span>
-                                </button>
-                            {% endif %}
                         </div>
                     {% endif %}
                 </div>
