@@ -21,6 +21,8 @@ from app.models import (
     Accommodation,
     AccommodationReview,
     Favorite,
+    GoodsOrder,
+    GoodsOrderItem,
     Reservation,
     Review,
 )
@@ -61,7 +63,7 @@ def reservations():
             )
             .where(
                 Reservation.user_id == g.user.id,
-                Reservation.status != "CANCELLED",
+                Reservation.status.in_(("PENDING", "PAYMENT_PENDING", "CONFIRMED")),
             )
             .order_by(Reservation.created_at.desc(), Reservation.id.desc())
         ).scalars()
@@ -70,6 +72,48 @@ def reservations():
         "mypage/reservations.html",
         reservations=user_reservations,
     )
+
+
+@mypage_bp.get("/orders")
+@login_required
+def orders():
+    user_orders = list(
+        db.session.execute(
+            db.select(GoodsOrder)
+            .options(
+                selectinload(GoodsOrder.items).selectinload(GoodsOrderItem.product),
+                selectinload(GoodsOrder.payment),
+            )
+            .where(GoodsOrder.user_id == g.user.id)
+            .order_by(GoodsOrder.created_at.desc(), GoodsOrder.id.desc())
+        ).scalars()
+    )
+    status_labels = {
+        "PAYMENT_PENDING": "결제 대기",
+        "PAID": "결제 완료",
+        "PREPARING": "상품 준비 중",
+        "SHIPPED": "배송 중",
+        "DELIVERED": "배송 완료",
+        "CANCELLED": "주문 취소",
+        "REFUNDED": "환불 완료",
+        "FAILED": "결제 실패",
+        "PAYMENT_FAILED": "결제 실패",
+        "EXPIRED": "결제 만료",
+    }
+    return render_template(
+        "mypage/orders.html",
+        orders=user_orders,
+        status_labels=status_labels,
+    )
+
+
+@mypage_bp.get("/orders/<int:order_id>")
+@login_required
+def order_detail(order_id):
+    order = db.session.get(GoodsOrder, order_id)
+    if order is None or order.user_id != g.user.id:
+        abort(404)
+    return redirect(url_for("order.detail", order_id=order.id))
 
 
 @mypage_bp.get("/reviews")

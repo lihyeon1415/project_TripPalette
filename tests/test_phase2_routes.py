@@ -124,7 +124,7 @@ class Phase2RouteTestCase(unittest.TestCase):
         self.assertIn("지역 여행지 더보기", page)
         self.assertIn("data-pally-goods-ad", page)
         self.assertIn("pally-goods-ad-v1.png", page)
-        self.assertIn('<button class="pally-goods-ad__button"', page)
+        self.assertIn('<a class="pally-goods-ad__button" href="/goods"', page)
         self.assertIn("바다와 섬이 빚어낸 쉼", page)
         self.assertIn(
             "img/destination/generated/jeju-dol-hareubang-v1.png",
@@ -139,6 +139,16 @@ class Phase2RouteTestCase(unittest.TestCase):
                 "언제나 즐거운 우리",
             ],
         )
+
+    def test_shared_footer_contains_full_width_goods_cta(self):
+        for path in ("/", "/destinations", "/auth/login", "/goods"):
+            with self.subTest(path=path):
+                response = self.client.get(path)
+                self.assertEqual(response.status_code, 200)
+                page = response.get_data(as_text=True)
+                self.assertIn('class="site-footer-goods"', page)
+                self.assertIn('class="site-footer-goods__button" href="/goods"', page)
+                self.assertIn("여행의 기분을,", page)
 
     def test_destination_list(self):
         response, template, context = self.get_context("/destinations")

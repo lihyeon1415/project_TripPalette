@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+{% block title %}굿즈 주문 내역 | TripPalette{% endblock %}
+{% block css %}<link rel="stylesheet" href="{{ url_for('static', filename='css/reservation.css') }}">{% endblock %}
+{% block content %}
+<section class="reservation-history goods-order-history">
+    <header class="order-history-hero">
+        <div class="container order-history-hero__inner">
+            <div>
+                <span>PALLY GOODS</span>
+                <h1>굿즈 주문 내역</h1>
+                <p>팰리와 함께 주문한 작은 여행 소품을 확인해 보세요.</p>
+            </div>
+            <img src="{{ url_for('static', filename='img/main/pally-goods-ad-v1.png') }}" alt="" aria-hidden="true">
+        </div>
+    </header>
+    <div class="container reservation-history__inner">
+        <nav class="purchase-history-tabs" aria-label="예약 및 주문 내역 구분">
+            <a href="{{ url_for('mypage.reservations') }}">숙소 예약</a>
+            <a class="is-active" href="{{ url_for('mypage.orders') }}" aria-current="page">굿즈 주문</a>
+        </nav>
+        {% if orders %}
+            <div class="goods-order-list">
+                {% for order in orders %}
+                    <article class="goods-order-card">
+                        {% set item = order.items[0] %}
+                        <a class="goods-order-card__media" href="{{ url_for('mypage.order_detail', order_id=order.id) }}">
+                            {% if item.product and item.product.thumbnail_url %}
+                                <img src="{{ url_for('static', filename=item.product.thumbnail_url) }}" alt="{{ item.product_name }}">
+                            {% endif %}
+                        </a>
+                        <div class="goods-order-card__content">
+                            <div class="goods-order-card__topline">
+                                <span>{{ order.created_at.strftime('%Y.%m.%d') if order.created_at else '' }}</span>
+                                <strong class="reservation-status reservation-status--{{ order.status|lower }}">{{ status_labels.get(order.status, order.status) }}</strong>
+                            </div>
+                            <h2>{{ item.product_name }}</h2>
+                            <p>주문번호 {{ order.order_number }}</p>
+                            <dl>
+                                <div><dt>수량</dt><dd>{{ item.quantity }}개</dd></div>
+                                <div><dt>결제 금액</dt><dd>₩ {{ "{:,}".format(order.total_amount) }}</dd></div>
+                                <div><dt>받는 분</dt><dd>{{ order.recipient_name }}</dd></div>
+                            </dl>
+                        </div>
+                        <div class="goods-order-card__actions">
+                            <a href="{{ url_for('mypage.order_detail', order_id=order.id) }}">주문 상세</a>
+                            {% if order.status == 'PAYMENT_PENDING' and order.payment %}
+                                <a class="is-primary" href="{{ url_for('payment.checkout', payment_id=order.payment.id) }}">결제하기</a>
+                            {% endif %}
+                        </div>
+                    </article>
+                {% endfor %}
+            </div>
+        {% else %}
+            <div class="reservation-history__empty">
+                <h2>아직 주문한 굿즈가 없습니다.</h2>
+                <p>여행의 기분을 일상으로 가져오는 팰리 굿즈를 만나보세요.</p>
+                <a href="{{ url_for('goods.list_products') }}">굿즈 둘러보기 <span aria-hidden="true">→</span></a>
+            </div>
+        {% endif %}
+    </div>
+</section>
+{% endblock %}

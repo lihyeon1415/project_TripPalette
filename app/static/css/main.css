@@ -1,3 +1,11 @@
+@font-face {
+    font-family: "Cafe24Oneprettynight";
+    src: url("https://cdn.jsdelivr.net/gh/yellopencil/yellopencil-webfonts@v1.26.0/fonts/cafe24-oneprettynight/Cafe24Oneprettynight-v2.0.woff2") format("woff2");
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+}
+
 .main-icon-sprite { position: absolute; width: 0; height: 0; overflow: hidden; }
 
 .hero {
@@ -473,30 +481,164 @@
     fill: #f47c69;
     stroke: #f47c69;
 }
-.companion-layout { display: grid; grid-template-columns: minmax(0, 1.22fr) minmax(390px, .95fr); gap: 18px; }
-.companion-feature { position: relative; min-height: 390px; overflow: hidden; color: #fff; background: #172633; border-radius: 16px; box-shadow: 0 10px 28px rgba(23, 38, 51, 0.1); }
-.companion-feature__copy { position: absolute; right: 30px; bottom: 27px; left: 30px; z-index: 1; }
+.companion-layout {
+    --companion-accent: #e58b78;
+    --companion-paper: #fbf6f2;
+    --companion-tint: rgba(229, 139, 120, .055);
+    position: relative;
+    padding: 18px;
+    display: grid;
+    grid-template-columns: minmax(0, 1.05fr) minmax(420px, 1fr);
+    gap: 18px;
+    background-color: var(--companion-paper);
+    background-image: radial-gradient(rgba(91, 79, 67, .09) .65px, transparent .65px);
+    background-size: 7px 7px;
+    border: 1px solid rgba(130, 113, 94, .12);
+    border-radius: 24px;
+}
+[data-companion-panel="1"] { --companion-accent: #78aebd; --companion-paper: #f2f8f9; --companion-tint: rgba(89, 166, 190, .05); }
+[data-companion-panel="2"] { --companion-accent: #e58b78; --companion-paper: #fbf4f1; --companion-tint: rgba(229, 126, 105, .055); }
+[data-companion-panel="3"] { --companion-accent: #d6ae58; --companion-paper: #fbf8eb; --companion-tint: rgba(222, 179, 79, .05); }
+[data-companion-panel="4"] { --companion-accent: #ea875e; --companion-paper: #f5f8fa; --companion-tint: rgba(75, 151, 189, .045); }
+.companion-layout::after {
+    position: absolute;
+    top: 48%;
+    right: 31%;
+    z-index: 0;
+    width: 120px;
+    height: 42px;
+    content: "";
+    border-top: 2px dashed color-mix(in srgb, var(--companion-accent) 48%, transparent);
+    border-radius: 50%;
+    transform: rotate(-8deg);
+    pointer-events: none;
+}
+.companion-layout > * { position: relative; z-index: 1; }
+.companion-feature { position: relative; min-height: 390px; overflow: hidden; color: #fff; background: #172633; border: 8px solid #fffaf0; border-radius: 18px; box-shadow: 0 16px 34px rgba(42, 47, 44, .16); transition: transform .25s ease, box-shadow .25s ease; }
+.companion-feature:hover { transform: translateY(-4px); box-shadow: 0 21px 40px rgba(42, 47, 44, .2); }
+.companion-feature__copy { position: absolute; right: 82px; bottom: 25px; left: 26px; z-index: 2; }
+.companion-feature__tag {
+    position: absolute;
+    top: 20px;
+    left: 22px;
+    z-index: 3;
+    padding: 7px 12px;
+    color: #373a37;
+    background: rgba(255, 250, 240, .94);
+    border: 1px solid rgba(255, 255, 255, .72);
+    border-radius: 999px;
+    box-shadow: 0 6px 18px rgba(28, 34, 31, .14);
+    font-size: .72rem;
+    font-weight: 750;
+}
+.companion-feature__postmark {
+    position: absolute;
+    top: 24px;
+    right: 28px;
+    z-index: 2;
+    width: 92px;
+    height: 92px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    color: rgba(255, 255, 255, .82);
+    border: 2px solid currentColor;
+    border-radius: 50%;
+    font-size: .58rem;
+    font-weight: 800;
+    letter-spacing: .12em;
+    line-height: 1.2;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, .25);
+    transform: rotate(-9deg);
+}
+.companion-feature__postmark small { margin-top: 4px; font-size: .52rem; letter-spacing: .2em; }
+.companion-feature__postmark::after {
+    position: absolute;
+    right: -42px;
+    width: 50px;
+    height: 2px;
+    content: "";
+    background: currentColor;
+    box-shadow: 0 7px 0 currentColor, 0 14px 0 currentColor;
+}
+.companion-feature__region {
+    display: block;
+    font-family: "Cafe24Oneprettynight", "Nanum Pen Script", "Segoe Print", cursive;
+    font-size: clamp(2.8rem, 4.5vw, 4.15rem);
+    font-weight: 400;
+    line-height: .9;
+    letter-spacing: -.025em;
+    text-shadow: 0 3px 14px rgba(0, 0, 0, .48);
+}
 .companion-feature__copy strong {
+    margin-top: 12px;
     max-width: 440px;
     display: block;
-    font-family: inherit;
-    font-size: clamp(1.65rem, 2.7vw, 2.25rem);
-    font-weight: 800;
-    line-height: 1.2;
-    letter-spacing: -0.045em;
+    font-family: "Cafe24Oneprettynight", "Nanum Pen Script", "Segoe Print", cursive;
+    font-size: clamp(1.45rem, 2.3vw, 1.9rem);
+    font-weight: 400;
+    line-height: 1.1;
+    letter-spacing: 0;
     text-shadow: 0 3px 14px rgba(0, 0, 0, 0.42);
 }
-.companion-feature__copy small { margin-top: 8px; display: block; color: rgba(255,255,255,.9); font-size: .93rem; font-weight: 600; }
-.companion-recommendations { display: flex; flex-direction: column; justify-content: center; }
-.companion-recommendations__heading h3 { margin: 0 0 11px; color: #172b4d; font-size: 1.2rem; font-weight: 900; letter-spacing: -.035em; }
-.companion-card-grid { min-height: 350px; display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, .85fr); grid-template-rows: repeat(2, 1fr); gap: 10px; }
-.companion-card { position: relative; min-width: 0; overflow: hidden; color: #fff; background: #172633; border: 0; border-radius: 14px; box-shadow: 0 7px 20px rgba(23, 38, 51, 0.09); }
-.companion-card:nth-child(1) { grid-column: 1; grid-row: 1; }
-.companion-card:nth-child(2) { grid-column: 1; grid-row: 2; }
-.companion-card:nth-child(3) { grid-column: 2; grid-row: 1 / 3; }
+.companion-feature__copy small { margin-top: 7px; display: block; color: rgba(255,255,255,.9); font-family: "Cafe24Oneprettynight", "Nanum Pen Script", "Segoe Print", cursive; font-size: 1.15rem; font-weight: 400; }
+.companion-feature:hover img,
+.companion-card:hover img { transform: scale(1.05); }
+.companion-layout .image-shade {
+    background:
+        linear-gradient(var(--companion-tint), var(--companion-tint)),
+        linear-gradient(180deg, rgba(9, 29, 26, .01) 28%, rgba(9, 29, 26, .76));
+}
+.companion-recommendations { display: flex; flex-direction: column; justify-content: stretch; }
+.companion-card-grid { min-height: 390px; flex: 1; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); grid-template-rows: repeat(2, 1fr); gap: 12px; }
+.companion-card { position: relative; min-width: 0; overflow: hidden; color: #fff; background: #172633; border: 6px solid #fffaf0; border-radius: 16px; box-shadow: 0 11px 26px rgba(42, 47, 44, .14); transition: transform .25s ease, box-shadow .25s ease; }
+.companion-card:nth-child(1) { grid-column: 1; grid-row: 1; transform: translateY(2px) rotate(-.25deg); }
+.companion-card:nth-child(2) { grid-column: 1; grid-row: 2; transform: translateY(-2px) rotate(.2deg); }
+.companion-card:nth-child(3) { grid-column: 2; grid-row: 1 / 3; transform: translateY(1px) rotate(.15deg); }
+.companion-card:hover { transform: translateY(-4px) rotate(0); box-shadow: 0 16px 32px rgba(42, 47, 44, .2); }
 .companion-card__image { position: absolute; inset: 0; overflow: hidden; background: var(--color-background); }
-.companion-card__copy { position: absolute; right: 18px; bottom: 15px; left: 18px; z-index: 1; }
-.companion-card__copy strong { color: #fff; font-size: 1.05rem; font-weight: 900; text-shadow: 0 2px 10px rgba(0,0,0,.48); }
+.companion-card__copy { position: absolute; right: 58px; bottom: 15px; left: 16px; z-index: 2; }
+.companion-card__copy strong { color: #fff; font-family: "Cafe24Oneprettynight", "Nanum Pen Script", "Segoe Print", cursive; font-size: 1.55rem; font-weight: 400; line-height: 1; text-shadow: 0 2px 10px rgba(0,0,0,.48); }
+.companion-card__copy small {
+    max-width: 240px;
+    margin-top: 6px;
+    display: block;
+    overflow: hidden;
+    color: rgba(255, 255, 255, .92);
+    font-family: "Cafe24Oneprettynight", "Nanum Pen Script", "Segoe Print", cursive;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.15;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    opacity: 0;
+    transform: translateY(8px);
+    transition: opacity .22s ease, transform .22s ease;
+}
+.companion-card:hover .companion-card__copy small,
+.companion-card:focus-visible .companion-card__copy small { opacity: 1; transform: none; }
+.companion-photo-arrow {
+    position: absolute;
+    right: 22px;
+    bottom: 20px;
+    z-index: 3;
+    width: 46px;
+    height: 46px;
+    display: grid;
+    place-items: center;
+    color: #2f3532;
+    background: rgba(255, 255, 255, .96);
+    border: 1px solid rgba(46, 52, 49, .12);
+    border-radius: 50%;
+    box-shadow: 0 7px 18px rgba(24, 31, 28, .18);
+    transition: transform .2s ease, background-color .2s ease;
+}
+.companion-photo-arrow svg { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+.companion-photo-arrow--small { right: 13px; bottom: 12px; width: 36px; height: 36px; }
+.companion-photo-arrow--small svg { width: 17px; height: 17px; }
+.companion-feature:hover .companion-photo-arrow,
+.companion-card:hover .companion-photo-arrow { background: #fff; transform: translateX(3px); }
 
 .fall-section,
 .recommendation-cta { position: relative; width: min(var(--container-width), calc(100% - 64px)); margin: 0 auto; overflow: hidden; color: #fff; background: var(--color-primary); }
@@ -789,6 +931,12 @@
     .companion-card:nth-child(2) { grid-row: 2; }
     .companion-card:nth-child(3) { grid-row: 3; }
     .companion-card__image { height: auto; min-height: 0; }
+    .companion-layout { padding: 10px; gap: 12px; border-radius: 18px; }
+    .companion-card__copy small { opacity: 1; transform: none; }
+    .companion-feature__postmark { display: none; }
+    .companion-feature__copy { right: 70px; bottom: 20px; left: 20px; }
+    .companion-photo-arrow { right: 16px; bottom: 15px; width: 40px; height: 40px; }
+    .companion-photo-arrow--small { right: 11px; bottom: 10px; width: 34px; height: 34px; }
     .fall-section { min-height: 300px; }
     .fall-section__shade { background: rgba(31,23,16,.62); }
     .taste-grid { grid-template-columns: repeat(2, minmax(0,1fr)); }
@@ -815,6 +963,10 @@
     .destination-card__image,
     .regional-card img,
     .companion-feature img,
+    .companion-feature,
+    .companion-card,
+    .companion-card__copy small,
+    .companion-photo-arrow,
     .companion-card__image img,
     .companion-heading__scene,
     .fall-section__image,

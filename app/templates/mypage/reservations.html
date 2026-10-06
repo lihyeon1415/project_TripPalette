@@ -30,6 +30,10 @@
     </header>
 
     <div class="container reservation-history__inner">
+        <nav class="purchase-history-tabs" aria-label="예약 및 주문 내역 구분">
+            <a class="is-active" href="{{ url_for('mypage.reservations') }}" aria-current="page">숙소 예약</a>
+            <a href="{{ url_for('mypage.orders') }}">굿즈 주문</a>
+        </nav>
         {% if reservations %}
             <div class="reservation-history__heading">
                 <div>
@@ -78,10 +82,14 @@
 
                         <div class="reservation-history-card__aside">
                             <span class="reservation-status reservation-status--{{ reservation.status|lower }}">
-                                {% if reservation.status == 'CONFIRMED' %}예약 확정{% else %}예약 대기{% endif %}
+                                {% if reservation.status == 'CONFIRMED' %}예약 확정{% elif reservation.status == 'PAYMENT_PENDING' %}결제 대기{% else %}예약 대기{% endif %}
                             </span>
                             <div class="reservation-history-card__actions">
-                                <a href="{{ url_for('reservation.complete', id=reservation.id) }}">상세 보기</a>
+                                {% if reservation.status == 'PAYMENT_PENDING' and reservation.payment %}
+                                    <a href="{{ url_for('payment.checkout', payment_id=reservation.payment.id) }}">결제하기</a>
+                                {% else %}
+                                    <a href="{{ url_for('reservation.complete', id=reservation.id) }}">상세 보기</a>
+                                {% endif %}
                                 <form
                                     method="post"
                                     action="{{ url_for('reservation.cancel', id=reservation.id) }}"

@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% block title %}PALLY GOODS | TripPalette{% endblock %}
+{% block css %}<link rel="stylesheet" href="{{ url_for('static', filename='css/goods.css') }}">{% endblock %}
+{% block content %}
+<main class="pally-shop">
+    <nav class="container pally-shop-nav" aria-label="팰리 굿즈 메뉴">
+        <a class="pally-shop-brand" href="{{ url_for('goods.list_products') }}"><strong>PALLY</strong><small>by TripPalette</small></a>
+        <div><a href="#products">모든 굿즈</a><a href="#story">팰리 이야기</a><a href="{{ url_for('destination.list') }}">여행하러 가기 ↗</a></div>
+        <a class="pally-shop-bag" href="{{ url_for('mypage.orders') if g.user else url_for('auth.login') }}">주문 내역 <span>{{ g.user.goods_orders|length if g.user else 0 }}</span></a>
+    </nav>
+    <section class="container pally-shop-hero">
+        <div class="pally-shop-hero__copy">
+            <span>PALLY'S LITTLE TRAVEL SHOP</span><h1>여행의 기분을,<br>일상에 데려와.</h1>
+            <p>어디로 떠나든, 잠깐 쉬어가든.<br>나만의 여행을 닮은 작은 친구, 팰리.</p>
+            <a href="#products">나의 여행 친구 고르기 <b aria-hidden="true">↗</b></a>
+            <small><i></i><i></i><i></i> 작은 물건에 담은, 다채로운 여행</small>
+        </div>
+        <div class="pally-shop-hero__visual">
+            <img src="{{ url_for('static', filename='img/main/pally-goods-ad-v1.png') }}" alt="여행하는 팰리와 다양한 여행 굿즈">
+            <span>THE FIRST<br><b>COLLECTION</b><br>01 / PALLY</span><em>Let's go somewhere ♡</em>
+        </div>
+    </section>
+    <div class="pally-shop-marquee" aria-hidden="true"><span>PACK A LITTLE JOY</span><i>✳</i><span>YOUR TRAVEL, YOUR PALETTE</span><i>✳</i><span>TAKE PALLY WITH YOU</span><i>✳</i></div>
+    <section id="products" class="container pally-products">
+        <header class="pally-products__heading"><div><span>MADE FOR YOUR EVERYDAY ADVENTURE</span><h2>우리, 같이 떠날까?</h2></div><p>가방 속에 쏙. 마음에는 오래.<br>팰리의 첫 번째 굿즈 컬렉션.</p></header>
+        <nav class="pally-product-tabs" aria-label="상품 분류">
+            {% for value, label in (("all", "전체"), ("travel", "여행 소품"), ("daily", "일상 소품"), ("stationery", "문구 · 기록")) %}<a href="{{ url_for('goods.list_products', category=value) }}#products"{% if category == value %} class="is-active" aria-current="page"{% endif %}>{{ label }}</a>{% endfor %}<span>{{ products|length }}개의 작은 즐거움</span>
+        </nav>
+        <div class="pally-product-grid">
+            {% for product in products %}
+                <article class="pally-product-card">
+                    <a class="pally-product-card__media" href="{{ url_for('goods.detail', product_id=product.id) }}"><span>{{ ('PALLY PICK', 'TRAVEL MATE', 'LITTLE JOY', 'TAKE ME')[loop.index0 % 4] }}</span><img src="{{ url_for('static', filename=product.thumbnail_url) }}" alt="{{ product.name }}"{% if loop.index > 4 %} loading="lazy"{% endif %}></a>
+                    <div class="pally-product-card__body"><div><h3><a href="{{ url_for('goods.detail', product_id=product.id) }}">{{ product.name }}</a></h3><p>{{ product.description }}</p></div><footer><strong>{{ "{:,}".format(product.price) }}원</strong><a href="{{ url_for('goods.detail', product_id=product.id) }}" aria-label="{{ product.name }} 보기">＋</a></footer></div>
+                </article>
+            {% else %}<p class="pally-products__empty">해당 분류의 상품을 준비하고 있습니다.</p>{% endfor %}
+        </div>
+    </section>
+    <section id="story" class="pally-shop-story"><div class="container"><span>MEET YOUR LITTLE TRAVEL MATE</span><h2>여행은, 어디보다 ‘나’부터 고르는 것.</h2><p>초록 배낭에 설렘을 담고, 작은 지도 위에 취향을 펼쳐요.<br>팰리는 당신이 좋아하는 방향으로 함께 걸어가는 친구예요.</p><a href="{{ url_for('recommendation.survey') }}">팰리와 함께할 준비 됐나요? ↗</a></div></section>
+</main>
+{% endblock %}

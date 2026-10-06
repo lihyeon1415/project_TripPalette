@@ -13,14 +13,14 @@
         <span class="reservation-complete-card__icon{% if reservation.status == 'CANCELLED' %} reservation-complete-card__icon--cancelled{% endif %}" aria-hidden="true">
             {{ '×' if reservation.status == 'CANCELLED' else '✓' }}
         </span>
-        {% if reservation.status == 'CANCELLED' %}
+        {% if reservation.status in ('CANCELLED', 'FAILED', 'EXPIRED') %}
             <span class="reservation-kicker">예약 취소</span>
             <h1>취소된 예약입니다.</h1>
             <p>예약 정보는 내역 확인을 위해 보관되며 실제 숙소에는 전달되지 않습니다.</p>
         {% else %}
-            <span class="reservation-kicker">예약 접수 완료</span>
-            <h1>여행을 위한 숙소가<br>예약 대기 상태로 접수됐어요.</h1>
-            <p>현재 프로젝트에서는 결제 없이 예약 정보만 저장됩니다.</p>
+            <span class="reservation-kicker">예약 및 결제 완료</span>
+            <h1>여행을 위한 숙소가<br>예약 확정되었어요.</h1>
+            <p>토스페이먼츠 테스트 결제가 정상적으로 승인되었습니다.</p>
         {% endif %}
 
         <dl class="reservation-complete-card__details">
@@ -30,7 +30,7 @@
             <div><dt>예상 금액</dt><dd>₩ {{ "{:,}".format(reservation.total_price) }}</dd></div>
             <div>
                 <dt>상태</dt>
-                <dd>{% if reservation.status == 'CANCELLED' %}예약 취소{% elif reservation.status == 'CONFIRMED' %}예약 확정{% else %}예약 대기{% endif %}</dd>
+                <dd>{% if reservation.status == 'CANCELLED' %}예약 취소{% elif reservation.status == 'FAILED' %}결제 실패{% elif reservation.status == 'EXPIRED' %}결제 만료{% elif reservation.status == 'CONFIRMED' %}예약 확정{% else %}결제 대기{% endif %}</dd>
             </div>
         </dl>
 
@@ -38,7 +38,7 @@
             <a href="{{ url_for('mypage.reservations') }}">예약 내역 보기</a>
             <a href="{{ url_for('accommodation.detail', id=reservation.accommodation.id) }}">숙소로 돌아가기</a>
         </div>
-        {% if reservation.status in ('PENDING', 'CONFIRMED') %}
+        {% if reservation.status in ('PAYMENT_PENDING', 'CONFIRMED') %}
             <form
                 class="reservation-complete-card__cancel"
                 method="post"

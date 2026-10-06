@@ -218,9 +218,15 @@
     transform: translateY(-1px);
 }
 
-.filter-reset > span {
-    font-size: 1.2rem;
-    line-height: 1;
+.filter-reset > svg {
+    width: 18px;
+    height: 18px;
+    flex: 0 0 auto;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.9;
+    stroke-linecap: round;
+    stroke-linejoin: round;
 }
 
 .filter-submit__icon {

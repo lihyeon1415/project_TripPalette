@@ -15,6 +15,13 @@ from sqlalchemy.orm import joinedload
 from app import db
 from app.auth_helpers import login_required
 from app.models import Accommodation, Reservation
+from app.services import toss_client
+from app.services.payment_service import (
+    PaymentValidationError,
+    cancel_order_payment,
+    create_reservation_payment,
+    expire_pending_payments,
+)
 
 
 reservation_bp = Blueprint("reservation", __name__)
@@ -43,6 +50,8 @@ def create(accommodation_id):
         form_data["check_out"] = (today + timedelta(days=2)).isoformat()
 
     if request.method == "POST":
+        # 스케줄러 실행 사이에도 새 예약이 만료 건에 막히지 않도록 먼저 정리한다.
+        expire_pending_payments()
         check_in = _parse_date(form_data["check_in"])
         check_out = _parse_date(form_data["check_out"])
         try:
@@ -65,7 +74,7 @@ def create(accommodation_id):
             conflicting_reservation = db.session.scalar(
                 db.select(Reservation.id).where(
                     Reservation.accommodation_id == accommodation.id,
-                    Reservation.status.in_(("PENDING", "CONFIRMED")),
+                    Reservation.status.in_(("PENDING", "PAYMENT_PENDING", "CONFIRMED")),
                     Reservation.check_in < check_out,
                     Reservation.check_out > check_in,
                 )
@@ -82,11 +91,12 @@ def create(accommodation_id):
                 check_out=check_out,
                 people_count=people_count,
                 total_price=accommodation.price_per_night * nights,
-                status="PENDING",
+                status="PAYMENT_PENDING",
             )
             db.session.add(reservation)
+            payment = create_reservation_payment(reservation)
             db.session.commit()
-            return redirect(url_for("reservation.complete", id=reservation.id))
+            return redirect(url_for("payment.checkout", payment_id=payment.id))
 
         flash(error, "error")
 
@@ -117,13 +127,17 @@ def _get_user_reservation_or_404(reservation_id):
 @login_required
 def payment(id):
     reservation = _get_user_reservation_or_404(id)
-    return render_template("reservation/payment.html", reservation=reservation)
+    if reservation.payment is None:
+        abort(404)
+    return redirect(url_for("payment.checkout", payment_id=reservation.payment.id))
 
 
 @reservation_bp.get("/<int:id>/complete")
 @login_required
 def complete(id):
     reservation = _get_user_reservation_or_404(id)
+    if reservation.status == "PAYMENT_PENDING" and reservation.payment:
+        return redirect(url_for("payment.checkout", payment_id=reservation.payment.id))
     return render_template("reservation/complete.html", reservation=reservation)
 
 
@@ -131,7 +145,16 @@ def complete(id):
 @login_required
 def cancel(id):
     reservation = _get_user_reservation_or_404(id)
-    if reservation.status in ("PENDING", "CONFIRMED"):
-        reservation.status = "CANCELLED"
+    if reservation.payment is None:
+        if reservation.status in ("PENDING", "CONFIRMED"):
+            reservation.status = "CANCELLED"
+            db.session.commit()
+        return redirect(url_for("reservation.complete", id=reservation.id))
+    try:
+        cancel_order_payment(reservation.payment, "숙소 예약 취소")
         db.session.commit()
-    return redirect(url_for("mypage.reservations"))
+    except (PaymentValidationError, toss_client.TossPaymentError) as error:
+        db.session.rollback()
+        message = error.message if isinstance(error, toss_client.TossPaymentError) else str(error)
+        flash(message, "error")
+    return redirect(url_for("reservation.complete", id=reservation.id))

@@ -352,16 +352,21 @@
                                 <img src="{{ url_for('static', filename=featured_media.gallery[2].filename) }}" alt="{{ featured.name }}에서 즐기는 {{ group.label }} 여행" loading="lazy">
                             {% endif %}
                             <span class="image-shade"></span>
+                            <span class="companion-feature__tag">{{ group.trip_tag }}</span>
+                            <span class="companion-feature__postmark" aria-hidden="true">
+                                <span>TRIPPALETTE</span>
+                                <small>TRAVEL</small>
+                            </span>
                             <span class="companion-feature__copy">
-                                <strong>{{ group.headline }}</strong>
-                                <small>{{ group.recommendation_title }}</small>
+                                <span class="companion-feature__region">{{ featured.name }}</span>
+                                <strong>{{ group.captions.get(featured.name, group.headline) }}</strong>
+                            </span>
+                            <span class="companion-photo-arrow" aria-hidden="true">
+                                <svg viewBox="0 0 24 24"><path d="M5 12h14M14 7l5 5-5 5"></path></svg>
                             </span>
                         </a>
 
                         <div class="companion-recommendations">
-                            <div class="companion-recommendations__heading">
-                                <h3>{{ group.recommendation_title }}</h3>
-                            </div>
                             <div class="companion-card-grid">
                                 {% for destination in group.destinations[1:] %}
                                     {% set media = destination_media.get(destination.name) %}
@@ -374,6 +379,10 @@
                                         <span class="image-shade"></span>
                                         <span class="companion-card__copy">
                                             <strong>{{ destination.name }}</strong>
+                                            <small>{{ group.captions.get(destination.name, destination.description) }}</small>
+                                        </span>
+                                        <span class="companion-photo-arrow companion-photo-arrow--small" aria-hidden="true">
+                                            <svg viewBox="0 0 24 24"><path d="M5 12h14M14 7l5 5-5 5"></path></svg>
                                         </span>
                                     </a>
                                 {% endfor %}
@@ -463,7 +472,7 @@
         <p class="pally-goods-ad__kicker">PALLY GOODS</p>
         <h2 id="pally-goods-title">여행을 닮은 작은 굿즈</h2>
         <p>팰리와 여행의 순간을 간직해보세요.</p>
-        <button class="pally-goods-ad__button" type="button">굿즈 구경하기 <span aria-hidden="true">→</span></button>
+        <a class="pally-goods-ad__button" href="{{ url_for('goods.list_products') }}">굿즈 구경하기 <span aria-hidden="true">→</span></a>
     </div>
 </aside>
 {% endblock %}

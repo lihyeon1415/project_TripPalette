@@ -24,6 +24,11 @@ class User(db.Model):
         nullable=True,
         index=True,
     )
+    payment_customer_key = db.Column(
+        db.String(64),
+        nullable=True,
+        unique=True,
+    )
 
     preference = db.relationship(
         "UserPreference",
@@ -37,6 +42,7 @@ class User(db.Model):
         back_populates="user",
     )
     reservations = db.relationship("Reservation", back_populates="user")
+    goods_orders = db.relationship("GoodsOrder", back_populates="user")
 
 
 # 회원의 맞춤 여행지 추천 조건 저장 모델 , 한명당 하나의 최신 설정만 저장, id당 unique 제약조건적으로 1:1 관계
@@ -257,8 +263,8 @@ class Reservation(db.Model):
     status = db.Column(
         db.String(20),
         nullable=False,
-        default="PENDING",
-        server_default="PENDING",
+        default="PAYMENT_PENDING",
+        server_default="PAYMENT_PENDING",
     )
     created_at = db.Column(
         db.DateTime,
@@ -266,6 +272,7 @@ class Reservation(db.Model):
         default=db.func.now(),
         server_default=db.func.current_timestamp(),
     )
+    expires_at = db.Column(db.DateTime, nullable=True, index=True)
 
     user = db.relationship("User", back_populates="reservations")
     accommodation = db.relationship("Accommodation", back_populates="reservations")
@@ -277,9 +284,215 @@ class Reservation(db.Model):
     # 다른 테이블 값을 확인해야 하므로 예약 처리 로직에서 검증한다.
     # ===========================================
 
-# 숙소 예약에 대한 모의 결제정보를 저장
+class Product(db.Model):
+    __tablename__ = "product"
+    __table_args__ = (
+        db.CheckConstraint("price >= 0", name="ck_product_price_nonnegative"),
+        db.CheckConstraint(
+            "stock_quantity >= 0",
+            name="ck_product_stock_quantity_nonnegative",
+        ),
+    )
+
+    id = db.Column(db.Integer, primary_key=True)
+    sku = db.Column(db.String(50), nullable=False, unique=True)
+    name = db.Column(db.String(120), nullable=False)
+    description = db.Column(db.Text)
+    price = db.Column(db.Integer, nullable=False)
+    stock_quantity = db.Column(db.Integer, nullable=False, default=0, server_default="0")
+    thumbnail_url = db.Column(db.String(255))
+    is_active = db.Column(
+        db.Boolean,
+        nullable=False,
+        default=True,
+        server_default=db.true(),
+    )
+    created_at = db.Column(
+        db.DateTime,
+        nullable=False,
+        default=db.func.now(),
+        server_default=db.func.current_timestamp(),
+    )
+    updated_at = db.Column(
+        db.DateTime,
+        nullable=True,
+        default=db.func.now(),
+        onupdate=db.func.now(),
+        server_default=db.func.current_timestamp(),
+    )
+
+    images = db.relationship(
+        "ProductImage",
+        back_populates="product",
+        cascade="all, delete-orphan",
+        order_by="ProductImage.sort_order",
+    )
+    categories = db.relationship(
+        "ProductCategory",
+        back_populates="product",
+        cascade="all, delete-orphan",
+    )
+    order_items = db.relationship("GoodsOrderItem", back_populates="product")
+
+
+class ProductCategory(db.Model):
+    __tablename__ = "product_category"
+    __table_args__ = (
+        db.UniqueConstraint(
+            "product_id",
+            "category",
+            name="uq_product_category_product_category",
+        ),
+    )
+
+    id = db.Column(db.Integer, primary_key=True)
+    product_id = db.Column(
+        db.Integer,
+        db.ForeignKey("product.id"),
+        nullable=False,
+    )
+    category = db.Column(db.String(30), nullable=False, index=True)
+
+    product = db.relationship("Product", back_populates="categories")
+
+
+class ProductImage(db.Model):
+    __tablename__ = "product_image"
+    __table_args__ = (
+        db.UniqueConstraint(
+            "product_id",
+            "sort_order",
+            name="uq_product_image_product_sort_order",
+        ),
+        db.CheckConstraint(
+            "sort_order >= 0",
+            name="ck_product_image_sort_order_nonnegative",
+        ),
+    )
+
+    id = db.Column(db.Integer, primary_key=True)
+    product_id = db.Column(
+        db.Integer,
+        db.ForeignKey("product.id"),
+        nullable=False,
+    )
+    image_url = db.Column(db.String(255), nullable=False)
+    sort_order = db.Column(db.Integer, nullable=False, default=0, server_default="0")
+
+    product = db.relationship("Product", back_populates="images")
+
+
+class GoodsOrder(db.Model):
+    __tablename__ = "goods_order"
+    __table_args__ = (
+        db.CheckConstraint(
+            "items_amount >= 0",
+            name="ck_goods_order_items_amount_nonnegative",
+        ),
+        db.CheckConstraint(
+            "shipping_fee >= 0",
+            name="ck_goods_order_shipping_fee_nonnegative",
+        ),
+        db.CheckConstraint(
+            "total_amount >= 0",
+            name="ck_goods_order_total_amount_nonnegative",
+        ),
+    )
+
+    id = db.Column(db.Integer, primary_key=True)
+    order_number = db.Column(db.String(64), nullable=False, unique=True)
+    # 탈퇴 후에도 거래 기록은 보존하고 회원 연결과 배송 개인정보만 익명화한다.
+    user_id = db.Column(db.Integer, db.ForeignKey("user.id"), nullable=True)
+    recipient_name = db.Column(db.String(50), nullable=False)
+    recipient_phone = db.Column(db.String(20), nullable=False)
+    postal_code = db.Column(db.String(10), nullable=False)
+    address = db.Column(db.String(255), nullable=False)
+    address_detail = db.Column(db.String(255))
+    delivery_request = db.Column(db.String(255))
+    items_amount = db.Column(db.Integer, nullable=False)
+    shipping_fee = db.Column(db.Integer, nullable=False, default=0, server_default="0")
+    total_amount = db.Column(db.Integer, nullable=False)
+    status = db.Column(
+        db.String(30),
+        nullable=False,
+        default="PAYMENT_PENDING",
+        server_default="PAYMENT_PENDING",
+    )
+    expires_at = db.Column(db.DateTime, nullable=False, index=True)
+    created_at = db.Column(
+        db.DateTime,
+        nullable=False,
+        default=db.func.now(),
+        server_default=db.func.current_timestamp(),
+    )
+    paid_at = db.Column(db.DateTime)
+    cancelled_at = db.Column(db.DateTime)
+
+    user = db.relationship("User", back_populates="goods_orders")
+    items = db.relationship(
+        "GoodsOrderItem",
+        back_populates="goods_order",
+        cascade="all, delete-orphan",
+    )
+    payment = db.relationship(
+        "Payment",
+        back_populates="goods_order",
+        uselist=False,
+    )
+
+
+class GoodsOrderItem(db.Model):
+    __tablename__ = "goods_order_item"
+    __table_args__ = (
+        db.CheckConstraint(
+            "unit_price >= 0",
+            name="ck_goods_order_item_unit_price_nonnegative",
+        ),
+        db.CheckConstraint(
+            "quantity >= 1",
+            name="ck_goods_order_item_quantity_positive",
+        ),
+        db.CheckConstraint(
+            "subtotal >= 0",
+            name="ck_goods_order_item_subtotal_nonnegative",
+        ),
+    )
+
+    id = db.Column(db.Integer, primary_key=True)
+    goods_order_id = db.Column(
+        db.Integer,
+        db.ForeignKey("goods_order.id"),
+        nullable=False,
+    )
+    product_id = db.Column(
+        db.Integer,
+        db.ForeignKey("product.id"),
+        nullable=False,
+    )
+    product_name = db.Column(db.String(120), nullable=False)
+    sku = db.Column(db.String(50), nullable=False)
+    unit_price = db.Column(db.Integer, nullable=False)
+    quantity = db.Column(db.Integer, nullable=False)
+    subtotal = db.Column(db.Integer, nullable=False)
+
+    goods_order = db.relationship("GoodsOrder", back_populates="items")
+    product = db.relationship("Product", back_populates="order_items")
+
+
+# 숙소 예약과 굿즈 주문의 테스트 결제정보를 공통으로 저장
 class Payment(db.Model):
     __tablename__ = "payment"
+    __table_args__ = (
+        db.CheckConstraint(
+            "(reservation_id IS NOT NULL AND goods_order_id IS NULL) OR "
+            "(reservation_id IS NULL AND goods_order_id IS NOT NULL)",
+            name="ck_payment_exactly_one_target",
+        ),
+        db.CheckConstraint(
+            "amount >= 0",
+            name="ck_payment_amount_nonnegative",
+        ),
+    )
 
     id = db.Column(db.Integer, primary_key=True)
 
@@ -287,18 +500,43 @@ class Payment(db.Model):
     reservation_id = db.Column(
         db.Integer,
         db.ForeignKey("reservation.id"),
-        nullable=False,
+        nullable=True,
         unique=True,
     )
+    goods_order_id = db.Column(
+        db.Integer,
+        db.ForeignKey("goods_order.id"),
+        nullable=True,
+        unique=True,
+    )
+    merchant_order_id = db.Column(db.String(64), nullable=True, unique=True)
+    provider = db.Column(
+        db.String(20),
+        nullable=False,
+        default="TOSS",
+        server_default="TOSS",
+    )
+    payment_key = db.Column(db.String(200), nullable=True, unique=True)
     amount = db.Column(db.Integer, nullable=False)
-    payment_method = db.Column(db.String(20), nullable=False)
+    payment_method = db.Column(db.String(20), nullable=True)
     payment_status = db.Column(
         db.String(20),
         nullable=False,
         default="READY",
         server_default="READY",
     )
-    # 결졔가 성공하기 전에는 NUll이며 성공 시점에만 기록
+    requested_at = db.Column(
+        db.DateTime,
+        nullable=False,
+        default=db.func.now(),
+        server_default=db.func.current_timestamp(),
+    )
+    # 결제가 성공하기 전에는 NULL이며 성공 시점에만 기록
     paid_at = db.Column(db.DateTime)
+    cancelled_at = db.Column(db.DateTime)
+    failure_code = db.Column(db.String(100))
+    failure_message = db.Column(db.String(255))
+    idempotency_key = db.Column(db.String(64), nullable=True, unique=True)
 
     reservation = db.relationship("Reservation", back_populates="payment")
+    goods_order = db.relationship("GoodsOrder", back_populates="payment")

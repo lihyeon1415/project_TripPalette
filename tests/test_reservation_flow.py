@@ -4,7 +4,7 @@ from datetime import date, timedelta
 from werkzeug.security import generate_password_hash
 
 from app import create_app, db
-from app.models import Accommodation, Destination, Reservation, User
+from app.models import Accommodation, Destination, Payment, Reservation, User
 
 
 class TestConfig:
@@ -90,14 +90,14 @@ class ReservationFlowTestCase(unittest.TestCase):
         self.assertEqual(response.status_code, 200)
         self.assertIn("제주 테스트 숙소", page)
         self.assertIn("120,000", page)
-        self.assertIn("예약 접수하기", page)
+        self.assertIn("예약 후 결제하기", page)
 
     def test_logged_in_header_links_to_reservation_history(self):
         self.login_as()
         page = self.client.get("/").get_data(as_text=True)
 
         self.assertIn('href="/mypage/reservations"', page)
-        self.assertIn("예약 내역", page)
+        self.assertIn("예약·주문 내역", page)
 
         reservation_page = self.client.get("/mypage/reservations").get_data(
             as_text=True
@@ -116,11 +116,15 @@ class ReservationFlowTestCase(unittest.TestCase):
 
         reservation = db.session.scalar(db.select(Reservation))
         self.assertEqual(response.status_code, 302)
-        self.assertEqual(response.location, f"/reservations/{reservation.id}/complete")
+        payment = db.session.scalar(db.select(Payment))
+        self.assertEqual(response.location, f"/payments/{payment.id}")
         self.assertEqual(reservation.user_id, self.user_id)
         self.assertEqual(reservation.people_count, 2)
         self.assertEqual(reservation.total_price, 240000)
-        self.assertEqual(reservation.status, "PENDING")
+        self.assertEqual(reservation.status, "PAYMENT_PENDING")
+        self.assertEqual(payment.amount, 240000)
+        self.assertEqual(payment.reservation_id, reservation.id)
+        self.assertIsNotNone(reservation.expires_at)
 
     def test_invalid_dates_and_capacity_do_not_create_reservation(self):
         self.login_as()
@@ -223,7 +227,7 @@ class ReservationFlowTestCase(unittest.TestCase):
             follow_redirects=False,
         )
         self.assertEqual(response.status_code, 302)
-        self.assertEqual(response.location, "/mypage/reservations")
+        self.assertEqual(response.location, f"/reservations/{reservation_id}/complete")
         db.session.refresh(reservation)
         self.assertEqual(reservation.status, "CANCELLED")
         history_page = self.client.get("/mypage/reservations").get_data(

@@ -1,0 +1,167 @@
+[
+  {
+    "sku": "PALLY-STICKER-001",
+    "name": "여행 스티커 팩",
+    "description": "팰리의 다양한 표정과 여행 아이콘을 담은 스티커 팩입니다.",
+    "price": 5000,
+    "stock_quantity": 1000,
+    "thumbnail_url": "img/goods/travel-sticker-pack/main.png",
+    "images": ["img/goods/travel-sticker-pack/main.png"],
+    "categories": ["stationery"],
+    "is_active": true
+  },
+  {
+    "sku": "PALLY-KEYRING-001",
+    "name": "아크릴 키링",
+    "description": "팰리와 여행 감성 포인트를 담은 투명 아크릴 키링입니다.",
+    "price": 8000,
+    "stock_quantity": 1000,
+    "thumbnail_url": "img/goods/acrylic-keyring/main.png",
+    "images": ["img/goods/acrylic-keyring/main.png"],
+    "categories": ["stationery"],
+    "is_active": true
+  },
+  {
+    "sku": "PALLY-PASSPORT-001",
+    "name": "여권 케이스",
+    "description": "여권과 탑승권, 카드를 한 번에 정리하는 팰리 여권 케이스입니다.",
+    "price": 13000,
+    "stock_quantity": 1000,
+    "thumbnail_url": "img/goods/passport-case/main.png",
+    "images": ["img/goods/passport-case/main.png"],
+    "categories": ["travel"],
+    "is_active": true
+  },
+  {
+    "sku": "PALLY-LUGGAGE-TAG-001",
+    "name": "러기지택",
+    "description": "가방을 쉽게 알아볼 수 있는 팰리 모양 여행용 네임택입니다.",
+    "price": 8000,
+    "stock_quantity": 1000,
+    "thumbnail_url": "img/goods/luggage-tag/main.png",
+    "images": ["img/goods/luggage-tag/main.png"],
+    "categories": ["travel"],
+    "is_active": true
+  },
+  {
+    "sku": "PALLY-POSTCARD-001",
+    "name": "여행 기록 엽서 세트",
+    "description": "바다, 가을, 봄, 캠핑의 순간을 담은 여행 기록 엽서 4장 세트입니다.",
+    "price": 5000,
+    "stock_quantity": 1000,
+    "thumbnail_url": "img/goods/travel-postcard-set/main.png",
+    "images": ["img/goods/travel-postcard-set/main.png"],
+    "categories": ["stationery"],
+    "is_active": true
+  },
+  {
+    "sku": "PALLY-POUCH-001",
+    "name": "미니 파우치",
+    "description": "충전기와 이어폰, 작은 여행용품을 깔끔하게 담는 미니 파우치입니다.",
+    "price": 12000,
+    "stock_quantity": 1000,
+    "thumbnail_url": "img/goods/mini-pouch/main.png",
+    "images": ["img/goods/mini-pouch/main.png"],
+    "categories": ["daily"],
+    "is_active": true
+  },
+  {
+    "sku": "PALLY-ECO-BAG-001",
+    "name": "에코백",
+    "description": "팰리 여행 일러스트를 담아 일상에서도 가볍게 드는 코튼 에코백입니다.",
+    "price": 21000,
+    "stock_quantity": 1000,
+    "thumbnail_url": "img/goods/eco-bag/main.png",
+    "images": ["img/goods/eco-bag/main.png"],
+    "categories": ["daily"],
+    "is_active": true
+  },
+  {
+    "sku": "PALLY-TUMBLER-500-001",
+    "name": "텀블러 500ml",
+    "description": "여행과 일상에서 사용하기 좋은 팰리 컬러 텀블러입니다.",
+    "price": 25000,
+    "stock_quantity": 1000,
+    "thumbnail_url": "img/goods/tumbler-500/main.png",
+    "images": ["img/goods/tumbler-500/main.png"],
+    "categories": ["daily"],
+    "is_active": true
+  },
+  {
+    "sku": "PALLY-SMART-TOK-001",
+    "name": "팰리 스마트톡",
+    "description": "팰리 얼굴과 여행 포즈를 담은 스마트폰 그립입니다.",
+    "price": 8000,
+    "stock_quantity": 1000,
+    "thumbnail_url": "img/goods/pally-smart-talk/main.png",
+    "images": ["img/goods/pally-smart-talk/main.png"],
+    "categories": ["daily"],
+    "is_active": true
+  },
+  {
+    "sku": "PALLY-SLEEP-MASK-001",
+    "name": "여행용 수면 안대",
+    "description": "부드러운 안감과 길이 조절 밴드를 적용한 여행용 수면 안대입니다.",
+    "price": 13000,
+    "stock_quantity": 1000,
+    "thumbnail_url": "img/goods/travel-sleep-mask/main.png",
+    "images": ["img/goods/travel-sleep-mask/main.png"],
+    "categories": ["travel"],
+    "is_active": true
+  },
+  {
+    "sku": "PALLY-FOLDABLE-BAG-001",
+    "name": "접이식 여행 보조가방",
+    "description": "짐이 늘어날 때 펼쳐 쓰고 캐리어 손잡이에 고정할 수 있는 보조가방입니다.",
+    "price": 15000,
+    "stock_quantity": 1000,
+    "thumbnail_url": "img/goods/foldable-travel-bag/main.png",
+    "images": ["img/goods/foldable-travel-bag/main.png"],
+    "categories": ["travel"],
+    "is_active": true
+  },
+  {
+    "sku": "PALLY-LUGGAGE-STRAP-001",
+    "name": "팰리 캐리어 스트랩",
+    "description": "캐리어를 단단히 고정하고 빠르게 구분할 수 있는 팰리 패턴 스트랩입니다.",
+    "price": 15000,
+    "stock_quantity": 1000,
+    "thumbnail_url": "img/goods/pally-luggage-strap/main.png",
+    "images": ["img/goods/pally-luggage-strap/main.png"],
+    "categories": ["travel"],
+    "is_active": true
+  },
+  {
+    "sku": "PALLY-TRAVEL-TOWEL-001",
+    "name": "팰리 여행 타월",
+    "description": "바다와 캠핑의 팰리 일러스트를 담은 가볍고 포근한 여행 타월입니다.",
+    "price": 12000,
+    "stock_quantity": 1000,
+    "thumbnail_url": "img/goods/pally-travel-towel/main.png",
+    "images": ["img/goods/pally-travel-towel/main.png"],
+    "categories": ["travel"],
+    "is_active": true
+  },
+  {
+    "sku": "PALLY-MASKING-TAPE-001",
+    "name": "여행 마스킹테이프 3종 세트",
+    "description": "지도, 비행기, 팰리 여행 아이콘으로 구성한 마스킹테이프 3종 세트입니다.",
+    "price": 8000,
+    "stock_quantity": 1000,
+    "thumbnail_url": "img/goods/travel-masking-tape-set/main.png",
+    "images": ["img/goods/travel-masking-tape-set/main.png"],
+    "categories": ["daily", "stationery"],
+    "is_active": true
+  },
+  {
+    "sku": "PALLY-NOTEBOOK-001",
+    "name": "팔레트 수첩",
+    "description": "여행의 순간과 체크리스트를 기록하는 팰리 디자인 하드커버 수첩입니다.",
+    "price": 5000,
+    "stock_quantity": 1000,
+    "thumbnail_url": "img/goods/palette-notebook/main.png",
+    "images": ["img/goods/palette-notebook/main.png"],
+    "categories": ["stationery"],
+    "is_active": true
+  }
+]

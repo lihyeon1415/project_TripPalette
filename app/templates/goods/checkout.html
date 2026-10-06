@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block title %}{{ product.name }} 주문 | 팰리 굿즈{% endblock %}
+{% block content %}
+<main class="container" style="padding-block: 48px;">
+    <h1>바로 구매</h1>
+    <h2>{{ product.name }}</h2>
+    <p>상품 가격 {{ "{:,}".format(product.price) }}원 · 배송비 3,000원</p>
+    <form method="post" action="{{ url_for('goods.create_order', product_id=product.id) }}">
+        <label>수량 <input type="number" name="quantity" min="1" max="10" value="{{ form_data.get('quantity', '1') }}" required></label>
+        <label>받는 분 <input name="recipient_name" maxlength="50" value="{{ form_data.get('recipient_name', '') }}" required></label>
+        <label>연락처 <input name="recipient_phone" maxlength="20" value="{{ form_data.get('recipient_phone', '') }}" placeholder="010-1234-5678" required></label>
+        <label>우편번호 <input name="postal_code" inputmode="numeric" maxlength="5" value="{{ form_data.get('postal_code', '') }}" required></label>
+        <label>주소 <input name="address" maxlength="255" value="{{ form_data.get('address', '') }}" required></label>
+        <label>상세 주소 <input name="address_detail" maxlength="255" value="{{ form_data.get('address_detail', '') }}"></label>
+        <label>배송 요청사항 <input name="delivery_request" maxlength="255" value="{{ form_data.get('delivery_request', '') }}"></label>
+        <button type="submit">결제 대기 주문 만들기</button>
+    </form>
+</main>
+{% endblock %}

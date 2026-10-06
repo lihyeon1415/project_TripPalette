@@ -158,3 +158,17 @@
     .reservation-history-card__aside { grid-column: auto; }
     .reservation-history__empty { padding: 56px 20px; }
 }
+/* 예약·굿즈 주문 내역 공통 탭 */
+.purchase-history-tabs { margin: 0 0 30px; display: flex; gap: 8px; }
+.purchase-history-tabs a { min-width: 118px; padding: 11px 20px; color: #737975; background: #fff; border: 1px solid #dfe3df; border-radius: 999px; font-size: .78rem; font-weight: 800; text-align: center; }
+.purchase-history-tabs a.is-active { color: #fff; background: #35443a; border-color: #35443a; }
+.order-history-hero { position: relative; overflow: hidden; min-height: 330px; margin-bottom: 48px; color: #35443a; background: #f3efe3; border-bottom: 1px solid #e7e1d4; }
+.order-history-hero__inner { min-height: 330px; display: flex; align-items: center; justify-content: space-between; }
+.order-history-hero__inner>div { position: relative; z-index: 2; }.order-history-hero span{font-size:.66rem;font-weight:850;letter-spacing:.2em}.order-history-hero h1{margin:14px 0 10px;font-size:clamp(2.3rem,4vw,3.8rem);letter-spacing:-.06em}.order-history-hero p{margin:0;color:#737a72}.order-history-hero img{align-self:stretch;width:52%;object-fit:cover;object-position:center;border-radius:70px 0 0 0}
+.goods-order-list { display: grid; gap: 16px; }
+.goods-order-card { padding: 18px; display: grid; grid-template-columns: 150px minmax(0,1fr) 120px; align-items: center; gap: 24px; background: #fff; border: 1px solid #e0e4df; border-radius: 18px; box-shadow: 0 10px 30px rgba(46,57,51,.055); }
+.goods-order-card__media { overflow: hidden; aspect-ratio: 1; border-radius: 12px; background: #f1eee4; }.goods-order-card__media img{width:100%;height:100%;display:block;object-fit:cover}.goods-order-card__topline{display:flex;align-items:center;justify-content:space-between;gap:15px}.goods-order-card__topline>span{color:#9a9f9b;font-size:.68rem}.goods-order-card h2{margin:10px 0 5px;color:#303733;font-size:1.2rem}.goods-order-card__content>p{margin:0 0 16px;color:#929793;font-size:.66rem}.goods-order-card dl{margin:0;display:flex;flex-wrap:wrap;gap:20px}.goods-order-card dl div{display:flex;gap:7px;font-size:.72rem}.goods-order-card dt{color:#929793}.goods-order-card dd{margin:0;color:#4c5550;font-weight:750}.goods-order-card__actions{display:grid;gap:8px}.goods-order-card__actions a{padding:9px 12px;color:#56605a;background:#fff;border:1px solid #d9dfda;border-radius:8px;font-size:.7rem;font-weight:800;text-align:center}.goods-order-card__actions a.is-primary{color:#fff;background:#35443a;border-color:#35443a}
+@media(max-width:760px){.order-history-hero__inner{align-items:flex-start;padding-top:50px}.order-history-hero img{position:absolute;right:0;bottom:0;width:70%;height:65%;opacity:.58}.goods-order-card{grid-template-columns:95px minmax(0,1fr);gap:15px}.goods-order-card__actions{grid-column:1/-1;grid-template-columns:repeat(2,1fr)}.goods-order-card dl{display:grid;gap:5px}.purchase-history-tabs a{min-width:0;flex:1}}
+.test-payment-notice { margin: 20px 0; padding: 16px 18px; color: #625744; background: #fff8e8; border: 1px solid #ead9ad; border-radius: 10px; line-height: 1.7; }
+.test-payment-notice strong { color: #8a5b29; }
+.toss-payment-ui { width: min(100%, 620px); margin: 24px auto; text-align: left; }

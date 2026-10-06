@@ -78,7 +78,7 @@
                 <div class="mobile-account-navigation">
                     {% if g.user %}
                         <a class="mypage-nav-link{% if request.endpoint == 'mypage.favorites' %} mypage-nav-link--active{% endif %}" href="{{ url_for('mypage.favorites') }}"{% if request.endpoint == 'mypage.favorites' %} aria-current="page"{% endif %}><svg aria-hidden="true"><use href="#icon-mypage-heart"></use></svg><span>찜한 여행지</span></a>
-                        <a class="mypage-nav-link{% if request.endpoint == 'mypage.reservations' or request.blueprint == 'reservation' %} mypage-nav-link--active{% endif %}" href="{{ url_for('mypage.reservations') }}"{% if request.endpoint == 'mypage.reservations' or request.blueprint == 'reservation' %} aria-current="page"{% endif %}><svg aria-hidden="true"><use href="#icon-mypage-calendar"></use></svg><span>예약 내역</span></a>
+                        <a class="mypage-nav-link{% if request.endpoint in ('mypage.reservations', 'mypage.orders', 'mypage.order_detail') or request.blueprint in ('reservation', 'order', 'payment') %} mypage-nav-link--active{% endif %}" href="{{ url_for('mypage.reservations') }}"{% if request.endpoint in ('mypage.reservations', 'mypage.orders', 'mypage.order_detail') or request.blueprint in ('reservation', 'order', 'payment') %} aria-current="page"{% endif %}><svg aria-hidden="true"><use href="#icon-mypage-calendar"></use></svg><span>예약·주문 내역</span></a>
                         <a class="mypage-nav-link{% if request.endpoint == 'mypage.reviews' %} mypage-nav-link--active{% endif %}" href="{{ url_for('mypage.reviews') }}"{% if request.endpoint == 'mypage.reviews' %} aria-current="page"{% endif %}><svg aria-hidden="true"><use href="#icon-mypage-review"></use></svg><span>작성한 리뷰</span></a>
                         <a class="mypage-nav-link{% if request.endpoint == 'mypage.profile' %} mypage-nav-link--active{% endif %}" href="{{ url_for('mypage.profile') }}"{% if request.endpoint == 'mypage.profile' %} aria-current="page"{% endif %}><svg aria-hidden="true"><use href="#icon-mypage-profile"></use></svg><span>회원정보 수정</span></a>
                         <form method="post" action="{{ url_for('auth.logout') }}">
@@ -117,7 +117,7 @@
                         hidden
                     >
                         <a class="mypage-nav-link{% if request.endpoint == 'mypage.favorites' %} mypage-nav-link--active{% endif %}" href="{{ url_for('mypage.favorites') }}"{% if request.endpoint == 'mypage.favorites' %} aria-current="page"{% endif %}><svg aria-hidden="true"><use href="#icon-mypage-heart"></use></svg><span>찜한 여행지</span></a>
-                        <a class="mypage-nav-link{% if request.endpoint == 'mypage.reservations' or request.blueprint == 'reservation' %} mypage-nav-link--active{% endif %}" href="{{ url_for('mypage.reservations') }}"{% if request.endpoint == 'mypage.reservations' or request.blueprint == 'reservation' %} aria-current="page"{% endif %}><svg aria-hidden="true"><use href="#icon-mypage-calendar"></use></svg><span>예약 내역</span></a>
+                        <a class="mypage-nav-link{% if request.endpoint in ('mypage.reservations', 'mypage.orders', 'mypage.order_detail') or request.blueprint in ('reservation', 'order', 'payment') %} mypage-nav-link--active{% endif %}" href="{{ url_for('mypage.reservations') }}"{% if request.endpoint in ('mypage.reservations', 'mypage.orders', 'mypage.order_detail') or request.blueprint in ('reservation', 'order', 'payment') %} aria-current="page"{% endif %}><svg aria-hidden="true"><use href="#icon-mypage-calendar"></use></svg><span>예약·주문 내역</span></a>
                         <a class="mypage-nav-link{% if request.endpoint == 'mypage.reviews' %} mypage-nav-link--active{% endif %}" href="{{ url_for('mypage.reviews') }}"{% if request.endpoint == 'mypage.reviews' %} aria-current="page"{% endif %}><svg aria-hidden="true"><use href="#icon-mypage-review"></use></svg><span>작성한 리뷰</span></a>
                         <a class="mypage-nav-link{% if request.endpoint == 'mypage.profile' %} mypage-nav-link--active{% endif %}" href="{{ url_for('mypage.profile') }}"{% if request.endpoint == 'mypage.profile' %} aria-current="page"{% endif %}><svg aria-hidden="true"><use href="#icon-mypage-profile"></use></svg><span>회원정보 수정</span></a>
                     </nav>
@@ -175,6 +175,28 @@
     </main>
 
     <footer id="site-footer" class="site-footer">
+        <section class="site-footer-goods" aria-labelledby="site-footer-goods-title">
+            <img
+                class="site-footer-goods__image"
+                src="{{ url_for('static', filename='img/main/pally-goods-footer-v1.png') }}"
+                alt="여행하는 팰리와 에코백, 텀블러, 키링, 수첩 굿즈"
+                loading="lazy"
+            >
+            <span class="site-footer-goods__shade" aria-hidden="true"></span>
+            <span class="site-footer-goods__route" aria-hidden="true">✈</span>
+            <div class="container site-footer-goods__inner">
+                <div class="site-footer-goods__copy">
+                    <p class="site-footer-goods__eyebrow">PALLY GOODS</p>
+                    <h2 id="site-footer-goods-title">여행의 기분을,<br>일상에 데려와.</h2>
+                    <p class="site-footer-goods__description">팰리와 함께하는 작은 여행 소품을 만나보세요.</p>
+                    <a class="site-footer-goods__button" href="{{ url_for('goods.list_products') }}">
+                        굿즈 보러가기
+                        <span aria-hidden="true">→</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
         <div class="container site-footer__inner">
             <div class="site-footer__top">
                 <div class="site-footer__brand-block">

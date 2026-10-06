@@ -1,0 +1,72 @@
+{% extends "base.html" %}
+{% block title %}테스트 결제 | TripPalette{% endblock %}
+{% block css %}<link rel="stylesheet" href="{{ url_for('static', filename='css/reservation.css') }}">{% endblock %}
+{% block content %}
+<section class="reservation-complete-page">
+    <div class="reservation-complete-card">
+        <span class="reservation-kicker">TOSS TEST PAYMENT</span>
+        <h1>{{ order_name }}</h1>
+        <p class="test-payment-notice"><strong>테스트 결제이며 실제 청구되지 않습니다.</strong><br>입력한 결제수단은 토스페이먼츠 테스트 환경에서만 처리됩니다.</p>
+        <dl class="reservation-complete-card__details">
+            <div><dt>주문번호</dt><dd>{{ payment.merchant_order_id }}</dd></div>
+            <div><dt>결제 금액</dt><dd>₩ {{ "{:,}".format(payment.amount) }}</dd></div>
+            <div><dt>결제 기한</dt><dd>{{ target.expires_at.strftime('%Y.%m.%d %H:%M:%S') }}</dd></div>
+        </dl>
+        {% if client_key %}
+            <div class="toss-payment-ui">
+                <div id="payment-method"></div>
+                <div id="agreement"></div>
+            </div>
+            <button type="button" id="toss-payment-button">테스트 결제하기</button>
+            <p id="toss-payment-error" role="alert" hidden></p>
+        {% else %}
+            <p role="alert">TOSS_CLIENT_KEY와 TOSS_SECRET_KEY를 .env에 설정해야 테스트 결제창을 열 수 있습니다.</p>
+        {% endif %}
+    </div>
+</section>
+{% endblock %}
+{% block scripts %}
+{% if client_key %}
+<script src="https://js.tosspayments.com/v2/standard"></script>
+<script>
+(() => {
+    const button = document.getElementById("toss-payment-button");
+    const errorBox = document.getElementById("toss-payment-error");
+    const tossPayments = TossPayments({{ client_key|tojson }});
+    const widgets = tossPayments.widgets({ customerKey: {{ customer_key|tojson }} });
+
+    async function initializePaymentUI() {
+        await widgets.setAmount({ currency: "KRW", value: {{ payment.amount }} });
+        await Promise.all([
+            widgets.renderPaymentMethods({ selector: "#payment-method", variantKey: "DEFAULT" }),
+            widgets.renderAgreement({ selector: "#agreement", variantKey: "AGREEMENT" }),
+        ]);
+    }
+
+    button.addEventListener("click", async () => {
+        button.disabled = true;
+        errorBox.hidden = true;
+        try {
+            await widgets.requestPayment({
+                orderId: {{ payment.merchant_order_id|tojson }},
+                orderName: {{ order_name|tojson }},
+                successUrl: {{ success_url|tojson }},
+                failUrl: {{ fail_url|tojson }},
+                customerEmail: {{ g.user.email|tojson }},
+                customerName: {{ g.user.name|tojson }},
+            });
+        } catch (error) {
+            errorBox.textContent = error.message || "결제창을 열지 못했습니다.";
+            errorBox.hidden = false;
+            button.disabled = false;
+        }
+    });
+    initializePaymentUI().catch((error) => {
+        errorBox.textContent = error.message || "결제 UI를 불러오지 못했습니다.";
+        errorBox.hidden = false;
+        button.disabled = true;
+    });
+})();
+</script>
+{% endif %}
+{% endblock %}

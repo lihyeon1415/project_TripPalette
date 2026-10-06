@@ -1,17 +1,28 @@
 from datetime import datetime, timedelta, timezone
 
-from sqlalchemy import delete
+from sqlalchemy import delete, update
 
 from app import db
 from app.models import (
     AccommodationReview,
     Favorite,
+    GoodsOrder,
     Payment,
     Reservation,
     Review,
     User,
     UserPreference,
 )
+
+
+GOODS_ORDER_TERMINAL_STATUSES = {
+    "DELIVERED",
+    "CANCELLED",
+    "REFUNDED",
+    "FAILED",
+    "PAYMENT_FAILED",
+    "EXPIRED",
+}
 
 
 def utcnow():
@@ -30,30 +41,55 @@ def format_deletion_date(value):
 
 
 def delete_accounts(user_ids):
-    """탈퇴 계정과 계정에 귀속된 데이터를 외래키 순서대로 삭제한다."""
+    """진행 중 주문이 없는 탈퇴 계정을 삭제하고 거래 개인정보를 익명화한다."""
     user_ids = tuple(user_ids)
     if not user_ids:
         return 0
 
+    blocked_user_ids = set(
+        db.session.scalars(
+            db.select(GoodsOrder.user_id).where(
+                GoodsOrder.user_id.in_(user_ids),
+                GoodsOrder.status.not_in(GOODS_ORDER_TERMINAL_STATUSES),
+            )
+        )
+    )
+    deletable_user_ids = tuple(
+        user_id for user_id in user_ids if user_id not in blocked_user_ids
+    )
+    if not deletable_user_ids:
+        return 0
+
     reservation_ids = db.select(Reservation.id).where(
-        Reservation.user_id.in_(user_ids)
+        Reservation.user_id.in_(deletable_user_ids)
     )
     statements = (
         delete(Payment).where(Payment.reservation_id.in_(reservation_ids)),
-        delete(Reservation).where(Reservation.user_id.in_(user_ids)),
-        delete(UserPreference).where(UserPreference.user_id.in_(user_ids)),
-        delete(Favorite).where(Favorite.user_id.in_(user_ids)),
+        delete(Reservation).where(Reservation.user_id.in_(deletable_user_ids)),
+        delete(UserPreference).where(UserPreference.user_id.in_(deletable_user_ids)),
+        delete(Favorite).where(Favorite.user_id.in_(deletable_user_ids)),
         delete(AccommodationReview).where(
-            AccommodationReview.user_id.in_(user_ids)
+            AccommodationReview.user_id.in_(deletable_user_ids)
         ),
-        delete(Review).where(Review.user_id.in_(user_ids)),
-        delete(User).where(User.id.in_(user_ids)),
+        delete(Review).where(Review.user_id.in_(deletable_user_ids)),
+        update(GoodsOrder)
+        .where(GoodsOrder.user_id.in_(deletable_user_ids))
+        .values(
+            user_id=None,
+            recipient_name="탈퇴 회원",
+            recipient_phone="",
+            postal_code="",
+            address="삭제된 배송지",
+            address_detail=None,
+            delivery_request=None,
+        ),
+        delete(User).where(User.id.in_(deletable_user_ids)),
     )
     for statement in statements:
         db.session.execute(
             statement.execution_options(synchronize_session=False)
         )
-    return len(user_ids)
+    return len(deletable_user_ids)
 
 
 def purge_expired_accounts(now=None):

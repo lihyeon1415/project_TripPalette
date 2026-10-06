@@ -14,7 +14,7 @@
             <a class="reservation-back" href="{{ url_for('accommodation.detail', id=accommodation.id) }}">← 숙소 상세로</a>
             <span class="reservation-kicker">숙소 예약</span>
             <h1>여행 날짜와 인원을<br>선택해 주세요.</h1>
-            <p>예약 정보를 확인한 뒤 대기 상태로 접수됩니다. 결제 기능은 아직 연결되지 않습니다.</p>
+            <p>예약 정보를 확인한 뒤 10분 동안 객실을 확보하고 테스트 결제를 진행합니다.</p>
 
             <form method="post" class="reservation-form" data-reservation-form data-nightly-price="{{ accommodation.price_per_night }}">
                 <div class="reservation-form__dates">
@@ -59,7 +59,7 @@
                     <strong data-total-price>₩ {{ "{:,}".format(accommodation.price_per_night) }}</strong>
                 </div>
 
-                <button type="submit">예약 접수하기 <span aria-hidden="true">→</span></button>
+                <button type="submit">예약 후 결제하기 <span aria-hidden="true">→</span></button>
             </form>
         </div>
 
@@ -78,7 +78,7 @@
                 <dl>
                     <div><dt>1박 요금</dt><dd>₩ {{ "{:,}".format(accommodation.price_per_night) }}</dd></div>
                     <div><dt>최대 인원</dt><dd>{{ accommodation.capacity }}명</dd></div>
-                    <div><dt>예약 상태</dt><dd>대기</dd></div>
+                    <div><dt>예약 상태</dt><dd>결제 대기</dd></div>
                 </dl>
             </div>
         </aside>
