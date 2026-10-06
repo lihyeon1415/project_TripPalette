@@ -1,0 +1,33 @@
+{% macro shipping_dialog(dialog_id, form_id, action, form_data, total_amount, shipping_fee, description, auto_open=false, quantity_value=none, quantity_max=10, selection_present=false) -%}
+<dialog id="{{ dialog_id }}" class="shipping-dialog" data-shipping-dialog{% if auto_open %} data-auto-open="true"{% endif %} aria-labelledby="{{ dialog_id }}-title">
+    <button class="shipping-dialog__close" type="button" data-shipping-close aria-label="배송지 입력창 닫기">×</button>
+    <form id="{{ form_id }}" method="post" action="{{ action }}" class="shipping-dialog__form">
+        {% if selection_present %}<input type="hidden" name="selection_present" value="1">{% endif %}
+        <header class="shipping-dialog__heading">
+            <span class="shipping-dialog__icon"><img src="{{ url_for('static', filename='img/base/icon-cart.svg') }}" alt=""></span>
+            <span class="shipping-dialog__heading-copy"><small>DELIVERY INFORMATION</small><h2 id="{{ dialog_id }}-title">배송지 정보</h2><p>{{ description }}</p></span>
+        </header>
+        {% if quantity_value is not none %}
+        <label class="shipping-dialog__quantity">수량<input data-modal-quantity type="number" name="quantity" min="1" max="{{ quantity_max }}" value="{{ quantity_value }}" required></label>
+        {% endif %}
+        <div class="shipping-dialog__row"><label>받는 분<input name="recipient_name" maxlength="50" value="{{ form_data.get('recipient_name', '') }}" required></label><label>연락처<input name="recipient_phone" maxlength="20" value="{{ form_data.get('recipient_phone', '') }}" placeholder="010-1234-5678" required></label></div>
+        <div class="shipping-dialog__address"><label>우편번호<input name="postal_code" inputmode="numeric" maxlength="5" value="{{ form_data.get('postal_code', '') }}" placeholder="숫자 5자리" required></label><label>주소<input name="address" maxlength="255" value="{{ form_data.get('address', '') }}" placeholder="기본 주소를 입력해 주세요" required></label></div>
+        <label>상세 주소<input name="address_detail" maxlength="255" value="{{ form_data.get('address_detail', '') }}" placeholder="동·호수 등 상세 주소"></label>
+        <label>배송 요청사항<input name="delivery_request" maxlength="255" value="{{ form_data.get('delivery_request', '') }}" placeholder="문 앞에 놓아주세요"></label>
+        <div class="shipping-dialog__total"><span>결제 예정 금액 <small>배송비 {{ "{:,}".format(shipping_fee) }}원 포함</small></span><strong data-shipping-total>{{ "{:,}".format(total_amount) }}원</strong></div>
+        <button class="shipping-dialog__submit" type="submit">배송지 확인하고 결제하기 <span aria-hidden="true">→</span></button>
+    </form>
+</dialog>
+{%- endmacro %}
+
+{% macro shipping_login_dialog(login_url, dialog_id='goods-shipping-dialog') -%}
+<dialog id="{{ dialog_id }}" class="shipping-dialog" data-shipping-dialog aria-labelledby="shipping-login-title">
+    <button class="shipping-dialog__close" type="button" data-shipping-close aria-label="구매창 닫기">×</button>
+    <section class="shipping-dialog__login">
+        <span class="shipping-dialog__login-icon" aria-hidden="true">✈</span>
+        <h2 id="shipping-login-title">로그인 후 구매할 수 있어요</h2>
+        <p>굿즈 주문과 배송 내역을 안전하게 보관하기 위해 로그인이 필요합니다.</p>
+        <a href="{{ login_url }}">로그인하고 계속하기 <span aria-hidden="true">→</span></a>
+    </section>
+</dialog>
+{%- endmacro %}

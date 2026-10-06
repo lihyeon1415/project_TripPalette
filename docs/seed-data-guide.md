@@ -4,6 +4,8 @@
 
 - `app/data/destinations.json`: 여행지 68개
 - `app/data/accommodations.json`: 지역별 숙소 3~7개, 총 277개
+- `app/data/products.json`: 굿즈 상품 15개와 가격·재고·카테고리·이미지 경로
+- `app/static/img/goods/`: `products.json`에서 참조하는 상품 이미지
 
 계절별 여행지 수는 다음과 같습니다.
 
@@ -128,3 +130,34 @@ PowerShell에서 다음 명령으로 JSON 문법을 확인합니다.
 4. `destination_name`으로 저장된 여행지를 조회합니다.
 5. 여행지와 숙소 이름 조합으로 기존 숙소를 확인해 중복 삽입을 방지합니다.
 6. 여러 번 실행해도 같은 결과가 나오도록 구현합니다.
+7. `products.json`은 SKU를 기준으로 상품을 Upsert합니다.
+8. 상품 가격·재고·판매 상태·카테고리·이미지 순서를 JSON 기준으로 동기화합니다.
+
+Seed 대상은 여행지·숙소·상품 카탈로그뿐입니다. 회원, 찜, 리뷰, 장바구니,
+예약, 굿즈 주문, 주문 항목, 결제 및 배송지 거래 데이터는 생성하거나 초기화하지
+않습니다.
+
+## 팀원 적용 명령
+
+Migration이 Seed보다 먼저 실행되어야 합니다.
+
+```powershell
+git switch main
+git fetch origin
+git pull --ff-only origin main
+.\venv\Scripts\Activate.ps1
+python -m pip install -r requirements.txt
+python -m flask db upgrade
+python seed.py
+python -m flask db current
+```
+
+정상 적용 후 DB 버전은 다음과 같습니다.
+
+```text
+b4e8c1a7d930 (head)
+```
+
+`seed.py`는 반복 실행할 수 있지만 상품 재고도 `products.json`의 개발용 기준값으로
+다시 동기화됩니다. 따라서 의미 있는 로컬 주문 데이터를 유지해야 하는 환경에서는
+재고 초기화 여부를 확인한 뒤 실행합니다.

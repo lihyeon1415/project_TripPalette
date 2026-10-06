@@ -79,17 +79,22 @@ class TossPaymentFlowTestCase(unittest.TestCase):
             "method": "카드",
         }
 
-    def test_reservation_opens_v2_test_payment_page(self):
+    def test_reservation_opens_v2_payment_modal_on_booking_page(self):
         response, payment = self.create_pending_reservation()
         page = self.client.get(response.location).get_data(as_text=True)
         self.assertIn("https://js.tosspayments.com/v2/standard", page)
         self.assertIn("test_ck_test-client", page)
         self.assertNotIn("test_sk_test-secret", page)
         self.assertIn(payment.merchant_order_id, page)
-        self.assertIn("value: 200000", page)
-        self.assertIn("테스트 결제이며 실제 청구되지 않습니다.", page)
-        self.assertIn('selector: "#payment-method"', page)
-        self.assertIn('selector: "#agreement"', page)
+        self.assertIn('data-amount="200000"', page)
+        self.assertIn('data-stay-payment-modal', page)
+        self.assertIn('class="stay-payment-layer"', page)
+        self.assertNotIn('<dialog class="stay-payment-modal"', page)
+        self.assertIn("결제 방법", page)
+        self.assertNotIn("테스트 결제", page)
+        self.assertIn('id="stay-payment-method"', page)
+        self.assertIn('id="stay-payment-agreement"', page)
+        self.assertIn("/static/js/payment/payment-widget.js", page)
 
     def test_success_approves_once_and_confirms_reservation(self):
         _, payment = self.create_pending_reservation()

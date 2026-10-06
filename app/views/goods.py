@@ -83,10 +83,7 @@ def detail(product_id):
     product = _active_product_or_404(product_id)
     return render_template(
         "goods/detail.html",
-        **_detail_context(
-            product,
-            buy_modal_open=request.args.get("buy") == "1",
-        ),
+        **_detail_context(product, buy_modal_open=request.args.get("buy") == "1"),
     )
 
 
@@ -100,17 +97,16 @@ def checkout(product_id):
 @goods_bp.post("/<int:product_id>/orders")
 @login_required
 def create_order(product_id):
-    # 만료된 주문이 확보한 재고를 새 주문 전에 즉시 반환한다.
     expire_pending_payments()
     product = _active_product_or_404(product_id)
     form_data = request.form.to_dict()
     try:
         order = create_goods_order(g.user.id, product.id, request.form)
         db.session.commit()
-    except GoodsOrderValidationError as error:
+    except GoodsOrderValidationError as exc:
         db.session.rollback()
-        for message in error.errors:
-            flash(message, "error")
+        for error in exc.errors:
+            flash(error, "error")
         return (
             render_template(
                 "goods/detail.html",
@@ -118,7 +114,4 @@ def create_order(product_id):
             ),
             400,
         )
-    except Exception:
-        db.session.rollback()
-        raise
     return redirect(url_for("payment.checkout", payment_id=order.payment.id))

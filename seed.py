@@ -19,6 +19,10 @@ DESTINATIONS_PATH = DATA_DIR / "destinations.json"
 ACCOMMODATIONS_PATH = DATA_DIR / "accommodations.json"
 PRODUCTS_PATH = DATA_DIR / "products.json"
 
+# 이 지역들은 검수된 accommodations.json 목록을 기준으로 관리한다.
+# 과거 시드에서 남은 사진 없는 숙소는 예약·리뷰가 없을 때만 정리한다.
+ACCOMMODATION_PRUNE_DESTINATIONS = frozenset({"구례", "순천", "신안", "진주"})
+
 DESTINATION_REQUIRED_FIELDS = ("name", "region")
 ACCOMMODATION_REQUIRED_FIELDS = (
     "destination_name",
@@ -232,11 +236,30 @@ def upsert_destinations(items):
 def upsert_accommodations(items, destinations_by_name):
     created = 0
     updated = 0
+    deleted = 0
 
     existing_accommodations = {
         (accommodation.destination_id, accommodation.name): accommodation
         for accommodation in db.session.execute(db.select(Accommodation)).scalars()
     }
+    desired_keys = {
+        (destinations_by_name[item["destination_name"].strip()].id, item["name"].strip())
+        for item in items
+        if item["destination_name"].strip() in ACCOMMODATION_PRUNE_DESTINATIONS
+    }
+
+    for key, accommodation in tuple(existing_accommodations.items()):
+        destination_name = accommodation.destination.name
+        if (
+            destination_name in ACCOMMODATION_PRUNE_DESTINATIONS
+            and key not in desired_keys
+            and not accommodation.image_url
+            and not accommodation.reservations
+            and not accommodation.reviews
+        ):
+            db.session.delete(accommodation)
+            existing_accommodations.pop(key)
+            deleted += 1
 
     for item in items:
         destination_name = item["destination_name"].strip()
@@ -268,7 +291,7 @@ def upsert_accommodations(items, destinations_by_name):
         # 값이 없는 숙소만 사진 준비 중 상태로 표시한다.
         accommodation.image_url = item.get("image_url") or None
 
-    return created, updated
+    return created, updated, deleted
 
 
 def upsert_products(items):
@@ -340,7 +363,7 @@ def seed():
             destinations_by_name, destination_created, destination_updated = (
                 upsert_destinations(destinations)
             )
-            accommodation_created, accommodation_updated = upsert_accommodations(
+            accommodation_created, accommodation_updated, accommodation_deleted = upsert_accommodations(
                 accommodations,
                 destinations_by_name,
             )
@@ -358,6 +381,7 @@ def seed():
         print(
             "숙소: "
             f"신규 {accommodation_created}개, 갱신 {accommodation_updated}개, "
+            f"사진 없는 잔존 데이터 삭제 {accommodation_deleted}개, "
             f"전체 {db.session.scalar(db.select(db.func.count(Accommodation.id)))}개"
         )
         print(

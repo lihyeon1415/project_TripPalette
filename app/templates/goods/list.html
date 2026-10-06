@@ -6,7 +6,7 @@
     <nav class="container pally-shop-nav" aria-label="팰리 굿즈 메뉴">
         <a class="pally-shop-brand" href="{{ url_for('goods.list_products') }}"><strong>PALLY</strong><small>by TripPalette</small></a>
         <div><a href="#products">모든 굿즈</a><a href="#story">팰리 이야기</a><a href="{{ url_for('destination.list') }}">여행하러 가기 ↗</a></div>
-        <a class="pally-shop-bag" href="{{ url_for('mypage.orders') if g.user else url_for('auth.login') }}">주문 내역 <span>{{ g.user.goods_orders|length if g.user else 0 }}</span></a>
+        <a class="pally-shop-bag" href="{{ url_for('cart.detail') if g.user else url_for('auth.login', next=url_for('cart.detail')) }}">장바구니 <span>{{ cart_item_count }}</span></a>
     </nav>
     <section class="container pally-shop-hero">
         <div class="pally-shop-hero__copy">

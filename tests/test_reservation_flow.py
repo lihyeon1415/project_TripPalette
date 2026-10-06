@@ -117,7 +117,10 @@ class ReservationFlowTestCase(unittest.TestCase):
         reservation = db.session.scalar(db.select(Reservation))
         self.assertEqual(response.status_code, 302)
         payment = db.session.scalar(db.select(Payment))
-        self.assertEqual(response.location, f"/payments/{payment.id}")
+        self.assertEqual(
+            response.location,
+            f"/reservations/new/{self.accommodation_id}?payment_id={payment.id}",
+        )
         self.assertEqual(reservation.user_id, self.user_id)
         self.assertEqual(reservation.people_count, 2)
         self.assertEqual(reservation.total_price, 240000)

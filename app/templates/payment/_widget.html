@@ -1,0 +1,28 @@
+{% macro render_toss_widget(prefix, payment, client_key, customer_key, order_name, success_url, fail_url, customer_email, customer_name, button_text, frame_class='', button_class='', error_class='') -%}
+    {% if client_key %}
+    <div
+        class="payment-widget-frame {{ frame_class }}"
+        data-payment-widget
+        data-client-key="{{ client_key|e }}"
+        data-customer-key="{{ customer_key|e }}"
+        data-amount="{{ payment.amount }}"
+        data-order-id="{{ payment.merchant_order_id|e }}"
+        data-order-name="{{ order_name|e }}"
+        data-success-url="{{ success_url|e }}"
+        data-fail-url="{{ fail_url|e }}"
+        data-customer-email="{{ customer_email|e }}"
+        data-customer-name="{{ customer_name|e }}"
+    >
+        <div class="payment-widget-frame__ui">
+            <div id="{{ prefix }}-payment-method" data-payment-method></div>
+            <div id="{{ prefix }}-payment-agreement" data-payment-agreement></div>
+        </div>
+        <button class="payment-widget-frame__submit {{ button_class }}" type="button" data-payment-submit>
+            {{ button_text }} <span aria-hidden="true">→</span>
+        </button>
+        <p class="payment-widget-frame__error {{ error_class }}" data-payment-error role="alert" hidden></p>
+    </div>
+    {% else %}
+    <p class="payment-widget-frame__error {{ error_class }}" role="alert">결제수단을 불러올 수 없습니다. 잠시 후 다시 시도해 주세요.</p>
+    {% endif %}
+{%- endmacro %}

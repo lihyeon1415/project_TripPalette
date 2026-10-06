@@ -1,10 +1,12 @@
 
 {% extends "base.html" %}
+{% from "payment/_widget.html" import render_toss_widget %}
 
 {% block title %}{{ accommodation.name }} 예약 | TripPalette{% endblock %}
 
 {% block css %}
 <link rel="stylesheet" href="{{ url_for('static', filename='css/reservation.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/payment/payment-widget.css') }}">
 {% endblock %}
 
 {% block content %}
@@ -14,7 +16,7 @@
             <a class="reservation-back" href="{{ url_for('accommodation.detail', id=accommodation.id) }}">← 숙소 상세로</a>
             <span class="reservation-kicker">숙소 예약</span>
             <h1>여행 날짜와 인원을<br>선택해 주세요.</h1>
-            <p>예약 정보를 확인한 뒤 10분 동안 객실을 확보하고 테스트 결제를 진행합니다.</p>
+            <p>예약 정보를 확인한 뒤 10분 동안 객실을 확보하고 결제를 진행합니다.</p>
 
             <form method="post" class="reservation-form" data-reservation-form data-nightly-price="{{ accommodation.price_per_night }}">
                 <div class="reservation-form__dates">
@@ -83,9 +85,63 @@
             </div>
         </aside>
     </div>
+
+    {% if payment_modal %}
+    <div class="stay-payment-layer" data-stay-payment-modal>
+        <section class="stay-payment-modal" role="dialog" aria-modal="true" aria-labelledby="stay-payment-title">
+            <button class="stay-payment-modal__close" type="button" data-stay-payment-close aria-label="결제창 닫기">×</button>
+            <header class="stay-payment-modal__header">
+                <span>예약 정보를 확인해 주세요</span>
+                <h2 id="stay-payment-title">결제 방법</h2>
+                <p>{{ payment_modal.order_name }}</p>
+            </header>
+            <section class="stay-payment-modal__booking" aria-label="숙소 예약 요약">
+                <div><span>체크인</span><strong>{{ payment_modal.payment.reservation.check_in.strftime('%Y.%m.%d') }}</strong></div>
+                <div><span>체크아웃</span><strong>{{ payment_modal.payment.reservation.check_out.strftime('%Y.%m.%d') }}</strong></div>
+                <div><span>예약 인원</span><strong>{{ payment_modal.payment.reservation.people_count }}명</strong></div>
+            </section>
+            <div class="stay-payment-modal__total"><span>총 결제 금액</span><strong>{{ "{:,}".format(payment_modal.payment.amount) }}원</strong></div>
+            {{ render_toss_widget(
+                'stay', payment_modal.payment, payment_modal.client_key, payment_modal.customer_key,
+                payment_modal.order_name, payment_modal.success_url, payment_modal.fail_url,
+                g.user.email, g.user.name, "{:,}원 결제하기".format(payment_modal.payment.amount),
+                frame_class='stay-payment-modal__widget',
+                button_class='stay-payment-modal__submit',
+                error_class='stay-payment-modal__error'
+            ) }}
+            <p class="stay-payment-modal__secure">▣ 안전하게 결제 정보를 보호하고 있어요</p>
+        </section>
+    </div>
+    {% endif %}
 </section>
 {% endblock %}
 
 {% block scripts %}
 <script src="{{ url_for('static', filename='js/reservation.js') }}" defer></script>
+{% if payment_modal %}
+<script>
+(() => {
+    const layer = document.querySelector("[data-stay-payment-modal]");
+    const closeButton = document.querySelector("[data-stay-payment-close]");
+    if (!layer) return;
+    const closeModal = () => {
+        layer.hidden = true;
+        document.body.classList.remove("has-stay-payment-modal");
+    };
+    closeButton?.addEventListener("click", closeModal);
+    layer.addEventListener("click", (event) => {
+        if (event.target === layer) closeModal();
+    });
+    layer.addEventListener("keydown", (event) => {
+        if (event.key === "Escape") closeModal();
+    });
+    document.body.classList.add("has-stay-payment-modal");
+    closeButton?.focus();
+})();
+</script>
+{% endif %}
+{% if payment_modal and payment_modal.client_key %}
+<script src="https://js.tosspayments.com/v2/standard"></script>
+<script src="{{ url_for('static', filename='js/payment/payment-widget.js') }}" defer></script>
+{% endif %}
 {% endblock %}

@@ -1,0 +1,81 @@
+/* Shared TripPalette checkout surface. Pally green belongs only to goods pages. */
+.site-checkout {
+    --pally-ink: #20272d;
+    min-height: calc(100vh - 96px);
+    color: #20272d;
+    background: #fff;
+}
+
+.site-checkout .pally-cart__header > div > span,
+.site-checkout .pally-cart-payment__panel header > span {
+    color: #7c8589;
+}
+
+.site-checkout .pally-cart__header h1,
+.site-checkout .pally-cart-payment__panel header h2 {
+    color: #20272d;
+    font-family: inherit;
+    font-weight: 850;
+    letter-spacing: -.04em;
+}
+
+.site-checkout .pally-cart__header > a {
+    color: #384146;
+    border-color: #aeb5b8;
+}
+
+.site-checkout .pally-cart__items,
+.site-checkout .pally-cart-checkout {
+    border-color: #e1e5e5;
+    box-shadow: 0 14px 42px rgba(29, 42, 48, .06);
+}
+
+.site-checkout .pally-cart__items > h2 span {
+    color: #d36b50;
+}
+
+.site-checkout .pally-cart-item__body > span,
+.site-checkout .pally-cart-item__body p,
+.site-checkout .pally-cart-payment__panel header p,
+.site-checkout .pally-cart-payment__meta span,
+.site-checkout .pally-cart-checkout__summary dt {
+    color: #7c8589;
+}
+
+.site-checkout .pally-cart-payment__delivery,
+.site-checkout .pally-cart-checkout__summary {
+    background: #f5f6f5;
+}
+
+.site-checkout .pally-cart-payment__delivery > span {
+    color: #7c8589;
+}
+
+.site-checkout .pally-cart-payment__meta {
+    border-color: #e3e6e6;
+}
+
+.site-checkout .pally-cart-checkout__summary div:last-child dd {
+    color: #d36b50;
+}
+
+.site-checkout .pally-cart-payment__widget {
+    margin-top: 14px;
+}
+
+.site-checkout .pally-cart-payment__submit {
+    width: 100%;
+    min-height: 52px;
+    background: #252d30;
+    box-shadow: 0 10px 24px rgba(32, 39, 45, .14);
+}
+
+.site-checkout .pally-cart-payment__submit:hover {
+    background: #151a1c;
+}
+
+.site-checkout .pally-cart-payment__submit:focus-visible,
+.site-checkout .pally-cart__header > a:focus-visible {
+    outline: 3px solid rgba(211, 107, 80, .24);
+    outline-offset: 3px;
+}

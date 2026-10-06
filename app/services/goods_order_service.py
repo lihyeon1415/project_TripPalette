@@ -3,7 +3,7 @@ import uuid
 from datetime import UTC, datetime, timedelta
 
 from app import db
-from app.models import GoodsOrder, GoodsOrderItem, Payment, Product
+from app.models import CartItem, GoodsOrder, GoodsOrderItem, Payment, Product
 
 
 MAX_ORDER_QUANTITY = 10
@@ -69,6 +69,15 @@ def validate_checkout_data(form):
     return cleaned
 
 
+def validate_shipping_data(form):
+    """Validate only recipient and delivery fields for a cart checkout."""
+    payload = dict(form)
+    payload["quantity"] = "1"
+    cleaned = validate_checkout_data(payload)
+    cleaned.pop("quantity", None)
+    return cleaned
+
+
 def create_goods_order(user_id, product_id, form):
     data = validate_checkout_data(form)
     product = db.session.scalar(
@@ -113,6 +122,87 @@ def create_goods_order(user_id, product_id, form):
         idempotency_key=str(uuid.uuid4()),
     )
     db.session.add(order)
+    db.session.flush()
+    return order
+
+
+def create_goods_order_from_cart(user_id, form, cart_item_ids=None):
+    data = validate_shipping_data(form)
+    cart_statement = db.select(CartItem).where(CartItem.user_id == user_id)
+    if cart_item_ids is not None:
+        cart_statement = cart_statement.where(CartItem.id.in_(cart_item_ids))
+    cart_items = db.session.execute(
+        cart_statement
+        .order_by(CartItem.product_id)
+        .with_for_update()
+    ).scalars().all()
+    if not cart_items:
+        raise GoodsOrderValidationError(["장바구니가 비어 있습니다."])
+
+    product_ids = [item.product_id for item in cart_items]
+    products = db.session.execute(
+        db.select(Product)
+        .where(Product.id.in_(product_ids))
+        .order_by(Product.id)
+        .with_for_update()
+    ).scalars().all()
+    product_by_id = {product.id: product for product in products}
+
+    errors = []
+    for item in cart_items:
+        product = product_by_id.get(item.product_id)
+        if product is None or not product.is_active:
+            errors.append("판매가 종료된 상품이 장바구니에 있습니다.")
+        elif not 1 <= item.quantity <= MAX_ORDER_QUANTITY:
+            errors.append(f"{product.name}의 수량을 다시 확인해 주세요.")
+        elif product.stock_quantity < item.quantity:
+            errors.append(f"{product.name}의 재고가 부족합니다.")
+    if errors:
+        raise GoodsOrderValidationError(errors)
+
+    items_amount = sum(
+        product_by_id[item.product_id].price * item.quantity
+        for item in cart_items
+    )
+    order = GoodsOrder(
+        order_number=f"GOODS-{uuid.uuid4().hex.upper()}",
+        user_id=user_id,
+        recipient_name=data["recipient_name"],
+        recipient_phone=data["recipient_phone"],
+        postal_code=data["postal_code"],
+        address=data["address"],
+        address_detail=data["address_detail"],
+        delivery_request=data["delivery_request"],
+        items_amount=items_amount,
+        shipping_fee=SHIPPING_FEE,
+        total_amount=items_amount + SHIPPING_FEE,
+        status="PAYMENT_PENDING",
+        expires_at=utcnow() + timedelta(minutes=ORDER_EXPIRATION_MINUTES),
+    )
+    for cart_item in cart_items:
+        product = product_by_id[cart_item.product_id]
+        subtotal = product.price * cart_item.quantity
+        product.stock_quantity -= cart_item.quantity
+        order.items.append(
+            GoodsOrderItem(
+                product=product,
+                product_name=product.name,
+                sku=product.sku,
+                unit_price=product.price,
+                quantity=cart_item.quantity,
+                subtotal=subtotal,
+            )
+        )
+
+    order.payment = Payment(
+        merchant_order_id=order.order_number,
+        amount=order.total_amount,
+        payment_status="READY",
+        idempotency_key=str(uuid.uuid4()),
+    )
+    db.session.add(order)
+    for cart_item in cart_items:
+        db.session.delete(cart_item)
     db.session.flush()
     return order
 

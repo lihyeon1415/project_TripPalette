@@ -33,10 +33,10 @@
                                 <span>{{ order.created_at.strftime('%Y.%m.%d') if order.created_at else '' }}</span>
                                 <strong class="reservation-status reservation-status--{{ order.status|lower }}">{{ status_labels.get(order.status, order.status) }}</strong>
                             </div>
-                            <h2>{{ item.product_name }}</h2>
+                            <h2>{{ item.product_name }}{% if order.items|length > 1 %} 외 {{ order.items|length - 1 }}건{% endif %}</h2>
                             <p>주문번호 {{ order.order_number }}</p>
                             <dl>
-                                <div><dt>수량</dt><dd>{{ item.quantity }}개</dd></div>
+                                <div><dt>총 수량</dt><dd>{{ order.items|sum(attribute='quantity') }}개</dd></div>
                                 <div><dt>결제 금액</dt><dd>₩ {{ "{:,}".format(order.total_amount) }}</dd></div>
                                 <div><dt>받는 분</dt><dd>{{ order.recipient_name }}</dd></div>
                             </dl>
@@ -45,6 +45,11 @@
                             <a href="{{ url_for('mypage.order_detail', order_id=order.id) }}">주문 상세</a>
                             {% if order.status == 'PAYMENT_PENDING' and order.payment %}
                                 <a class="is-primary" href="{{ url_for('payment.checkout', payment_id=order.payment.id) }}">결제하기</a>
+                            {% endif %}
+                            {% if order.status in ('EXPIRED', 'CANCELLED') %}
+                                <form method="post" action="{{ url_for('order.hide', order_id=order.id) }}" onsubmit="return confirm('이 주문을 목록에서 삭제할까요?');">
+                                    <button type="submit">목록에서 삭제</button>
+                                </form>
                             {% endif %}
                         </div>
                     </article>

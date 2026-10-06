@@ -5,6 +5,7 @@ from sqlalchemy import delete, update
 from app import db
 from app.models import (
     AccommodationReview,
+    CartItem,
     Favorite,
     GoodsOrder,
     Payment,
@@ -72,6 +73,7 @@ def delete_accounts(user_ids):
             AccommodationReview.user_id.in_(deletable_user_ids)
         ),
         delete(Review).where(Review.user_id.in_(deletable_user_ids)),
+        delete(CartItem).where(CartItem.user_id.in_(deletable_user_ids)),
         update(GoodsOrder)
         .where(GoodsOrder.user_id.in_(deletable_user_ids))
         .values(

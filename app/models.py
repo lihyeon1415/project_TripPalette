@@ -43,6 +43,11 @@ class User(db.Model):
     )
     reservations = db.relationship("Reservation", back_populates="user")
     goods_orders = db.relationship("GoodsOrder", back_populates="user")
+    cart_items = db.relationship(
+        "CartItem",
+        back_populates="user",
+        cascade="all, delete-orphan",
+    )
 
 
 # 회원의 맞춤 여행지 추천 조건 저장 모델 , 한명당 하나의 최신 설정만 저장, id당 unique 제약조건적으로 1:1 관계
@@ -333,6 +338,7 @@ class Product(db.Model):
         cascade="all, delete-orphan",
     )
     order_items = db.relationship("GoodsOrderItem", back_populates="product")
+    cart_items = db.relationship("CartItem", back_populates="product")
 
 
 class ProductCategory(db.Model):
@@ -382,6 +388,51 @@ class ProductImage(db.Model):
     product = db.relationship("Product", back_populates="images")
 
 
+class CartItem(db.Model):
+    __tablename__ = "cart_item"
+    __table_args__ = (
+        db.UniqueConstraint(
+            "user_id",
+            "product_id",
+            name="uq_cart_item_user_product",
+        ),
+        db.CheckConstraint(
+            "quantity >= 1 AND quantity <= 10",
+            name="ck_cart_item_quantity_range",
+        ),
+    )
+
+    id = db.Column(db.Integer, primary_key=True)
+    user_id = db.Column(
+        db.Integer,
+        db.ForeignKey("user.id", ondelete="CASCADE"),
+        nullable=False,
+        index=True,
+    )
+    product_id = db.Column(
+        db.Integer,
+        db.ForeignKey("product.id"),
+        nullable=False,
+    )
+    quantity = db.Column(db.Integer, nullable=False, default=1, server_default="1")
+    created_at = db.Column(
+        db.DateTime,
+        nullable=False,
+        default=db.func.now(),
+        server_default=db.func.current_timestamp(),
+    )
+    updated_at = db.Column(
+        db.DateTime,
+        nullable=False,
+        default=db.func.now(),
+        onupdate=db.func.now(),
+        server_default=db.func.current_timestamp(),
+    )
+
+    user = db.relationship("User", back_populates="cart_items")
+    product = db.relationship("Product", back_populates="cart_items")
+
+
 class GoodsOrder(db.Model):
     __tablename__ = "goods_order"
     __table_args__ = (
@@ -427,6 +478,7 @@ class GoodsOrder(db.Model):
     )
     paid_at = db.Column(db.DateTime)
     cancelled_at = db.Column(db.DateTime)
+    hidden_at = db.Column(db.DateTime, nullable=True, index=True)
 
     user = db.relationship("User", back_populates="goods_orders")
     items = db.relationship(

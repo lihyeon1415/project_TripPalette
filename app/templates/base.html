@@ -79,6 +79,7 @@
                     {% if g.user %}
                         <a class="mypage-nav-link{% if request.endpoint == 'mypage.favorites' %} mypage-nav-link--active{% endif %}" href="{{ url_for('mypage.favorites') }}"{% if request.endpoint == 'mypage.favorites' %} aria-current="page"{% endif %}><svg aria-hidden="true"><use href="#icon-mypage-heart"></use></svg><span>찜한 여행지</span></a>
                         <a class="mypage-nav-link{% if request.endpoint in ('mypage.reservations', 'mypage.orders', 'mypage.order_detail') or request.blueprint in ('reservation', 'order', 'payment') %} mypage-nav-link--active{% endif %}" href="{{ url_for('mypage.reservations') }}"{% if request.endpoint in ('mypage.reservations', 'mypage.orders', 'mypage.order_detail') or request.blueprint in ('reservation', 'order', 'payment') %} aria-current="page"{% endif %}><svg aria-hidden="true"><use href="#icon-mypage-calendar"></use></svg><span>예약·주문 내역</span></a>
+                        <a class="mypage-nav-link{% if request.blueprint == 'cart' %} mypage-nav-link--active{% endif %}" href="{{ url_for('cart.detail') }}"{% if request.blueprint == 'cart' %} aria-current="page"{% endif %}><img src="{{ url_for('static', filename='img/base/icon-cart.svg') }}" alt=""><span>장바구니 ({{ cart_item_count }})</span></a>
                         <a class="mypage-nav-link{% if request.endpoint == 'mypage.reviews' %} mypage-nav-link--active{% endif %}" href="{{ url_for('mypage.reviews') }}"{% if request.endpoint == 'mypage.reviews' %} aria-current="page"{% endif %}><svg aria-hidden="true"><use href="#icon-mypage-review"></use></svg><span>작성한 리뷰</span></a>
                         <a class="mypage-nav-link{% if request.endpoint == 'mypage.profile' %} mypage-nav-link--active{% endif %}" href="{{ url_for('mypage.profile') }}"{% if request.endpoint == 'mypage.profile' %} aria-current="page"{% endif %}><svg aria-hidden="true"><use href="#icon-mypage-profile"></use></svg><span>회원정보 수정</span></a>
                         <form method="post" action="{{ url_for('auth.logout') }}">
@@ -118,6 +119,7 @@
                     >
                         <a class="mypage-nav-link{% if request.endpoint == 'mypage.favorites' %} mypage-nav-link--active{% endif %}" href="{{ url_for('mypage.favorites') }}"{% if request.endpoint == 'mypage.favorites' %} aria-current="page"{% endif %}><svg aria-hidden="true"><use href="#icon-mypage-heart"></use></svg><span>찜한 여행지</span></a>
                         <a class="mypage-nav-link{% if request.endpoint in ('mypage.reservations', 'mypage.orders', 'mypage.order_detail') or request.blueprint in ('reservation', 'order', 'payment') %} mypage-nav-link--active{% endif %}" href="{{ url_for('mypage.reservations') }}"{% if request.endpoint in ('mypage.reservations', 'mypage.orders', 'mypage.order_detail') or request.blueprint in ('reservation', 'order', 'payment') %} aria-current="page"{% endif %}><svg aria-hidden="true"><use href="#icon-mypage-calendar"></use></svg><span>예약·주문 내역</span></a>
+                        <a class="mypage-nav-link{% if request.blueprint == 'cart' %} mypage-nav-link--active{% endif %}" href="{{ url_for('cart.detail') }}"{% if request.blueprint == 'cart' %} aria-current="page"{% endif %}><img src="{{ url_for('static', filename='img/base/icon-cart.svg') }}" alt=""><span>장바구니 ({{ cart_item_count }})</span></a>
                         <a class="mypage-nav-link{% if request.endpoint == 'mypage.reviews' %} mypage-nav-link--active{% endif %}" href="{{ url_for('mypage.reviews') }}"{% if request.endpoint == 'mypage.reviews' %} aria-current="page"{% endif %}><svg aria-hidden="true"><use href="#icon-mypage-review"></use></svg><span>작성한 리뷰</span></a>
                         <a class="mypage-nav-link{% if request.endpoint == 'mypage.profile' %} mypage-nav-link--active{% endif %}" href="{{ url_for('mypage.profile') }}"{% if request.endpoint == 'mypage.profile' %} aria-current="page"{% endif %}><svg aria-hidden="true"><use href="#icon-mypage-profile"></use></svg><span>회원정보 수정</span></a>
                     </nav>
@@ -160,7 +162,8 @@
         </div>
     </header>
 
-    {% with messages = get_flashed_messages(with_categories=true) %}
+    {% set messages = get_flashed_messages(with_categories=true, category_filter=['error', 'warning']) %}
+    {% with messages = messages %}
         {% if messages %}
             <div class="container flash-list" role="status" aria-live="polite">
                 {% for category, message in messages %}

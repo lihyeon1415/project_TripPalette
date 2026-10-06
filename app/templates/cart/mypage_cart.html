@@ -1,0 +1,65 @@
+{% extends "base.html" %}
+{% from "shipping/_dialog.html" import shipping_dialog %}
+{% block title %}장바구니 | TripPalette{% endblock %}
+{% block css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/goods.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/shipping/shipping-dialog.css') }}">
+{% endblock %}
+{% block content %}
+<main class="pally-cart" data-cart-page data-shipping-fee="{{ shipping_fee }}">
+    <header class="pally-cart-hero">
+        <img class="pally-cart-hero__art" src="{{ url_for('static', filename='img/mypage/cart-hero-v1.png') }}" alt="">
+        <div class="container pally-cart-hero__inner"><div class="pally-cart-hero__copy"><h1>장바구니</h1><p>담아둔 팰리 굿즈를 확인하고, 여행의 설렘을 준비하세요.</p></div></div>
+    </header>
+
+    <div class="container pally-cart__body">
+        <nav class="pally-cart__breadcrumb" aria-label="현재 위치"><span>마이페이지</span><span aria-hidden="true">/</span><strong>장바구니</strong></nav>
+        {% if items %}
+        <div class="pally-cart__title"><h2>담은 굿즈 <span>{{ items|length }}</span></h2></div>
+        <div class="pally-cart__layout">
+            <section class="pally-cart__items" aria-labelledby="cart-items-title">
+                <header class="pally-cart__toolbar">
+                    <label class="pally-cart-check"><input type="checkbox" checked data-cart-select-all><span aria-hidden="true"></span><b id="cart-items-title">전체 선택 ({{ items|length }})</b></label>
+                    <form method="post" action="{{ url_for('cart.delete_selected_items') }}" data-delete-selected><button type="submit"><span aria-hidden="true">⌫</span> 선택 삭제</button></form>
+                </header>
+                {% for item in items %}
+                <article class="pally-cart-item" data-cart-item data-item-price="{{ item.product.price }}" data-item-quantity="{{ item.quantity }}">
+                    <label class="pally-cart-check pally-cart-check--item" aria-label="{{ item.product.name }} 선택"><input type="checkbox" name="cart_item_ids" value="{{ item.id }}" form="cart-checkout-form" checked data-cart-select><span aria-hidden="true"></span></label>
+                    <a class="pally-cart-item__media" href="{{ url_for('goods.detail', product_id=item.product.id) }}"><img src="{{ url_for('static', filename=item.product.thumbnail_url) }}" alt="{{ item.product.name }}"></a>
+                    <div class="pally-cart-item__body"><h3>{{ item.product.name }}</h3><p>옵션 <i></i> 팰리 기본</p></div>
+                    <form class="pally-cart-item__quantity" method="post" action="{{ url_for('cart.update_item', item_id=item.id) }}" data-quantity-form><button type="button" data-quantity-minus aria-label="{{ item.product.name }} 수량 줄이기">−</button><input type="number" name="quantity" min="1" max="10" value="{{ item.quantity }}" readonly aria-label="{{ item.product.name }} 수량"><button type="button" data-quantity-plus aria-label="{{ item.product.name }} 수량 늘리기">+</button></form>
+                    <strong>{{ "{:,}".format(item.product.price * item.quantity) }}원</strong>
+                    <form method="post" action="{{ url_for('cart.delete_item', item_id=item.id) }}"><button class="pally-cart-item__delete" type="submit" aria-label="{{ item.product.name }} 삭제">×</button></form>
+                </article>
+                {% endfor %}
+            </section>
+
+            <aside class="pally-cart-checkout" aria-labelledby="cart-summary-title">
+                <div class="pally-cart-checkout__icon"><img src="{{ url_for('static', filename='img/base/icon-cart.svg') }}" alt=""></div><h2 id="cart-summary-title">주문 금액</h2>
+                <dl class="pally-cart-checkout__summary">
+                    <div><dt>선택 상품</dt><dd><span data-selected-count>{{ items|length }}</span>개</dd></div>
+                    <div><dt>상품 금액</dt><dd data-selected-amount>{{ "{:,}".format(items_amount) }}원</dd></div>
+                    <div><dt>배송비</dt><dd data-shipping-amount>{{ "{:,}".format(shipping_fee) }}원</dd></div>
+                    <div class="pally-cart-checkout__total"><dt>총 결제 금액</dt><dd data-selected-total>{{ "{:,}".format(total_amount) }}원</dd></div>
+                </dl>
+                <button type="button" class="pally-cart-checkout__open" data-checkout-open data-shipping-open="#cart-shipping-dialog">선택 상품 주문하기 <span aria-hidden="true">→</span></button>
+                <p class="pally-cart-checkout__delivery"><span aria-hidden="true">▱</span> 배송비는 주문당 {{ "{:,}".format(shipping_fee) }}원입니다.</p>
+            </aside>
+        </div>
+        <div class="pally-cart__footer"><a href="{{ url_for('goods.list_products') }}">굿즈 더 둘러보기 <span aria-hidden="true">→</span></a><p><span aria-hidden="true">!</span> 장바구니에 담은 상품은 결제 전까지 구매가 확정되지 않습니다.</p></div>
+
+        {{ shipping_dialog(
+            'cart-shipping-dialog', 'cart-checkout-form', url_for('cart.checkout'), form_data,
+            total_amount, shipping_fee, '선택한 굿즈를 한 번의 배송으로 편하게 받아보세요.',
+            auto_open=checkout_modal_open, selection_present=true
+        ) }}
+        {% else %}
+        <section class="pally-cart-empty"><img src="{{ url_for('static', filename='img/base/icon-cart.svg') }}" alt=""><h2>장바구니가 비어 있습니다.</h2><p>여행의 기분을 일상으로 데려올 굿즈를 골라보세요.</p><a href="{{ url_for('goods.list_products') }}">굿즈 둘러보기 <span aria-hidden="true">→</span></a></section>
+        {% endif %}
+    </div>
+</main>
+{% endblock %}
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/cart.js') }}" defer></script>
+<script src="{{ url_for('static', filename='js/shipping/shipping-dialog.js') }}" defer></script>
+{% endblock %}

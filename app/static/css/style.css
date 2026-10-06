@@ -193,6 +193,13 @@ button, a { -webkit-tap-highlight-color: transparent; }
     stroke-linecap: round;
     stroke-linejoin: round;
 }
+.mypage-nav-link > img {
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+    opacity: .76;
+}
+.mypage-nav-link--active > img { opacity: 1; }
 .mypage-menu__panel .mypage-nav-link--active {
     color: #292f2d;
     background: #fff1ec;
@@ -276,6 +283,11 @@ button, a { -webkit-tap-highlight-color: transparent; }
     color: var(--color-brick);
     background: #fff4ee;
     border-color: #edc2ae;
+}
+.flash--warning {
+    color: #70552d;
+    background: #fff9eb;
+    border-color: #e4cf9d;
 }
 
 .page-section {

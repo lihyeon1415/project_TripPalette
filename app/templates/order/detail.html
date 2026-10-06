@@ -1,26 +1,103 @@
 {% extends "base.html" %}
-{% block title %}주문 {{ order.order_number }} | TripPalette{% endblock %}
+{% block title %}주문 상세 | TripPalette{% endblock %}
+{% block css %}<link rel="stylesheet" href="{{ url_for('static', filename='css/order-detail.css') }}">{% endblock %}
 {% block content %}
-<main class="container" style="padding-block: 48px;">
-    <h1>주문 정보</h1>
-    <p>주문번호 {{ order.order_number }}</p>
-    <p>상태 {{ order.status }}</p>
-    {% for item in order.items %}
-        <p>{{ item.product_name }} · {{ item.quantity }}개 · {{ "{:,}".format(item.subtotal) }}원</p>
-    {% endfor %}
-    <p>상품 금액 {{ "{:,}".format(order.items_amount) }}원</p>
-    <p>배송비 {{ "{:,}".format(order.shipping_fee) }}원</p>
-    <strong>총 결제 예정 금액 {{ "{:,}".format(order.total_amount) }}원</strong>
-    <h2>배송지</h2>
-    <p>{{ order.recipient_name }} / {{ order.recipient_phone }}</p>
-    <p>({{ order.postal_code }}) {{ order.address }} {{ order.address_detail or '' }}</p>
-    {% if order.status == "PAYMENT_PENDING" %}
-        <p>결제 가능 시간: {{ order.expires_at }}</p>
-        <a href="{{ url_for('payment.checkout', payment_id=order.payment.id) }}">테스트 결제하기</a>
-        <form method="post" action="{{ url_for('order.cancel', order_id=order.id) }}"><button type="submit">주문 취소</button></form>
-    {% elif order.status == "PAID" %}
-        <p>테스트 결제가 승인되었습니다.</p>
-        <form method="post" action="{{ url_for('order.cancel', order_id=order.id) }}"><button type="submit">결제 취소</button></form>
-    {% endif %}
+<main class="order-detail-page">
+    <div class="container order-detail">
+        <nav class="order-detail__breadcrumb" aria-label="현재 위치">
+            <span>마이페이지</span><span aria-hidden="true">/</span>
+            <a href="{{ url_for('mypage.orders') }}">주문 내역</a><span aria-hidden="true">/</span>
+            <strong>주문 상세</strong>
+        </nav>
+
+        <header class="order-detail__title">
+            <div><span>ORDER DETAIL</span><h1>주문 상세</h1></div>
+            <a href="{{ url_for('mypage.orders') }}">주문 내역으로 <span aria-hidden="true">→</span></a>
+        </header>
+
+        <section class="order-detail__overview" aria-label="주문 요약">
+            <div><span>주문번호</span><strong>{{ order.order_number }}</strong></div>
+            <div><span>주문일</span><strong>{{ order.created_at.strftime('%Y년 %m월 %d일 %H:%M') if order.created_at else '-' }}</strong></div>
+            <strong class="order-status order-status--{{ order.status|lower }}">{{ status_label }}</strong>
+        </section>
+
+        <div class="order-detail__layout">
+            <div class="order-detail__main">
+                <section class="order-card order-products" aria-labelledby="order-products-title">
+                    <header class="order-card__header">
+                        <div><span>ORDER ITEMS</span><h2 id="order-products-title">주문 상품</h2></div>
+                        <p>총 {{ order.items|sum(attribute='quantity') }}개</p>
+                    </header>
+                    <div class="order-products__labels" aria-hidden="true">
+                        <span>상품 정보</span><span>수량</span><span>단가</span><span>소계</span>
+                    </div>
+                    <div class="order-products__list">
+                        {% for item in order.items %}
+                        <article class="order-product">
+                            <div class="order-product__info">
+                                <div class="order-product__image">
+                                    {% if item.product and item.product.thumbnail_url %}
+                                    <img src="{{ url_for('static', filename=item.product.thumbnail_url) }}" alt="{{ item.product_name }}">
+                                    {% else %}
+                                    <img src="{{ url_for('static', filename='img/base/icon-cart.svg') }}" alt="">
+                                    {% endif %}
+                                </div>
+                                <div><span>{{ item.sku }}</span><h3>{{ item.product_name }}</h3><p>팰리 기본 디자인</p></div>
+                            </div>
+                            <dl class="order-product__numbers">
+                                <div><dt>수량</dt><dd>{{ item.quantity }}개</dd></div>
+                                <div><dt>단가</dt><dd>{{ "{:,}".format(item.unit_price) }}원</dd></div>
+                                <div><dt>소계</dt><dd>{{ "{:,}".format(item.subtotal) }}원</dd></div>
+                            </dl>
+                        </article>
+                        {% endfor %}
+                    </div>
+                </section>
+
+                <section class="order-card order-delivery" aria-labelledby="order-delivery-title">
+                    <header class="order-card__header"><div><span>DELIVERY</span><h2 id="order-delivery-title">배송지 정보</h2></div></header>
+                    <dl>
+                        <div><dt>받는 분</dt><dd>{{ order.recipient_name }}</dd></div>
+                        <div><dt>연락처</dt><dd>{{ order.recipient_phone }}</dd></div>
+                        <div><dt>주소</dt><dd>({{ order.postal_code }}) {{ order.address }} {{ order.address_detail or '' }}</dd></div>
+                        <div><dt>배송 요청사항</dt><dd>{{ order.delivery_request or '없음' }}</dd></div>
+                    </dl>
+                </section>
+            </div>
+
+            <aside class="order-detail__aside">
+                <section class="order-card order-payment" aria-labelledby="order-payment-title">
+                    <header class="order-card__header"><div><span>PAYMENT</span><h2 id="order-payment-title">결제 정보</h2></div></header>
+                    <dl>
+                        <div><dt>상품 금액</dt><dd>{{ "{:,}".format(order.items_amount) }}원</dd></div>
+                        <div><dt>배송비</dt><dd>{{ "{:,}".format(order.shipping_fee) }}원</dd></div>
+                        {% if order.payment and order.payment.payment_method %}<div><dt>결제 수단</dt><dd>{{ order.payment.payment_method }}</dd></div>{% endif %}
+                        <div class="order-payment__total"><dt>총 주문 금액</dt><dd>{{ "{:,}".format(order.total_amount) }}원</dd></div>
+                    </dl>
+                </section>
+
+                <section class="order-card order-progress" aria-labelledby="order-progress-title">
+                    <header class="order-card__header"><div><span>STATUS</span><h2 id="order-progress-title">주문 상태</h2></div></header>
+                    <div class="order-progress__symbol" aria-hidden="true">
+                        <svg viewBox="0 0 48 48"><path d="M9 16h30v23H9zM16 16V9h16v7M18 27l4 4 8-9"></path></svg>
+                    </div>
+                    <strong>{{ status_label }}</strong>
+                    <p>{{ status_message }}</p>
+                    {% if order.status == 'PAYMENT_PENDING' %}
+                        <time datetime="{{ order.expires_at.isoformat() }}">결제 기한 {{ order.expires_at.strftime('%Y.%m.%d %H:%M:%S') }}</time>
+                        {% if order.payment %}<a class="order-action order-action--primary" href="{{ url_for('payment.checkout', payment_id=order.payment.id) }}">결제하기 <span aria-hidden="true">→</span></a>{% endif %}
+                        <form method="post" action="{{ url_for('order.cancel', order_id=order.id) }}" onsubmit="return confirm('주문을 취소할까요?');"><button class="order-action order-action--outline" type="submit">주문 취소</button></form>
+                    {% elif order.status == 'PAID' %}
+                        <form method="post" action="{{ url_for('order.cancel', order_id=order.id) }}" onsubmit="return confirm('결제를 취소할까요?');"><button class="order-action order-action--outline" type="submit">결제 취소</button></form>
+                    {% endif %}
+                </section>
+            </aside>
+        </div>
+
+        <footer class="order-detail__footer">
+            <a href="{{ url_for('mypage.orders') }}">주문 내역으로</a>
+            <a class="is-primary" href="{{ url_for('goods.list_products') }}">굿즈 더 둘러보기 <span aria-hidden="true">→</span></a>
+        </footer>
+    </div>
 </main>
 {% endblock %}

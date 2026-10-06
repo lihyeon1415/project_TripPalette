@@ -52,10 +52,20 @@ def checkout(payment_id):
     if payment.payment_status != "READY":
         return redirect(url_for("payment.failed", payment_id=payment.id))
 
+    if payment.reservation is not None:
+        return redirect(
+            url_for(
+                "reservation.create",
+                accommodation_id=payment.reservation.accommodation_id,
+                payment_id=payment.id,
+            )
+        )
+
     customer_key = ensure_customer_key(g.user)
     db.session.commit()
+    template_name = "cart/payment.html" if payment.goods_order else "payment/checkout.html"
     return render_template(
-        "payment/checkout.html",
+        template_name,
         payment=payment,
         target=payment_target(payment),
         order_name=payment_order_name(payment),

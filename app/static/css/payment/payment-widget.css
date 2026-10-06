@@ -1,0 +1,21 @@
+.payment-widget-frame__ui {
+    width: 100%;
+    text-align: left;
+}
+
+.payment-widget-frame__submit {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+    color: #fff;
+    background: #252d30;
+    border: 0;
+    border-radius: 9px;
+    font-weight: 850;
+    cursor: pointer;
+}
+
+.payment-widget-frame__submit:hover { background: #151a1c; }
+.payment-widget-frame__submit:disabled { opacity: .55; cursor: wait; }
+.payment-widget-frame__error { color: #b94f39; font-size: .72rem; line-height: 1.6; }

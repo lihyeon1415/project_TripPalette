@@ -1,0 +1,32 @@
+.shipping-dialog { width:min(720px,calc(100% - 28px)); max-height:90vh; padding:0; color:#20272d; background:#fff; border:0; border-radius:22px; box-shadow:0 28px 90px rgba(20,25,28,.28); overflow:auto; }
+.shipping-dialog::backdrop { background:rgba(20,25,28,.55); backdrop-filter:blur(4px); }
+.shipping-dialog__close { position:absolute; z-index:2; top:20px; right:22px; width:40px; height:40px; color:#626a6e; background:#fff; border:1px solid #dfe2e3; border-radius:50%; box-shadow:0 5px 14px rgba(32,39,45,.08); font-size:1.3rem; cursor:pointer; }
+.shipping-dialog__form { padding:0 0 30px; display:grid; gap:14px; text-align:left; }
+.shipping-dialog__heading { padding:27px 76px 25px 28px; display:grid; grid-template-columns:64px 1fr; align-items:center; gap:17px; background:#f4f7f8; border-bottom:1px solid #e2e6e7; }
+.shipping-dialog__icon { width:64px; height:64px; display:grid; place-items:center; background:#fff; border:1px solid #e0e4e5; border-radius:16px; box-shadow:0 7px 20px rgba(32,39,45,.06); }
+.shipping-dialog__icon img { width:29px; height:29px; filter:invert(49%) sepia(65%) saturate(720%) hue-rotate(326deg) brightness(96%); }
+.shipping-dialog__heading-copy { min-width:0; display:block; }
+.shipping-dialog__heading-copy small { color:#7c8589; font-size:.58rem; font-weight:850; letter-spacing:.16em; }
+.shipping-dialog__heading h2 { margin:6px 0 4px; color:#20272d; font-family:inherit; font-size:1.65rem; font-weight:850; letter-spacing:-.04em; }
+.shipping-dialog__heading p { margin:0; color:#7c8589; font-size:.72rem; }
+.shipping-dialog__row,.shipping-dialog__address { display:grid; gap:10px; }
+.shipping-dialog__row { grid-template-columns:1fr 1fr; }
+.shipping-dialog__address { grid-template-columns:145px minmax(0,1fr); }
+.shipping-dialog__row,.shipping-dialog__address,.shipping-dialog__form>label,.shipping-dialog__total,.shipping-dialog__submit { margin-inline:30px; }
+.shipping-dialog__form label { display:grid; gap:6px; color:#596267; font-size:.69rem; font-weight:800; }
+.shipping-dialog__form input { width:100%; height:46px; padding:0 13px; color:#20272d; background:#fff; border:1px solid #dfe2e3; border-radius:9px; outline:0; }
+.shipping-dialog__form input:focus { border-color:#525c60; box-shadow:0 0 0 3px rgba(37,45,48,.1); }
+.shipping-dialog__form input::placeholder { color:#a1a8ab; }
+.shipping-dialog__quantity { max-width:145px; }
+.shipping-dialog__total { margin-top:5px; padding:17px 18px; display:flex; align-items:center; justify-content:space-between; background:#f4f6f6; border:1px solid #e6e9e9; border-radius:10px; font-size:.76rem; font-weight:800; }
+.shipping-dialog__total small { margin-top:4px; display:block; color:#858d91; font-size:.62rem; font-weight:500; }
+.shipping-dialog__total strong { color:#d05f47; font-size:1.3rem; }
+.shipping-dialog__submit { min-height:56px; color:#fff; background:#252d30; border:0; border-radius:9px; box-shadow:0 10px 24px rgba(32,39,45,.13); font-weight:850; cursor:pointer; }
+.shipping-dialog__submit:hover { background:#151a1c; }
+.shipping-dialog__login { padding:68px 38px 44px; text-align:center; }
+.shipping-dialog__login-icon { width:60px; height:60px; margin:auto; display:grid; place-items:center; color:#d05f47; background:#fff0ec; border-radius:50%; font-size:1.4rem; }
+.shipping-dialog__login h2 { margin:20px 0 8px; font-size:1.6rem; }
+.shipping-dialog__login p { margin:0 auto 24px; max-width:420px; color:#7c8589; font-size:.78rem; line-height:1.7; }
+.shipping-dialog__login a { min-height:50px; padding:0 22px; display:inline-flex; align-items:center; gap:18px; color:#fff; background:#252d30; border-radius:8px; font-size:.78rem; font-weight:800; }
+body:has(.shipping-dialog[open]) { overflow:hidden; }
+@media(max-width:640px){.shipping-dialog__heading{padding:22px 62px 20px 18px;grid-template-columns:50px 1fr;gap:13px}.shipping-dialog__icon{width:50px;height:50px;border-radius:13px}.shipping-dialog__row,.shipping-dialog__address{grid-template-columns:1fr}.shipping-dialog__row,.shipping-dialog__address,.shipping-dialog__form>label,.shipping-dialog__total,.shipping-dialog__submit{margin-inline:18px}.shipping-dialog__quantity{max-width:none}}

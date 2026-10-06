@@ -26,6 +26,7 @@ from app.models import (
     Reservation,
     Review,
 )
+from app.services.payment_service import expire_pending_payments
 
 mypage_bp = Blueprint("mypage", __name__)
 
@@ -77,6 +78,7 @@ def reservations():
 @mypage_bp.get("/orders")
 @login_required
 def orders():
+    expire_pending_payments()
     user_orders = list(
         db.session.execute(
             db.select(GoodsOrder)
@@ -84,7 +86,10 @@ def orders():
                 selectinload(GoodsOrder.items).selectinload(GoodsOrderItem.product),
                 selectinload(GoodsOrder.payment),
             )
-            .where(GoodsOrder.user_id == g.user.id)
+            .where(
+                GoodsOrder.user_id == g.user.id,
+                GoodsOrder.hidden_at.is_(None),
+            )
             .order_by(GoodsOrder.created_at.desc(), GoodsOrder.id.desc())
         ).scalars()
     )

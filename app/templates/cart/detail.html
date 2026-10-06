@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+{% block title %}장바구니 | PALLY GOODS{% endblock %}
+{% block css %}<link rel="stylesheet" href="{{ url_for('static', filename='css/goods.css') }}">{% endblock %}
+{% block content %}
+<main class="pally-cart">
+    <header class="container pally-cart__header">
+        <div><span>PALLY GOODS</span><h1>장바구니</h1></div>
+        <a href="{{ url_for('goods.list_products') }}">상품 더 담기 <span aria-hidden="true">→</span></a>
+    </header>
+
+    {% if items %}
+    <div class="container pally-cart__layout">
+        <section class="pally-cart__items" aria-labelledby="cart-items-title">
+            <h2 id="cart-items-title">담은 상품 <span>{{ cart_item_count }}</span></h2>
+            {% for item in items %}
+            <article class="pally-cart-item">
+                <a href="{{ url_for('goods.detail', product_id=item.product.id) }}"><img src="{{ url_for('static', filename=item.product.thumbnail_url) }}" alt="{{ item.product.name }}"></a>
+                <div class="pally-cart-item__body"><span>{{ item.product.sku }}</span><h3>{{ item.product.name }}</h3><p>{{ "{:,}".format(item.product.price) }}원</p></div>
+                <form class="pally-cart-item__quantity" method="post" action="{{ url_for('cart.update_item', item_id=item.id) }}">
+                    <label for="quantity-{{ item.id }}">수량</label>
+                    <select id="quantity-{{ item.id }}" name="quantity" onchange="this.form.submit()">{% for quantity in range(1, 11) %}<option value="{{ quantity }}"{% if item.quantity == quantity %} selected{% endif %}>{{ quantity }}</option>{% endfor %}</select>
+                </form>
+                <strong>{{ "{:,}".format(item.product.price * item.quantity) }}원</strong>
+                <form method="post" action="{{ url_for('cart.delete_item', item_id=item.id) }}"><button class="pally-cart-item__delete" type="submit" aria-label="{{ item.product.name }} 삭제">×</button></form>
+            </article>
+            {% endfor %}
+        </section>
+
+        <aside class="pally-cart-checkout">
+            <form method="post" action="{{ url_for('cart.checkout') }}" class="pally-cart-checkout__form">
+                <header><span>DELIVERY &amp; PAYMENT</span><h2>배송지와 결제</h2><p>한 번의 배송으로 담은 상품을 함께 받아보세요.</p></header>
+                <div class="pally-cart-checkout__row">
+                    <label>받는 분<input name="recipient_name" maxlength="50" value="{{ form_data.get('recipient_name', '') }}" required></label>
+                    <label>연락처<input name="recipient_phone" maxlength="20" value="{{ form_data.get('recipient_phone', '') }}" placeholder="010-1234-5678" required></label>
+                </div>
+                <label>우편번호<input name="postal_code" inputmode="numeric" maxlength="5" value="{{ form_data.get('postal_code', '') }}" placeholder="숫자 5자리" required></label>
+                <label>주소<input name="address" maxlength="255" value="{{ form_data.get('address', '') }}" required></label>
+                <label>상세 주소<input name="address_detail" maxlength="255" value="{{ form_data.get('address_detail', '') }}"></label>
+                <label>배송 요청사항<input name="delivery_request" maxlength="255" value="{{ form_data.get('delivery_request', '') }}" placeholder="문 앞에 놓아주세요"></label>
+                <dl class="pally-cart-checkout__summary">
+                    <div><dt>상품 금액</dt><dd>{{ "{:,}".format(items_amount) }}원</dd></div>
+                    <div><dt>배송비</dt><dd>{{ "{:,}".format(shipping_fee) }}원</dd></div>
+                    <div><dt>총 결제 금액</dt><dd>{{ "{:,}".format(total_amount) }}원</dd></div>
+                </dl>
+                <button type="submit">결제 화면으로 이동 <span aria-hidden="true">→</span></button>
+                <small>결제 화면에서 결제수단과 최종 금액을 다시 확인합니다.</small>
+            </form>
+        </aside>
+    </div>
+    {% else %}
+    <section class="container pally-cart-empty"><span aria-hidden="true">□</span><h2>장바구니가 비어 있습니다.</h2><p>여행의 기분을 일상으로 데려올 팰리 굿즈를 골라보세요.</p><a href="{{ url_for('goods.list_products') }}">굿즈 둘러보기 <span aria-hidden="true">→</span></a></section>
+    {% endif %}
+</main>
+{% endblock %}

@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+{% from "payment/_widget.html" import render_toss_widget %}
+{% block title %}주문 확인 및 결제 | TripPalette{% endblock %}
+{% block css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/goods.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/checkout.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/payment/payment-widget.css') }}">
+{% endblock %}
+{% block content %}
+<main class="pally-cart pally-cart-payment site-checkout">
+    <header class="container pally-cart__header">
+        <div><span>ORDER &amp; PAYMENT</span><h1>주문 확인 및 결제</h1></div>
+        <a href="{{ url_for('mypage.orders') }}">주문 내역 <span aria-hidden="true">→</span></a>
+    </header>
+    <div class="container pally-cart__layout">
+        <section class="pally-cart__items" aria-labelledby="payment-order-title">
+            <h2 id="payment-order-title">주문 상품 <span>{{ target.items|sum(attribute='quantity') }}</span></h2>
+            {% for item in target.items %}
+            <article class="pally-cart-item pally-cart-item--payment">
+                <div class="pally-cart-item__image">{% if item.product and item.product.thumbnail_url %}<img src="{{ url_for('static', filename=item.product.thumbnail_url) }}" alt="{{ item.product_name }}">{% endif %}</div>
+                <div class="pally-cart-item__body"><span>{{ item.sku }}</span><h3>{{ item.product_name }}</h3><p>{{ "{:,}".format(item.unit_price) }}원 · {{ item.quantity }}개</p></div>
+                <strong>{{ "{:,}".format(item.subtotal) }}원</strong>
+            </article>
+            {% endfor %}
+            <section class="pally-cart-payment__delivery">
+                <span>배송지</span><h3>{{ target.recipient_name }} · {{ target.recipient_phone }}</h3>
+                <p>({{ target.postal_code }}) {{ target.address }} {{ target.address_detail or '' }}</p>
+                {% if target.delivery_request %}<small>{{ target.delivery_request }}</small>{% endif %}
+            </section>
+        </section>
+
+        <aside class="pally-cart-checkout pally-cart-payment__panel">
+            <header><span>PAYMENT</span><h2>결제 정보</h2><p>주문 상품과 금액을 확인하고 결제수단을 선택해 주세요.</p></header>
+            <div class="pally-cart-payment__meta">
+                <div><span>주문번호</span><strong>{{ payment.merchant_order_id }}</strong></div>
+                <div><span>결제 가능 시간</span><strong>{{ target.expires_at.strftime('%Y.%m.%d %H:%M:%S') }}</strong></div>
+            </div>
+            <dl class="pally-cart-checkout__summary">
+                <div><dt>상품 금액</dt><dd>{{ "{:,}".format(target.items_amount) }}원</dd></div>
+                <div><dt>배송비</dt><dd>{{ "{:,}".format(target.shipping_fee) }}원</dd></div>
+                <div><dt>총 결제 금액</dt><dd>{{ "{:,}".format(payment.amount) }}원</dd></div>
+            </dl>
+            {{ render_toss_widget(
+                'goods', payment, client_key, customer_key, order_name, success_url, fail_url,
+                g.user.email, g.user.name, "{:,}원 결제하기".format(payment.amount),
+                frame_class='pally-cart-payment__widget',
+                button_class='pally-cart-payment__submit',
+                error_class='pally-cart-payment__error'
+            ) }}
+        </aside>
+    </div>
+</main>
+{% endblock %}
+{% block scripts %}
+{% if client_key %}
+<script src="https://js.tosspayments.com/v2/standard"></script>
+<script src="{{ url_for('static', filename='js/payment/payment-widget.js') }}" defer></script>
+{% endif %}
+{% endblock %}

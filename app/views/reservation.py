@@ -3,6 +3,7 @@ from datetime import date, timedelta
 from flask import (
     Blueprint,
     abort,
+    current_app,
     flash,
     g,
     redirect,
@@ -14,13 +15,16 @@ from sqlalchemy.orm import joinedload
 
 from app import db
 from app.auth_helpers import login_required
-from app.models import Accommodation, Reservation
+from app.models import Accommodation, Payment, Reservation
 from app.services import toss_client
 from app.services.payment_service import (
     PaymentValidationError,
     cancel_order_payment,
     create_reservation_payment,
+    ensure_customer_key,
+    expire_payment,
     expire_pending_payments,
+    payment_order_name,
 )
 
 
@@ -45,9 +49,54 @@ def create(accommodation_id):
         "people_count": request.form.get("people_count", "1"),
     }
 
+    payment_modal = None
+    payment_id = request.args.get("payment_id", type=int)
+
     if request.method == "GET":
         form_data["check_in"] = (today + timedelta(days=1)).isoformat()
         form_data["check_out"] = (today + timedelta(days=2)).isoformat()
+
+        if payment_id is not None:
+            payment = db.session.scalar(
+                db.select(Payment)
+                .options(joinedload(Payment.reservation))
+                .where(Payment.id == payment_id)
+            )
+            if (
+                payment is None
+                or payment.reservation is None
+                or payment.reservation.user_id != g.user.id
+                or payment.reservation.accommodation_id != accommodation.id
+            ):
+                abort(404)
+            if payment.payment_status == "APPROVED":
+                return redirect(
+                    url_for("reservation.complete", id=payment.reservation.id)
+                )
+            if expire_payment(payment):
+                db.session.commit()
+                flash("결제 가능 시간이 만료되었습니다. 다시 예약해 주세요.", "error")
+            elif payment.payment_status == "READY":
+                reservation = payment.reservation
+                form_data = {
+                    "check_in": reservation.check_in.isoformat(),
+                    "check_out": reservation.check_out.isoformat(),
+                    "people_count": str(reservation.people_count),
+                }
+                customer_key = ensure_customer_key(g.user)
+                db.session.commit()
+                payment_modal = {
+                    "payment": payment,
+                    "order_name": payment_order_name(payment),
+                    "customer_key": customer_key,
+                    "client_key": current_app.config.get("TOSS_CLIENT_KEY", ""),
+                    "success_url": url_for(
+                        "payment.success", payment_id=payment.id, _external=True
+                    ),
+                    "fail_url": url_for(
+                        "payment.fail", payment_id=payment.id, _external=True
+                    ),
+                }
 
     if request.method == "POST":
         # 스케줄러 실행 사이에도 새 예약이 만료 건에 막히지 않도록 먼저 정리한다.
@@ -96,7 +145,13 @@ def create(accommodation_id):
             db.session.add(reservation)
             payment = create_reservation_payment(reservation)
             db.session.commit()
-            return redirect(url_for("payment.checkout", payment_id=payment.id))
+            return redirect(
+                url_for(
+                    "reservation.create",
+                    accommodation_id=accommodation.id,
+                    payment_id=payment.id,
+                )
+            )
 
         flash(error, "error")
 
@@ -105,6 +160,7 @@ def create(accommodation_id):
         accommodation=accommodation,
         form_data=form_data,
         today=today.isoformat(),
+        payment_modal=payment_modal,
     )
 
 

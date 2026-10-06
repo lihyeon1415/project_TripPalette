@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, g
 from flask_migrate import Migrate
 from flask_sqlalchemy import SQLAlchemy
 
@@ -24,6 +24,7 @@ def create_app(config_class=Config):
     # Blueprint import
     from app.views.accommodation import accommodation_bp
     from app.views.auth import auth_bp
+    from app.views.cart import cart_bp
     from app.views.destination import destination_bp
     from app.views.main import main_bp
     from app.views.mypage import mypage_bp
@@ -42,6 +43,7 @@ def create_app(config_class=Config):
     app.register_blueprint(reservation_bp, url_prefix="/reservations")
     app.register_blueprint(mypage_bp, url_prefix="/mypage")
     app.register_blueprint(goods_bp, url_prefix="/goods")
+    app.register_blueprint(cart_bp, url_prefix="/cart")
     app.register_blueprint(order_bp, url_prefix="/orders")
     app.register_blueprint(payment_bp, url_prefix="/payments")
 
@@ -49,7 +51,19 @@ def create_app(config_class=Config):
 
     @app.context_processor
     def inject_destination_media():
-        return {"destination_media": DESTINATION_MEDIA}
+        cart_item_count = 0
+        if g.get("user") is not None:
+            from app.models import CartItem
+
+            cart_item_count = db.session.scalar(
+                db.select(db.func.coalesce(db.func.sum(CartItem.quantity), 0)).where(
+                    CartItem.user_id == g.user.id
+                )
+            )
+        return {
+            "destination_media": DESTINATION_MEDIA,
+            "cart_item_count": cart_item_count,
+        }
 
     @app.cli.command("purge-withdrawn-users")
     def purge_withdrawn_users():
