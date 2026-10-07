@@ -7,9 +7,24 @@
 - WSGI 서버: Gunicorn
 - 실행 사용자: 비루트 `app` 사용자
 - 기본 포트: `8000` (`PORT` 환경변수로 변경 가능)
-- 데이터베이스: 이미지에 포함하지 않고 `DATABASE_URL`로 외부 MySQL 연결
+- 데이터베이스: 이미지에 포함하지 않고 `DATABASE_URL` 또는 개별 `MYSQL_*` 환경변수로 외부 MySQL 연결
 
 회원, 리뷰, 예약, 주문 데이터나 `.env` 비밀정보는 이미지에 포함하지 않는다.
+
+## 현재 배포 상태
+
+기준일: 2026-10-07
+
+| 항목 | 현재 값 |
+|---|---|
+| Docker Hub | `docker.io/wellerman114/trippalette-flask:main-e43941b` |
+| Render | <https://trippalette-web.onrender.com> |
+| Render 서비스 | `trippalette-web`, Free, Singapore |
+| Aiven | MySQL 8.4, TLS 연결 |
+| Migration | `b4e8c1a7d930 (head)` |
+| 자동 테스트 | 106개 통과 |
+
+배포 이미지는 `main` PR #60의 소스 트리와 동일하며 Render 자동 배포는 꺼 두었다. 새 릴리스는 새 고정 태그를 Push한 뒤 수동으로 배포한다.
 
 ## Aiven MySQL TLS 연결
 
@@ -143,12 +158,15 @@ docker run --rm `
 2. Source에서 `Existing Image`를 선택한다.
 3. Docker Hub의 고정 버전 태그 또는 digest를 입력한다.
 4. Free 인스턴스를 선택한다.
-5. `DATABASE_URL`, `SECRET_KEY`, Toss 테스트 키를 환경변수로 등록한다.
-6. 배포 후 `/`, 로그인, 리뷰, 예약, 주문, 테스트 결제를 확인한다.
+5. `MYSQL_HOST`, `MYSQL_PORT`, `MYSQL_DATABASE`, `MYSQL_USER`, `MYSQL_PASSWORD`, `MYSQL_SSL_CA`, `SECRET_KEY`, Toss 테스트 키를 환경변수로 등록한다.
+6. Aiven CA를 `aiven-ca.pem` Secret File로 등록하고 `MYSQL_SSL_CA=/etc/secrets/aiven-ca.pem`을 지정한다.
+7. 배포 후 `/`, 로그인, 리뷰, 예약, 주문, 테스트 결제를 확인한다.
 
 Docker Hub 이미지가 갱신되어도 이미지 기반 Render 서비스는 자동 재배포되지
 않는다. 공용 DB Migration을 먼저 한 번 수행하고 대표 서비스를 검증한 다음,
 팀원들이 같은 이미지 버전을 수동 배포한다.
+
+현재 배포에서는 `/`, `/goods`, `/goods/1`, `/destinations`, `/auth/login`, `/auth/signup`이 모두 HTTP 200으로 응답하고 Render 오류 로그가 없음을 확인했다.
 
 ## 이후 릴리스 순서
 

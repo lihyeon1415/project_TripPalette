@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="1080" viewBox="0 0 1920 1080">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ffffff"/><stop offset="1" stop-color="#eef6ff"/></linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="5" stdDeviation="8" flood-color="#173e6b" flood-opacity="0.12"/></filter>
+    <marker id="blueArrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0 0L10 5L0 10z" fill="#3979b9"/></marker>
+    <marker id="orangeArrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0 0L10 5L0 10z" fill="#d77a45"/></marker>
+    <marker id="grayArrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0 0L10 5L0 10z" fill="#788596"/></marker>
+    <style>
+      text{font-family:'Malgun Gothic','Noto Sans KR',sans-serif;fill:#17243a}.title{font-size:48px;font-weight:800;fill:#153f75}.subtitle{font-size:23px;font-weight:600;fill:#4b647e}.lane-title{font-size:25px;font-weight:800}.box-title{font-size:18px;font-weight:800;text-anchor:middle}.box-sub{font-size:14px;font-weight:600;text-anchor:middle;fill:#607286}.tiny{font-size:13px;font-weight:700}.blue{fill:#fff;stroke:#4f8ed0;stroke-width:2}.orange{fill:#fff;stroke:#e09462;stroke-width:2}.gray{fill:#fff;stroke:#aab5c1;stroke-width:2}.green{fill:#f4fbf6;stroke:#64a47c;stroke-width:2}.warn{fill:#fff8f3;stroke:#df8a64;stroke-width:2}.line-blue{fill:none;stroke:#3979b9;stroke-width:3;marker-end:url(#blueArrow)}.line-orange{fill:none;stroke:#d77a45;stroke-width:3;marker-end:url(#orangeArrow)}.line-gray{fill:none;stroke:#788596;stroke-width:2.5;marker-end:url(#grayArrow)}
+    </style>
+  </defs>
+  <rect width="1920" height="1080" fill="url(#bg)"/>
+  <g transform="translate(45 30)"><path d="M12 48L48 10L76 42L101 24L133 58Z" fill="#4d8cc9"/><path d="M12 48L43 30L72 50L101 35L133 58Z" fill="#61b574"/><path d="M112 13l28-9-13 24-5-8-11 7-4-5 11-8z" fill="#2f74b7"/><text x="0" y="91" font-size="31" font-weight="800" fill="#183b68">TripPalette</text></g>
+  <text x="960" y="61" class="title" text-anchor="middle">TripPalette User Flow</text>
+  <text x="960" y="99" class="subtitle" text-anchor="middle">여행 탐색부터 숙소 예약·굿즈 주문·결제 완료까지의 현재 흐름</text>
+
+  <rect x="705" y="125" width="510" height="78" rx="20" class="gray" filter="url(#shadow)"/>
+  <text x="960" y="158" class="box-title">메인 페이지</text><text x="960" y="183" class="box-sub">여행지 추천 · 숙소 · 굿즈 · 마이페이지 진입</text>
+  <path d="M880 203V236H480V272" class="line-blue"/><path d="M1040 203V236H1440V272" class="line-orange"/>
+
+  <rect x="1480" y="122" width="370" height="116" rx="18" fill="#f7f9fb" stroke="#b8c1cc" stroke-width="2"/>
+  <text x="1665" y="153" font-size="19" font-weight="800" text-anchor="middle">인증 흐름</text>
+  <text x="1665" y="181" class="box-sub">로그인 · 회원가입 · 아이디/비밀번호 찾기</text>
+  <text x="1665" y="209" class="box-sub">완료 후 요청하던 기능으로 복귀</text>
+
+  <rect x="55" y="252" width="890" height="674" rx="25" fill="#f4f9ff" stroke="#7fb2e2" stroke-width="3"/>
+  <rect x="80" y="270" width="205" height="45" rx="22" fill="#d6ebff"/><text x="182" y="300" class="lane-title" text-anchor="middle" fill="#1c5d9d">여행 · 숙소</text>
+  <rect x="975" y="252" width="890" height="674" rx="25" fill="#fff8f2" stroke="#e6a176" stroke-width="3"/>
+  <rect x="1000" y="270" width="205" height="45" rx="22" fill="#ffe2cf"/><text x="1102" y="300" class="lane-title" text-anchor="middle" fill="#a95a2e">굿즈 · 주문</text>
+
+  <!-- 여행 흐름 -->
+  <rect x="105" y="345" width="250" height="82" rx="16" class="blue"/><text x="230" y="378" class="box-title">여행지 탐색·추천</text><text x="230" y="404" class="box-sub">지역·테마 검색 / 맞춤 설문</text>
+  <rect x="405" y="345" width="250" height="82" rx="16" class="blue"/><text x="530" y="378" class="box-title">여행지 상세</text><text x="530" y="404" class="box-sub">찜 · 여행지 리뷰</text>
+  <rect x="705" y="345" width="200" height="82" rx="16" class="blue"/><text x="805" y="378" class="box-title">숙소 목록·상세</text><text x="805" y="404" class="box-sub">숙소 리뷰 포함</text>
+  <path d="M355 386H402" class="line-blue"/><path d="M655 386H702" class="line-blue"/>
+
+  <rect x="105" y="480" width="250" height="82" rx="16" class="gray"/><text x="230" y="513" class="box-title">로그인 확인</text><text x="230" y="539" class="box-sub">비회원이면 인증 후 복귀</text>
+  <rect x="405" y="480" width="250" height="82" rx="16" class="blue"/><text x="530" y="513" class="box-title">예약 생성</text><text x="530" y="539" class="box-sub">PAYMENT_PENDING · 10분</text>
+  <rect x="705" y="480" width="200" height="82" rx="16" class="blue"/><text x="805" y="513" class="box-title">결제 모달</text><text x="805" y="539" class="box-sub">토스 결제창 실행</text>
+  <path d="M805 427V452H230V477" class="line-blue"/><path d="M355 521H402" class="line-blue"/><path d="M655 521H702" class="line-blue"/>
+
+  <rect x="405" y="625" width="250" height="88" rx="16" class="green"/><text x="530" y="660" class="box-title">결제 성공</text><text x="530" y="687" class="box-sub">CONFIRMED · 예약 확정</text>
+  <rect x="705" y="625" width="200" height="88" rx="16" class="warn"/><text x="805" y="654" class="box-title">실패·취소·만료</text><text x="805" y="679" class="box-sub">예약 취소 처리</text><text x="805" y="699" class="box-sub">날짜 점유 해제</text>
+  <path d="M805 562V592H530V622" class="line-blue"/><path d="M805 562V622" class="line-gray"/>
+  <text x="650" y="588" class="tiny" fill="#3979b9">성공</text><text x="818" y="596" class="tiny" fill="#b3633b">미완료</text>
+
+  <rect x="105" y="775" width="800" height="105" rx="18" fill="#fff" stroke="#8ab7dc" stroke-width="2"/>
+  <text x="505" y="810" font-size="20" font-weight="800" text-anchor="middle" fill="#235f99">마이페이지에서 확인</text>
+  <text x="505" y="842" class="box-sub">예약 내역 · 예약 상세 · 결제 취소 · 찜 목록 · 여행지/숙소 리뷰</text>
+  <text x="505" y="866" class="box-sub">결제 대기·실패·만료 상태도 분리 표시</text>
+  <path d="M530 713V772" class="line-blue"/>
+
+  <!-- 굿즈 흐름 -->
+  <rect x="1025" y="345" width="235" height="82" rx="16" class="orange"/><text x="1142" y="378" class="box-title">굿즈 목록·상세</text><text x="1142" y="404" class="box-sub">바로 구매 / 장바구니 담기</text>
+  <rect x="1310" y="345" width="235" height="82" rx="16" class="orange"/><text x="1427" y="378" class="box-title">장바구니</text><text x="1427" y="404" class="box-sub">상품 선택 · 수량 · 삭제</text>
+  <rect x="1595" y="345" width="220" height="82" rx="16" class="gray"/><text x="1705" y="378" class="box-title">로그인 확인</text><text x="1705" y="404" class="box-sub">인증 후 주문 계속</text>
+  <path d="M1260 386H1307" class="line-orange"/><path d="M1545 386H1592" class="line-orange"/>
+  <path d="M1142 427V448H1705V477" class="line-orange"/><text x="1180" y="450" class="tiny" fill="#b76438">바로 구매</text>
+
+  <rect x="1025" y="480" width="235" height="82" rx="16" class="orange"/><text x="1142" y="513" class="box-title">배송지 입력 모달</text><text x="1142" y="539" class="box-sub">공통 배송지 UI·검증</text>
+  <rect x="1310" y="480" width="235" height="82" rx="16" class="orange"/><text x="1427" y="513" class="box-title">주문 생성</text><text x="1427" y="539" class="box-sub">PAYMENT_PENDING · 재고 차감</text>
+  <rect x="1595" y="480" width="220" height="82" rx="16" class="orange"/><text x="1705" y="513" class="box-title">결제 모달</text><text x="1705" y="539" class="box-sub">토스 결제창 실행</text>
+  <path d="M1705 427V451H1142V477" class="line-orange"/><path d="M1260 521H1307" class="line-orange"/><path d="M1545 521H1592" class="line-orange"/>
+
+  <rect x="1167" y="625" width="235" height="88" rx="16" class="green"/><text x="1284" y="660" class="box-title">결제 성공</text><text x="1284" y="687" class="box-sub">PAID · 주문 확정</text>
+  <rect x="1515" y="625" width="260" height="88" rx="16" class="warn"/><text x="1645" y="654" class="box-title">실패·취소·만료</text><text x="1645" y="679" class="box-sub">주문 상태 변경</text><text x="1645" y="699" class="box-sub">차감 재고 복구</text>
+  <path d="M1705 562V592H1284V622" class="line-orange"/><path d="M1705 562V622H1645" class="line-gray"/>
+  <text x="1500" y="588" class="tiny" fill="#c46a3e">성공</text><text x="1720" y="597" class="tiny" fill="#b3633b">미완료</text>
+
+  <rect x="1025" y="775" width="790" height="105" rx="18" fill="#fff" stroke="#dda078" stroke-width="2"/>
+  <text x="1420" y="810" font-size="20" font-weight="800" text-anchor="middle" fill="#a95a2e">마이페이지에서 확인</text>
+  <text x="1420" y="842" class="box-sub">장바구니 · 굿즈 주문 내역 · 주문 상세 · 결제 취소</text>
+  <text x="1420" y="866" class="box-sub">취소·결제 만료 주문은 목록에서 숨김 처리 가능</text>
+  <path d="M1284 713V772" class="line-orange"/>
+
+  <rect x="180" y="966" width="1560" height="72" rx="18" fill="#f8fafc" stroke="#c8d2dc" stroke-width="2"/>
+  <text x="250" y="1008" font-size="18" font-weight="800">계정 공통</text><text x="380" y="1008" font-size="16" font-weight="600">회원정보 수정 · 로그아웃 · 회원탈퇴 신청/철회</text>
+  <circle cx="1060" cy="1002" r="8" fill="#4f8ed0"/><text x="1080" y="1008" class="tiny">여행·숙소</text><circle cx="1210" cy="1002" r="8" fill="#e09462"/><text x="1230" y="1008" class="tiny">굿즈·주문</text><circle cx="1360" cy="1002" r="8" fill="#64a47c"/><text x="1380" y="1008" class="tiny">완료</text><circle cx="1470" cy="1002" r="8" fill="#df8a64"/><text x="1490" y="1008" class="tiny">실패·취소·만료</text>
+</svg>

@@ -1,6 +1,6 @@
 # TripPalette 최종본 팀 동기화 가이드
 
-기준일: 2026-10-06
+최종 갱신일: 2026-10-07
 
 ## 최종본 구성
 
@@ -10,30 +10,23 @@
 - 굿즈 상품·상세·장바구니·배송지·주문·주문 상세
 - 숙소 예약과 굿즈 주문의 토스페이먼츠 테스트 결제
 - 결제 대기 10분 만료와 재고·숙소 날짜 점유 복구
-- 자동 테스트 99개
+- 자동 테스트 106개
 - Migration head: `b4e8c1a7d930`
+- 최종 `main`: `e43941b` (PR #60)
+- Docker Hub: `docker.io/wellerman114/trippalette-flask:main-e43941b`
+- Render: <https://trippalette-web.onrender.com>
+- Aiven MySQL 8.4 공용 DB와 검증된 TLS 연결
 
-## GitHub 반영 순서
+## GitHub 최종 반영 상태
 
-현재 기능 브랜치는 `feature/goods-cart-checkout`입니다.
+굿즈·장바구니, Docker, Aiven TLS 작업은 각각 기능 브랜치에서 `develop`을 거쳐 `main`으로 승격했습니다.
 
-```powershell
-git switch feature/goods-cart-checkout
-git status
-python -m unittest discover -s tests -q
-git add -A
-git diff --cached --check
-git commit -m "feat: 굿즈 장바구니와 공통 결제 흐름 완성"
-git push -u origin feature/goods-cart-checkout
-```
+1. PR #55: `feature/goods-cart-checkout` → `develop`
+2. PR #57: `feature/docker-deployment` → `develop`
+3. PR #59: `feature/aiven-tls` → `develop`
+4. PR #60: `develop` → `main`
 
-GitHub에서 다음 순서로 Pull Request를 병합합니다.
-
-1. `feature/goods-cart-checkout` → `develop`
-2. `develop`에서 테스트와 화면을 최종 확인
-3. `develop` → `main`
-
-기능 브랜치를 `main`으로 직접 병합하지 않습니다.
+최종 `main` 커밋은 `e43941b`입니다. 이후 작업도 기능 브랜치를 `develop`에 병합하고, 검증된 `develop`만 `main`으로 승격합니다.
 
 ## 기존 팀원의 최종본 적용
 
@@ -45,9 +38,6 @@ git fetch origin
 git pull --ff-only origin main
 .\venv\Scripts\Activate.ps1
 python -m pip install -r requirements.txt
-python -m flask db upgrade
-python seed.py
-python -m flask db current
 python -m unittest discover -s tests -q
 python -m flask run
 ```
@@ -61,14 +51,21 @@ git pull --ff-only upstream main
 git push origin main
 .\venv\Scripts\Activate.ps1
 python -m pip install -r requirements.txt
-python -m flask db upgrade
-python seed.py
-python -m flask db current
 python -m unittest discover -s tests -q
 python -m flask run
 ```
 
 GitHub 웹의 개인 Fork에서는 먼저 `Sync fork` → `Update branch`를 실행해도 됩니다.
+
+개인 로컬 MySQL을 사용하는 경우에만 코드 업데이트 후 다음을 실행합니다.
+
+```powershell
+python -m flask db upgrade
+python seed.py
+python -m flask db current
+```
+
+공용 Aiven DB를 사용하는 경우 Migration과 Seed는 대표자가 한 번만 적용합니다. 팀원은 위 세 명령을 반복하지 않고 승인받은 `MYSQL_*` 환경변수와 CA 인증서로 접속합니다.
 
 ## 처음 받는 팀원
 
@@ -90,7 +87,7 @@ CHARACTER SET utf8mb4
 COLLATE utf8mb4_unicode_ci;
 ```
 
-`.env`의 `DATABASE_URL`, `SECRET_KEY`를 자신의 로컬 환경에 맞게 수정한 뒤 실행합니다.
+`.env`의 `DATABASE_URL`, `SECRET_KEY`를 자신의 로컬 환경에 맞게 수정한 뒤 실행합니다. 공용 Aiven을 사용하는 팀원은 `DATABASE_URL`을 비우고 승인받은 `MYSQL_*` 값과 `MYSQL_SSL_CA`를 설정합니다.
 
 ```powershell
 python -m flask db upgrade
@@ -99,6 +96,8 @@ python -m flask db current
 python -m unittest discover -s tests -q
 python -m flask run
 ```
+
+위 명령은 **개인 로컬 MySQL** 기준입니다. 공용 Aiven DB는 대표자가 이미 Migration과 Seed를 적용했으므로 팀원이 각자 `db upgrade`와 `seed.py`를 반복 실행하지 않습니다. 팀원은 애플리케이션 접속과 읽기·쓰기 동작만 검증합니다.
 
 ## 토스 테스트 결제 설정
 
@@ -150,6 +149,17 @@ python -m flask db current
 → b4e8c1a7d930 (head)
 
 python -m unittest discover -s tests -q
-→ Ran 99 tests
+→ Ran 106 tests
 → OK
+```
+
+배포 서비스는 다음 핵심 경로가 HTTP 200인지 확인합니다.
+
+```text
+/
+/goods
+/goods/1
+/destinations
+/auth/login
+/auth/signup
 ```
