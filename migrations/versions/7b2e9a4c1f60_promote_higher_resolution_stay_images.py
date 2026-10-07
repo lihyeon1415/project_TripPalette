@@ -92,7 +92,10 @@ def _image_url(region, stay, filename):
 def _update_image(region, stay, filename):
     destination_id = op.get_bind().execute(
         sa.select(destination.c.id).where(destination.c.name == region)
-    ).scalar_one()
+    ).scalar_one_or_none()
+    if destination_id is None:
+        return
+
     op.execute(
         sa.update(accommodation)
         .where(

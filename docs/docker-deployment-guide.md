@@ -11,6 +11,37 @@
 
 회원, 리뷰, 예약, 주문 데이터나 `.env` 비밀정보는 이미지에 포함하지 않는다.
 
+## Aiven MySQL TLS 연결
+
+Aiven MySQL 주소를 `DATABASE_URL`에 사용하면 애플리케이션은
+`MYSQL_SSL_CA`를 필수로 요구한다. CA 체인과 서버 호스트 이름을 모두
+검증하므로 인증서가 없거나 경로가 잘못되면 서버 시작 단계에서 중단된다.
+
+로컬 환경에서는 Aiven Console에서 받은 프로젝트 CA를 Git에서 제외되는
+`instance/aiven-ca.pem`에 저장한다.
+
+```dotenv
+DATABASE_URL=
+MYSQL_HOST=HOST
+MYSQL_PORT=PORT
+MYSQL_DATABASE=trippalette
+MYSQL_USER=trippalette_app
+MYSQL_PASSWORD=PASSWORD
+MYSQL_SSL_CA=instance/aiven-ca.pem
+```
+
+Render에서는 인증서 전체를 `aiven-ca.pem` Secret File로 등록하고 환경변수에
+컨테이너 내부 경로를 지정한다.
+
+```text
+MYSQL_SSL_CA=/etc/secrets/aiven-ca.pem
+```
+
+개별 환경변수를 사용하면 비밀번호의 예약 문자를 URL 인코딩할 필요가 없다.
+기존 `DATABASE_URL`과 개별 MySQL 환경변수가 모두 있으면 `DATABASE_URL`을
+우선한다. Aiven의 원본 Service URI, 비밀번호, API 토큰, `.env`는 Git에
+커밋하지 않는다.
+
 ## 로컬 빌드
 
 PowerShell에서 Git 커밋 해시와 릴리스 이름을 지정해 빌드한다.
@@ -51,6 +82,8 @@ docker run --rm `
   --publish 5000:8000 `
   --env SECRET_KEY=로컬용랜덤값 `
   --env DATABASE_URL='mysql+pymysql://username:password@host.docker.internal:3306/trippalette?charset=utf8mb4' `
+  --env MYSQL_SSL_CA=/run/secrets/aiven-ca.pem `
+  --volume 'D:\TripPalette\instance\aiven-ca.pem:/run/secrets/aiven-ca.pem:ro' `
   --env TOSS_PAYMENT_MODE=test `
   --env TOSS_CLIENT_KEY=test_클라이언트키 `
   --env TOSS_SECRET_KEY=test_시크릿키 `

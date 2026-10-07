@@ -38,11 +38,14 @@ accommodation = sa.table(
 def _destination_id(name):
     return op.get_bind().execute(
         sa.select(destination.c.id).where(destination.c.name == name)
-    ).scalar_one()
+    ).scalar_one_or_none()
 
 
 def _insert_if_missing(region, **values):
     destination_id = _destination_id(region)
+    if destination_id is None:
+        return
+
     exists = op.get_bind().execute(
         sa.select(accommodation.c.id).where(
             accommodation.c.destination_id == destination_id,
@@ -108,9 +111,11 @@ def downgrade():
         ("신안", "신안 1004 섬리조트 펜션"),
         ("완주", "소양고택"),
     ):
-        op.execute(
-            sa.delete(accommodation).where(
-                accommodation.c.destination_id == _destination_id(region),
-                accommodation.c.name == name,
+        destination_id = _destination_id(region)
+        if destination_id is not None:
+            op.execute(
+                sa.delete(accommodation).where(
+                    accommodation.c.destination_id == destination_id,
+                    accommodation.c.name == name,
+                )
             )
-        )

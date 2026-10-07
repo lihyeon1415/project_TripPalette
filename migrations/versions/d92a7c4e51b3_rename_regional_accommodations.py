@@ -38,10 +38,14 @@ accommodation = sa.table(
 def _destination_id(name):
     return op.get_bind().execute(
         sa.select(destination.c.id).where(destination.c.name == name)
-    ).scalar_one()
+    ).scalar_one_or_none()
 
 
 def _rename(region, old_name, new_name, description=None):
+    destination_id = _destination_id(region)
+    if destination_id is None:
+        return
+
     values = {"name": new_name}
     if description is not None:
         values["description"] = description
@@ -49,7 +53,7 @@ def _rename(region, old_name, new_name, description=None):
     op.execute(
         sa.update(accommodation)
         .where(
-            accommodation.c.destination_id == _destination_id(region),
+            accommodation.c.destination_id == destination_id,
             accommodation.c.name == old_name,
         )
         .values(**values)
@@ -68,6 +72,9 @@ def upgrade():
     _rename("울릉", "울릉 다와라 펜션", "스테이너와")
 
     jeju_id = _destination_id("제주")
+    if jeju_id is None:
+        return
+
     exists = op.get_bind().execute(
         sa.select(accommodation.c.id).where(
             accommodation.c.destination_id == jeju_id,
@@ -90,12 +97,14 @@ def upgrade():
 
 
 def downgrade():
-    op.execute(
-        sa.delete(accommodation).where(
-            accommodation.c.destination_id == _destination_id("제주"),
-            accommodation.c.name == "제주자연인펜션글램핑",
+    jeju_id = _destination_id("제주")
+    if jeju_id is not None:
+        op.execute(
+            sa.delete(accommodation).where(
+                accommodation.c.destination_id == jeju_id,
+                accommodation.c.name == "제주자연인펜션글램핑",
+            )
         )
-    )
     _rename("울릉", "스테이너와", "울릉 다와라 펜션")
     _rename("울릉", "코스모스 울릉도", "힐링스테이 코스모스")
     _rename(

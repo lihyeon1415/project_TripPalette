@@ -38,14 +38,18 @@ accommodation = sa.table(
 def _destination_id(name):
     return op.get_bind().execute(
         sa.select(destination.c.id).where(destination.c.name == name)
-    ).scalar_one()
+    ).scalar_one_or_none()
 
 
 def _replace(region, old_name, **values):
+    destination_id = _destination_id(region)
+    if destination_id is None:
+        return
+
     op.execute(
         sa.update(accommodation)
         .where(
-            accommodation.c.destination_id == _destination_id(region),
+            accommodation.c.destination_id == destination_id,
             accommodation.c.name == old_name,
         )
         .values(**values)
@@ -54,6 +58,9 @@ def _replace(region, old_name, **values):
 
 def _insert_if_missing(region, **values):
     destination_id = _destination_id(region)
+    if destination_id is None:
+        return
+
     exists = op.get_bind().execute(
         sa.select(accommodation.c.id).where(
             accommodation.c.destination_id == destination_id,
@@ -117,12 +124,14 @@ def downgrade():
         ("제주 조천", "제주 베스트힐 글램핑 & 펜션"),
         ("진주", "호텔오름"),
     ):
-        op.execute(
-            sa.delete(accommodation).where(
-                accommodation.c.destination_id == _destination_id(region),
-                accommodation.c.name == name,
+        destination_id = _destination_id(region)
+        if destination_id is not None:
+            op.execute(
+                sa.delete(accommodation).where(
+                    accommodation.c.destination_id == destination_id,
+                    accommodation.c.name == name,
+                )
             )
-        )
 
     _replace(
         "포항",
