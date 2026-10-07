@@ -1,0 +1,100 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="1080" viewBox="0 0 1920 1080">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ffffff"/><stop offset="1" stop-color="#eef6ff"/></linearGradient>
+    <filter id="shadow" x="-15%" y="-15%" width="130%" height="130%"><feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#173e6b" flood-opacity="0.12"/></filter>
+    <style>
+      text{font-family:'Malgun Gothic','Noto Sans KR',sans-serif;fill:#17243a}.title{font-size:46px;font-weight:800;fill:#153f75}.subtitle{font-size:21px;font-weight:600;fill:#516a83}.entity{font-size:20px;font-weight:800;fill:#fff}.field{font-size:12.5px;font-weight:600}.key{font-size:12px;font-weight:800}.rel{fill:none;stroke-width:2.5}.rel-blue{stroke:#4b86c2}.rel-teal{stroke:#45958d}.rel-purple{stroke:#806fbd}.rel-orange{stroke:#d18452}.rel-gray{stroke:#778596}.card{fill:#fff;stroke-width:2}.note{font-size:13px;font-weight:700;fill:#4d6177}
+    </style>
+  </defs>
+  <rect width="1920" height="1080" fill="url(#bg)"/>
+  <g transform="translate(42 25)"><path d="M12 48L48 10L76 42L101 24L133 58Z" fill="#4d8cc9"/><path d="M12 48L43 30L72 50L101 35L133 58Z" fill="#61b574"/><path d="M112 13l28-9-13 24-5-8-11 7-4-5 11-8z" fill="#2f74b7"/><text x="0" y="91" font-size="31" font-weight="800" fill="#183b68">TripPalette</text></g>
+  <text x="960" y="55" class="title" text-anchor="middle">TripPalette ERD</text>
+  <text x="960" y="90" class="subtitle" text-anchor="middle">현재 SQLAlchemy 15개 모델 · 핵심 컬럼 및 관계 기준</text>
+
+  <!-- 관계선: 카드보다 뒤에 배치 -->
+  <path d="M310 220H340" class="rel rel-blue"/><text x="316" y="211" class="key">1</text><text x="320" y="238" class="key">0..1</text>
+  <path d="M175 382V425H170V450" class="rel rel-blue"/><text x="181" y="420" class="key">1:N</text>
+  <path d="M205 382V417H465V450" class="rel rel-blue"/><text x="350" y="411" class="key">1:N</text>
+  <path d="M235 382V408H770V450" class="rel rel-blue"/><text x="602" y="402" class="key">1:N</text>
+  <path d="M265 382V398H1360V370" class="rel rel-blue"/><text x="865" y="392" class="key">1:N</text>
+  <path d="M295 382V690H955V720" class="rel rel-blue"/><text x="700" y="684" class="key">1:N</text>
+  <path d="M305 382V675H1255V720" class="rel rel-blue"/><text x="1040" y="669" class="key">1:N</text>
+
+  <path d="M750 370V425H170V450" class="rel rel-teal"/><text x="530" y="420" class="key">1:N</text>
+  <path d="M770 370V435H465V450" class="rel rel-teal"/><text x="610" y="432" class="key">1:N</text>
+  <path d="M880 260H910" class="rel rel-teal"/><text x="885" y="250" class="key">1:N</text>
+  <path d="M1040 370V425H770V450" class="rel rel-teal"/><text x="895" y="420" class="key">1:N</text>
+  <path d="M1180 260H1210" class="rel rel-purple"/><text x="1182" y="250" class="key">1:N</text>
+  <path d="M1510 260H1540" class="rel rel-purple"/><text x="1513" y="250" class="key">0..1</text>
+
+  <path d="M1690 420V650H1350V720" class="rel rel-gray"/><text x="1485" y="645" class="key">0..1 결제</text>
+  <path d="M1550 850H1480" class="rel rel-orange"/><text x="1492" y="840" class="key">1:N</text>
+  <path d="M1100 850H1080" class="rel rel-orange"/><text x="1082" y="840" class="key">N:1</text>
+  <path d="M310 850H330" class="rel rel-orange"/><text x="312" y="840" class="key">1:N</text>
+  <path d="M310 875H580" class="rel rel-orange"/><text x="442" y="869" class="key">1:N</text>
+  <path d="M310 900H830" class="rel rel-orange"/><text x="615" y="894" class="key">1:N</text>
+  <path d="M310 925H1480" class="rel rel-orange"/><text x="1200" y="919" class="key">1:N</text>
+
+  <!-- 상단: 회원·여행·예약·결제 -->
+  <g filter="url(#shadow)"><rect class="card" x="40" y="135" width="270" height="247" rx="15" stroke="#4b86c2"/><path d="M40 150a15 15 0 0 1 15-15h240a15 15 0 0 1 15 15v38H40z" fill="#4b86c2"/></g>
+  <text x="60" y="169" class="entity">User</text><text x="285" y="169" class="entity" text-anchor="end">회원</text>
+  <text x="58" y="213" class="field"><tspan class="key">PK</tspan> id</text><text x="58" y="236" class="field"><tspan class="key">UQ</tspan> email</text><text x="58" y="259" class="field">password_hash · name · phone</text><text x="58" y="282" class="field">withdrawal_requested_at</text><text x="58" y="305" class="field">scheduled_deletion_at</text><text x="58" y="328" class="field"><tspan class="key">UQ</tspan> payment_customer_key</text><text x="58" y="351" class="field">created_at</text>
+
+  <g filter="url(#shadow)"><rect class="card" x="340" y="135" width="250" height="220" rx="15" stroke="#4b86c2"/><path d="M340 150a15 15 0 0 1 15-15h220a15 15 0 0 1 15 15v38H340z" fill="#4b86c2"/></g>
+  <text x="358" y="169" class="entity">UserPreference</text><text x="572" y="169" class="entity" text-anchor="end">취향</text>
+  <text x="358" y="213" class="field"><tspan class="key">PK</tspan> id</text><text x="358" y="236" class="field"><tspan class="key">FK·UQ</tspan> user_id</text><text x="358" y="259" class="field">season · companion · purpose</text><text x="358" y="282" class="field">atmosphere · budget</text><text x="358" y="305" class="field">trip_duration</text><text x="358" y="328" class="field">updated_at</text>
+
+  <g filter="url(#shadow)"><rect class="card" x="620" y="135" width="260" height="235" rx="15" stroke="#45958d"/><path d="M620 150a15 15 0 0 1 15-15h230a15 15 0 0 1 15 15v38H620z" fill="#45958d"/></g>
+  <text x="638" y="169" class="entity">Destination</text><text x="862" y="169" class="entity" text-anchor="end">여행지</text>
+  <text x="638" y="213" class="field"><tspan class="key">PK</tspan> id</text><text x="638" y="236" class="field">name · region</text><text x="638" y="259" class="field">season · purpose · atmosphere</text><text x="638" y="282" class="field">budget_level · recommended_days</text><text x="638" y="305" class="field">description · image_url</text>
+
+  <g filter="url(#shadow)"><rect class="card" x="910" y="135" width="270" height="235" rx="15" stroke="#45958d"/><path d="M910 150a15 15 0 0 1 15-15h240a15 15 0 0 1 15 15v38H910z" fill="#45958d"/></g>
+  <text x="928" y="169" class="entity">Accommodation</text><text x="1162" y="169" class="entity" text-anchor="end">숙소</text>
+  <text x="928" y="213" class="field"><tspan class="key">PK</tspan> id</text><text x="928" y="236" class="field"><tspan class="key">FK</tspan> destination_id</text><text x="928" y="259" class="field">name · address</text><text x="928" y="282" class="field">price_per_night · capacity</text><text x="928" y="305" class="field">rating · description</text><text x="928" y="328" class="field">image_url</text>
+
+  <g filter="url(#shadow)"><rect class="card" x="1210" y="135" width="300" height="235" rx="15" stroke="#806fbd"/><path d="M1210 150a15 15 0 0 1 15-15h270a15 15 0 0 1 15 15v38h-300z" fill="#806fbd"/></g>
+  <text x="1228" y="169" class="entity">Reservation</text><text x="1492" y="169" class="entity" text-anchor="end">숙소 예약</text>
+  <text x="1228" y="213" class="field"><tspan class="key">PK</tspan> id</text><text x="1228" y="236" class="field"><tspan class="key">FK</tspan> user_id · accommodation_id</text><text x="1228" y="259" class="field">check_in · check_out · people_count</text><text x="1228" y="282" class="field">total_price · status</text><text x="1228" y="305" class="field">created_at · expires_at</text><text x="1228" y="328" class="field">PAYMENT_PENDING → CONFIRMED</text>
+
+  <g filter="url(#shadow)"><rect class="card" x="1540" y="120" width="340" height="300" rx="15" stroke="#778596"/><path d="M1540 135a15 15 0 0 1 15-15h310a15 15 0 0 1 15 15v38h-340z" fill="#5d6b7b"/></g>
+  <text x="1558" y="154" class="entity">Payment</text><text x="1862" y="154" class="entity" text-anchor="end">공통 결제</text>
+  <text x="1558" y="198" class="field"><tspan class="key">PK</tspan> id</text><text x="1558" y="221" class="field"><tspan class="key">FK·UQ</tspan> reservation_id (nullable)</text><text x="1558" y="244" class="field"><tspan class="key">FK·UQ</tspan> goods_order_id (nullable)</text><text x="1558" y="267" class="field"><tspan class="key">UQ</tspan> merchant_order_id · payment_key</text><text x="1558" y="290" class="field">provider · amount · payment_method</text><text x="1558" y="313" class="field">payment_status · idempotency_key</text><text x="1558" y="336" class="field">requested_at · paid_at · cancelled_at</text><text x="1558" y="359" class="field">failure_code · failure_message</text><text x="1558" y="388" class="note">예약 또는 굿즈 주문 중 정확히 하나만 연결(XOR)</text>
+
+  <!-- 중단: 상호작용 -->
+  <g filter="url(#shadow)"><rect class="card" x="60" y="450" width="220" height="185" rx="15" stroke="#65a38a"/><path d="M60 465a15 15 0 0 1 15-15h190a15 15 0 0 1 15 15v36H60z" fill="#65a38a"/></g>
+  <text x="78" y="482" class="entity">Favorite</text><text x="262" y="482" class="entity" text-anchor="end">찜</text><text x="78" y="525" class="field"><tspan class="key">PK</tspan> id</text><text x="78" y="548" class="field"><tspan class="key">FK</tspan> user_id</text><text x="78" y="571" class="field"><tspan class="key">FK</tspan> destination_id</text><text x="78" y="594" class="field">created_at</text><text x="78" y="617" class="field"><tspan class="key">UQ</tspan> user + destination</text>
+
+  <g filter="url(#shadow)"><rect class="card" x="350" y="450" width="230" height="185" rx="15" stroke="#65a38a"/><path d="M350 465a15 15 0 0 1 15-15h200a15 15 0 0 1 15 15v36H350z" fill="#65a38a"/></g>
+  <text x="368" y="482" class="entity">Review</text><text x="562" y="482" class="entity" text-anchor="end">여행지 리뷰</text><text x="368" y="525" class="field"><tspan class="key">PK</tspan> id</text><text x="368" y="548" class="field"><tspan class="key">FK</tspan> user_id · destination_id</text><text x="368" y="571" class="field">rating · content</text><text x="368" y="594" class="field">created_at</text><text x="368" y="617" class="field"><tspan class="key">UQ</tspan> user + destination</text>
+
+  <g filter="url(#shadow)"><rect class="card" x="660" y="450" width="280" height="185" rx="15" stroke="#65a38a"/><path d="M660 465a15 15 0 0 1 15-15h250a15 15 0 0 1 15 15v36H660z" fill="#65a38a"/></g>
+  <text x="678" y="482" class="entity" font-size="18">AccommodationReview</text><text x="678" y="525" class="field"><tspan class="key">PK</tspan> id</text><text x="678" y="548" class="field"><tspan class="key">FK</tspan> user_id · accommodation_id</text><text x="678" y="571" class="field">rating · content</text><text x="678" y="594" class="field">created_at</text><text x="678" y="617" class="field"><tspan class="key">UQ</tspan> user + accommodation</text>
+
+  <!-- 하단: 굿즈 -->
+  <g filter="url(#shadow)"><rect class="card" x="40" y="720" width="270" height="290" rx="15" stroke="#d18452"/><path d="M40 735a15 15 0 0 1 15-15h240a15 15 0 0 1 15 15v38H40z" fill="#d18452"/></g>
+  <text x="58" y="754" class="entity">Product</text><text x="292" y="754" class="entity" text-anchor="end">상품</text><text x="58" y="798" class="field"><tspan class="key">PK</tspan> id</text><text x="58" y="821" class="field"><tspan class="key">UQ</tspan> sku</text><text x="58" y="844" class="field">name · description</text><text x="58" y="867" class="field">price · stock_quantity</text><text x="58" y="890" class="field">thumbnail_url · is_active</text><text x="58" y="913" class="field">created_at · updated_at</text>
+
+  <g filter="url(#shadow)"><rect class="card" x="330" y="720" width="220" height="200" rx="15" stroke="#d18452"/><path d="M330 735a15 15 0 0 1 15-15h190a15 15 0 0 1 15 15v38H330z" fill="#d18452"/></g>
+  <text x="348" y="754" class="entity" font-size="17">ProductCategory</text><text x="348" y="798" class="field"><tspan class="key">PK</tspan> id</text><text x="348" y="821" class="field"><tspan class="key">FK</tspan> product_id</text><text x="348" y="844" class="field">category</text><text x="348" y="867" class="field"><tspan class="key">UQ</tspan> product + category</text>
+
+  <g filter="url(#shadow)"><rect class="card" x="580" y="720" width="220" height="200" rx="15" stroke="#d18452"/><path d="M580 735a15 15 0 0 1 15-15h190a15 15 0 0 1 15 15v38H580z" fill="#d18452"/></g>
+  <text x="598" y="754" class="entity" font-size="18">ProductImage</text><text x="598" y="798" class="field"><tspan class="key">PK</tspan> id</text><text x="598" y="821" class="field"><tspan class="key">FK</tspan> product_id</text><text x="598" y="844" class="field">image_url · sort_order</text><text x="598" y="867" class="field"><tspan class="key">UQ</tspan> product + sort_order</text>
+
+  <g filter="url(#shadow)"><rect class="card" x="830" y="720" width="250" height="220" rx="15" stroke="#d18452"/><path d="M830 735a15 15 0 0 1 15-15h220a15 15 0 0 1 15 15v38H830z" fill="#d18452"/></g>
+  <text x="848" y="754" class="entity">CartItem</text><text x="1062" y="754" class="entity" text-anchor="end">장바구니</text><text x="848" y="798" class="field"><tspan class="key">PK</tspan> id</text><text x="848" y="821" class="field"><tspan class="key">FK</tspan> user_id · product_id</text><text x="848" y="844" class="field">quantity</text><text x="848" y="867" class="field">created_at · updated_at</text><text x="848" y="890" class="field"><tspan class="key">UQ</tspan> user + product</text>
+
+  <g filter="url(#shadow)"><rect class="card" x="1100" y="720" width="350" height="290" rx="15" stroke="#c86e43"/><path d="M1100 735a15 15 0 0 1 15-15h320a15 15 0 0 1 15 15v38h-350z" fill="#c86e43"/></g>
+  <text x="1118" y="754" class="entity">GoodsOrder</text><text x="1432" y="754" class="entity" text-anchor="end">굿즈 주문</text><text x="1118" y="798" class="field"><tspan class="key">PK</tspan> id · <tspan class="key">UQ</tspan> order_number</text><text x="1118" y="821" class="field"><tspan class="key">FK</tspan> user_id (nullable)</text><text x="1118" y="844" class="field">recipient_name · recipient_phone · postal_code</text><text x="1118" y="867" class="field">address · address_detail · delivery_request</text><text x="1118" y="890" class="field">items_amount · shipping_fee · total_amount</text><text x="1118" y="913" class="field">status · expires_at · created_at</text><text x="1118" y="936" class="field">paid_at · cancelled_at · hidden_at</text>
+
+  <g filter="url(#shadow)"><rect class="card" x="1480" y="720" width="380" height="270" rx="15" stroke="#c86e43"/><path d="M1480 735a15 15 0 0 1 15-15h350a15 15 0 0 1 15 15v38h-380z" fill="#c86e43"/></g>
+  <text x="1498" y="754" class="entity">GoodsOrderItem</text><text x="1842" y="754" class="entity" text-anchor="end">주문 항목</text><text x="1498" y="798" class="field"><tspan class="key">PK</tspan> id</text><text x="1498" y="821" class="field"><tspan class="key">FK</tspan> goods_order_id · product_id</text><text x="1498" y="844" class="field">product_name · sku</text><text x="1498" y="867" class="field">unit_price · quantity · subtotal</text><text x="1498" y="890" class="field">주문 시점의 상품명·SKU·가격 보존</text>
+
+  <rect x="990" y="450" width="890" height="185" rx="18" fill="#f8fafc" stroke="#c7d0da" stroke-width="2"/>
+  <text x="1020" y="485" font-size="20" font-weight="800" fill="#46586c">관계·무결성 요약</text>
+  <text x="1020" y="520" class="note">• 회원은 취향 1개, 찜·리뷰·예약·장바구니·주문 여러 개를 가질 수 있음</text>
+  <text x="1020" y="550" class="note">• 여행지는 숙소·찜·여행지 리뷰와 연결되고, 숙소는 예약·숙소 리뷰와 연결됨</text>
+  <text x="1020" y="580" class="note">• 상품은 분류·이미지·장바구니·주문 항목과 연결되며 SKU로 Seed Upsert</text>
+  <text x="1020" y="610" class="note">• Payment는 예약 또는 굿즈 주문 하나만 참조하고 주문번호·결제키·멱등키는 유일함</text>
+
+  <text x="1858" y="1045" class="note" text-anchor="end">PK 기본키 · FK 외래키 · UQ 유일 제약 · 2026-10 현재 구현 기준</text>
+</svg>

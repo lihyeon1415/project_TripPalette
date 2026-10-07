@@ -1,5 +1,7 @@
 # TripPalette 개발 사양서
 
+> 문서 성격: 이 문서는 Phase 0~1에서 작성한 초기 기준 사양입니다. 이후 숙소 리뷰, 굿즈·장바구니·배송지·주문, 토스페이먼츠 테스트 결제, Aiven·Docker·Render 배포가 추가되었습니다. 현재 구현 상태와 최종 수치는 [README](../README.md)와 [Roadmap](../Roadmap.md), 결제 상세 계약은 [Phase 5 사양서](phase5/2026-10-02-goods-and-toss-test-payment-backend-spec.md)를 우선합니다.
+
 ## 1. 프로젝트 개요
 
 ### 1.1 프로젝트명

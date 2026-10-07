@@ -2,9 +2,11 @@
 
 > 2026-09-30 후속 4인 작업은 [여행지 상세·숙소 인라인 작업 브리핑](2026-09-30-accommodation-inline/README.md)을 기준으로 진행합니다.
 
-상태: 여행지 상세·맞춤 추천 완료, 숙소 화면 미착수
+상태: 전체 완료
 
-기준일: 2026-09-29
+최종 갱신일: 2026-10-07
+
+> 이 문서는 Phase 4 당시의 작업 배정과 통합 계약을 기록한 문서입니다. 맞춤 추천, 여행지 상세, 숙소 목록·상세는 이후 통합·고도화까지 완료되어 `main`에 반영됐습니다.
 
 Phase 4의 핵심 기능은 한 사람이 설문부터 추천 결과까지 전담합니다. 나머지 두 사람은 이미 데이터가 연결된 여행지 상세와 숙소 화면을 각각 고도화합니다. 세 작업은 담당 파일을 분리하여 동시에 진행합니다.
 
@@ -14,12 +16,12 @@ Phase 4의 핵심 기능은 한 사람이 설문부터 추천 결과까지 전�
 |---|---|---|---|---|
 | 작업자 1(팀장) | 맞춤 여행지 추천 전체·테스트·통합 | [01-recommendation-owner.md](01-recommendation-owner.md) | `kdk` | 완료 |
 | 작업자 2 | 여행지 상세 페이지 고도화 | [02-destination-detail.md](02-destination-detail.md) | `hyh` | 완료 |
-| 작업자 3 | 숙소 목록·상세 페이지 고도화 | [03-accommodation-pages.md](03-accommodation-pages.md) | `feature/accommodation-ui` | 미착수 |
+| 작업자 3 | 숙소 목록·상세 페이지 고도화 | [03-accommodation-pages.md](03-accommodation-pages.md) | `feature/accommodation-ui` | 완료 |
 
 ## 시작 조건
 
 - 세 작업자 모두 최신 `develop`을 반영하고 작업을 시작합니다.
-- 맞춤 추천과 숙소 화면은 미착수이며, 여행지 상세는 PR #36의 구현 후 PR #38·#39에서 기능 계약을 교정하여 병합했습니다.
+- 작업 시작 당시 맞춤 추천과 숙소 화면은 미착수였고, 여행지 상세는 PR #36 이후 PR #38·#39에서 기능 계약을 교정했습니다. 현재 세 작업은 모두 병합 완료 상태입니다.
 - 모델, Migration, 공통 Layout 변경이 필요하면 구현 전에 팀장과 합의합니다.
 - 공통 기준은 [`TripPalette-개발-사양서.md`](../TripPalette-개발-사양서.md)와 [`TripPalette-CSS-가이드.md`](../TripPalette-CSS-가이드.md)를 따릅니다.
 

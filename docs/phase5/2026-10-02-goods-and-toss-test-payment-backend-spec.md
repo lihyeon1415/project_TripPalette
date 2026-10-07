@@ -1,7 +1,8 @@
- # Phase 5 백엔드 사양서 — 굿즈 바로 구매와 토스페이먼츠 테스트 결제
+# Phase 5 백엔드 사양서 — 굿즈 주문·장바구니와 토스페이먼츠 테스트 결제
 
 작성일: 2026-10-02
-상태: 테스트 안전장치·DB 구성 완료 / 상품 Seed·결제 기능 미착수
+최종 갱신일: 2026-10-07
+상태: 구현·자동 테스트·배포 완료
 대상 DB: MySQL
 결제 환경: 토스페이먼츠 테스트 환경 전용
 
@@ -9,11 +10,11 @@
 
 ## 1. 목표와 범위
 
-TripPalette에 숙소 예약 결제와 굿즈 바로 구매 결제를 하나의 결제 서비스로 연결한다. 굿즈에는 장바구니와 찜을 만들지 않는다.
+TripPalette에 숙소 예약 결제와 굿즈 주문 결제를 하나의 결제 서비스로 연결한다. 초기 사양은 바로 구매만 포함했으나 구현 과정에서 회원별 장바구니와 선택 상품 일괄 주문을 추가했고, 굿즈 찜은 만들지 않았다.
 
 ```text
 숙소 예약 → 결제 → 예약 확정 → 마이페이지 숙소 예약
-굿즈 상세 → 바로 구매 → 배송지 → 결제 → 마이페이지 굿즈 주문
+굿즈 상세 → 바로 구매 또는 장바구니 → 배송지 → 결제 → 마이페이지 굿즈 주문
 ```
 
 이번 문서는 모델, Migration, Seed, URL, 서버 검증, 토스 테스트 승인·취소, 마이페이지 연결 계약만 정의한다. 프론트엔드 Template·CSS·JavaScript는 팀원의 이미지 초안이 확정된 뒤 구현한다.
@@ -31,7 +32,7 @@ TripPalette에 숙소 예약 결제와 굿즈 바로 구매 결제를 하나의 
 
 ### 제외
 
-- 장바구니와 굿즈 찜
+- 굿즈 찜
 - 쿠폰·포인트·복합 할인
 - 실제 배송사 API·운송장 추적
 - 관리자 상품 관리 화면
@@ -325,7 +326,7 @@ PAYMENT_PENDING_MINUTES=10
 - `TOSS_PAYMENT_MODE`가 `test`가 아니면 결제 요청을 거부한다.
 - `live_` 키 또는 `test_`로 시작하지 않는 키가 감지되면 서버 시작 단계에서 명확한 설정 오류를 발생시킨다.
 - 라이브 전환용 우회 플래그나 설정값은 이번 Phase에서 만들지 않는다.
-- 화면에는 `테스트 결제이며 실제 청구되지 않습니다` 안내를 표시할 수 있도록 `is_test_payment=true`를 Template에 제공한다.
+- 테스트 환경 여부는 서버 설정과 키 검증으로 강제하며 내부 환경 문구를 결제 UI에 노출하지 않는다.
 
 ### 식별자
 
@@ -597,9 +598,8 @@ get_payment(payment_key)
   shipping_fee, total_amount, form_data
 
 결제 화면:
-  payment_id, client_key, customer_key, merchant_order_id,
-  order_name, amount, success_url, fail_url, payment_target_type,
-  is_test_payment
+  payment, target, client_key, customer_key,
+  order_name, success_url, fail_url
 
 마이페이지 굿즈 주문:
   orders, active_tab
@@ -654,15 +654,15 @@ get_payment(payment_key)
 
 22. [x] 팀원 이미지 초안 기준 Template·CSS 구현
 23. [x] SDK V2 JavaScript 연결
-24. [x] 화면에 테스트 결제 안내 표시
-25. [ ] 문서용 테스트 키로 결제창 → 성공·실패 URL → 승인 완료 흐름 확인
+24. [x] 내부 테스트 환경 문구를 노출하지 않고 공통 결제 디자인 적용
+25. [x] 문서용 테스트 키로 결제창 실행과 결제 콜백·승인 흐름 확인
 26. [x] 현재 범위 전체 회귀 테스트
 
 ## 17. 완료 기준
 
 - Migration 1개로 빈 MySQL DB와 기존 개발 DB가 Upgrade된다.
 - `python seed.py` 재실행 시 상품이 중복되지 않는다.
-- 장바구니 없이 상품을 바로 구매한다.
+- 상품 상세에서 바로 구매하거나 장바구니의 선택 상품을 한 번에 주문한다.
 - 배송지와 주문 당시 상품 정보가 저장된다.
 - 숙소와 굿즈가 같은 토스 결제 서비스를 사용한다.
 - 테스트 승인 성공 시 숙소는 `CONFIRMED`, 굿즈는 `PAID`가 된다.
